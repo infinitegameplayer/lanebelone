@@ -1,0 +1,310 @@
+@import '@fontsource/eb-garamond/400.css';
+@import '@fontsource/eb-garamond/500.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0c1510;
+  --color-bg-mid: #111d13;
+  --color-accent: #4a2878;
+  --color-gold-from: #c9a84c;
+  --color-gold-to: #f0d080;
+  --color-text: #f5f0e8;
+  --color-text-muted: #a89f8c;
+  --radius: 8px;
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Grain texture overlay utility */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold shimmer button */
+.btn-gold {
+  display: inline-block;
+  background-image: linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%);
+  background-size: 220% 100%;
+  background-position: right center;
+  color: #0f1a12;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-gold:hover {
+  background-position: left center;
+  box-shadow: 0 4px 18px rgba(245, 216, 138, 0.18);
+  transform: translateY(-1px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+.hero-line-1 { animation-delay: 0.1s; }
+.hero-line-2 { animation-delay: 0.22s; }
+.hero-line-3 { animation-delay: 0.34s; }
+
+/* Outline button */
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(245, 240, 232, 0.3);
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: rgba(245, 240, 232, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Ghost / editorial link */
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.15);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  padding: 8px 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.25s ease, letter-spacing 0.3s ease, border-color 0.25s ease;
+}
+.btn-ghost:hover {
+  color: var(--color-text);
+  letter-spacing: 0.11em;
+  border-bottom-color: rgba(245, 240, 232, 0.4);
+}
+
+/* Dark card — forest tint (lanebelone flavor) */
+.dark-card {
+  background: rgba(15, 25, 18, 0.6);
+  border: 1px solid rgba(245, 240, 232, 0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.dark-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 240, 232, 0.16);
+}
+
+/* Section spacing */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 2rem;
+  }
+}
+
+/* About hero — responsive object-position */
+.about-hero-img {
+  object-position: 50% 47%;
+}
+@media (min-width: 768px) {
+  .about-hero-img {
+    object-position: 78% 47%;
+  }
+}
+
+/* HubSpot form dark palette overrides */
+.hs-form-override {
+  width: 100%;
+  max-width: 480px;
+}
+
+.hs-form-override .hs-form fieldset {
+  max-width: 100% !important;
+}
+
+.hs-form-override .hs-form .hs-form-field {
+  margin-bottom: 1.25rem;
+}
+
+.hs-form-override .hs-form label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.55);
+  margin-bottom: 0.4rem;
+}
+
+.hs-form-override .hs-form input[type="text"],
+.hs-form-override .hs-form input[type="email"],
+.hs-form-override .hs-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  transition: border-color 0.2s ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.hs-form-override .hs-form input[type="text"]:focus,
+.hs-form-override .hs-form input[type="email"]:focus,
+.hs-form-override .hs-form textarea:focus {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.hs-form-override .hs-form input::placeholder,
+.hs-form-override .hs-form textarea::placeholder {
+  color: rgba(245, 240, 232, 0.25);
+}
+
+.hs-form-override .hs-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.hs-form-override .hs-form .hs-error-msgs {
+  list-style: none;
+  margin-top: 0.3rem;
+}
+
+.hs-form-override .hs-form .hs-error-msgs label {
+  color: rgba(220, 80, 80, 0.85);
+  font-size: 0.78rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.hs-form-override .hs-form .hs-button,
+.hs-form-override .hs-form input[type="submit"],
+.hs-form-override .hs-form input.hs-button {
+  display: inline-block !important;
+  background-image: linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%) !important;
+  background-size: 220% 100% !important;
+  background-position: right center !important;
+  background-color: transparent !important;
+  color: #0f1a12 !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  padding: 0.75rem 1.75rem !important;
+  border-radius: var(--radius) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+  margin-top: 0.5rem !important;
+  width: auto !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.hs-form-override .hs-form .hs-button:hover,
+.hs-form-override .hs-form input[type="submit"]:hover,
+.hs-form-override .hs-form input.hs-button:hover {
+  background-position: left center !important;
+  box-shadow: 0 4px 18px rgba(245, 216, 138, 0.18) !important;
+  transform: translateY(-1px) !important;
+}
+
+.hs-form-override .submitted-message {
+  font-family: var(--font-body);
+  color: rgba(245, 240, 232, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1rem 0;
+}
+
+/* Hide HubSpot branding */
+.hs-form-override .hs-richtext,
+.hs-form-override .legal-consent-container {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(245, 240, 232, 0.35);
+}
+
+.hs-form-override .hs-form .hs-form-booleancheckbox-display {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: rgba(245, 240, 232, 0.45);
+}
