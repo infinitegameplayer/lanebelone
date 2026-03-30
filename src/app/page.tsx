@@ -28,14 +28,14 @@ const paths = [
 const books = [
   {
     title: 'Humble Alpha',
-    cover: '/images/book-humble-alpha.webp', // TODO: Drop book-humble-alpha.webp into public/images/
+    cover: '/images/book-humble-alpha.jpg',
     description: 'Co-authored by Lane Belone and Steven Dyme. Decoding how to master your life, conquer what stands in your way and run towards greatness.',
     cta: { label: 'Get the Book', href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X', external: true },
     badge: 'Book',
   },
   {
     title: 'Your Infinite RPG',
-    cover: '/images/book-infinite-rpg.webp', // TODO: Drop book-infinite-rpg.webp into public/images/
+    cover: '/images/book-infinite-rpg.png',
     description: 'A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life.',
     cta: { label: 'Download Free', href: 'https://drive.google.com/file/d/1nlRYiD-T7K5HgorKe4VzgD-AiO7uZ1Fr/view?usp=sharing', external: true },
     badge: 'Free',
