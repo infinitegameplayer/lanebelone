@@ -1,0 +1,9 @@
+---
+title: "Open Letter To The HAVE Community"
+slug: "open-letter-to-the-have-community"
+date: "2022-12-06"
+category: "philosophy"
+heroImage: "/images/blog/open-letter-to-the-have-community-hero.png"
+description: "The following statement ONLY reflects the individual thoughts of myself, Lane Belone. It in no way reflects any other organization, movement or people. I..."
+---
+<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/HAVE%20Event.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;&nbsp;</p><p><em>The following statement ONLY reflects the individual thoughts of myself, Lane Belone. It in no way reflects any other organization, movement or people.</em></p><p>I am deeply sorry to all those who have supported the HAVE movement and the HAVE NFT project.</p><p>I feel like I let you down.</p><p>Recently, I made the decision to walk away from the Humble Alpha and that included the HAVE Movement and HAVE NFT project.</p><p>The feeling of letting the community down, letting down my partners and team has been heavy. The feeling of walking away and quitting has crawled in my mind for months.</p><p>I know many people invested time, energy, effort, money and resources into HAVE and for that, I am deeply sorry to walk away.</p><p>Just know that it wasn’t personal and if there was any way for me to not walk away, I would have.</p><p>This experience has allowed me to learn so much about myself and how to support a movement. Moving forward, I will take these lessons and apply them with my entire Heart.</p><p>To the best of my knowledge, the HAVE NFT project is in the final stages of being acquired by an organization and there are plans to keep the support of what was originally intended. It is out of my hands however and I wish HAVE and HAVE NFT the absolute best.</p><p>My work with the Veteran community will continue.</p><p>Stay tuned.</p>

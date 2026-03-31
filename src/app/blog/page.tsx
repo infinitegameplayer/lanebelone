@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { getAllPosts } from '@/lib/blog'
+import BlogCard from '@/components/BlogCard'
 
 export const metadata: Metadata = {
   title: 'Writing',
@@ -6,23 +8,46 @@ export const metadata: Metadata = {
 }
 
 export default function BlogIndexPage() {
+  const posts = getAllPosts()
+
   return (
-    <section className="section pt-40">
-      <h1 className="text-5xl md:text-7xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-        Writing
-      </h1>
-      <p className="text-parchment/60 text-lg max-w-xl mb-8" style={{ fontFamily: 'var(--font-body)' }}>
-        {/* TODO Session C: render article index here */}
-        Essays and breadcrumbs from the infinite game.
-      </p>
-      <a
-        href="https://lanebelone.substack.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-outline"
-      >
-        Read on Substack
-      </a>
+    <section className="section pt-40 pb-24">
+      <div className="max-w-5xl mx-auto">
+        <h1
+          className="text-5xl md:text-7xl mb-4"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
+          Writing
+        </h1>
+        <p
+          className="text-parchment/60 text-lg max-w-xl mb-3"
+          style={{ fontFamily: 'var(--font-body)' }}
+        >
+          Essays and breadcrumbs from the infinite game.
+        </p>
+        <div className="mb-12">
+          <a
+            href="https://lanebelone.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline inline-block"
+          >
+            Current writing on Substack
+          </a>
+        </div>
+
+        {posts.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map(post => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-parchment/40" style={{ fontFamily: 'var(--font-body)' }}>
+            No articles found.
+          </p>
+        )}
+      </div>
     </section>
   )
 }
