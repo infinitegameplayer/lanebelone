@@ -39,8 +39,7 @@ const formats = [
   'Private sessions for founders and visionaries',
 ]
 
-// TODO: Replace with actual HubSpot Speaking Inquiry form ID (portal 23478458)
-const SPEAKING_FORM_ID = 'TODO_SPEAKING_FORM_ID'
+const SPEAKING_FORM_ID = '61190c6c-2a3a-486e-a3bd-e7b331eaa555'
 
 export default function SpeakingPage() {
   return (

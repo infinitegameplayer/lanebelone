@@ -28,6 +28,15 @@ export default function TermsPage() {
 
           <div>
             <h2 className="text-xl text-parchment/90 mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+              Private operation
+            </h2>
+            <p>
+              This site is privately operated. Any exchange, including donations, payments or services, takes place between living men and women as a private arrangement.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl text-parchment/90 mb-3" style={{ fontFamily: 'var(--font-display)' }}>
               Speaking and content
             </h2>
             <p>

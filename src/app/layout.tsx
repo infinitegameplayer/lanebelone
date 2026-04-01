@@ -16,14 +16,24 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Lane Belone',
     locale: 'en_US',
+    title: 'Lane Belone',
+    description: 'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    url: 'https://lanebelone.com',
+    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lane Belone',
+    description: 'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    images: ['/images/lane-machu-picchu-square.webp'],
   },
   robots: {
     index: true,
     follow: true,
   },
   icons: {
-    icon: '/images/lane-belone-logo-white.png',
-    apple: '/images/lane-belone-logo-white.png',
+    icon: '/images/lane-belone-logo-color.png',
+    apple: '/images/lane-belone-logo-color.png',
   },
 }
 

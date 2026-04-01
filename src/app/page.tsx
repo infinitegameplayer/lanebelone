@@ -4,8 +4,7 @@ import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
 import HubSpotForm from '@/components/HubSpotForm'
 
-// TODO: Replace with actual HubSpot Contact form ID (portal 23478458)
-const CONTACT_FORM_ID = 'TODO_CONTACT_FORM_ID'
+const CONTACT_FORM_ID = 'eddc876e-e15f-419f-af48-7506a8767fcc'
 
 const paths = [
   {
@@ -29,7 +28,7 @@ const books = [
   {
     title: 'Humble Alpha',
     cover: '/images/book-humble-alpha.jpg',
-    description: 'Co-authored by Lane Belone and Steven Dyme. Decoding how to master your life, conquer what stands in your way and run towards greatness.',
+    description: 'Co-authored by Lane Belone and Steven Kuhn. Decoding how to master your life, conquer what stands in your way and run towards greatness.',
     cta: { label: 'Get the Book', href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X', external: true },
     badge: 'Book',
     coverContain: false,
@@ -316,8 +315,7 @@ export default function HomePage() {
             <p className="text-parchment/60 mb-8 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               Personal updates and fresh ideas.
             </p>
-            {/* TODO: Create personal updates signup form in HubSpot portal 23478458 (Distillation list) and replace form ID below */}
-            <HubSpotForm formId="TODO_DISTILLATION_FORM_ID" />
+            <HubSpotForm formId="be6f8412-8e52-4571-94f9-197ff18f9f90" />
           </div>
         </SectionReveal>
       </section>
