@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import ShootingStars from '@/components/ShootingStars'
 
 export const metadata: Metadata = {
   title: {
@@ -65,6 +66,7 @@ export default function RootLayout({
         />
       </head>
       <body style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }} suppressHydrationWarning>
+        <ShootingStars />
         <Nav />
         <main>{children}</main>
         <Footer />
