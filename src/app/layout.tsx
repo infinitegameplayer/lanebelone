@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/images/lane-belone-logo-color.png',
     apple: '/images/lane-belone-logo-color.png',
   },
 }
