@@ -109,7 +109,7 @@ export default function SpeakingPage() {
               <ul className="flex flex-col gap-3" style={{ fontFamily: 'var(--font-body)' }}>
                 {formats.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-parchment/70">
-                    <span className="text-parchment/30 mt-1">&#x2014;</span>
+                    <span className="text-parchment/30 mt-1">&#xB7;</span>
                     <span>{f}</span>
                   </li>
                 ))}
