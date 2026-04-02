@@ -49,17 +49,17 @@ export default function HubSpotForm({
       .hs-form input::placeholder, .hs-form textarea::placeholder { color: rgba(245,240,232,0.25); }
       .hs-form textarea { min-height: 90px; resize: vertical; background: rgba(255,255,255,0.05) !important; color: #f5f0e8 !important; }
       .hs-button, input[type="submit"], input.hs-button {
-        display: inline-block;
-        background-image: linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%);
-        background-size: 220% 100%; background-position: right center;
-        background-color: transparent;
-        color: #0f1a12; font-family: 'Inter', system-ui, sans-serif; font-size: 0.875rem;
-        font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase;
-        padding: 0.75rem 1.75rem; border-radius: 8px; border: none; cursor: pointer;
-        transition: background-position 0.5s ease, box-shadow 0.3s ease;
-        margin-top: 0.5rem; width: auto; -webkit-appearance: none; appearance: none;
+        display: inline-block !important;
+        background-image: linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%) !important;
+        background-size: 220% 100% !important; background-position: right center !important;
+        background-color: transparent !important;
+        color: #0f1a12 !important; font-family: 'Inter', system-ui, sans-serif !important; font-size: 0.875rem !important;
+        font-weight: 500 !important; letter-spacing: 0.07em !important; text-transform: uppercase !important;
+        padding: 0.75rem 1.75rem !important; border-radius: 8px !important; border: none !important; cursor: pointer !important;
+        transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+        margin-top: 0.5rem !important; width: auto !important; -webkit-appearance: none !important; appearance: none !important;
       }
-      .hs-button:hover, input[type="submit"]:hover { background-position: left center; box-shadow: 0 4px 18px rgba(245,216,138,0.18); }
+      .hs-button:hover, input[type="submit"]:hover { background-position: left center !important; box-shadow: 0 4px 18px rgba(245,216,138,0.18) !important; transform: translateY(-1px) !important; }
       .hs-error-msgs { list-style: none; margin-top: 0.3rem; }
       .hs-error-msgs label { color: rgba(220,80,80,0.85); font-size: 0.78rem; text-transform: none; letter-spacing: 0; }
       .submitted-message { color: rgba(245,240,232,0.7); font-size: 0.95rem; line-height: 1.6; padding: 1rem 0; }
