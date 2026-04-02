@@ -123,6 +123,26 @@ export default function SpeakingPage() {
         </SectionReveal>
       </section>
 
+      {/* SQHQ cross-link */}
+      <section className="section border-t border-white/5">
+        <SectionReveal>
+          <div className="max-w-2xl">
+            <p className="text-parchment/60 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+              Looking for workshops, retreats or ongoing advisory work? That lives at{' '}
+              <a
+                href="https://sidequesthq.co"
+                className="text-parchment/80 underline underline-offset-4 hover:text-parchment transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Side Quest HQ
+              </a>
+              .
+            </p>
+          </div>
+        </SectionReveal>
+      </section>
+
       {/* Inquiry CTA */}
       <section className="section border-t border-white/5" id="speak">
         <SectionReveal>

@@ -44,6 +44,19 @@ const jsonLd = {
   url: 'https://lanebelone.com',
   description:
     'Writer, speaker and guide exploring the infinite game, clearer perception and personal freedom.',
+  jobTitle: 'Writer, Speaker and Guide',
+  knowsAbout: [
+    'Infinite Game philosophy',
+    'Joyful Sovereignty',
+    'Leadership development',
+    'Flow Intelligence',
+    'Sovereign Worldbuilding',
+    'Perception and clarity',
+    'Personal freedom',
+    'Experiential retreats',
+    'Special Forces leadership',
+    'Humble Alpha framework',
+  ],
   sameAs: [
     'https://www.instagram.com/increasefreedom/',
     'https://www.linkedin.com/in/lanebelone/',
