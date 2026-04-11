@@ -9,6 +9,7 @@ Not a conversion funnel — an infinite game signal surface.
 
 Local path: `C:\Users\User\sites\lanebelone\`
 Repo: `InfiniteGamePlayer/lanebelone` (GitHub, branch: `master` — auto-deploys to Vercel)
+Deploy fallback: `npx vercel --prod --yes` from `C:\Users\User\sites\lanebelone\` — use if webhook fails. GitHub org URL case change broke Vercel webhook (2026-04-10); reconnect GitHub integration in Vercel settings to permanently fix.
 Live: https://lanebelone.com
 Dev server: `npm run dev` → localhost:3000
 Build check: `npm run build` (must pass 40 static pages, 0 errors)
