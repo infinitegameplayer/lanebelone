@@ -64,6 +64,7 @@ const personJsonLd = {
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',
     'https://lanebelone.substack.com/',
+    'https://infinitegameos.io',
   ],
 }
 
@@ -84,6 +85,7 @@ const orgJsonLd = {
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',
     'https://lanebelone.substack.com/',
+    'https://infinitegameos.io',
   ],
 }
 

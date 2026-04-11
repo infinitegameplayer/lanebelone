@@ -69,6 +69,7 @@ export default function Footer() {
           <Link href="/joyful-sovereignty" className="hover:text-parchment/80 transition-colors">Joyful Sovereignty</Link>
           <a href="https://lanebelone.substack.com/" target="_blank" rel="noopener noreferrer" className="hover:text-parchment/80 transition-colors">Writing</a>
           <Link href="/blog" className="hover:text-parchment/80 transition-colors">Blog</Link>
+          <a href="https://infinitegameos.io" target="_blank" rel="noopener noreferrer" className="hover:text-parchment/80 transition-colors">Infinite Game OS</a>
           <Link href="/privacy" className="hover:text-parchment/80 transition-colors">Privacy</Link>
           <Link href="/terms" className="hover:text-parchment/80 transition-colors">Terms</Link>
         </nav>
