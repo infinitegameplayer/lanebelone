@@ -7,9 +7,59 @@ export const metadata: Metadata = {
   description: "Lane Belone's core philosophy: joyful sovereignty, clearer perception and the art of playing an infinite game.",
 }
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Joyful Sovereignty?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Joyful Sovereignty is a quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. It is not a destination but a way of moving. Sovereignty is understood as a birthright, not something to fight for. The phrase "the whole game, played from the inside" captures its essence.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the Infinite Game?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Infinite Game is life played to keep playing, not to win. Finite arcs — projects, quests, retreats, creative sprints — create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures are growth obstacles, not permanent defeats. The infinite game never stops.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are Playgrounds of Exploration?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Playgrounds of Exploration is Lane Belone\'s framework for architecting each part of the day as a distinct playground with its own energy and essence. The morning, midday, afternoon, evening and night each move like tracks on a playlist. Designing these playgrounds is itself an expression of Joyful Sovereignty.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the Perception Upgrade?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Perception Upgrade is the recognition that reality is decoded, not given. Based on your internal orientation, life responds in kind. Perception upgrades are available every moment. Setting an internal orientation of aliveness and synchronicity lets life respond in kind.',
+      },
+    },
+  ],
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Joyful Sovereignty', item: 'https://lanebelone.com/joyful-sovereignty' },
+  ],
+}
+
 export default function JoyfulSovereigntyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative min-h-[60vh] flex flex-col justify-center overflow-hidden grain-overlay">
         <Image

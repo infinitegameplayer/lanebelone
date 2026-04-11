@@ -33,13 +33,15 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    apple: '/images/lane-belone-logo-color.png',
+    icon: '/images/lane-belone-icon-color.png',
+    apple: '/images/lane-belone-icon-color.png',
   },
 }
 
-const jsonLd = {
+const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': 'https://lanebelone.com/#person',
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
   description:
@@ -65,6 +67,26 @@ const jsonLd = {
   ],
 }
 
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://lanebelone.com/#organization',
+  name: 'Lane Belone',
+  url: 'https://lanebelone.com',
+  logo: 'https://lanebelone.com/images/lane-belone-icon-color.png',
+  founder: {
+    '@type': 'Person',
+    '@id': 'https://lanebelone.com/#person',
+    name: 'Lane Belone',
+  },
+  sameAs: [
+    'https://www.instagram.com/increasefreedom/',
+    'https://www.linkedin.com/in/lanebelone/',
+    'https://www.facebook.com/increasefreedom',
+    'https://lanebelone.substack.com/',
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -75,7 +97,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
       <body style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }} suppressHydrationWarning>

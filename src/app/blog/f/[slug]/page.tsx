@@ -44,8 +44,41 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    author: {
+      '@type': 'Person',
+      '@id': 'https://lanebelone.com/#person',
+      name: 'Lane Belone',
+      url: 'https://lanebelone.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': 'https://lanebelone.com/#organization',
+      name: 'Lane Belone',
+    },
+    url: `https://lanebelone.com/blog/f/${slug}`,
+    ...(post.heroImage && { image: `https://lanebelone.com${post.heroImage}` }),
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://lanebelone.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://lanebelone.com/blog/f/${slug}` },
+    ],
+  }
+
   return (
     <article className="pt-32 pb-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero image */}
       {post.heroImage && (
         <div className="relative w-full max-h-[480px] overflow-hidden mb-12">
