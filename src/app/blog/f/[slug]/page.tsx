@@ -49,7 +49,7 @@ export default async function BlogPostPage({
     '@type': 'Article',
     headline: post.title,
     description: post.description,
-    datePublished: post.date,
+    datePublished: `${post.date}T00:00:00Z`,
     author: {
       '@type': 'Person',
       '@id': 'https://lanebelone.com/#person',
