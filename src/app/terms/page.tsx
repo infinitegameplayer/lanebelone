@@ -13,7 +13,7 @@ export default function TermsPage() {
           Terms of Use
         </h1>
         <p className="text-parchment/40 text-sm mb-12" style={{ fontFamily: 'var(--font-body)' }}>
-          Effective date: March 2026
+          Effective date: April 2026
         </p>
 
         <div className="flex flex-col gap-10 text-parchment/70 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
@@ -28,10 +28,10 @@ export default function TermsPage() {
 
           <div>
             <h2 className="text-xl text-parchment/90 mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Private operation
+              Site operator
             </h2>
             <p>
-              This site is privately operated. Any exchange, including donations, payments or services, takes place between living men and women as a private arrangement.
+              This site is operated by Lane Belone. By accessing this site or engaging through it, you are engaging with Lane Belone directly.
             </p>
           </div>
 
