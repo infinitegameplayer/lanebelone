@@ -159,6 +159,27 @@ a {
   border-color: rgba(245, 240, 232, 0.16);
 }
 
+/* Display-scale typography — oversized section anchors */
+.text-display {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.1;
+}
+
+/* Stagger reveal — orchestrated child entrance */
+@keyframes fadeUpChild {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stagger-reveal > * {
+  opacity: 0;
+}
+.stagger-reveal.is-visible > *:nth-child(1) { animation: fadeUpChild 0.55s ease forwards; animation-delay: 0.05s; }
+.stagger-reveal.is-visible > *:nth-child(2) { animation: fadeUpChild 0.55s ease forwards; animation-delay: 0.18s; }
+.stagger-reveal.is-visible > *:nth-child(3) { animation: fadeUpChild 0.55s ease forwards; animation-delay: 0.31s; }
+.stagger-reveal.is-visible > *:nth-child(4) { animation: fadeUpChild 0.55s ease forwards; animation-delay: 0.44s; }
+.stagger-reveal.is-visible > *:nth-child(5) { animation: fadeUpChild 0.55s ease forwards; animation-delay: 0.57s; }
+
 /* Section spacing */
 .section {
   padding: 5rem 1.5rem;

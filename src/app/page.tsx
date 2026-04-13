@@ -122,28 +122,26 @@ export default function HomePage() {
 
       {/* Three-path grid */}
       <section className="section">
-        <SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {paths.map((p) => (
-              <div key={p.title} className="dark-card p-8 flex flex-col gap-4">
-                <h2 className="text-2xl" style={{ fontFamily: 'var(--font-display)' }}>
-                  {p.title}
-                </h2>
-                <p className="text-parchment/65 text-sm leading-relaxed flex-1" style={{ fontFamily: 'var(--font-body)' }}>
-                  {p.body}
-                </p>
-                {p.cta.external ? (
-                  <a href={p.cta.href} target="_blank" rel="noopener noreferrer" className={`btn-${p.cta.variant} self-start`}>
-                    {p.cta.label}
-                  </a>
-                ) : (
-                  <a href={p.cta.href} className={`btn-${p.cta.variant} self-start`}>
-                    {p.cta.label}
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {paths.map((p) => (
+            <div key={p.title} className="dark-card p-8 flex flex-col gap-4">
+              <h2 className="text-2xl" style={{ fontFamily: 'var(--font-display)' }}>
+                {p.title}
+              </h2>
+              <p className="text-parchment/65 text-sm leading-relaxed flex-1" style={{ fontFamily: 'var(--font-body)' }}>
+                {p.body}
+              </p>
+              {p.cta.external ? (
+                <a href={p.cta.href} target="_blank" rel="noopener noreferrer" className={`btn-${p.cta.variant} self-start`}>
+                  {p.cta.label}
+                </a>
+              ) : (
+                <a href={p.cta.href} className={`btn-${p.cta.variant} self-start`}>
+                  {p.cta.label}
+                </a>
+              )}
+            </div>
+          ))}
         </SectionReveal>
       </section>
 

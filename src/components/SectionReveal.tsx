@@ -6,9 +6,10 @@ interface SectionRevealProps {
   children: ReactNode
   delay?: number
   className?: string
+  staggerChildren?: boolean
 }
 
-export default function SectionReveal({ children, delay = 0, className = '' }: SectionRevealProps) {
+export default function SectionReveal({ children, delay = 0, className = '', staggerChildren = false }: SectionRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -27,6 +28,17 @@ export default function SectionReveal({ children, delay = 0, className = '' }: S
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
+
+  if (staggerChildren) {
+    return (
+      <div
+        ref={ref}
+        className={`stagger-reveal${visible ? ' is-visible' : ''} ${className}`}
+      >
+        {children}
+      </div>
+    )
+  }
 
   return (
     <div
