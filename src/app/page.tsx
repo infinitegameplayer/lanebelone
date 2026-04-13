@@ -28,7 +28,7 @@ const books = [
   {
     title: 'Humble Alpha',
     cover: '/images/book-humble-alpha.jpg',
-    description: 'Co-authored by Lane Belone and Steven Kuhn. Decoding how to master your life, conquer what stands in your way and run towards greatness.',
+    description: 'A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.',
     cta: { label: 'Get the Book', href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X', external: true },
     badge: 'Book',
     coverContain: false,
