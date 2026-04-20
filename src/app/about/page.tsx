@@ -12,7 +12,7 @@ const personJsonLd = {
   '@type': 'Person',
   '@id': 'https://www.lanebelone.com/about#lane-belone',
   name: 'Lane Belone',
-  url: 'https://lanebelone.com',
+  url: 'https://www.lanebelone.com',
   jobTitle: 'Writer, Speaker and Guide',
   description:
     'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
@@ -39,7 +39,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.lanebelone.com' },
     { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.lanebelone.com/about' },
   ],
 }

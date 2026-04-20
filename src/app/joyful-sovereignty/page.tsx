@@ -50,8 +50,8 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Joyful Sovereignty', item: 'https://lanebelone.com/joyful-sovereignty' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.lanebelone.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Joyful Sovereignty', item: 'https://www.lanebelone.com/joyful-sovereignty' },
   ],
 }
 

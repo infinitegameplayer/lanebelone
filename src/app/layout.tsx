@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Lane Belone',
     description: 'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
-    url: 'https://lanebelone.com',
+    url: 'https://www.lanebelone.com',
     images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://lanebelone.com/#person',
+  '@id': 'https://www.lanebelone.com/#person',
   name: 'Lane Belone',
-  url: 'https://lanebelone.com',
+  url: 'https://www.lanebelone.com',
   description:
     'Writer, speaker and guide exploring the infinite game, clearer perception and personal freedom.',
   jobTitle: 'Writer, Speaker and Guide',
@@ -72,13 +72,13 @@ const personJsonLd = {
 const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://lanebelone.com/#organization',
+  '@id': 'https://www.lanebelone.com/#organization',
   name: 'Lane Belone',
-  url: 'https://lanebelone.com',
-  logo: 'https://lanebelone.com/images/lane-belone-icon-color.png',
+  url: 'https://www.lanebelone.com',
+  logo: 'https://www.lanebelone.com/images/lane-belone-icon-color.png',
   founder: {
     '@type': 'Person',
-    '@id': 'https://lanebelone.com/#person',
+    '@id': 'https://www.lanebelone.com/#person',
     name: 'Lane Belone',
   },
   sameAs: [

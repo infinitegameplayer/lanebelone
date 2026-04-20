@@ -52,26 +52,26 @@ export default async function BlogPostPage({
     datePublished: `${post.date}T00:00:00Z`,
     author: {
       '@type': 'Person',
-      '@id': 'https://lanebelone.com/#person',
+      '@id': 'https://www.lanebelone.com/#person',
       name: 'Lane Belone',
-      url: 'https://lanebelone.com',
+      url: 'https://www.lanebelone.com',
     },
     publisher: {
       '@type': 'Organization',
-      '@id': 'https://lanebelone.com/#organization',
+      '@id': 'https://www.lanebelone.com/#organization',
       name: 'Lane Belone',
     },
-    url: `https://lanebelone.com/blog/f/${slug}`,
-    ...(post.heroImage && { image: `https://lanebelone.com${post.heroImage}` }),
+    url: `https://www.lanebelone.com/blog/f/${slug}`,
+    ...(post.heroImage && { image: `https://www.lanebelone.com${post.heroImage}` }),
   }
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://lanebelone.com/blog' },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://lanebelone.com/blog/f/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.lanebelone.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://www.lanebelone.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.lanebelone.com/blog/f/${slug}` },
     ],
   }
 
