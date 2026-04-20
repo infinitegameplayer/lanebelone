@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     description: 'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
     images: ['/images/lane-machu-picchu-square.webp'],
   },
+  alternates: {
+    types: {
+      'text/markdown': '/llms.txt',
+    },
+  },
   robots: {
     index: true,
     follow: true,
