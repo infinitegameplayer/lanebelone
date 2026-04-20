@@ -4,7 +4,7 @@ import SectionReveal from '@/components/SectionReveal'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Lane Belone — writer, speaker and guide. The story behind the infinite game.',
+  description: 'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
 }
 
 export default function AboutPage() {
@@ -38,7 +38,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div className="flex flex-col gap-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed" style={{ fontFamily: 'var(--font-display)' }}>
-                I write, speak and guide at the edge of what we think is possible.
+                Lane Belone is a writer, speaker and guide. Former U.S. Army Green
+                Beret, author of <em>Unleash Your Humble Alpha</em>, and founder
+                of Side Quest HQ, where he leads workshops, retreats and private
+                advisory for founders and leaders playing an infinite game.
               </p>
               <p className="text-parchment/70">
                 My work orbits a simple question: how can I flow with aliveness and allow the &ldquo;success&rdquo; to be the byproduct? In retrospect, that question has (often) silently been answered in every chapter of my story. It sent me to Germany. It led me into Special Forces. It brought me to Peru, to Panama, to mountain retreats and deep conversations on many continents. It keeps asking.
@@ -116,7 +119,7 @@ export default function AboutPage() {
               Along the way, I met Steven Kuhn. Together we built the Humble Alpha, a book, a community and a framework for leading with humility, depth and genuine strength. The work reached veterans, entrepreneurs and natural leaders navigating the intersection of inner life and outer impact.
             </p>
             <p>
-              Toward the end of this chapter, a phrase kept surfacing. Joyful Sovereignty. I let it find its shape on its own terms.
+              Toward the end of this chapter, a phrase kept surfacing. <a href="/joyful-sovereignty" className="underline underline-offset-4 transition-colors" style={{ color: 'rgba(232, 228, 240, 0.85)' }}>Joyful Sovereignty</a>. I let it find its shape on its own terms.
             </p>
           </div>
         </SectionReveal>

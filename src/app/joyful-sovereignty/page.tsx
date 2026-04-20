@@ -4,7 +4,7 @@ import SectionReveal from '@/components/SectionReveal'
 
 export const metadata: Metadata = {
   title: 'Joyful Sovereignty',
-  description: "Lane Belone's core philosophy: joyful sovereignty, clearer perception and the art of playing an infinite game.",
+  description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
 }
 
 const faqJsonLd = {
@@ -95,6 +95,14 @@ export default function JoyfulSovereigntyPage() {
             <h2 className="text-3xl md:text-4xl text-parchment mb-2" style={{ fontFamily: 'var(--font-display)' }}>
               What this is
             </h2>
+            <p className="text-parchment/90">
+              Joyful Sovereignty is Lane Belone&apos;s approach to playing the Infinite
+              Game through joy, sovereignty and embodied play rather than strategy
+              and optimization. It is a philosophy and a lived practice. When your
+              choices come from genuine alignment rather than conditioned obligation,
+              there is a felt quality: power without performance, aliveness without
+              effort.
+            </p>
             <p>
               The word sovereign carries a certain gravity. It points to something earned, fought for, liberated from. And there&apos;s truth in that direction.
             </p>
