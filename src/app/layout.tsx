@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    'max-image-preview': 'large' as const,
   },
   icons: {
     icon: '/images/lane-belone-icon-color.png',
