@@ -73,4 +73,4 @@ Disallow: /
 # Content signals — explicit opt-in posture
 # Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
-Sitemap: https://lanebelone.com/sitemap.xml
+Sitemap: https://www.lanebelone.com/sitemap.xml

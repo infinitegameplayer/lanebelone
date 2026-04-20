@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://lanebelone.com/about#lane-belone',
+  '@id': 'https://www.lanebelone.com/about#lane-belone',
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
   jobTitle: 'Writer, Speaker and Guide',
@@ -28,8 +28,8 @@ const personJsonLd = {
 const profilePageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  mainEntity: { '@id': 'https://lanebelone.com/about#lane-belone' },
-  url: 'https://lanebelone.com/about',
+  mainEntity: { '@id': 'https://www.lanebelone.com/about#lane-belone' },
+  url: 'https://www.lanebelone.com/about',
   name: 'About Lane Belone',
   description:
     'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
@@ -40,7 +40,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com' },
-    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://lanebelone.com/about' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.lanebelone.com/about' },
   ],
 }
 

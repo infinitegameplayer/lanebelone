@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { CARRY_FORWARD_SLUGS } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://lanebelone.com'
+  const base = 'https://www.lanebelone.com'
 
   const blogEntries: MetadataRoute.Sitemap = CARRY_FORWARD_SLUGS.map(slug => ({
     url: `${base}/blog/f/${slug}`,

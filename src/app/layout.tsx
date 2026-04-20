@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
-  metadataBase: new URL('https://lanebelone.com'),
+  metadataBase: new URL('https://www.lanebelone.com'),
   openGraph: {
     type: 'website',
     siteName: 'Lane Belone',
