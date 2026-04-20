@@ -20,6 +20,12 @@ const nextConfig: NextConfig = {
           },
           // Content-Security-Policy requires per-site tuning for HubSpot and Luma.
           // Define and test before enabling.
+          // RFC 8288 Link headers — point AI agents to structured resources
+          {
+            key: 'Link',
+            value:
+              '<https://lanebelone.com/llms.txt>; rel="ai-agent"; type="text/plain", <https://lanebelone.com/sitemap.xml>; rel="sitemap"; type="application/xml"',
+          },
         ],
       },
     ]

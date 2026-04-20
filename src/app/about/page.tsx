@@ -7,9 +7,49 @@ export const metadata: Metadata = {
   description: 'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
 }
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://lanebelone.com/about#lane-belone',
+  name: 'Lane Belone',
+  url: 'https://lanebelone.com',
+  jobTitle: 'Writer, Speaker and Guide',
+  description:
+    'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
+  sameAs: [
+    'https://sidequesthq.co',
+    'https://infinitegameos.io',
+    'https://www.linkedin.com/in/lanebelone/',
+    'https://www.instagram.com/increasefreedom/',
+    'https://lanebelone.substack.com/',
+  ],
+}
+
+const profilePageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  mainEntity: { '@id': 'https://lanebelone.com/about#lane-belone' },
+  url: 'https://lanebelone.com/about',
+  name: 'About Lane Belone',
+  description:
+    'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lanebelone.com' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://lanebelone.com/about' },
+  ],
+}
+
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero portrait */}
       <section className="relative min-h-[65vh] flex flex-col justify-end overflow-hidden">
         <Image

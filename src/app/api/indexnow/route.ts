@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { CARRY_FORWARD_SLUGS } from '@/lib/blog'
 
 const INDEXNOW_KEY = '9f0f6b4049a44a3bb0a43f1ffd6d026a'
-const HOST = 'lanebelone.com'
+const HOST = 'www.lanebelone.com'
 const BASE = `https://${HOST}`
 const ENDPOINT = 'https://api.indexnow.org/indexnow'
 
