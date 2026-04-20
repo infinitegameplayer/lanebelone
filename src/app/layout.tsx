@@ -66,11 +66,12 @@ const personJsonLd = {
     'Humble Alpha framework',
   ],
   sameAs: [
+    'https://sidequesthq.co',
+    'https://infinitegameos.io',
     'https://www.instagram.com/increasefreedom/',
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',
     'https://lanebelone.substack.com/',
-    'https://infinitegameos.io',
   ],
 }
 
@@ -87,11 +88,12 @@ const orgJsonLd = {
     name: 'Lane Belone',
   },
   sameAs: [
+    'https://sidequesthq.co',
+    'https://infinitegameos.io',
     'https://www.instagram.com/increasefreedom/',
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',
     'https://lanebelone.substack.com/',
-    'https://infinitegameos.io',
   ],
 }
 

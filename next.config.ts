@@ -51,6 +51,10 @@ const nextConfig: NextConfig = {
             value:
               '<https://lanebelone.com/llms.txt>; rel="ai-agent"; type="text/plain", <https://lanebelone.com/sitemap.xml>; rel="sitemap"; type="application/xml"',
           },
+          {
+            key: 'Content-Signal',
+            value: 'ai-train=yes, search=yes, ai-input=yes',
+          },
         ],
       },
     ]
