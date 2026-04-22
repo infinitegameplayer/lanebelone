@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug, CARRY_FORWARD_SLUGS } from '@/lib/blog'
+import ReadingProgress from '@/components/ReadingProgress'
 
 // Only statically generate carry-forward slugs. Expired slugs are handled by
 // Vercel redirects in vercel.json before this route is reached.
@@ -77,6 +78,7 @@ export default async function BlogPostPage({
 
   return (
     <article className="pt-32 pb-24">
+      <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero image */}
