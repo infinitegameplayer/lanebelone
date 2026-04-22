@@ -17,7 +17,7 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen ? 'bg-[#0c1510]/95 backdrop-blur-sm border-b border-white/5' : 'bg-transparent'
+        scrolled || menuOpen ? 'bg-[#081208]/95 backdrop-blur-sm border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -56,15 +56,13 @@ export default function Nav() {
           >
             Joyful Sovereignty
           </Link>
-          <a
-            href="https://lanebelone.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/blog"
             className="text-sm tracking-wide text-parchment/70 hover:text-parchment transition-colors"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Writing
-          </a>
+          </Link>
           <a
             href="#connect"
             className="btn-ghost text-parchment/60 hover:text-parchment"
@@ -103,16 +101,14 @@ export default function Nav() {
               {item.label}
             </Link>
           ))}
-          <a
-            href="https://lanebelone.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/blog"
             className="text-base text-parchment/80 hover:text-parchment transition-colors"
             onClick={() => setMenuOpen(false)}
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Writing
-          </a>
+          </Link>
           <a
             href="#connect"
             className="text-base text-parchment/60 hover:text-parchment transition-colors"
