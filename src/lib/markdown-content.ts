@@ -11,30 +11,48 @@ const pages: Record<string, string> = {
 
 > Writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, practitioner of joyful sovereignty and the Infinite Game.
 
-## Paths
+Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.
 
-- **[Writing](https://lanebelone.substack.com/)** · Essays and breadcrumbs from the infinite game.
-- **[Speaking](/speaking)** · Keynotes and talks on perception, flow and the long game.
-- **[Joyful Sovereignty](/joyful-sovereignty)** · The core philosophy. Spacious, playful and at peace. The whole game, played from the inside.
+## Happening Now
+
+- **AI for Livin' Workshop** · May 2, Colorado Springs. A 3-hour in-person workshop on Claude Code and designing your own digital OS. Small group. Real conversation. [Register](https://sidequesthq.co/workshop)
+- **The Sovereign Life Playbook** · A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited, not just read once. $47. [Get the playbook](https://sidequesthq.co/products/sovereign-life-playbook)
+
+## Joyful Sovereignty
+
+"Spacious. Playful. At peace. The whole game, played from the inside."
+
+An approach to playing the Infinite Game through joy and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort. [Explore Joyful Sovereignty](${SITE}/joyful-sovereignty)
 
 ## Books
 
 - **[Humble Alpha](https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X)** · A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.
 - **[Your Infinite RPG](https://drive.google.com/file/d/1nlRYiD-T7K5HgorKe4VzgD-AiO7uZ1Fr/view?usp=sharing)** · A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life.
 
-## Side Quest HQ
+## Recent Writing
 
-The practical container within the Infinite Game. [sidequesthq.co](https://sidequesthq.co)
+Essays on the infinite game, sovereignty, flow and perception. [Read the full archive](${SITE}/blog)
 
-- **Workshops** · Immersive sessions for teams, communities and organizations seeking clarity, alignment and meaningful momentum.
-- **Explorer Side Quests** · Adventure-based retreats that open new perception, real connection and memorable transformation.
-- **Private Advisory** · A selective advisory container for founders, leaders and creators who want strategic depth and a grounded thought partner.
+## Work with Me at Side Quest HQ
 
-## Blog
+Where the tools, events and one-on-one work live. Four ways to go deeper:
 
-Essays on the infinite game, sovereignty, flow and perception.
+- **[Digital Products](https://sidequesthq.co/products)** · Playbooks and guides
+- **[Workshops](https://sidequesthq.co/workshop)** · One-day intensives
+- **[Retreats](https://sidequesthq.co/explorers-side-quest)** · Multi-day immersions
+- **[Private Advisory](https://sidequesthq.co/one-on-one)** · One-on-one
 
-[Read the blog](${SITE}/blog)
+## About Lane
+
+I'm a former Green Beret turned life designer. Published author, retreat leader and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
+
+## Speaking
+
+Keynotes and talks on perception, flow, joyful sovereignty and the Infinite Game. [Invite me to speak](${SITE}/speaking)
+
+## Connect
+
+Personal updates and fresh ideas. Newsletter and contact at [${SITE}/#connect](${SITE}/#connect).
 
 ---
 *[Lane Belone](${SITE})*
