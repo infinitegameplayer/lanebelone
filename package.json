@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^5.2.7",
+    "@fontsource/geist-sans": "^5.2.5",
     "@fontsource/inter": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "gray-matter": "^4.0.3",
     "next": "^16.2.3",
     "react": "19.2.4",
