@@ -41,6 +41,8 @@ Contact email: howdy@lanebelone.com
 
 **`suppressHydrationWarning` on body.** Already in `layout.tsx`. Password managers inject attributes. Never remove it.
 
+**Do NOT add `'use client'` to page files unless they use client-side hooks directly.** `SectionReveal`, `HubSpotForm`, and other client components already carry their own `'use client'` — server component pages can import them without the directive. Adding `'use client'` to a page prevents JSON-LD `<script>` tags from rendering into static HTML (Google can't read them). Pages that genuinely need `'use client'` (direct useState/useEffect): none currently.
+
 **Dev sourcemaps.** `config.devtool = 'cheap-module-source-map'` when `dev === true` in `next.config.ts`. Already present. Prevents Brave Shields from blocking Next.js eval.
 
 ---
