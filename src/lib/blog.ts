@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
-// 31 GoDaddy-migrated archive slugs. Frozen; do not modify.
+// 30 GoDaddy-migrated archive slugs. Frozen; do not modify.
 export const ARCHIVE_SLUGS = [
   // Core philosophy / infinite game
   'intrinsic-joy-the-game-within-the-game',
