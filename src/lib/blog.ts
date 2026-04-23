@@ -1,6 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { remark } from 'remark'
+import remarkHtml from 'remark-html'
+import remarkGfm from 'remark-gfm'
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
@@ -69,6 +72,26 @@ export interface BlogPost {
   articleSection?: string
 }
 
+async function renderMarkdown(content: string): Promise<string> {
+  const result = await remark()
+    .use(remarkGfm)
+    .use(remarkHtml, { sanitize: false })
+    .process(content)
+  return result.toString()
+}
+
+function renderMarkdownSync(content: string): string {
+  const result = remark()
+    .use(remarkGfm)
+    .use(remarkHtml, { sanitize: false })
+    .processSync(content)
+  return result.toString()
+}
+
+function countWords(content: string): number {
+  return content.trim().split(/\s+/).filter(Boolean).length
+}
+
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return []
 
@@ -78,14 +101,22 @@ export function getAllPosts(): BlogPost[] {
     .map(filename => {
       const raw = fs.readFileSync(path.join(BLOG_DIR, filename), 'utf8')
       const { data, content } = matter(raw)
+      const format = data.format === 'markdown' ? 'markdown' : 'html'
+      const renderedContent = format === 'markdown' ? renderMarkdownSync(content) : content
       return {
         slug: data.slug || filename.replace('.md', ''),
         title: data.title || '',
         date: data.date || '',
+        dateModified: data.dateModified,
         category: data.category || '',
         heroImage: data.heroImage || '',
         description: data.description || '',
-        content,
+        content: renderedContent,
+        format,
+        about: Array.isArray(data.about) ? data.about : undefined,
+        mentions: Array.isArray(data.mentions) ? data.mentions : undefined,
+        wordCount: countWords(content),
+        articleSection: data.articleSection || data.category || undefined,
       } as BlogPost
     })
     .filter(post => ALL_SLUGS.includes(post.slug))
@@ -104,13 +135,22 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const raw = fs.readFileSync(filepath, 'utf8')
   const { data, content } = matter(raw)
 
+  const format = data.format === 'markdown' ? 'markdown' : 'html'
+  const renderedContent = format === 'markdown' ? renderMarkdownSync(content) : content
+
   return {
     slug: data.slug || slug,
     title: data.title || '',
     date: data.date || '',
+    dateModified: data.dateModified,
     category: data.category || '',
     heroImage: data.heroImage || '',
     description: data.description || '',
-    content,
+    content: renderedContent,
+    format,
+    about: Array.isArray(data.about) ? data.about : undefined,
+    mentions: Array.isArray(data.mentions) ? data.mentions : undefined,
+    wordCount: countWords(content),
+    articleSection: data.articleSection || data.category || undefined,
   }
 }
