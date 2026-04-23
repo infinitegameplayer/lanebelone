@@ -75,6 +75,7 @@ export interface BlogPost {
 async function renderMarkdown(content: string): Promise<string> {
   const result = await remark()
     .use(remarkGfm)
+    // sanitize: false — trusted local markdown authored in-repo; HTML structure must pass through
     .use(remarkHtml, { sanitize: false })
     .process(content)
   return result.toString()
@@ -83,6 +84,7 @@ async function renderMarkdown(content: string): Promise<string> {
 function renderMarkdownSync(content: string): string {
   const result = remark()
     .use(remarkGfm)
+    // sanitize: false — trusted local markdown authored in-repo; HTML structure must pass through
     .use(remarkHtml, { sanitize: false })
     .processSync(content)
   return result.toString()
