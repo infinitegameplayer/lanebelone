@@ -60,12 +60,16 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
-  const articleJsonLd = {
+  const articleJsonLd: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
+    '@id': `https://www.lanebelone.com/blog/f/${slug}#article`,
+    mainEntityOfPage: `https://www.lanebelone.com/blog/f/${slug}`,
     headline: post.title,
     description: post.description,
     datePublished: `${post.date}T00:00:00Z`,
+    dateModified: `${post.dateModified || post.date}T00:00:00Z`,
+    inLanguage: 'en-US',
     author: {
       '@type': 'Person',
       '@id': 'https://www.lanebelone.com/#person',
@@ -79,6 +83,14 @@ export default async function BlogPostPage({
     },
     url: `https://www.lanebelone.com/blog/f/${slug}`,
     ...(post.heroImage && { image: `https://www.lanebelone.com${post.heroImage}` }),
+    ...(post.wordCount && { wordCount: post.wordCount }),
+    ...(post.articleSection && { articleSection: post.articleSection }),
+    ...(post.about && post.about.length > 0 && {
+      about: post.about.map(id => ({ '@id': id })),
+    }),
+    ...(post.mentions && post.mentions.length > 0 && {
+      mentions: post.mentions.map(id => ({ '@id': id })),
+    }),
   }
 
   const breadcrumbJsonLd = {
