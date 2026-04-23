@@ -48,10 +48,16 @@ export interface BlogPost {
   slug: string
   title: string
   date: string
+  dateModified?: string
   category: string
   heroImage: string
   description: string
   content: string
+  format?: 'markdown' | 'html'
+  about?: string[]
+  mentions?: string[]
+  wordCount?: number
+  articleSection?: string
 }
 
 export function getAllPosts(): BlogPost[] {
