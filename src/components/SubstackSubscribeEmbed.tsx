@@ -12,10 +12,10 @@ export default function SubstackSubscribeEmbed({ variant = 'full' }: Props) {
     >
       <iframe
         src="https://lanebelone.substack.com/embed"
+        title="Subscribe to Lane Belone on Substack"
         width="100%"
         height={height}
         style={{ border: 'none', background: 'transparent' }}
-        frameBorder={0}
         scrolling="no"
       />
     </div>
