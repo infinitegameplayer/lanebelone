@@ -16,7 +16,7 @@ Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the
 ## Happening Now
 
 - **AI for Livin' Workshop** · May 2, Colorado Springs. A 3-hour in-person workshop on Claude Code and designing your own digital OS. Small group. Real conversation. [Register](https://sidequesthq.co/workshop)
-- **The Sovereign Life Playbook** · A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited, not just read once. $47. [Get the playbook](https://sidequesthq.co/products/sovereign-life-playbook)
+- **The Sovereign Life Playbook** · A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited, not just read once. $37. [Get the playbook](https://sidequesthq.co/products/sovereign-life-playbook)
 
 ## Joyful Sovereignty
 

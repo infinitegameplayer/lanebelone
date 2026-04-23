@@ -101,7 +101,7 @@ export default function HomePage() {
                   className="btn-outline"
                   style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
                 >
-                  Get the Playbook &middot; $47
+                  Get the Playbook &middot; $37
                 </a>
               </div>
             </div>
