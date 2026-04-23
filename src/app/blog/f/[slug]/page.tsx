@@ -23,10 +23,23 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `https://www.lanebelone.com/blog/f/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
+      type: 'article',
+      url: `https://www.lanebelone.com/blog/f/${slug}`,
+      publishedTime: post.date,
+      modifiedTime: post.dateModified || post.date,
       images: post.heroImage ? [{ url: post.heroImage }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: post.heroImage ? [post.heroImage] : [],
     },
   }
 }
