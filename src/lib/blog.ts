@@ -4,9 +4,8 @@ import matter from 'gray-matter'
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
-// 31 carry-forward slugs — the canonical set for static generation
-// 6 slugs from the original 37 were not found in the GoDaddy feed and are treated as expired
-export const CARRY_FORWARD_SLUGS = [
+// 31 GoDaddy-migrated archive slugs. Frozen; do not modify.
+export const ARCHIVE_SLUGS = [
   // Core philosophy / infinite game
   'intrinsic-joy-the-game-within-the-game',
   'developing-a-playbook-for-the-infinite-game',
@@ -44,6 +43,16 @@ export const CARRY_FORWARD_SLUGS = [
   'rainbow-warriors-and-the-emerging-golden-age',
 ]
 
+// Slugs for posts published through the Article Publishing skill.
+// The skill appends here as new posts ship.
+export const LIVE_SLUGS: string[] = []
+
+// Combined set used for static generation and URL resolution.
+export const ALL_SLUGS = [...ARCHIVE_SLUGS, ...LIVE_SLUGS]
+
+// Backward-compat alias. Will be removed once no consumers reference it.
+export const CARRY_FORWARD_SLUGS = ALL_SLUGS
+
 export interface BlogPost {
   slug: string
   title: string
@@ -79,14 +88,14 @@ export function getAllPosts(): BlogPost[] {
         content,
       } as BlogPost
     })
-    .filter(post => CARRY_FORWARD_SLUGS.includes(post.slug))
+    .filter(post => ALL_SLUGS.includes(post.slug))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return posts
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
-  if (!CARRY_FORWARD_SLUGS.includes(slug)) return null
+  if (!ALL_SLUGS.includes(slug)) return null
 
   const filename = `${slug}.md`
   const filepath = path.join(BLOG_DIR, filename)
