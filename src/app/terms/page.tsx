@@ -3,6 +3,24 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description: 'Terms of use for lanebelone.com.',
+  alternates: {
+    canonical: 'https://www.lanebelone.com/terms',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Lane Belone',
+    locale: 'en_US',
+    title: 'Terms of Use · Lane Belone',
+    description: 'Terms of use for lanebelone.com.',
+    url: 'https://www.lanebelone.com/terms',
+    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Use · Lane Belone',
+    description: 'Terms of use for lanebelone.com.',
+    images: ['/images/lane-machu-picchu-square.webp'],
+  },
 }
 
 export default function TermsPage() {

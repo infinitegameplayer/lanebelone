@@ -5,6 +5,24 @@ import SectionReveal from '@/components/SectionReveal'
 export const metadata: Metadata = {
   title: 'About',
   description: 'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
+  alternates: {
+    canonical: 'https://www.lanebelone.com/about',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Lane Belone',
+    locale: 'en_US',
+    title: 'About Lane Belone',
+    description: 'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
+    url: 'https://www.lanebelone.com/about',
+    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Lane Belone',
+    description: 'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.',
+    images: ['/images/lane-machu-picchu-square.webp'],
+  },
 }
 
 const personJsonLd = {

@@ -9,6 +9,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.lanebelone.com/blog',
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Lane Belone',
+    locale: 'en_US',
+    title: 'Writing · Lane Belone',
+    description: 'Essays and articles by Lane Belone on the infinite game, clearer perception and the art of living freely.',
+    url: 'https://www.lanebelone.com/blog',
+    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Writing · Lane Belone',
+    description: 'Essays and articles by Lane Belone on the infinite game, clearer perception and the art of living freely.',
+    images: ['/images/lane-machu-picchu-square.webp'],
+  },
 }
 
 export default function BlogIndexPage() {

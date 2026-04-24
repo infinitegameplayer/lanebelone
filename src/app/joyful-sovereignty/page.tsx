@@ -5,6 +5,24 @@ import SectionReveal from '@/components/SectionReveal'
 export const metadata: Metadata = {
   title: 'Joyful Sovereignty',
   description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
+  alternates: {
+    canonical: 'https://www.lanebelone.com/joyful-sovereignty',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Lane Belone',
+    locale: 'en_US',
+    title: 'Joyful Sovereignty · Lane Belone',
+    description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
+    url: 'https://www.lanebelone.com/joyful-sovereignty',
+    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Joyful Sovereignty · Lane Belone',
+    description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
+    images: ['/images/lane-machu-picchu-square.webp'],
+  },
 }
 
 const faqJsonLd = {

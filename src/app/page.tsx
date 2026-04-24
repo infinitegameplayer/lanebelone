@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import HubSpotForm from '@/components/HubSpotForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.lanebelone.com',
+  },
+}
 
 const CONTACT_FORM_ID = 'eddc876e-e15f-419f-af48-7506a8767fcc'
 const NEWSLETTER_FORM_ID = 'be6f8412-8e52-4571-94f9-197ff18f9f90'
