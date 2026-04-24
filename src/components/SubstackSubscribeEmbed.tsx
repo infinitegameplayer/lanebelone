@@ -3,7 +3,7 @@ interface Props {
 }
 
 export default function SubstackSubscribeEmbed({ variant = 'full' }: Props) {
-  const height = variant === 'slim' ? 72 : 320
+  const height = variant === 'slim' ? 150 : 320
 
   return (
     <div
