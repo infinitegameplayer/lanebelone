@@ -48,7 +48,9 @@ export const ARCHIVE_SLUGS = [
 
 // Slugs for posts published through the Article Publishing skill.
 // The skill appends here as new posts ship.
-export const LIVE_SLUGS: string[] = []
+export const LIVE_SLUGS: string[] = [
+  'the-infinite-game-is-already-in-progress',
+]
 
 // Combined set used for static generation and URL resolution.
 export const ALL_SLUGS = [...ARCHIVE_SLUGS, ...LIVE_SLUGS]
