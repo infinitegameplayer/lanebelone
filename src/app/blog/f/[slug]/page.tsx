@@ -34,8 +34,9 @@ export async function generateMetadata({
       description: post.description,
       type: 'article',
       url: `https://www.lanebelone.com/blog/f/${slug}`,
-      publishedTime: `${post.date}T00:00:00Z`,
-      modifiedTime: `${post.dateModified || post.date}T00:00:00Z`,
+      authors: ['Lane Belone'],
+      publishedTime: `${post.date}T12:00:00Z`,
+      modifiedTime: `${post.dateModified || post.date}T12:00:00Z`,
       images: post.heroImage ? [{ url: post.heroImage }] : [],
     },
     twitter: {
