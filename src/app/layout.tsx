@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Suspense } from 'react'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import AmbientPulse from '@/components/AmbientPulse'
+import { PostHogProvider } from './providers'
+import { PostHogPageView } from './PostHogPageView'
 
 export const metadata: Metadata = {
   title: {
@@ -114,16 +117,29 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }} suppressHydrationWarning>
-        <AmbientPulse />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <Script
-          src="//js-na2.hsforms.net/forms/embed/v2.js"
-          strategy="afterInteractive"
-        />
-      </body>
+      <PostHogProvider>
+        <body style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }} suppressHydrationWarning>
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
+          {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+            <Script
+              defer
+              src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
+              data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+              strategy="afterInteractive"
+            />
+          )}
+          <AmbientPulse />
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+          <Script
+            src="//js-na2.hsforms.net/forms/embed/v2.js"
+            strategy="afterInteractive"
+          />
+        </body>
+      </PostHogProvider>
     </html>
   )
 }
