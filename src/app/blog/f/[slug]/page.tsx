@@ -110,9 +110,9 @@ export default async function BlogPostPage({
       <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      {/* Hero image */}
+      {/* Hero image (mobile): full-bleed at top */}
       {post.heroImage && (
-        <div className="relative w-full max-h-[480px] overflow-hidden mb-12">
+        <div className="md:hidden relative w-full max-h-[480px] overflow-hidden mb-12">
           <div className="relative w-full aspect-[16/7]">
             <Image
               src={post.heroImage}
@@ -143,6 +143,22 @@ export default async function BlogPostPage({
         >
           {post.title}
         </h1>
+
+        {/* Hero image (desktop): contained below title */}
+        {post.heroImage && (
+          <div className="hidden md:block relative w-full mb-10 rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-[16/7]">
+              <Image
+                src={post.heroImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(min-width: 768px) 672px, 100vw"
+              />
+            </div>
+          </div>
+        )}
 
         {/* Body */}
         <div
