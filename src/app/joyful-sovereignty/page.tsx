@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
-import { jsSections } from '@/lib/page-data'
+import { jsSections, isLinkedPara, JS_DESCRIPTION } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Joyful Sovereignty',
-  description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
+  description: JS_DESCRIPTION,
   alternates: {
     canonical: 'https://www.lanebelone.com/joyful-sovereignty',
   },
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Joyful Sovereignty · Lane Belone',
-    description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
+    description: JS_DESCRIPTION,
     url: 'https://www.lanebelone.com/joyful-sovereignty',
     images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Joyful Sovereignty · Lane Belone',
-    description: "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.",
+    description: JS_DESCRIPTION,
     images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
@@ -115,9 +115,11 @@ export default function JoyfulSovereigntyPage() {
               <h2 className="text-3xl md:text-4xl text-parchment mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                 {section.heading}
               </h2>
-              {(section.paras as string[]).map((para, pi) => (
+              {section.paras.map((para, pi) => (
                 <p key={pi} {...(si === 0 && pi === 0 ? { className: 'text-parchment/90' } : {})}>
-                  {para}
+                  {isLinkedPara(para)
+                    ? <>{para.before}<a href={para.linkHref} className="underline underline-offset-4 transition-colors" style={{ color: 'rgba(232, 228, 240, 0.85)' }}>{para.linkLabel}</a>{para.after}</>
+                    : para}
                 </p>
               ))}
             </div>

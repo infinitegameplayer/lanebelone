@@ -7,6 +7,7 @@ import {
   LANE_BIO,
   aboutStory,
   isLinkedPara,
+  JS_DESCRIPTION,
   speakingTopics,
   speakingFormats,
   jsSections,
@@ -17,9 +18,7 @@ import {
 
 const SITE = 'https://www.lanebelone.com'
 
-const pages: Record<string, string> = {
-  blog: '', // placeholder, generated dynamically below
-}
+const pages: Record<string, string> = {}
 
 function generateHomeMarkdown(): string {
   const happeningNowMd = happeningNow
@@ -87,14 +86,20 @@ Personal updates and fresh ideas. Newsletter and contact at [${SITE}/#connect]($
 function generateJoyfulSovereigntyMarkdown(): string {
   const sectionsMd = jsSections
     .map(section => {
-      const parasText = (section.paras as string[]).join('\n\n')
+      const parasText = section.paras
+        .map(p =>
+          isLinkedPara(p)
+            ? `${p.before}[${p.linkLabel}](${SITE}${p.linkHref})${p.after}`
+            : p
+        )
+        .join('\n\n')
       return `## ${section.heading}\n\n${parasText}`
     })
     .join('\n\n')
 
   return `# Joyful Sovereignty
 
-> Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.
+> ${JS_DESCRIPTION}
 
 ${sectionsMd}
 

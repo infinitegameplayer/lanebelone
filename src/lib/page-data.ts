@@ -106,6 +106,9 @@ export const speakingFormats: string[] = [
 
 // ── Joyful Sovereignty ────────────────────────────────────────────────────────
 
+export const JS_DESCRIPTION =
+  "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort."
+
 export const jsSections: StorySection[] = [
   {
     heading: 'What this is',
