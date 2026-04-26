@@ -5,6 +5,7 @@ import SectionReveal from '@/components/SectionReveal'
 import HubSpotForm from '@/components/HubSpotForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
+import { happeningNow, books, sqhqChips } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   alternates: {
@@ -54,20 +55,20 @@ export default function HomePage() {
                 Workshop
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
-                AI for Livin&rsquo; Workshop
+                {happeningNow[0].title}
               </h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.65 }}>
-                May 2. Colorado Springs. A 3-hour in-person workshop on Claude Code and designing your own digital OS. Small group. Real conversation.
+                {happeningNow[0].description}
               </p>
               <div className="mt-auto pt-4" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
                 <a
-                  href="https://sidequesthq.co/workshop"
+                  href={happeningNow[0].ctaHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-gold"
                   style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
                 >
-                  Register Now
+                  {happeningNow[0].cta}
                 </a>
               </div>
             </div>
@@ -95,20 +96,20 @@ export default function HomePage() {
                 Playbook
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
-                The Sovereign Life Playbook
+                {happeningNow[1].title}
               </h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.65 }}>
-                A framework for peeling away the inherited game and designing what&rsquo;s actually yours. Built to be revisited, not just read once.
+                {happeningNow[1].description}
               </p>
               <div className="mt-auto pt-4" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
                 <a
-                  href="https://sidequesthq.co/products/sovereign-life-playbook"
+                  href={happeningNow[1].ctaHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"
                   style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
                 >
-                  Get the Playbook &middot; $37
+                  {happeningNow[1].cta}{happeningNow[1].price ? ` · ${happeningNow[1].price}` : ''}
                 </a>
               </div>
             </div>
@@ -231,18 +232,18 @@ export default function HomePage() {
                     Free
                   </span>
                   <h3 style={{ fontFamily: 'var(--font-voice)', fontSize: '1.55rem', fontWeight: 500, lineHeight: 1.2, marginBottom: '0.85rem' }}>
-                    Your Infinite RPG
+                    {books[0].title}
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
-                    A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life.
+                    {books[0].description}
                   </p>
                   <a
-                    href="https://drive.google.com/file/d/1nlRYiD-T7K5HgorKe4VzgD-AiO7uZ1Fr/view?usp=sharing"
+                    href={books[0].href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-ghost"
                   >
-                    Instant download &rarr;
+                    {books[0].cta} &rarr;
                   </a>
                 </div>
               </div>
@@ -274,18 +275,18 @@ export default function HomePage() {
                     Book
                   </span>
                   <h3 style={{ fontFamily: 'var(--font-voice)', fontSize: '1.55rem', fontWeight: 500, lineHeight: 1.2, marginBottom: '0.85rem' }}>
-                    Humble Alpha
+                    {books[1].title}
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
-                    A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.
+                    {books[1].description}
                   </p>
                   <a
-                    href="https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X"
+                    href={books[1].href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-ghost"
                   >
-                    Get the book &rarr;
+                    {books[1].cta} &rarr;
                   </a>
                 </div>
               </div>
@@ -379,12 +380,7 @@ export default function HomePage() {
           </p>
         </SectionReveal>
         <SectionReveal staggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { title: 'Digital Products', sub: 'Playbooks · Guides', href: 'https://sidequesthq.co/products' },
-            { title: 'Workshops', sub: 'One-day intensives', href: 'https://sidequesthq.co/workshop' },
-            { title: 'Retreats', sub: 'Multi-day immersions', href: 'https://sidequesthq.co/explorers-side-quest' },
-            { title: 'Private Advisory', sub: 'One-on-one', href: 'https://sidequesthq.co/one-on-one' },
-          ].map((chip) => (
+          {sqhqChips.map((chip) => (
             <a
               key={chip.title}
               href={chip.href}

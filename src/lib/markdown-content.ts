@@ -3,12 +3,41 @@
 // request Accept: text/markdown or text/plain.
 
 import { getAllPosts, getPostBySlug } from './blog'
-import { LANE_BIO, aboutStory, isLinkedPara } from './page-data'
+import {
+  LANE_BIO,
+  aboutStory,
+  isLinkedPara,
+  speakingTopics,
+  speakingFormats,
+  jsSections,
+  happeningNow,
+  books,
+  sqhqChips,
+} from './page-data'
 
 const SITE = 'https://www.lanebelone.com'
 
 const pages: Record<string, string> = {
-  '': `# Lane Belone
+  blog: '', // placeholder, generated dynamically below
+}
+
+function generateHomeMarkdown(): string {
+  const happeningNowMd = happeningNow
+    .map(item => {
+      const pricePart = item.price ? ` · ${item.price}` : ''
+      return `- **${item.title}**${pricePart} · ${item.description} [${item.cta}](${item.ctaHref})`
+    })
+    .join('\n')
+
+  const booksMd = books
+    .map(b => `- **[${b.title}](${b.href})** · ${b.description}`)
+    .join('\n')
+
+  const sqhqMd = sqhqChips
+    .map(c => `- **[${c.title}](${c.href})** · ${c.sub}`)
+    .join('\n')
+
+  return `# Lane Belone
 
 > Writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, practitioner of joyful sovereignty and the Infinite Game.
 
@@ -16,8 +45,7 @@ Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the
 
 ## Happening Now
 
-- **AI for Livin' Workshop** · May 2, Colorado Springs. A 3-hour in-person workshop on Claude Code and designing your own digital OS. Small group. Real conversation. [Register](https://sidequesthq.co/workshop)
-- **The Sovereign Life Playbook** · A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited, not just read once. $37. [Get the playbook](https://sidequesthq.co/products/sovereign-life-playbook)
+${happeningNowMd}
 
 ## Joyful Sovereignty
 
@@ -27,8 +55,7 @@ An approach to playing the Infinite Game through joy and embodied play rather th
 
 ## Books
 
-- **[Humble Alpha](https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X)** · A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.
-- **[Your Infinite RPG](https://drive.google.com/file/d/1nlRYiD-T7K5HgorKe4VzgD-AiO7uZ1Fr/view?usp=sharing)** · A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life.
+${booksMd}
 
 ## Recent Writing
 
@@ -38,10 +65,7 @@ Essays on the infinite game, sovereignty, flow and perception. [Read the full ar
 
 Where the tools, events and one-on-one work live. Four ways to go deeper:
 
-- **[Digital Products](https://sidequesthq.co/products)** · Playbooks and guides
-- **[Workshops](https://sidequesthq.co/workshop)** · One-day intensives
-- **[Retreats](https://sidequesthq.co/explorers-side-quest)** · Multi-day immersions
-- **[Private Advisory](https://sidequesthq.co/one-on-one)** · One-on-one
+${sqhqMd}
 
 ## About Lane
 
@@ -57,28 +81,22 @@ Personal updates and fresh ideas. Newsletter and contact at [${SITE}/#connect]($
 
 ---
 *[Lane Belone](${SITE})*
-`,
+`
+}
 
+function generateJoyfulSovereigntyMarkdown(): string {
+  const sectionsMd = jsSections
+    .map(section => {
+      const parasText = (section.paras as string[]).join('\n\n')
+      return `## ${section.heading}\n\n${parasText}`
+    })
+    .join('\n\n')
 
-  'joyful-sovereignty': `# Joyful Sovereignty
+  return `# Joyful Sovereignty
 
 > Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.
 
-## What is Joyful Sovereignty?
-
-Joyful Sovereignty is a quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. It is not a destination but a way of moving. Sovereignty is understood as a birthright, not something to fight for. The phrase "the whole game, played from the inside" captures its essence.
-
-## What is the Infinite Game?
-
-The Infinite Game is life played to keep playing, not to win. Finite arcs, projects, quests, retreats, creative sprints, create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures are growth obstacles, not permanent defeats. The infinite game never stops.
-
-## What are Playgrounds of Exploration?
-
-Lane Belone's framework for architecting each part of the day as a distinct playground with its own energy and essence. The morning, midday, afternoon, evening and night each move like tracks on a playlist. Designing these playgrounds is itself an expression of Joyful Sovereignty.
-
-## What is the Perception Upgrade?
-
-The recognition that reality is decoded, not given. Based on your internal orientation, life responds in kind. Perception upgrades are available every moment. Setting an internal orientation of aliveness and synchronicity lets life respond in kind.
+${sectionsMd}
 
 ## Related
 
@@ -88,9 +106,17 @@ The recognition that reality is decoded, not given. Based on your internal orien
 
 ---
 *[Lane Belone](${SITE}) · [Joyful Sovereignty](${SITE}/joyful-sovereignty)*
-`,
+`
+}
 
-  speaking: `# Speaking · Lane Belone
+function generateSpeakingMarkdown(): string {
+  const topicsMd = speakingTopics
+    .map(t => `### ${t.title}\n${t.subtitle}\n\n${t.body}`)
+    .join('\n\n')
+
+  const formatsMd = speakingFormats.map(f => `- ${f}`).join('\n')
+
+  return `# Speaking · Lane Belone
 
 > Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.
 
@@ -100,33 +126,17 @@ Inviting leaders, creators and communities into experiences that spark clarity, 
 
 ## Topics
 
-### The Perception Upgrade
-Seeing reality through a more empowered lens. Guides audiences into renewed clarity through metaphor, perspective-shifts and practical tools. Covers the infinite game mindset, Side Quest psychology, pattern-recognition and expanding what you can perceive.
-
-### Sovereign Worldbuilding
-Designing the systems, environments and structures that shape your life and leadership. How to shape your world intentionally through personal rhythms, boundaries, team culture and organizational architecture.
-
-### Flow Intelligence
-Unlocking creative rhythm, nervous system balance and sustainable momentum. Reconnects people with creative energy through embodied rhythm and emotional awareness.
-
-### Guidance From Within
-Intuition, decision-making and moving through uncertainty with confidence. Teaches participants to interpret subtle signals and trust their inner compass.
+${topicsMd}
 
 ## Formats
 
-- Keynotes for conferences and summits
-- Workshops for leadership teams
-- Retreat sessions and multi-day experiences
-- Nature-based activations and embodied adventures
-- Private sessions for founders and visionaries
+${formatsMd}
 
 Contact: howdy@lanebelone.com
 
 ---
 *[Lane Belone](${SITE}) · [Speaking](${SITE}/speaking)*
-`,
-
-  blog: '', // placeholder, generated dynamically below
+`
 }
 
 function generateAboutMarkdown(): string {
@@ -201,6 +211,9 @@ ${post.content}
 }
 
 export function getMarkdownForPath(path: string): string | null {
+  if (path === '') return generateHomeMarkdown()
+  if (path === 'joyful-sovereignty') return generateJoyfulSovereigntyMarkdown()
+  if (path === 'speaking') return generateSpeakingMarkdown()
   if (path === 'about') return generateAboutMarkdown()
   if (path === 'blog') return generateBlogIndexMarkdown()
   if (path.startsWith('blog/f/')) {

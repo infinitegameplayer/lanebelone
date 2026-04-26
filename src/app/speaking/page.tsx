@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
 import HubSpotForm from '@/components/HubSpotForm'
+import { speakingTopics, speakingFormats } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Speaking',
@@ -25,37 +26,6 @@ export const metadata: Metadata = {
     images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
-
-const topics = [
-  {
-    title: 'The Perception Upgrade',
-    subtitle: 'Seeing reality through a more empowered lens',
-    body: 'Guides audiences into renewed clarity through metaphor, perspective-shifts and practical tools. Covers the infinite game mindset, Side Quest psychology, pattern-recognition and expanding what you can perceive.',
-  },
-  {
-    title: 'Sovereign Worldbuilding',
-    subtitle: 'Designing the systems, environments and structures that shape your life and leadership',
-    body: 'How to shape your world intentionally through personal rhythms, boundaries, team culture and organizational architecture. Explores reality design frameworks, natural law and structural coherence.',
-  },
-  {
-    title: 'Flow Intelligence',
-    subtitle: 'Unlocking creative rhythm, nervous system balance and sustainable momentum',
-    body: 'Reconnects people with creative energy through embodied rhythm and emotional awareness. Covers flow science, archetypal flow states and the practical mechanics of staying in motion.',
-  },
-  {
-    title: 'Guidance From Within',
-    subtitle: 'Intuition, decision-making and moving through uncertainty with confidence',
-    body: 'Teaches participants to interpret subtle signals and trust their inner compass. Topics include next-move sensing, signal interpretation and making clear decisions in complex environments.',
-  },
-]
-
-const formats = [
-  'Keynotes for conferences and summits',
-  'Workshops for leadership teams',
-  'Retreat sessions and multi-day experiences',
-  'Nature-based activations and embodied adventures',
-  'Private sessions for founders and visionaries',
-]
 
 const SPEAKING_FORM_ID = '56ffe32f-432f-48a5-9949-6f14d3ec53ee'
 
@@ -98,7 +68,7 @@ export default function SpeakingPage() {
             What I speak about
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {topics.map((topic) => (
+            {speakingTopics.map((topic) => (
               <div key={topic.title} className="dark-card p-8">
                 <h3 className="text-xl mb-1" style={{ fontFamily: 'var(--font-display)' }}>
                   {topic.title}
@@ -124,7 +94,7 @@ export default function SpeakingPage() {
                 How I show up
               </h2>
               <ul className="flex flex-col gap-3" style={{ fontFamily: 'var(--font-body)' }}>
-                {formats.map((f) => (
+                {speakingFormats.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-parchment/70">
                     <span className="text-parchment/30 mt-1">&#xB7;</span>
                     <span>{f}</span>

@@ -64,3 +64,160 @@ export const aboutStory: StorySection[] = [
     tagline: 'Enjoy the Journey',
   },
 ]
+
+// ── Speaking ──────────────────────────────────────────────────────────────────
+
+export interface SpeakingTopic {
+  title: string
+  subtitle: string
+  body: string
+}
+
+export const speakingTopics: SpeakingTopic[] = [
+  {
+    title: 'The Perception Upgrade',
+    subtitle: 'Seeing reality through a more empowered lens',
+    body: 'Guides audiences into renewed clarity through metaphor, perspective-shifts and practical tools. Covers the infinite game mindset, Side Quest psychology, pattern-recognition and expanding what you can perceive.',
+  },
+  {
+    title: 'Sovereign Worldbuilding',
+    subtitle: 'Designing the systems, environments and structures that shape your life and leadership',
+    body: 'How to shape your world intentionally through personal rhythms, boundaries, team culture and organizational architecture. Explores reality design frameworks, natural law and structural coherence.',
+  },
+  {
+    title: 'Flow Intelligence',
+    subtitle: 'Unlocking creative rhythm, nervous system balance and sustainable momentum',
+    body: 'Reconnects people with creative energy through embodied rhythm and emotional awareness. Covers flow science, archetypal flow states and the practical mechanics of staying in motion.',
+  },
+  {
+    title: 'Guidance From Within',
+    subtitle: 'Intuition, decision-making and moving through uncertainty with confidence',
+    body: 'Teaches participants to interpret subtle signals and trust their inner compass. Topics include next-move sensing, signal interpretation and making clear decisions in complex environments.',
+  },
+]
+
+export const speakingFormats: string[] = [
+  'Keynotes for conferences and summits',
+  'Workshops for leadership teams',
+  'Retreat sessions and multi-day experiences',
+  'Nature-based activations and embodied adventures',
+  'Private sessions for founders and visionaries',
+]
+
+// ── Joyful Sovereignty ────────────────────────────────────────────────────────
+
+export const jsSections: StorySection[] = [
+  {
+    heading: 'What this is',
+    paras: [
+      "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. It is a philosophy and a lived practice. When your choices come from genuine alignment rather than conditioned obligation, there is a felt quality: power without performance, aliveness without effort.",
+      "The word sovereign carries a certain gravity. It points to something earned, fought for, liberated from. And there's truth in that direction.",
+      'But when you add joyful to it, the whole energy shifts.',
+      "What was serious becomes spacious. What was a battle becomes a game. What was a destination becomes a way of moving through life. Joyful Sovereignty is a quality of presence you can inhabit right now.",
+      'The approach is something simpler and far more powerful: energize something so alive, so light, so deeply at peace, that the old paradigms simply become irrelevant. Made obsolete by the brightness of what replaces them.',
+      "From the inside, it feels like spaciousness of flow. A subtle smile woven into the day. Rhythmic laughter. Playful mischief. And underneath all of it, a steady, quiet peace. Because you begin to understand that sovereignty is your birthright. It's what you already are.",
+    ],
+  },
+  {
+    heading: 'The infinite game',
+    paras: [
+      'There are two kinds of games. Finite games are played to win. Infinite games are played to keep the game going.',
+      'Life is an infinite game.',
+      'And you get to choose how you play it.',
+      "The words need, should and have to carry a binding quality. They narrow. They flatten what's actually a wide-open playing field into something that feels more like an obligation. Joyful Sovereignty releases that. By recognizing that you were always free to choose.",
+      "You can play the infinite game with joy. With playful mischief. With laughter, with levity, with a smirk at the edge of a challenge. And finite games are the texture of the infinite one. Start something, let it have chapters, let it reach its natural conclusion. Quest it. A retreat in the mountains. A book. A creative sprint. These finite arcs are how you experiment with life. They have structure, rules and a clear game board. And when the game ends, you're still playing. The infinite game never stops.",
+      'Structure is the design of the playground.',
+      "The lived expression of this is what I call Playgrounds of Exploration. Each part of the day is a distinct playground with its own energy and essence. The morning playground. The midday playground. The afternoon playground. The evening. The night. Each one moves like a track on a playlist, seamlessly, deliberately, alive. You architect these. You design them. And the act of that design is itself an expression of joyful sovereignty, because you're playing the day, not reacting to it.",
+    ],
+  },
+  {
+    heading: 'Perception and clarity',
+    paras: [
+      "Reality is not given. It's decoded.",
+      "What you experience as your reality is rooted in how you perceive it. The electromagnetic spectrum that human senses can detect is a sliver of what's measurable. What's measurable is a sliver of what exists. And beyond the known, beyond the measurable, there are spectrums we don't have names for yet.",
+      'Based on your internal orientation, life responds in kind. Set an internal world of struggle, of being at the mercy of the system, of things always being a challenge, and life confirms it. "Yes, my dear. As you wish..."',
+      'But understand this mechanism, and something opens.',
+      "Perception upgrades are available every second of every day. The invitation is always there. Set the intention of the coolest, most joyful, most synchronistic game of life you can imagine playing. Then begin to embody it. Take action from that place. Let the old conditioning, the old programming, release. By no longer feeding it your attention and energy.",
+      "The intrinsic, radiant joy lives here, in the present moment, in the enjoying of the journey. Enjoy the journey is how I close every exchange. A perceptual declaration of where I've chosen to live.",
+      "When something unconscious surfaces, when a pattern you didn't know you were running gets illuminated, a choice opens. Do I keep this? Or do I choose something more alive? That moment of illumination is where Joyful Sovereignty becomes most practical. You can't play freely if you can't see clearly. And once you can see, the game shifts.",
+    ],
+  },
+  {
+    heading: 'How this shows up',
+    paras: [
+      'This philosophy is lived, refined and shared from inside the game.',
+      'The writing is where the threads surface. Essays and reflections from someone actively playing. Breadcrumbs from the field. Those live at the Substack.',
+      'In speaking, it becomes an experience. The Perception Upgrade, Sovereign Worldbuilding, Flow Intelligence and Guidance From Within are all doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
+      "The deeper work, the retreats, the advisory containers, the extended engagements, lives at Side Quest HQ. That's where Joyful Sovereignty meets real creative and strategic change.",
+    ],
+  },
+]
+
+// ── Home ──────────────────────────────────────────────────────────────────────
+
+export interface HappeningNowItem {
+  badge: string
+  title: string
+  description: string
+  cta: string
+  ctaHref: string
+  price?: string
+  featured?: boolean
+}
+
+export const happeningNow: HappeningNowItem[] = [
+  {
+    badge: 'Workshop',
+    title: "AI for Livin' Workshop",
+    description: 'May 2. Colorado Springs. A 3-hour in-person workshop on Claude Code and designing your own digital OS. Small group. Real conversation.',
+    cta: 'Register Now',
+    ctaHref: 'https://sidequesthq.co/workshop',
+    featured: true,
+  },
+  {
+    badge: 'Playbook',
+    title: 'The Sovereign Life Playbook',
+    description: "A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited, not just read once.",
+    cta: 'Get the Playbook',
+    ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+    price: '$37',
+  },
+]
+
+export interface BookEntry {
+  badge: string
+  title: string
+  description: string
+  cta: string
+  href: string
+}
+
+export const books: BookEntry[] = [
+  {
+    badge: 'Free',
+    title: 'Your Infinite RPG',
+    description: 'A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life.',
+    cta: 'Instant download',
+    href: 'https://drive.google.com/file/d/1nlRYiD-T7K5HgorKe4VzgD-AiO7uZ1Fr/view?usp=sharing',
+  },
+  {
+    badge: 'Book',
+    title: 'Humble Alpha',
+    description: 'A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.',
+    cta: 'Get the book',
+    href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
+  },
+]
+
+export interface SQHQChip {
+  title: string
+  sub: string
+  href: string
+}
+
+export const sqhqChips: SQHQChip[] = [
+  { title: 'Digital Products', sub: 'Playbooks · Guides', href: 'https://sidequesthq.co/products' },
+  { title: 'Workshops', sub: 'One-day intensives', href: 'https://sidequesthq.co/workshop' },
+  { title: 'Retreats', sub: 'Multi-day immersions', href: 'https://sidequesthq.co/explorers-side-quest' },
+  { title: 'Private Advisory', sub: 'One-on-one', href: 'https://sidequesthq.co/one-on-one' },
+]
