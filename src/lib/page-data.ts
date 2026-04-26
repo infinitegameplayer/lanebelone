@@ -156,6 +156,27 @@ export const jsSections: StorySection[] = [
   },
 ]
 
+export interface FaqItem { q: string; a: string }
+
+export const jsFaqs: FaqItem[] = [
+  {
+    q: 'What is Joyful Sovereignty?',
+    a: 'Joyful Sovereignty is a quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. It is not a destination but a way of moving. Sovereignty is understood as a birthright, not something to fight for. The phrase "the whole game, played from the inside" captures its essence.',
+  },
+  {
+    q: 'What is the Infinite Game?',
+    a: 'The Infinite Game is life played to keep playing, not to win. Finite arcs — projects, quests, retreats, creative sprints — create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures become growth obstacles, not permanent defeats. The infinite game never stops.',
+  },
+  {
+    q: 'What are Playgrounds of Exploration?',
+    a: "Playgrounds of Exploration is Lane Belone's framework for architecting each part of the day as a distinct playground with its own energy and essence. The morning, midday, afternoon, evening and night each move like tracks on a playlist. Designing these playgrounds is itself an expression of Joyful Sovereignty.",
+  },
+  {
+    q: 'What is the Perception Upgrade?',
+    a: 'The Perception Upgrade is the recognition that reality is decoded, not given. Based on your internal orientation, life responds in kind. Perception upgrades are available every moment. Setting an internal orientation of aliveness and synchronicity lets life respond in kind.',
+  },
+]
+
 // ── Home ──────────────────────────────────────────────────────────────────────
 
 export interface HappeningNowItem {

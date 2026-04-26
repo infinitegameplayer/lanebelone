@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
-import { jsSections, isLinkedPara, JS_DESCRIPTION } from '@/lib/page-data'
+import { jsSections, isLinkedPara, JS_DESCRIPTION, jsFaqs } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Joyful Sovereignty',
@@ -29,40 +29,11 @@ export const metadata: Metadata = {
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is Joyful Sovereignty?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Joyful Sovereignty is a quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. It is not a destination but a way of moving. Sovereignty is understood as a birthright, not something to fight for. The phrase "the whole game, played from the inside" captures its essence.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the Infinite Game?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The Infinite Game is life played to keep playing, not to win. Finite arcs — projects, quests, retreats, creative sprints — create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures are growth obstacles, not permanent defeats. The infinite game never stops.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What are Playgrounds of Exploration?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Playgrounds of Exploration is Lane Belone\'s framework for architecting each part of the day as a distinct playground with its own energy and essence. The morning, midday, afternoon, evening and night each move like tracks on a playlist. Designing these playgrounds is itself an expression of Joyful Sovereignty.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the Perception Upgrade?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The Perception Upgrade is the recognition that reality is decoded, not given. Based on your internal orientation, life responds in kind. Perception upgrades are available every moment. Setting an internal orientation of aliveness and synchronicity lets life respond in kind.',
-      },
-    },
-  ],
+  mainEntity: jsFaqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
 }
 
 const breadcrumbJsonLd = {
