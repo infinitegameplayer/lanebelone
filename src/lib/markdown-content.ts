@@ -3,6 +3,7 @@
 // request Accept: text/markdown or text/plain.
 
 import { getAllPosts, getPostBySlug } from './blog'
+import { LANE_BIO, aboutStory, isLinkedPara } from './page-data'
 
 const SITE = 'https://www.lanebelone.com'
 
@@ -58,23 +59,6 @@ Personal updates and fresh ideas. Newsletter and contact at [${SITE}/#connect]($
 *[Lane Belone](${SITE})*
 `,
 
-  about: `# About Lane Belone
-
-> Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, and practitioner of joyful sovereignty and the Infinite Game.
-
-Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ and practitioner of joyful sovereignty and the Infinite Game.
-
-## Ecosystem
-
-- **[Side Quest HQ](https://sidequesthq.co)** · Playbooks, workshops and advisory
-- **[Infinite Game OS](https://infinitegameos.io)** · The structured knowledge base
-- **[Substack](https://lanebelone.substack.com/)** · Essays and breadcrumbs
-- **[LinkedIn](https://www.linkedin.com/in/lanebelone/)**
-- **[Instagram](https://www.instagram.com/increasefreedom/)**
-
----
-*[Lane Belone](${SITE}) · [About](${SITE}/about)*
-`,
 
   'joyful-sovereignty': `# Joyful Sovereignty
 
@@ -145,6 +129,41 @@ Contact: howdy@lanebelone.com
   blog: '', // placeholder, generated dynamically below
 }
 
+function generateAboutMarkdown(): string {
+  const storyMd = aboutStory
+    .map(section => {
+      const parasText = section.paras
+        .map(p =>
+          isLinkedPara(p)
+            ? `${p.before}[${p.linkLabel}](${SITE}${p.linkHref})${p.after}`
+            : p
+        )
+        .join('\n\n')
+      return `## ${section.heading}\n\n${parasText}`
+    })
+    .join('\n\n')
+
+  return `# About Lane Belone
+
+> ${LANE_BIO}
+
+${LANE_BIO}
+
+${storyMd}
+
+## Ecosystem
+
+- **[Side Quest HQ](https://sidequesthq.co)** · Playbooks, workshops and advisory
+- **[Infinite Game OS](https://infinitegameos.io)** · The structured knowledge base
+- **[Substack](https://lanebelone.substack.com/)** · Essays and breadcrumbs
+- **[LinkedIn](https://www.linkedin.com/in/lanebelone/)**
+- **[Instagram](https://www.instagram.com/increasefreedom/)**
+
+---
+*[Lane Belone](${SITE}) · [About](${SITE}/about)*
+`
+}
+
 function generateBlogIndexMarkdown(): string {
   const posts = getAllPosts()
   const entries = posts
@@ -182,15 +201,11 @@ ${post.content}
 }
 
 export function getMarkdownForPath(path: string): string | null {
-  // Blog index
+  if (path === 'about') return generateAboutMarkdown()
   if (path === 'blog') return generateBlogIndexMarkdown()
-
-  // Individual blog posts
   if (path.startsWith('blog/f/')) {
     const slug = path.replace('blog/f/', '')
     return generateBlogPostMarkdown(slug)
   }
-
-  // Static pages
   return pages[path] ?? null
 }
