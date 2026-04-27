@@ -1,7 +1,7 @@
 ---
 title: The Architecture and the Music
 slug: the-architecture-and-the-music
-date: "2026-04-23"
+date: "2026-04-27"
 dateModified: "2026-04-27"
 description: The architecture of a sovereign day, the music that plays through it. Two halves of one dance the Infinite Game is always playing.
 category: infinite-game
