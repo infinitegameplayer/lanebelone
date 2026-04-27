@@ -65,6 +65,7 @@ export interface BlogPost {
   date: string
   dateModified?: string
   category: string
+  featured?: boolean
   heroImage: string
   description: string
   content: string
@@ -116,6 +117,7 @@ export function getAllPosts(): BlogPost[] {
         date: data.date || '',
         dateModified: data.dateModified,
         category: data.category || '',
+        featured: data.featured === true ? true : undefined,
         heroImage: data.heroImage || '',
         description: data.description || '',
         content: renderedContent,

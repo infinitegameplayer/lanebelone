@@ -5,6 +5,7 @@ date: "2026-04-24"
 dateModified: "2026-04-24"
 description: Years of "invisible" practice, season by season, produce what philosophy alone can't. An embodied operating system for the Infinite Game.
 category: infinite-game
+featured: true
 heroImage: /images/blog/the-infinite-game-is-already-in-progress-hero.png
 format: markdown
 about:

@@ -17,7 +17,9 @@ const CONTACT_FORM_ID = 'eddc876e-e15f-419f-af48-7506a8767fcc'
 const NEWSLETTER_FORM_ID = 'be6f8412-8e52-4571-94f9-197ff18f9f90'
 
 export default function HomePage() {
-  const recentPosts = getAllPosts().slice(0, 4)
+  const allPosts = getAllPosts()
+  const featuredPosts = allPosts.filter(p => p.featured).slice(0, 2).reverse()
+  const latestPosts = allPosts.slice(0, 2)
 
   return (
     <>
@@ -302,46 +304,153 @@ export default function HomePage() {
         <SectionReveal>
           <div className="section-label">— Recent Writing —</div>
         </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-          {recentPosts.map((post, i) => (
-            <Link key={post.slug} href={`/blog/f/${post.slug}`} className="block" style={{ textDecoration: 'none' }}>
-              <article
-                style={{
-                  paddingTop: '1.5rem',
-                  borderTop: i < 2 ? '1px solid rgba(232, 232, 216, 0.06)' : 'none',
-                }}
-              >
-                <div
+
+        {/* Featured row */}
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {featuredPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/f/${post.slug}`} className="group block" style={{ textDecoration: 'none' }}>
+              <article style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ overflow: 'hidden', marginBottom: '1.1rem' }}>
+                  <img
+                    src={post.heroImage}
+                    alt={post.title}
+                    style={{
+                      width: '100%',
+                      aspectRatio: '16/9',
+                      objectFit: 'cover',
+                      display: 'block',
+                      border: '1px solid rgba(232, 232, 216, 0.10)',
+                      transition: 'transform 0.3s ease',
+                    }}
+                    className="group-hover:scale-[1.03]"
+                  />
+                </div>
+                <span
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: '0.65rem',
+                    fontWeight: 500,
                     letterSpacing: '0.14em',
                     textTransform: 'uppercase',
-                    color: 'var(--color-text-muted)',
-                    marginBottom: '0.6rem',
+                    color: 'var(--color-gold)',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                    marginBottom: '0.25rem',
+                    display: 'block',
                   }}
                 >
-                  {post.date?.slice(0, 4) || ''}{post.category ? ` · ${post.category}` : ''}
-                </div>
+                  Featured
+                </span>
                 <h3
                   style={{
                     fontFamily: 'var(--font-voice)',
-                    fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)',
-                    fontWeight: 500,
-                    lineHeight: 1.25,
-                    marginBottom: '0.65rem',
+                    fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
+                    fontWeight: 400,
                     color: 'var(--color-text)',
+                    lineHeight: 1.35,
+                    marginBottom: '0.5rem',
                   }}
                 >
                   {post.title}
                 </h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.65, color: 'var(--color-text-muted)', margin: 0 }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-muted)', lineHeight: 1.65, margin: 0 }}>
                   {post.description}
                 </p>
               </article>
             </Link>
           ))}
         </SectionReveal>
+
+        {/* Hairline divider between rows */}
+        <hr
+          style={{
+            width: '200px',
+            height: '1px',
+            background: 'var(--color-gold)',
+            opacity: 0.3,
+            border: 'none',
+            margin: '3rem auto',
+          }}
+        />
+
+        {/* Latest row */}
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
+          {latestPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/f/${post.slug}`} className="group block" style={{ textDecoration: 'none' }}>
+              <article
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'flex-start',
+                  gap: '1rem',
+                  paddingTop: '1.5rem',
+                  paddingBottom: '1.5rem',
+                  marginBottom: '1.5rem',
+                  borderTop: '1px solid rgba(232, 232, 216, 0.06)',
+                  borderBottom: '1px solid rgba(232, 232, 216, 0.06)',
+                }}
+              >
+                <div style={{ flexShrink: 0, width: '120px', overflow: 'hidden', borderRadius: '2px' }}>
+                  <img
+                    src={post.heroImage}
+                    alt={post.title}
+                    style={{
+                      width: '120px',
+                      height: '68px',
+                      objectFit: 'cover',
+                      display: 'block',
+                      transition: 'transform 0.3s ease',
+                      aspectRatio: '16/9',
+                    }}
+                    className="group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '0.65rem',
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: 'var(--color-text-muted)',
+                      marginBottom: '0.5rem',
+                    }}
+                  >
+                    {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) : ''}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-voice)',
+                      fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
+                      fontWeight: 400,
+                      color: 'var(--color-text)',
+                      lineHeight: 1.35,
+                      marginBottom: '0.4rem',
+                    }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.875rem',
+                      color: 'var(--color-text-muted)',
+                      lineHeight: 1.65,
+                      margin: 0,
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    {post.description}
+                  </p>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </SectionReveal>
+
         <SectionReveal className="text-center mt-10">
           <Link href="/blog" className="btn-ghost">
             Read the full archive &rarr;

@@ -5,6 +5,7 @@ date: "2026-04-27"
 dateModified: "2026-04-27"
 description: The architecture of a sovereign day, the music that plays through it. Two halves of one dance the Infinite Game is always playing.
 category: infinite-game
+featured: true
 heroImage: /images/blog/the-architecture-and-the-music-hero.png
 format: markdown
 author: Lane Belone
