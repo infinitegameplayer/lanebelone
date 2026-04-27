@@ -50,6 +50,7 @@ export const ARCHIVE_SLUGS = [
 // The skill appends here as new posts ship.
 export const LIVE_SLUGS: string[] = [
   'the-infinite-game-is-already-in-progress',
+  'the-architecture-and-the-music',
 ]
 
 // Combined set used for static generation and URL resolution.
@@ -72,6 +73,8 @@ export interface BlogPost {
   mentions?: string[]
   wordCount?: number
   articleSection?: string
+  author?: string
+  authorUrl?: string
 }
 
 async function renderMarkdown(content: string): Promise<string> {
@@ -121,6 +124,8 @@ export function getAllPosts(): BlogPost[] {
         mentions: Array.isArray(data.mentions) ? data.mentions : undefined,
         wordCount: countWords(content),
         articleSection: data.articleSection || data.category || undefined,
+        author: data.author || undefined,
+        authorUrl: data.authorUrl || undefined,
       } as BlogPost
     })
     .filter(post => ALL_SLUGS.includes(post.slug))
@@ -156,5 +161,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     mentions: Array.isArray(data.mentions) ? data.mentions : undefined,
     wordCount: countWords(content),
     articleSection: data.articleSection || data.category || undefined,
+    author: data.author || undefined,
+    authorUrl: data.authorUrl || undefined,
   }
 }

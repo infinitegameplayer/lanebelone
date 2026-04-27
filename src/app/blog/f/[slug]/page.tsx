@@ -34,7 +34,7 @@ export async function generateMetadata({
       description: post.description,
       type: 'article',
       url: `https://www.lanebelone.com/blog/f/${slug}`,
-      authors: ['Lane Belone'],
+      authors: [post.authorUrl ?? 'https://www.lanebelone.com'],
       publishedTime: `${post.date}T12:00:00Z`,
       modifiedTime: `${post.dateModified || post.date}T12:00:00Z`,
       images: post.heroImage ? [{ url: post.heroImage }] : [],
@@ -44,6 +44,9 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       images: post.heroImage ? [post.heroImage] : [],
+    },
+    other: {
+      author: post.author ?? 'Lane Belone',
     },
   }
 }
@@ -75,8 +78,8 @@ export default async function BlogPostPage({
     author: {
       '@type': 'Person',
       '@id': 'https://www.lanebelone.com/#person',
-      name: 'Lane Belone',
-      url: 'https://www.lanebelone.com',
+      name: post.author ?? 'Lane Belone',
+      url: post.authorUrl ?? 'https://www.lanebelone.com',
     },
     publisher: {
       '@type': 'Organization',
