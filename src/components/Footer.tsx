@@ -61,6 +61,18 @@ export default function Footer() {
           <p className="text-xs text-parchment/30" style={{ fontFamily: 'var(--font-body)' }}>
             &copy; 2026 Lane Belone
           </p>
+          <p className="text-xs text-parchment/30" style={{ fontFamily: 'var(--font-body)' }}>
+            <span className="hidden md:inline" aria-hidden="true">·</span>{' '}
+            Articles licensed{' '}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="license noopener noreferrer"
+              className="underline underline-offset-4 hover:text-parchment/60 transition-colors"
+            >
+              CC BY 4.0
+            </a>
+          </p>
         </div>
 
         <nav className="flex flex-wrap justify-center gap-6 text-sm text-parchment/50" style={{ fontFamily: 'var(--font-body)' }}>

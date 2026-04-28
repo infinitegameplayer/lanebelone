@@ -87,6 +87,7 @@ export default async function BlogPostPage({
       name: 'Lane Belone',
     },
     url: `https://www.lanebelone.com/blog/f/${slug}`,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
     ...(post.heroImage && { image: `https://www.lanebelone.com${post.heroImage}` }),
     ...(post.wordCount && { wordCount: post.wordCount }),
     ...(post.articleSection && { articleSection: post.articleSection }),

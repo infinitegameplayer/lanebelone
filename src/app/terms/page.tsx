@@ -40,7 +40,28 @@ export default function TermsPage() {
               Site use
             </h2>
             <p>
-              This site is operated by Lane Belone. By accessing this site, you agree to use it for lawful purposes only. You may not copy, reproduce or redistribute content from this site without written permission.
+              This site is operated by Lane Belone. By accessing this site, you agree to use it for lawful purposes only. Editorial content (articles, blog posts and concept pages) is licensed under the terms below. Site code, design, images, branding and any commercial offerings remain the property of Lane Belone and are not covered by the editorial license.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl text-parchment/90 mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+              Content license
+            </h2>
+            <p className="mb-3">
+              Articles, blog posts and concept pages on this site are licensed under the{' '}
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="license noopener noreferrer"
+                className="underline underline-offset-4 text-parchment/80 hover:text-parchment transition-colors"
+              >
+                Creative Commons Attribution 4.0 International License (CC BY 4.0)
+              </a>
+              . You are free to share, adapt, quote and build on this content for any purpose, including commercial use, provided that you give appropriate credit, link back to the source and indicate if changes were made.
+            </p>
+            <p>
+              The CC BY 4.0 license does not extend to: site design and code; images and photography; branding and logos; commercial products, services and paid offerings; private email correspondence. These remain the property of Lane Belone and are not licensed for redistribution without written permission.
             </p>
           </div>
 
