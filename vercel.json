@@ -1,12 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "lanebelone.com" }],
-      "destination": "https://www.lanebelone.com/$1",
-      "permanent": true
-    },
-    {
       "source": "/blog/f/navigating-life%E2%80%99s-rhythms-unveiling-the-hidden-wisdom-of-breath",
       "destination": "/blog/f/navigating-lifes-rhythms-unveiling-the-hidden-wisdom-of-breath",
       "permanent": true
