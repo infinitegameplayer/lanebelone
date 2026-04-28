@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sitemap from '@/app/sitemap'
 
-const INDEXNOW_KEY = '9f0f6b4049a44a3bb0a43f1ffd6d026a'
+// lanebelone uses a different IndexNow key than SQHQ/IGOS due to
+// BWT re-registration history. The original key was orphaned when the
+// GSC-imported apex property was deleted. This key is registered against
+// the www.lanebelone.com property. See Web Strategy Codex Refinements 2026-04-28.
+const INDEXNOW_KEY = 'b0300f18e0cd4e998bdea174c0828d37'
 const HOST = 'www.lanebelone.com'
 const BASE = `https://${HOST}`
 const ENDPOINT = 'https://api.indexnow.org/indexnow'
