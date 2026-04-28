@@ -29,9 +29,36 @@ export const metadata: Metadata = {
 
 const SPEAKING_FORM_ID = '56ffe32f-432f-48a5-9949-6f14d3ec53ee'
 
+const speakingServiceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Speaking and Workshops',
+  serviceType: 'Speaking, keynotes, workshops, retreats',
+  description:
+    'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
+  provider: { '@id': 'https://www.lanebelone.com/#person' },
+  url: 'https://www.lanebelone.com/speaking',
+  areaServed: 'Worldwide',
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Leaders, founders, creators, communities',
+  },
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.lanebelone.com' },
+    { '@type': 'ListItem', position: 2, name: 'Speaking', item: 'https://www.lanebelone.com/speaking' },
+  ],
+}
+
 export default function SpeakingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakingServiceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero */}
       <section className="relative min-h-[60vh] flex flex-col justify-end overflow-hidden">
         <Image

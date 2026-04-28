@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { CARRY_FORWARD_SLUGS } from '@/lib/blog'
+import sitemap from '@/app/sitemap'
 
 const INDEXNOW_KEY = '9f0f6b4049a44a3bb0a43f1ffd6d026a'
 const HOST = 'www.lanebelone.com'
@@ -7,17 +7,7 @@ const BASE = `https://${HOST}`
 const ENDPOINT = 'https://api.indexnow.org/indexnow'
 
 function allSiteUrls(): string[] {
-  const staticPages = [
-    '',
-    '/about',
-    '/speaking',
-    '/joyful-sovereignty',
-    '/blog',
-    '/privacy',
-    '/terms',
-  ]
-  const blogUrls = CARRY_FORWARD_SLUGS.map(s => `/blog/f/${s}`)
-  return [...staticPages, ...blogUrls].map(p => `${BASE}${p}`)
+  return sitemap().map(entry => entry.url)
 }
 
 export async function POST(req: NextRequest) {

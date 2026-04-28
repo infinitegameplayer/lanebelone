@@ -49,12 +49,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Link',
             value:
-              '<https://lanebelone.com/llms.txt>; rel="ai-agent"; type="text/plain", <https://lanebelone.com/sitemap.xml>; rel="sitemap"; type="application/xml"',
+              '<https://www.lanebelone.com/llms.txt>; rel="ai-agent"; type="text/plain", <https://www.lanebelone.com/sitemap.xml>; rel="sitemap"; type="application/xml"',
           },
           {
             key: 'Content-Signal',
             value: 'ai-train=yes, search=yes, ai-input=yes',
           },
+          // Vary: Accept — required because /markdown rewrite is content-negotiated.
+          // Prevents CDN cache poisoning between text/html and text/markdown responses.
+          { key: 'Vary', value: 'Accept' },
         ],
       },
     ]

@@ -16,6 +16,28 @@ export const metadata: Metadata = {
 const CONTACT_FORM_ID = 'eddc876e-e15f-419f-af48-7506a8767fcc'
 const NEWSLETTER_FORM_ID = 'be6f8412-8e52-4571-94f9-197ff18f9f90'
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://www.lanebelone.com/#website',
+  url: 'https://www.lanebelone.com',
+  name: 'Lane Belone',
+  description:
+    'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+  publisher: { '@id': 'https://www.lanebelone.com/#person' },
+  inLanguage: 'en-US',
+}
+
+const profilePageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: 'https://www.lanebelone.com',
+  name: 'Lane Belone',
+  description:
+    'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+  mainEntity: { '@id': 'https://www.lanebelone.com/#person' },
+}
+
 export default function HomePage() {
   const allPosts = getAllPosts()
   const featuredPosts = allPosts.filter(p => p.featured).slice(0, 2).reverse()
@@ -23,6 +45,8 @@ export default function HomePage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }} />
       {/* 1 — Hero (client component for useRef + CursorParallax) */}
       <Hero />
 
