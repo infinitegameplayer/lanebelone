@@ -116,6 +116,8 @@ Lane's work sits at the intersection of Infinite Game philosophy, sovereign crea
 
 **Note:** A comprehensive AI Discoverability Upgrade is planned for this repo as part of the Post Web Expertise Web and Sovereign Signal Architecture strategy (Phase 4). This AGENTS.md will be revised at that time to reflect expanded schema coverage and ecosystem cross-linking standards. Treat the current state as a solid baseline, not the ceiling.
 
+**Note (PP2 Session 1, 2026-04-29 — pending pickup):** A site-root `public/AGENTS.md` (deployed at `https://lanebelone.com/AGENTS.md`) is required per Web Strategy Codex v1.1.0 Section V.4.b (Kingdom doctrine, not in this repo). Distinct from this repo-root AGENTS.md which serves AI coding agents working on the codebase. lanebelone-specific content per the codex per-site table: article taxonomy, blog index pattern, Substack canonical pair pattern, content license boundary. Plus required entries (all sites): site purpose statement, content license boundary, pointers to `llms.txt`, `llms-full.txt`, `sitemap.xml` and primary content directories. Source plan: `PendingPlan - IGOS Public Library Foundation` Session 1 deferred lanebelone.com scope to keep IGOS-only Saturday MVP focus. Pickup: author `public/AGENTS.md` and bundle into the next session's commit on this repo. See `infinitegameos.io/public/AGENTS.md` for the IGOS exemplar.
+
 ---
 
 ## Cross-Ecosystem Links to Maintain
