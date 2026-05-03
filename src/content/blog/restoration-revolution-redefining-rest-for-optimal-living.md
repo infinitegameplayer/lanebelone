@@ -6,7 +6,7 @@ category: "the-distillation"
 heroImage: "/images/blog/restoration-revolution-redefining-rest-for-optimal-living-hero.png"
 description: "My Intention For this 16th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to expand your perspective on rest and how..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2316%20-%20Rest.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 16th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to expand your perspective on rest and how to integrate it into your life.</em><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2316%20-%20Rest.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 16th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to expand your perspective on rest and how to integrate it into your life.</em><br>
 </p><p></p><hr><p></p><p>Perhaps you know of someone that has worked so hard and been burnt out.</p><p><br>
 Then one day, they’re forced into a deep state of rest.</p><p><br>
 Their body collapsing in fatigue, even becoming sick.</p><p><br>
@@ -19,7 +19,7 @@ But by the time we hear those loud sirens, its already become a big issue.</p><p
 There is a way to look at rest that will increase creativity, boost your sense of well-being and give you greater states of peace and joy.</p><p><br>
 There is a way to consistently rest throughout your days and week.</p><p><br>
 There is a way to reprogram yourself in an empowering way.</p><p><br>
-Read further with an open mind to shift your perspective of rest and how to integrate it into your life.</p><p><br></p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
+Read further with an open mind to shift your perspective of rest and how to integrate it into your life.</p><p><br></p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
 </p><div><h2><strong>Work &amp; Rest Complement Each Other</strong></h2></div><p>Stress + Rest = Growth.</p><p><br>
 This is a formula that brings awareness that work and rest can’t exist without the other.</p><p><br>
 Work and rest are two sides of the same coin.</p><p><br>

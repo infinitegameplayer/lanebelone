@@ -6,7 +6,7 @@ category: "the-distillation"
 heroImage: "/images/blog/navigating-lifes-rhythms-unveiling-the-hidden-wisdom-of-breath-hero.png"
 description: "My Intention For this 14th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to help ease your mind, knowing that it’s..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2313%20-%20The%20Breath.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 14th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to help ease your mind, knowing that it’s okay to be in one place in your life right now (and not the other).</em><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2313%20-%20The%20Breath.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 14th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to help ease your mind, knowing that it’s okay to be in one place in your life right now (and not the other).</em><br>
 </p><p></p><hr><p></p><p><br>
 A significant chapter of my adult life was filled with discipline, standard operating procedures and hierarchal advancement.</p><p><br>
 This rigid environment was rooted from a need to have as much “figured out”, because oftentimes someone’s life could be on the line.</p><p><br>

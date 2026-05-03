@@ -21,8 +21,9 @@ export async function generateMetadata({
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return { title: 'Article' }
+  const metaTitle = post.seoTitle ?? post.title
   return {
-    title: post.title,
+    title: { absolute: metaTitle },
     description: post.description,
     alternates: {
       canonical: `https://www.lanebelone.com/blog/f/${slug}`,
@@ -30,7 +31,7 @@ export async function generateMetadata({
     openGraph: {
       siteName: 'Lane Belone',
       locale: 'en_US',
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       type: 'article',
       url: `https://www.lanebelone.com/blog/f/${slug}`,
@@ -41,7 +42,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       images: post.heroImage ? [post.heroImage] : [],
     },

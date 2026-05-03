@@ -6,7 +6,7 @@ category: "performance"
 heroImage: "/images/blog/the-structure-flow-of-creativity-hero.png"
 description: "My Intention For this 13th edition of the Joyful Sovereignty Weekly, my intention is fan the ember of creativity within you. By reading this, a spark of..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2313%20-%20Creativity.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 13th edition of the Joyful Sovereignty Weekly, my intention is fan the ember of creativity within you. By reading this, a spark of creativity is awakened exactly how it needs to be in your life that leads to Joyful Sovereignty.</em></p><p><a href="https://lanebelone.com/f/developing-a-playbook-for-the-infinite-game" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2313%20-%20Creativity.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 13th edition of the Joyful Sovereignty Weekly, my intention is fan the ember of creativity within you. By reading this, a spark of creativity is awakened exactly how it needs to be in your life that leads to Joyful Sovereignty.</em></p><p><a href="https://lanebelone.com/f/developing-a-playbook-for-the-infinite-game" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a><br>
 </p><p></p><hr><p></p><p>Ever been to a fun campfire?</p><p><br>
 For hours, the good times and flames were rolling. Lots of good stories and laughing.</p><p><br>
 Log after log was added to the fire to keep it aflame. The fuel to keep it roaring.</p><p><br>
@@ -17,7 +17,7 @@ For hours those embers hold on to their heat.</p><p><br>
 They have a potential for a fire again, they just need the right fuel.</p><p><br>
 Perhaps your creativity is like this story.</p><p><br>
 You once had roaring creative energy flowing through you when you were younger.</p><p><br>
-And now all you need is the right fuel. Today's message is intended to be that fuel.</p><p><br></p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
+And now all you need is the right fuel. Today's message is intended to be that fuel.</p><p><br></p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
 </p><div><h2><strong>What’s Stopping You From Creativity</strong></h2></div><p>There’s a lot of things that could be stopping you from tapping into the limitless creative energy.</p><p><br>
 It could be any of the following:</p><p></p><ul>
   <li>You don’t have enough time</li>

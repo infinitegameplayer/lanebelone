@@ -19,8 +19,6 @@ mentions:
   - https://www.infinitegameos.io/concepts/joyful-sovereignty
 ---
 
-# The Architecture and the Music
-
 I love to go out on the trail most days of the week.
 
 It's been an amazing thing I've added to my near-daily flow of life. It's an intentional architecting of my day.

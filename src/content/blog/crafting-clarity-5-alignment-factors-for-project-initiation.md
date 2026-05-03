@@ -6,7 +6,7 @@ category: "the-distillation"
 heroImage: "/images/blog/crafting-clarity-5-alignment-factors-for-project-initiation-hero.png"
 description: "My Intention For this 18th edition of The Distillation, my intention is share 5 key factors to start your project with alignment from the get go. Starting..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2318%20-%20Project.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 18th edition of The Distillation, my intention is share 5 key factors to start your project with alignment from the get go.</em><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2318%20-%20Project.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 18th edition of The Distillation, my intention is share 5 key factors to start your project with alignment from the get go.</em><br>
 </p><p></p><hr><p></p><p>Starting something new can feel overwhelming and exciting at the same time.</p><p><br>
 On one hand, you’re getting idea after idea and they all feel worthy of exploring. You can even taste what it would look like when completed.</p><p><br>
 On the other hand, all of these insights can overload your system / mind. Sometimes it can get so bad that you may want to scrape the idea altogether.</p><p><br>

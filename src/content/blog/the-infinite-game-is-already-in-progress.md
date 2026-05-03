@@ -16,8 +16,6 @@ mentions:
   - https://www.infinitegameos.io/concepts/the-pioneer
 ---
 
-# The Infinite Game Is Already in Progress
-
 A few years ago I wrote a newsletter about the Infinite Game.
 
 It was [Edition 11 of the Joyful Sovereignty Weekly](https://www.lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game). I was writing about children playing tag across the planet, the difference between finite and infinite orientations, the idea that Joy and Sovereignty could be the internal drivers of a life well-lived.

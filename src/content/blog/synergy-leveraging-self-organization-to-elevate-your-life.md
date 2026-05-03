@@ -6,7 +6,7 @@ category: "the-distillation"
 heroImage: "/images/blog/synergy-leveraging-self-organization-to-elevate-your-life-hero.png"
 description: "My Intention For this 20th edition of The Distillation, my intention is to bring a deeper awareness of Synergy and how to apply it to your life. For years,..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2320%20-%20Synergy.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 20th edition of The Distillation, my intention is to bring a deeper awareness of Synergy and how to apply it to your life.</em></p><p></p><hr><p></p><p>For years, I’ve been unconsciously navigating letting go of control.</p><p><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2320%20-%20Synergy.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 20th edition of The Distillation, my intention is to bring a deeper awareness of Synergy and how to apply it to your life.</em></p><p></p><hr><p></p><p>For years, I’ve been unconsciously navigating letting go of control.</p><p><br>
 The past several months I’ve contemplated, “where in my life am I controlling?”</p><p><br>
 To even ask that question, was big growth for me.</p><p><br>
 Because I had stories that I wasn’t overly controlling.</p><p><br>

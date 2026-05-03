@@ -62,6 +62,7 @@ export const CARRY_FORWARD_SLUGS = ALL_SLUGS
 export interface BlogPost {
   slug: string
   title: string
+  seoTitle?: string
   date: string
   dateModified?: string
   category: string
@@ -114,6 +115,7 @@ export function getAllPosts(): BlogPost[] {
       return {
         slug: data.slug || filename.replace('.md', ''),
         title: data.title || '',
+        seoTitle: data.seoTitle || undefined,
         date: data.date || '',
         dateModified: data.dateModified,
         category: data.category || '',
@@ -152,6 +154,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return {
     slug: data.slug || slug,
     title: data.title || '',
+    seoTitle: data.seoTitle || undefined,
     date: data.date || '',
     dateModified: data.dateModified,
     category: data.category || '',

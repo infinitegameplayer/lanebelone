@@ -6,7 +6,7 @@ category: "performance"
 heroImage: "/images/blog/micro-mastery-is-the-gateway-to-universal-mastery-hero.jpg"
 description: "My Intention For this 6th edition of the Joyful Sovereignty Weekly, my intention is to help you eliminate procrastination and hesitation on your journey to..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Keystone%20Gateway.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 6th edition of the Joyful Sovereignty Weekly, my intention is to help you eliminate procrastination and hesitation on your journey to Self-Mastery.</em><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Keystone%20Gateway.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 6th edition of the Joyful Sovereignty Weekly, my intention is to help you eliminate procrastination and hesitation on your journey to Self-Mastery.</em><br>
 <a href="https://lanebelone.com/f/the-sweet-spot-of-self-mastery-strategy-flow-play" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>When you look up to a mountain, it often looks powerful, majestic and beautiful.</p><p><br>
 Then when someone says “lets climb it”, the energy shifts. Ideas of not being ready or being capable may fly in your mind.</p><p><br>
 Maybe it’s not the right time. Whatever your mind can conceive to delay, procrastinate or outright say it’s a bad idea, it will do.</p><p><br>

@@ -6,7 +6,7 @@ category: "the-distillation"
 heroImage: "/images/blog/transmuting-pressure-cultivating-the-anti-fragility-mindset-hero.png"
 description: "My Intention For this 15th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to share a perspective that welcomes the..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2315%20-%20Anti-Fragility.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 15th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to share a perspective that welcomes the uncertainties of life and allow it to be useful to you.</em></p><p></p><hr><p></p><p>For years, I’ve been between a rock and a hard place.</p><p><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2315%20-%20Anti-Fragility.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 15th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to share a perspective that welcomes the uncertainties of life and allow it to be useful to you.</em></p><p></p><hr><p></p><p>For years, I’ve been between a rock and a hard place.</p><p><br>
 The Rock: Being prepared for an unpredictable and uncertain future.</p><p><br>
 The Hard Place: Not living in fear.</p><p><br>
 This dynamic has brought me slight mental anguish (and for good reason).</p><p><br>
@@ -24,7 +24,7 @@ There is no one-size-fits-all solution.</p><p><br>
 Each of us are individual pieces of a collective puzzle. Each person having their unique gifts and role to play.</p><p><br>
 When it comes down to it, no matter where you fall on this spectrum, there is a simple, synthesized sweet spot to transmute this rock and hard place.</p><p><br>
 It’s <strong>Anti-Fragility</strong>.</p><p><br>
-</p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><div><h2><br></h2>
+</p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><div><h2><br></h2>
 <h2><strong>The Anti-Fragility Mindset</strong></h2></div><p>Anti-Fragility is a concept brought to light by <strong>Nassim Nicholas Taleb</strong>, in his book <a href="https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680" rel="">Antifragile: Things That Gain from Disorder.</a><br>
 In the book, he illuminates two main themes.</p><p></p><ol>
   <li>We can’t predict the uncertain future, try as we may.</li>

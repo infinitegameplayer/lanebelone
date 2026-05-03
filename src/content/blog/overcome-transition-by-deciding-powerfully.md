@@ -6,7 +6,7 @@ category: "philosophy"
 heroImage: "/images/blog/overcome-transition-by-deciding-powerfully-hero.png"
 description: "My Intention For this 7th edition of the Joyful Sovereignty Weekly, my intention is give a framework and encouraging message to help you navigate any..."
 ---
-<p></p><figure><div><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%237%20-%20Transition.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 7th edition of the Joyful Sovereignty Weekly, my intention is give a framework and encouraging message to help you navigate any transition in your life.</em><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%237%20-%20Transition.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 7th edition of the Joyful Sovereignty Weekly, my intention is give a framework and encouraging message to help you navigate any transition in your life.</em><br>
 <a href="https://lanebelone.com/f/micro-mastery-is-the-gateway-to-universal-mastery" rel="" target=""><strong>Read The Previous Edition Here</strong></a></p><p><br></p><p></p><hr><p></p><p>When I think of transition, two animals come to mind.<br>
 The toad and the butterfly.</p><p><br>
 Each has a challenging journey from one phase of their existence to the next.</p><p><br>
