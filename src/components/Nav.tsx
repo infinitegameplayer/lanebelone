@@ -25,7 +25,7 @@ export default function Nav() {
         <Link href="/" className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity">
           <Image
             src="/images/lane-belone-logo-white.png"
-            alt="Lane Belone"
+            alt="Lane Belone home"
             width={120}
             height={36}
             className="h-7 w-auto"

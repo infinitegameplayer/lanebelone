@@ -52,7 +52,7 @@ export default function Footer() {
           <Link href="/" className="opacity-70 hover:opacity-100 transition-opacity">
             <Image
               src="/images/lane-belone-logo-white.png"
-              alt="Lane Belone"
+              alt="Lane Belone wordmark"
               width={100}
               height={30}
               className="h-6 w-auto"

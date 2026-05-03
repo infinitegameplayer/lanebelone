@@ -10,25 +10,25 @@ import { PostHogPageView } from './PostHogPageView'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Lane Belone',
+    default: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
     template: '%s | Lane Belone',
   },
   description:
-    'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
   metadataBase: new URL('https://www.lanebelone.com'),
   openGraph: {
     type: 'website',
     siteName: 'Lane Belone',
     locale: 'en_US',
-    title: 'Lane Belone',
-    description: 'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
+    description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
     url: 'https://www.lanebelone.com',
     images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lane Belone',
-    description: 'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
+    description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
     images: ['/images/lane-machu-picchu-square.webp'],
   },
   alternates: {

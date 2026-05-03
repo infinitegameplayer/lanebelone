@@ -54,7 +54,7 @@ export default function JoyfulSovereigntyPage() {
       <section className="relative min-h-[60vh] flex flex-col justify-center overflow-hidden grain-overlay">
         <Image
           src="/images/bg-sacred-valley.jpg"
-          alt="Sacred Valley"
+          alt="Sacred Valley landscape in Peru"
           fill
           className="object-cover"
           quality={90}

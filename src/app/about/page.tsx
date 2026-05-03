@@ -4,7 +4,9 @@ import SectionReveal from '@/components/SectionReveal'
 import { LANE_BIO, aboutStory, isLinkedPara, type Para } from '@/lib/page-data'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: {
+    absolute: 'About Lane Belone | Writer and Guide of the Infinite Game',
+  },
   description: LANE_BIO,
   alternates: {
     canonical: 'https://www.lanebelone.com/about',
@@ -13,14 +15,14 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Lane Belone',
     locale: 'en_US',
-    title: 'About Lane Belone',
+    title: 'About Lane Belone | Writer and Guide of the Infinite Game',
     description: LANE_BIO,
     url: 'https://www.lanebelone.com/about',
     images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Lane Belone',
+    title: 'About Lane Belone | Writer and Guide of the Infinite Game',
     description: LANE_BIO,
     images: ['/images/lane-machu-picchu-square.webp'],
   },
@@ -111,9 +113,9 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed" style={{ fontFamily: 'var(--font-display)' }}>
                 Lane Belone is a writer, speaker and guide. Former U.S. Army Green
-                Beret, author of <em>Unleash Your Humble Alpha</em>, and founder
+                Beret, author of <em>Unleash Your Humble Alpha</em> and founder
                 of Side Quest HQ, where he leads workshops, retreats and private
-                advisory for founders and leaders playing an infinite game.
+                advisory for founders and leaders playing the Infinite Game.
               </p>
               <p className="text-parchment/70">
                 My work orbits a simple question: how can I flow with aliveness and allow the &ldquo;success&rdquo; to be the byproduct? In retrospect, that question has (often) silently been answered in every chapter of my story. It sent me to Germany. It led me into Special Forces. It brought me to Peru, to Panama, to mountain retreats and deep conversations on many continents. It keeps asking.
