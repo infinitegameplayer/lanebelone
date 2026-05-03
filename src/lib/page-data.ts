@@ -2,7 +2,7 @@
 // and the /markdown content-negotiation layer. Eliminates drift between surfaces.
 
 export const LANE_BIO =
-  'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ and practitioner of Joyful Sovereignty and the Infinite Game.'
+  'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, founder of Side Quest HQ and practitioner of Joyful Sovereignty and the Infinite Game.'
 
 type InlinePara = string
 type LinkedPara = { before: string; linkLabel: string; linkHref: string; after: string }
