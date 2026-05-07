@@ -57,7 +57,7 @@ export default function HomePage() {
           <div className="section-label">— Happening Now —</div>
         </SectionReveal>
         <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Featured: Workshop (gold shimmer bezel) */}
+          {/* Featured: Install Session (gold shimmer bezel) */}
           <div className="bezel-card featured flex flex-col">
             <div className="shimmer-border" />
             <div className="bezel-inner flex flex-col gap-3 flex-1">
@@ -77,7 +77,7 @@ export default function HomePage() {
                   marginBottom: '0.5rem',
                 }}
               >
-                Workshop
+                Install Session
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
                 {happeningNow[0].title}

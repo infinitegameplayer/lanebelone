@@ -191,11 +191,11 @@ export interface HappeningNowItem {
 
 export const happeningNow: HappeningNowItem[] = [
   {
-    badge: 'Workshop',
-    title: "AI for Livin' Workshop",
-    description: 'May 2. Colorado Springs. A 3-hour in-person workshop on Claude Code and designing your own digital OS. Small group. Real conversation.',
-    cta: 'Register Now',
-    ctaHref: 'https://sidequesthq.co/workshop',
+    badge: 'Install Session',
+    title: 'Sovereign Ecosystem Install',
+    description: 'Two sixty-minute sessions with Lane. Your AI workspace standing on its own legs by the end. $247.',
+    cta: 'Book the Install',
+    ctaHref: 'https://sidequesthq.co/sovereign-ecosystem-install',
     featured: true,
   },
   {
