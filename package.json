@@ -12,6 +12,7 @@
     "@fontsource/geist-sans": "^5.2.5",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
+    "@supabase/supabase-js": "^2.105.3",
     "gray-matter": "^4.0.3",
     "next": "^16.2.3",
     "posthog-js": "^1.372.1",

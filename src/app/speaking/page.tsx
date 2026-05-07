@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
-import HubSpotForm from '@/components/HubSpotForm'
+import InquiryForm from '@/components/InquiryForm'
 import { speakingTopics, speakingFormats } from '@/lib/page-data'
 
 export const metadata: Metadata = {
@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   },
 }
 
-const SPEAKING_FORM_ID = '56ffe32f-432f-48a5-9949-6f14d3ec53ee'
 
 const speakingServiceJsonLd = {
   '@context': 'https://schema.org',
@@ -168,7 +167,12 @@ export default function SpeakingPage() {
             <p className="text-parchment/60 mb-10 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               Tell me about your event — the audience, the moment, what you&apos;re hoping to open. If there&apos;s a fit, we&apos;ll figure out the next step.
             </p>
-            <HubSpotForm formId={SPEAKING_FORM_ID} />
+            <InquiryForm
+              formName="lanebelone-speaking"
+              placeholders={{
+                message: 'About your event: audience, moment, what you are hoping to open',
+              }}
+            />
           </div>
         </SectionReveal>
       </section>

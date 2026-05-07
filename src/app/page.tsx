@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
-import HubSpotForm from '@/components/HubSpotForm'
+import NewsletterForm from '@/components/NewsletterForm'
+import InquiryForm from '@/components/InquiryForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
 import { happeningNow, books, sqhqChips } from '@/lib/page-data'
@@ -13,8 +14,6 @@ export const metadata: Metadata = {
   },
 }
 
-const CONTACT_FORM_ID = 'eddc876e-e15f-419f-af48-7506a8767fcc'
-const NEWSLETTER_FORM_ID = 'be6f8412-8e52-4571-94f9-197ff18f9f90'
 
 const websiteJsonLd = {
   '@context': 'https://schema.org',
@@ -613,7 +612,7 @@ export default function HomePage() {
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
                 Personal updates and fresh ideas. No filler.
               </p>
-              <HubSpotForm formId={NEWSLETTER_FORM_ID} />
+              <NewsletterForm />
             </div>
           </div>
           <div className="bezel-card">
@@ -624,7 +623,12 @@ export default function HomePage() {
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
                 Whether it&rsquo;s about writing, speaking or something else entirely, reach out. I read every message.
               </p>
-              <HubSpotForm formId={CONTACT_FORM_ID} />
+              <InquiryForm
+                formName="lanebelone-contact"
+                placeholders={{
+                  message: 'A few lines about what brings you here',
+                }}
+              />
             </div>
           </div>
         </SectionReveal>
