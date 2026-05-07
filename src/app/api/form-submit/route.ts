@@ -1,6 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { lookupNativeFormConfig } from '@/lib/form-config'
+import { sendEmail } from '@/lib/email/resend'
+import {
+  newsletterAutoResponse,
+  contactAutoResponse,
+  speakingAutoResponse,
+} from '@/lib/email/templates'
+
+// Form Architecture Codex (canonical pattern; see Council Chamber/Codices)
+// covers the standard for adding any new form across SQHQ, lanebelone and IGOS.
+
+function autoResponseForFormName(formName: string, firstName?: string) {
+  switch (formName) {
+    case 'lanebelone-newsletter':
+      return newsletterAutoResponse(firstName)
+    case 'lanebelone-contact':
+      return contactAutoResponse(firstName)
+    case 'lanebelone-speaking':
+      return speakingAutoResponse(firstName)
+    default:
+      return null
+  }
+}
 
 type SubmitBody = {
   formName: string
@@ -73,15 +95,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, contactUpserted: false, reason: 'no_email' })
   }
 
+  let unsubscribed = false
   try {
     const { data: existing, error: selectErr } = await supabase
       .from('contacts')
-      .select('id, tags, first_name, last_name')
+      .select('id, tags, first_name, last_name, unsubscribed')
       .eq('email', email)
       .maybeSingle()
     if (selectErr) throw selectErr
 
     if (existing) {
+      unsubscribed = existing.unsubscribed === true
       const currentTags: string[] = Array.isArray(existing.tags) ? existing.tags : []
       const tagToAdd = config.contactTag
       const mergedTags = tagToAdd && !currentTags.includes(tagToAdd)
@@ -110,6 +134,23 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     const m = err instanceof Error ? err.message : 'Unknown error'
     console.error('contacts upsert error:', m)
+  }
+
+  if (!unsubscribed) {
+    try {
+      const template = autoResponseForFormName(body.formName, firstName)
+      if (template) {
+        await sendEmail({
+          to: email,
+          subject: template.subject,
+          html: template.html,
+          previewText: template.previewText,
+        })
+      }
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('auto-response send error:', m)
+    }
   }
 
   return NextResponse.json({ ok: true })

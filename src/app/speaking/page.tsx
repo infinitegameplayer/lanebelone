@@ -165,7 +165,7 @@ export default function SpeakingPage() {
               Invite me to speak
             </h2>
             <p className="text-parchment/60 mb-10 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              Tell me about your event — the audience, the moment, what you&apos;re hoping to open. If there&apos;s a fit, we&apos;ll figure out the next step.
+              Tell me about your event. The audience, the moment, what you&apos;re hoping to open. If there&apos;s a fit, we&apos;ll figure out the next step.
             </p>
             <InquiryForm
               formName="lanebelone-speaking"
