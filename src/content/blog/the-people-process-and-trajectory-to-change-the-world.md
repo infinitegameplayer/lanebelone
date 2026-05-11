@@ -125,7 +125,7 @@ By us playing the kind of <strong>infinite game</strong> that feels resonate, ot
 Let’s see how it unfolds.</p><p><br>
 </p><div><h2><strong>Action Steps</strong></h2></div><p>I know this is a little different message than previous editions of the Joyful Sovereignty Weekly. This weeks action step is a call to action for those who want to start a dialog about this topic.</p><p><br>
 I have opened up my schedule to talk with people about this.</p><p><br>
-If you are curious or interested, I invite you to <a href="https://calendly.com/lane-belone/connect" rel="">click this link and setup a time to chat with me</a>.</p><p><br>
+If you are curious or interested, I invite you to <a href="https://cal.com/lanebelone/connect" rel="">click this link and setup a time to chat with me</a>.</p><p><br>
 During our call, we will see where the conversation goes. I will share more in depth on this topic. You can ask any questions you want.</p><p><br>
 It also helps me greatly. Because the more people with different backgrounds and perspectives I talk with, the more holistic and well-rounded view I can develop.</p><p><br>
 Win-win.</p><p><br>

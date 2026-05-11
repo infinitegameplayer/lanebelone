@@ -232,7 +232,7 @@ Because you are reading this, you likely already have a significant list of “p
   <li>Develop a list of new plays you want to experiment with</li>
   <li>Take action on them, test them out, feeling if it resonates with you&nbsp;</li>
   <li>Further develop the game within the game (within yourself)</li>
-</ol><p></p><p>If you’re interested in sharing or even brainstorming, <a href="https://calendly.com/lane-belone/connect" rel="">you can connect with me over zoom</a>.</p><p><br>
+</ol><p></p><p>If you’re interested in sharing or even brainstorming, <a href="https://cal.com/lanebelone/connect" rel="">you can connect with me over zoom</a>.</p><p><br>
 I’d love to hear about your approach.</p><p><br>
 That’s it for this edition of the Joyful Sovereignty Weekly!</p><p><br>
 Wish you a great rest of your day!</p><p><br>
