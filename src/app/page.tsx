@@ -11,6 +11,9 @@ import { happeningNow, books, sqhqChips } from '@/lib/page-data'
 export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.lanebelone.com',
+    types: {
+      'text/markdown': 'https://www.lanebelone.com/markdown',
+    },
   },
 }
 
@@ -23,7 +26,7 @@ const websiteJsonLd = {
   name: 'Lane Belone',
   description:
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
-  publisher: { '@id': 'https://www.lanebelone.com/#person' },
+  publisher: { '@id': 'https://infinitegameos.io/#person' },
   inLanguage: 'en-US',
 }
 
@@ -34,7 +37,7 @@ const profilePageJsonLd = {
   name: 'Lane Belone',
   description:
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
-  mainEntity: { '@id': 'https://www.lanebelone.com/#person' },
+  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
 }
 
 export default function HomePage() {

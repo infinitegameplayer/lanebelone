@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: 'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
   alternates: {
     canonical: 'https://www.lanebelone.com/speaking',
+    types: {
+      'text/markdown': 'https://www.lanebelone.com/markdown/speaking',
+    },
   },
   openGraph: {
     type: 'website',
@@ -35,7 +38,7 @@ const speakingServiceJsonLd = {
   serviceType: 'Speaking, keynotes, workshops, retreats',
   description:
     'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
-  provider: { '@id': 'https://www.lanebelone.com/#person' },
+  provider: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/speaking',
   areaServed: 'Worldwide',
   audience: {

@@ -31,11 +31,6 @@ export const metadata: Metadata = {
     description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
     images: ['/images/lane-machu-picchu-square.webp'],
   },
-  alternates: {
-    types: {
-      'text/markdown': '/llms.txt',
-    },
-  },
   robots: {
     index: true,
     follow: true,
@@ -50,7 +45,7 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://www.lanebelone.com/#person',
+  '@id': 'https://infinitegameos.io/#person',
   name: 'Lane Belone',
   url: 'https://www.lanebelone.com',
   description:
@@ -87,7 +82,7 @@ const orgJsonLd = {
   logo: 'https://www.lanebelone.com/images/lane-belone-icon-color.png',
   founder: {
     '@type': 'Person',
-    '@id': 'https://www.lanebelone.com/#person',
+    '@id': 'https://infinitegameos.io/#person',
     name: 'Lane Belone',
   },
   sameAs: [

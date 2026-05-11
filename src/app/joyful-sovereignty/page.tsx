@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: JS_DESCRIPTION,
   alternates: {
     canonical: 'https://www.lanebelone.com/joyful-sovereignty',
+    types: {
+      'text/markdown': 'https://www.lanebelone.com/markdown/joyful-sovereignty',
+    },
   },
   openGraph: {
     type: 'website',

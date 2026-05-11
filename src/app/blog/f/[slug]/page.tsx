@@ -27,6 +27,9 @@ export async function generateMetadata({
     description: post.description,
     alternates: {
       canonical: `https://www.lanebelone.com/blog/f/${slug}`,
+      types: {
+        'text/markdown': `https://www.lanebelone.com/markdown/blog/f/${slug}`,
+      },
     },
     openGraph: {
       siteName: 'Lane Belone',
@@ -78,7 +81,7 @@ export default async function BlogPostPage({
     inLanguage: 'en-US',
     author: {
       '@type': 'Person',
-      '@id': 'https://www.lanebelone.com/#person',
+      '@id': 'https://infinitegameos.io/#person',
       name: post.author ?? 'Lane Belone',
       url: post.authorUrl ?? 'https://www.lanebelone.com',
     },

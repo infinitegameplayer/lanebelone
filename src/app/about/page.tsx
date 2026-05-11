@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: LANE_BIO,
   alternates: {
     canonical: 'https://www.lanebelone.com/about',
+    types: {
+      'text/markdown': 'https://www.lanebelone.com/markdown/about',
+    },
   },
   openGraph: {
     type: 'website',

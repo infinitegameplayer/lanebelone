@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: 'Essays and articles by Lane Belone on the infinite game, clearer perception and the art of living freely.',
   alternates: {
     canonical: 'https://www.lanebelone.com/blog',
+    types: {
+      'text/markdown': 'https://www.lanebelone.com/markdown/blog',
+    },
   },
   openGraph: {
     type: 'website',
@@ -36,7 +39,7 @@ export default function BlogIndexPage() {
     url: 'https://www.lanebelone.com/blog',
     name: 'Lane Belone — Writing',
     description: 'Essays on the infinite game, sovereignty, flow and perception.',
-    author: { '@id': 'https://www.lanebelone.com/#person' },
+    author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': 'https://www.lanebelone.com/#organization' },
   }
 

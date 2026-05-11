@@ -39,6 +39,9 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: OAI-AdsBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
@@ -60,6 +63,9 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
 User-agent: Amazonbot
 Allow: /
 
@@ -67,6 +73,12 @@ User-agent: Google-NotebookLM
 Allow: /
 
 User-agent: GoogleAgent-Mariner
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: MSNBot
 Allow: /
 
 # Search engines — exclude /markdown/ (AI-agent surface) to prevent duplicate
