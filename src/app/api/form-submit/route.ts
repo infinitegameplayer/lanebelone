@@ -4,7 +4,6 @@ import { lookupNativeFormConfig } from '@/lib/form-config'
 import { sendEmail } from '@/lib/email/resend'
 import { applyNewsletterOptIn } from '@/lib/newsletter'
 import {
-  newsletterAutoResponse,
   contactAutoResponse,
   speakingAutoResponse,
 } from '@/lib/email/templates'
@@ -14,13 +13,14 @@ import {
 
 function autoResponseForFormName(formName: string, firstName?: string) {
   switch (formName) {
-    case 'lanebelone-newsletter':
-      return newsletterAutoResponse(firstName)
     case 'lanebelone-contact':
       return contactAutoResponse(firstName)
     case 'lanebelone-speaking':
       return speakingAutoResponse(firstName)
     default:
+      // lanebelone-newsletter intentionally has no auto-response.
+      // The newsletter welcome email from applyNewsletterOptIn is the
+      // single canonical confirmation for that path.
       return null
   }
 }
