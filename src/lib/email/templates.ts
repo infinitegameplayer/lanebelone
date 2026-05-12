@@ -4,7 +4,6 @@
 // unsubscribed=true. See Form Architecture Codex for the canonical pattern.
 
 const ACCENT = '#c9a84c'
-const MUTED = 'rgba(245,240,232,0.45)'
 
 function p(text: string, style = '') {
   return `<p style="margin:0 0 16px 0;${style}">${text}</p>`
@@ -46,10 +45,8 @@ ${signoff()}
 
 export function newsletterWelcomeEmail({
   firstName,
-  unsubscribeUrl,
 }: {
   firstName?: string
-  unsubscribeUrl: string
 }) {
   const opening = firstName && firstName.trim().length > 0
     ? `Howdy, ${firstName.trim()}.`
@@ -65,7 +62,6 @@ ${p(`Two things to do real quick. Save ${bold('howdy@lanebelone.com')} to your c
 ${p("No schedule. I send when there's something worth sending. Quiet stretches are part of the design (that's what I tell myself lol).")}
 ${p('Good to be in touch.')}
 ${welcomeSignoff()}
-${p(`<a href="${unsubscribeUrl}" style="color:${MUTED};font-size:12px;text-decoration:underline">unsubscribe</a>`, `margin-top:32px;font-size:12px;color:${MUTED}`)}
 `,
   }
 }

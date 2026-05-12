@@ -2,7 +2,14 @@
 
 import { useEffect, useState } from 'react'
 
-type Status = 'idle' | 'pending' | 'success' | 'invalid' | 'error'
+type Status =
+  | 'idle'
+  | 'pending'
+  | 'success'
+  | 'resubscribing'
+  | 'resubscribed'
+  | 'invalid'
+  | 'error'
 
 export default function UnsubscribeClient({ email, token }: { email: string; token: string }) {
   const [status, setStatus] = useState<Status>('idle')
@@ -24,7 +31,7 @@ export default function UnsubscribeClient({ email, token }: { email: string; tok
         const data = await res.json().catch(() => ({}))
         if (res.ok) {
           setStatus('success')
-          setMessage(`You are unsubscribed. No more emails to ${email}.`)
+          setMessage(`You're unsubscribed. No more emails to ${email}.`)
         } else if (res.status === 403) {
           setStatus('invalid')
           setMessage("This link couldn't be verified. If you copied it from an email, try clicking it directly instead.")
@@ -39,10 +46,77 @@ export default function UnsubscribeClient({ email, token }: { email: string; tok
       })
   }, [email, token])
 
+  const handleResubscribe = async () => {
+    if (status !== 'success') return
+    setStatus('resubscribing')
+    try {
+      const res = await fetch('/api/newsletter/resubscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, token }),
+      })
+      if (res.ok) {
+        setStatus('resubscribed')
+        setMessage(`You're back in. No new welcome email, just picking up where we left off.`)
+      } else {
+        const data = await res.json().catch(() => ({}))
+        setStatus('error')
+        setMessage(typeof data?.error === 'string' ? data.error : 'Resubscribe failed. Please try again.')
+      }
+    } catch {
+      setStatus('error')
+      setMessage('Network error. Please try again.')
+    }
+  }
+
   return (
-    <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'rgba(245,240,232,0.85)' }}>
-      {status === 'pending' && 'Unsubscribing...'}
-      {(status === 'success' || status === 'invalid' || status === 'error') && message}
-    </p>
+    <div style={{ fontFamily: 'Georgia, serif', color: 'rgba(245,240,232,0.85)' }}>
+      <p style={{ fontSize: '1.05rem', lineHeight: 1.7, margin: 0 }}>
+        {status === 'pending' && 'Unsubscribing...'}
+        {status === 'resubscribing' && 'Bringing you back...'}
+        {(status === 'success' ||
+          status === 'resubscribed' ||
+          status === 'invalid' ||
+          status === 'error') && message}
+      </p>
+
+      {status === 'success' && (
+        <div style={{ marginTop: '2rem' }}>
+          <p
+            style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.6,
+              color: 'rgba(245,240,232,0.6)',
+              marginBottom: '1rem',
+            }}
+          >
+            If that was a mistake, one tap puts you back in.
+          </p>
+          <button
+            type="button"
+            onClick={handleResubscribe}
+            style={{
+              display: 'inline-block',
+              backgroundImage:
+                'linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%)',
+              backgroundSize: '220% 100%',
+              backgroundPosition: 'right center',
+              color: '#0f1a12',
+              fontFamily: "'Inter', system-ui, sans-serif",
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              letterSpacing: '0.07em',
+              textTransform: 'uppercase',
+              padding: '0.75rem 1.75rem',
+              borderRadius: '8px',
+              border: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            Resubscribe
+          </button>
+        </div>
+      )}
+    </div>
   )
 }

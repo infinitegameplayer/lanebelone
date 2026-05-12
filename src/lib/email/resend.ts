@@ -10,11 +10,15 @@ interface SendEmailOptions {
   subject: string
   html: string
   previewText?: string
+  // When provided, renders a "one-click unsubscribe" link in the email
+  // footer next to the brand line. Used by the personal-list welcome email
+  // and any future opt-in-based send that needs a manual unsubscribe surface.
+  unsubscribeUrl?: string
 }
 
-export async function sendEmail({ to, subject, html, previewText }: SendEmailOptions) {
+export async function sendEmail({ to, subject, html, previewText, unsubscribeUrl }: SendEmailOptions) {
   const resend = getResend()
-  const fullHtml = buildEmailHtml({ subject, html, previewText })
+  const fullHtml = buildEmailHtml({ subject, html, previewText, unsubscribeUrl })
 
   const { data, error } = await resend.emails.send({
     from: FROM,
@@ -33,13 +37,18 @@ export async function sendEmail({ to, subject, html, previewText }: SendEmailOpt
 function buildEmailHtml({
   html,
   previewText,
+  unsubscribeUrl,
 }: {
   subject: string
   html: string
   previewText?: string
+  unsubscribeUrl?: string
 }) {
   const preview = previewText
     ? `<div style="display:none;max-height:0;overflow:hidden;mso-hide:all">${previewText}</div>`
+    : ''
+  const unsubscribeFragment = unsubscribeUrl
+    ? ` &middot; <a href="${unsubscribeUrl}" style="color:rgba(201,168,76,0.6);text-decoration:none">one-click unsubscribe</a>`
     : ''
 
   // Lanebelone palette: dark with gold accent. Mirrors the visual register of
@@ -64,7 +73,7 @@ function buildEmailHtml({
           <tr>
             <td style="padding-top:40px;border-top:1px solid rgba(245,240,232,0.07)">
               <p style="margin:0;font-size:13px;color:rgba(245,240,232,0.3);font-family:Arial,sans-serif">
-                Lane Belone &middot; <a href="https://lanebelone.com" style="color:rgba(201,168,76,0.6);text-decoration:none">lanebelone.com</a>
+                Lane Belone &middot; <a href="https://lanebelone.com" style="color:rgba(201,168,76,0.6);text-decoration:none">lanebelone.com</a>${unsubscribeFragment}
               </p>
             </td>
           </tr>

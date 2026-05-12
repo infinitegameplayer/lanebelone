@@ -146,12 +146,13 @@ export async function applyNewsletterOptIn({
     try {
       const token = signEmailToken(normalizedEmail)
       const unsubUrl = `https://lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
-      const template = newsletterWelcomeEmail({ firstName, unsubscribeUrl: unsubUrl })
+      const template = newsletterWelcomeEmail({ firstName })
       await sendEmail({
         to: normalizedEmail,
         subject: template.subject,
         html: template.html,
         previewText: template.previewText,
+        unsubscribeUrl: unsubUrl,
       })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
