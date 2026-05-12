@@ -81,41 +81,55 @@ export default function UnsubscribeClient({ email, token }: { email: string; tok
       </p>
 
       {status === 'success' && (
-        <div style={{ marginTop: '2rem' }}>
+        <>
           <p
             style={{
-              fontSize: '0.95rem',
-              lineHeight: 1.6,
-              color: 'rgba(245,240,232,0.6)',
-              marginBottom: '1rem',
+              fontSize: '1.05rem',
+              lineHeight: 1.7,
+              color: 'rgba(245,240,232,0.7)',
+              marginTop: '1.75rem',
+              marginBottom: 0,
+              fontStyle: 'italic',
             }}
           >
-            If that was a mistake, one tap puts you back in.
+            Travel well from here. Wish you enjoyment on your journey. If our paths cross again, I&apos;m sure it&apos;ll be great lol.
           </p>
-          <button
-            type="button"
-            onClick={handleResubscribe}
-            style={{
-              display: 'inline-block',
-              backgroundImage:
-                'linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%)',
-              backgroundSize: '220% 100%',
-              backgroundPosition: 'right center',
-              color: '#0f1a12',
-              fontFamily: "'Inter', system-ui, sans-serif",
-              fontSize: '0.875rem',
-              fontWeight: 500,
-              letterSpacing: '0.07em',
-              textTransform: 'uppercase',
-              padding: '0.75rem 1.75rem',
-              borderRadius: '8px',
-              border: 'none',
-              cursor: 'pointer',
-            }}
-          >
-            Resubscribe
-          </button>
-        </div>
+          <div style={{ marginTop: '2.5rem' }}>
+            <p
+              style={{
+                fontSize: '0.95rem',
+                lineHeight: 1.6,
+                color: 'rgba(245,240,232,0.55)',
+                marginBottom: '1rem',
+              }}
+            >
+              Didn&apos;t mean to part ways just yet? Resubscribing is as easy as a click.
+            </p>
+            <button
+              type="button"
+              onClick={handleResubscribe}
+              style={{
+                display: 'inline-block',
+                backgroundImage:
+                  'linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%)',
+                backgroundSize: '220% 100%',
+                backgroundPosition: 'right center',
+                color: '#0f1a12',
+                fontFamily: "'Inter', system-ui, sans-serif",
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                letterSpacing: '0.07em',
+                textTransform: 'uppercase',
+                padding: '0.75rem 1.75rem',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              Resubscribe
+            </button>
+          </div>
+        </>
       )}
     </div>
   )
