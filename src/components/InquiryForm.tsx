@@ -12,6 +12,10 @@ type InquiryFormProps = {
   }
   submitLabel?: string
   successMessage?: string
+  // Render the "Also keep in touch" newsletter consent checkbox. Defaults
+  // true for inquiry-form contexts. Pass false on surfaces that should not
+  // offer the personal-list opt-in.
+  showNewsletterConsent?: boolean
 }
 
 const inputStyle: React.CSSProperties = {
@@ -58,11 +62,13 @@ export default function InquiryForm({
   placeholders,
   submitLabel = 'Send',
   successMessage = 'Message received. I read every one and will reply if there is resonance.',
+  showNewsletterConsent = true,
 }: InquiryFormProps) {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [newsletterConsent, setNewsletterConsent] = useState(false)
   const [website, setWebsite] = useState('')
   const [openedAt] = useState(() => Date.now())
   const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
@@ -114,6 +120,7 @@ export default function InquiryForm({
           lastName: lastName.trim() || undefined,
           email: email.trim(),
           message: message.trim(),
+          newsletterConsent: showNewsletterConsent ? newsletterConsent : false,
           honeypot: website,
           openedAt,
         }),
@@ -179,6 +186,36 @@ export default function InquiryForm({
         onChange={(e) => setMessage(e.target.value)}
         style={{ ...inputStyle, marginBottom: '1rem', minHeight: '90px', resize: 'vertical', fontFamily: 'inherit' }}
       />
+      {showNewsletterConsent && (
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '0.65rem',
+            marginBottom: '1.25rem',
+            fontFamily: 'Georgia, serif',
+            fontSize: '0.95rem',
+            lineHeight: 1.55,
+            color: 'rgba(245,240,232,0.78)',
+            cursor: 'pointer',
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={newsletterConsent}
+            onChange={(e) => setNewsletterConsent(e.target.checked)}
+            style={{
+              marginTop: '0.32rem',
+              accentColor: '#c8973a',
+              cursor: 'pointer',
+              flexShrink: 0,
+            }}
+          />
+          <span>
+            Also keep in touch. I send updates when there's something worth sending. Mostly what's most alive for me, a little personal, the kind of thing that might support you.
+          </span>
+        </label>
+      )}
       <input
         className="kingdom-form-honeypot"
         type="text"

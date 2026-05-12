@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { lookupNativeFormConfig } from '@/lib/form-config'
 import { sendEmail } from '@/lib/email/resend'
+import { applyNewsletterOptIn } from '@/lib/newsletter'
 import {
   newsletterAutoResponse,
   contactAutoResponse,
@@ -30,6 +31,9 @@ type SubmitBody = {
   firstName?: string
   lastName?: string
   message?: string
+  // Explicit newsletter consent. Honored only when form-config declares
+  // newsletterOptIn: 'explicit-checkbox'.
+  newsletterConsent?: boolean
   honeypot?: string
   openedAt?: number
 }
@@ -150,6 +154,27 @@ export async function POST(req: NextRequest) {
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
       console.error('auto-response send error:', m)
+    }
+  }
+
+  // Newsletter opt-in. Fires after the auto-response so the form's own
+  // confirmation email lands first and the welcome email lands second.
+  // The helper owns the distillation_subscriber tag, the Resend audience
+  // add and the welcome email.
+  const shouldOptIn =
+    config.newsletterOptIn === 'implicit' ||
+    (config.newsletterOptIn === 'explicit-checkbox' && body.newsletterConsent === true)
+  if (shouldOptIn && !unsubscribed) {
+    try {
+      await applyNewsletterOptIn({
+        email,
+        firstName,
+        lastName,
+        source: `form:${body.formName}`,
+      })
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('newsletter opt-in error:', m)
     }
   }
 

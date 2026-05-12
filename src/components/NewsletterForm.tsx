@@ -109,7 +109,7 @@ export default function NewsletterForm() {
   if (status === 'submitted') {
     return (
       <div style={{ color: '#f5d88a', fontSize: '0.95rem', lineHeight: 1.6, padding: '1rem 0' }}>
-        Subscribed. Watch for the next Distillation in your inbox.
+        Good to be in touch. Howdy from Lane is landing in your inbox now.
       </div>
     )
   }
