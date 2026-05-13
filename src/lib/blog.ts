@@ -52,6 +52,7 @@ export const LIVE_SLUGS: string[] = [
   'the-infinite-game-is-already-in-progress',
   'the-architecture-and-the-music',
   'the-game-i-was-already-playing',
+  'the-charter-jarvis-and-i-wrote',
 ]
 
 // Combined set used for static generation and URL resolution.
