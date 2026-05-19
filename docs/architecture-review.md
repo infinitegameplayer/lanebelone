@@ -8,7 +8,7 @@ _Generated: 2026-04-10_
 | Path | Purpose |
 |------|---------|
 | `src/app/layout.tsx` | Root layout: fonts, global OG/Twitter/JSON-LD metadata, Nav, Footer, ShootingStars, HubSpot script loader |
-| `src/app/page.tsx` | Home page: split-layout hero, three-path grid, books, about teaser, SQHQ section, "Happening Now" event card, Distillation newsletter form, Connect form |
+| `src/app/page.tsx` | Home page: split-layout hero, three-path grid, books, about teaser, SQHQ section, "Happening Now" event card, Personal newsletter form, Connect form |
 | `src/app/about/page.tsx` | Bio and background page |
 | `src/app/blog/page.tsx` | Blog index: grid of BlogCards from getAllPosts() |
 | `src/app/blog/f/[slug]/page.tsx` | Blog post: static generation from CARRY_FORWARD_SLUGS, markdown rendered via dangerouslySetInnerHTML |

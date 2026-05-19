@@ -1,14 +1,14 @@
-// Unsubscribe handler for the personal-list welcome email and any future
-// transactional surface that needs a manual unsubscribe link. Verifies
-// the HMAC token, sets unsubscribed=true on the contact, and clears the
-// distillation_subscriber tag from the Resend audience.
+// Unsubscribe handler for the Personal newsletter welcome email and any
+// future transactional surface that needs a manual unsubscribe link.
+// Verifies the HMAC token, sets unsubscribed=true on the contact, and
+// clears the personal_subscriber tag from the Resend audience.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { verifyEmailToken } from '@/lib/unsubscribe-token'
 
-const AUDIENCE_NAME = 'The Distillation'
+const AUDIENCE_NAME = 'Personal'
 
 export async function POST(req: NextRequest) {
   let body: { email?: string; token?: string }
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
   // Best-effort Resend audience suppression. Do not block on failure.
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    const audienceId = process.env.RESEND_AUDIENCE_DISTILLATION_ID || (await resolveAudienceIdByName(resend))
+    const audienceId = process.env.RESEND_AUDIENCE_PERSONAL_ID || (await resolveAudienceIdByName(resend))
     if (audienceId) {
       await resend.contacts.update({
         audienceId,

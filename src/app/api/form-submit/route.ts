@@ -159,7 +159,7 @@ export async function POST(req: NextRequest) {
 
   // Newsletter opt-in. Fires after the auto-response so the form's own
   // confirmation email lands first and the welcome email lands second.
-  // The helper owns the distillation_subscriber tag, the Resend audience
+  // The helper owns the personal_subscriber tag, the Resend audience
   // add and the welcome email.
   const shouldOptIn =
     config.newsletterOptIn === 'implicit' ||

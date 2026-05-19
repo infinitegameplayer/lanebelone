@@ -10,7 +10,7 @@ export type NativeFormConfig = {
   //   'implicit'         — calling the form is the consent. Helper fires on every submit.
   //   'explicit-checkbox'— helper fires only when submitBody.newsletterConsent === true.
   //   undefined          — form has no newsletter opt-in surface.
-  // The applyNewsletterOptIn helper owns the distillation_subscriber tag,
+  // The applyNewsletterOptIn helper owns the personal_subscriber tag,
   // Resend audience add and welcome email.
   newsletterOptIn?: 'implicit' | 'explicit-checkbox'
   allowedOrigins: string[]

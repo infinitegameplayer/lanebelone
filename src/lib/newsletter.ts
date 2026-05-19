@@ -24,14 +24,14 @@ export type OptInResult = {
   error?: string
 }
 
-const TAG = 'distillation_subscriber'
-const AUDIENCE_NAME = 'The Distillation'
+const TAG = 'personal_subscriber'
+const AUDIENCE_NAME = 'Personal'
 
 let cachedAudienceId: string | null = null
 
 async function resolveAudienceId(resend: Resend): Promise<string | null> {
   if (cachedAudienceId) return cachedAudienceId
-  const overrideId = process.env.RESEND_AUDIENCE_DISTILLATION_ID
+  const overrideId = process.env.RESEND_AUDIENCE_PERSONAL_ID
   if (overrideId) {
     cachedAudienceId = overrideId
     return cachedAudienceId

@@ -53,7 +53,7 @@ Portal: `23478458`. Script loads once in `layout.tsx` — do not add it again on
 
 | Form | ID | Location |
 |---|---|---|
-| Newsletter / Distillation | `be6f8412-8e52-4571-94f9-197ff18f9f90` | Homepage |
+| Newsletter / Personal | `be6f8412-8e52-4571-94f9-197ff18f9f90` | Homepage |
 | Contact | `eddc876e-e15f-419f-af48-7506a8767fcc` | Homepage #connect |
 | Speaking inquiry | `56ffe32f-432f-48a5-9949-6f14d3ec53ee` | /speaking #speak |
 

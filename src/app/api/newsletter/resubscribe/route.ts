@@ -8,8 +8,8 @@ import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { verifyEmailToken } from '@/lib/unsubscribe-token'
 
-const TAG = 'distillation_subscriber'
-const AUDIENCE_NAME = 'The Distillation'
+const TAG = 'personal_subscriber'
+const AUDIENCE_NAME = 'Personal'
 
 export async function POST(req: NextRequest) {
   let body: { email?: string; token?: string }
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
   // Best-effort Resend audience un-suppression. Do not block on failure.
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    const audienceId = process.env.RESEND_AUDIENCE_DISTILLATION_ID || (await resolveAudienceIdByName(resend))
+    const audienceId = process.env.RESEND_AUDIENCE_PERSONAL_ID || (await resolveAudienceIdByName(resend))
     if (audienceId) {
       await resend.contacts.update({
         audienceId,
