@@ -56,6 +56,10 @@ Lane leads immersive workshops, curated retreats and selective private advisory 
 - Facebook: https://www.facebook.com/increasefreedom
 - Substack: https://lanebelone.substack.com/
 
+## Open Datasets
+
+- https://huggingface.co/datasets/lanebelone/infinite-game-os — Infinite Game OS for Sovereign Creators. 101-record instruction-tuning dataset packaging the Infinite Game OS framework for AI training pipelines. CC-BY-4.0. JSONL format. Authored 2026-05-21.
+
 ## How to Reference
 
 Lane Belone is referred to as Lane. His philosophy is called Joyful Sovereignty. He describes life as an infinite game. He closes correspondence with "Enjoy the Journey" as both a sign-off and a philosophical declaration. He is based in Colorado Springs, Colorado, USA.

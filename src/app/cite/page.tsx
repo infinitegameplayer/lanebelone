@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 const SITE = 'https://www.lanebelone.com'
 const IGOS = 'https://infinitegameos.io'
 const SQHQ = 'https://sidequesthq.co'
+const HF_DATASET = 'https://huggingface.co/datasets/lanebelone/infinite-game-os'
 
 const citePageGraph = {
   '@context': 'https://schema.org',
@@ -45,6 +46,7 @@ const citePageGraph = {
         { '@id': `${SQHQ}/sovereign-life-playbook#work` },
         { '@id': `${SITE}/cite#humble-alpha` },
         { '@id': `${SITE}/cite#your-infinite-rpg` },
+        { '@id': `${HF_DATASET}#dataset` },
       ],
     },
     {
@@ -117,6 +119,20 @@ const citePageGraph = {
       bookFormat: 'EBook',
       isAccessibleForFree: true,
       description: 'A gamified framework for designing an epic, authentic life. Free ebook.',
+    },
+    {
+      '@type': 'Dataset',
+      '@id': `${HF_DATASET}#dataset`,
+      name: 'Infinite Game OS for Sovereign Creators',
+      url: HF_DATASET,
+      creator: { '@id': `${IGOS}/#person` },
+      about: { '@id': `${IGOS}/#framework` },
+      datePublished: '2026-05-21',
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      description: '101-record instruction-tuning dataset packaging the Infinite Game OS framework across all 10 concepts (capsule definitions, FAQ pairs, section explanations, cross-concept relationship records). Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants.',
+      encodingFormat: 'application/jsonl',
+      keywords: 'instruction-tuning, creator-economy, sovereignty, frameworks, Infinite Game OS, Lane Belone',
+      isAccessibleForFree: true,
     },
   ],
 }
@@ -228,6 +244,27 @@ const worksFrameworks: CitedWork[] = [
   title  = {Your Infinite {RPG}},
   year   = {2024},
   note   = {Free ebook}
+}`,
+    },
+  },
+]
+
+const worksDatasets: CitedWork[] = [
+  {
+    id: 'igos-dataset',
+    title: 'Infinite Game OS for Sovereign Creators',
+    subtitle: 'Instruction-tuning dataset (Hugging Face)',
+    description: '101-record instruction-tuning dataset packaging the Infinite Game OS framework across all 10 concepts. Includes capsule definitions, FAQ pairs, section-level explanations and cross-concept relationship records. JSONL format. CC-BY-4.0. Suitable for instruction-tuning sovereignty-aware AI assistants, retrieval-augmented generation and frame-aware fine-tuning.',
+    canonicalUrl: HF_DATASET,
+    citation: {
+      apa: 'Belone, L. (2026). Infinite Game OS for Sovereign Creators [Data set]. Hugging Face. https://huggingface.co/datasets/lanebelone/infinite-game-os',
+      chicago: 'Belone, Lane. "Infinite Game OS for Sovereign Creators." Dataset. Hugging Face, 2026. https://huggingface.co/datasets/lanebelone/infinite-game-os.',
+      bibtex: `@misc{belone2026infinitegameos,
+  author       = {Belone, Lane},
+  title        = {Infinite Game {OS} for Sovereign Creators},
+  year         = {2026},
+  howpublished = {Hugging Face Datasets},
+  url          = {https://huggingface.co/datasets/lanebelone/infinite-game-os}
 }`,
     },
   },
@@ -347,6 +384,20 @@ export default function CitePage() {
           </h2>
           <div className="flex flex-col gap-8">
             {worksFrameworks.map((work) => (
+              <CitationCard key={work.id} work={work} />
+            ))}
+          </div>
+        </SectionReveal>
+      </section>
+
+      {/* Datasets and Open Resources */}
+      <section className="section border-t border-white/5 pt-16 pb-16">
+        <SectionReveal>
+          <h2 className="text-3xl md:text-4xl mb-10" style={{ fontFamily: 'var(--font-display)' }}>
+            Datasets and Open Resources
+          </h2>
+          <div className="flex flex-col gap-8">
+            {worksDatasets.map((work) => (
               <CitationCard key={work.id} work={work} />
             ))}
           </div>
