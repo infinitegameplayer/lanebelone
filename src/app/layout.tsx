@@ -71,6 +71,17 @@ const personJsonLd = {
     'https://www.facebook.com/increasefreedom',
     'https://lanebelone.substack.com/',
   ],
+  image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
+  alumniOf: {
+    '@type': 'Organization',
+    name: 'U.S. Army Special Forces',
+    sameAs: 'https://en.wikipedia.org/wiki/United_States_Army_Special_Forces',
+  },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    name: 'Special Forces Qualification (Green Beret)',
+    credentialCategory: 'military qualification',
+  },
 }
 
 const orgJsonLd = {
