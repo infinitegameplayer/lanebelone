@@ -6,7 +6,15 @@ import NewsletterForm from '@/components/NewsletterForm'
 import InquiryForm from '@/components/InquiryForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
-import { happeningNow, books, sqhqChips } from '@/lib/page-data'
+import {
+  happeningNow,
+  books,
+  sqhqChips,
+  aiForBusinessFrame,
+  aiBusinessArc,
+  aiPersonalArc,
+  aiBundles,
+} from '@/lib/page-data'
 
 export const metadata: Metadata = {
   alternates: {
@@ -325,7 +333,325 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 5 — Recent Writing */}
+      {/* 5 — AI for Business */}
+      <section className="section">
+        <SectionReveal>
+          <div className="section-label">— AI for Business —</div>
+        </SectionReveal>
+        <SectionReveal>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '1.05rem',
+              lineHeight: 1.75,
+              color: 'var(--color-text-muted)',
+              maxWidth: '36em',
+              marginBottom: '3rem',
+            }}
+          >
+            {aiForBusinessFrame} A six-product slate of sub-$10 guides. Three for the business arc. Three for the personal arc. Built around the questions productivity AI skips.
+          </p>
+        </SectionReveal>
+
+        {/* Business Arc — Wave 1 */}
+        <SectionReveal>
+          <div
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.68rem',
+              fontWeight: 500,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: 'var(--color-gold)',
+              marginBottom: '1.25rem',
+            }}
+          >
+            Business Arc
+          </div>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {aiBusinessArc.map((card) => {
+            const isLive = card.status === 'live'
+            const cardInner = (
+              <div className="bezel-card flex flex-col h-full">
+                <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
+                  <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.6rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.14em',
+                        textTransform: 'uppercase',
+                        color: 'var(--color-accent-hover)',
+                      }}
+                    >
+                      {card.price}
+                    </span>
+                    {!isLive && (
+                      <span
+                        style={{
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '0.55rem',
+                          letterSpacing: '0.12em',
+                          textTransform: 'uppercase',
+                          color: 'var(--color-text-muted)',
+                          padding: '0.18rem 0.5rem',
+                          border: '1px solid var(--color-border-subtle)',
+                          borderRadius: '3px',
+                        }}
+                      >
+                        Coming soon
+                      </span>
+                    )}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '1.05rem',
+                      fontWeight: 600,
+                      letterSpacing: '-0.01em',
+                      lineHeight: 1.25,
+                      marginBottom: '0.4rem',
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.85rem',
+                      lineHeight: 1.55,
+                      color: 'var(--color-text-muted)',
+                      margin: 0,
+                    }}
+                  >
+                    {card.oneLiner}
+                  </p>
+                </div>
+              </div>
+            )
+            return isLive ? (
+              <a
+                key={card.title}
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                {cardInner}
+              </a>
+            ) : (
+              <div key={card.title}>{cardInner}</div>
+            )
+          })}
+        </SectionReveal>
+
+        {/* Personal Arc — Wave 2 */}
+        <SectionReveal>
+          <div
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.68rem',
+              fontWeight: 500,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: 'var(--color-gold)',
+              marginTop: '2.5rem',
+              marginBottom: '1.25rem',
+            }}
+          >
+            Personal Arc
+          </div>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {aiPersonalArc.map((card) => {
+            const isLive = card.status === 'live'
+            const cardInner = (
+              <div className="bezel-card flex flex-col h-full">
+                <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
+                  <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.6rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.14em',
+                        textTransform: 'uppercase',
+                        color: 'var(--color-accent-hover)',
+                      }}
+                    >
+                      {card.price}
+                    </span>
+                    {!isLive && (
+                      <span
+                        style={{
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '0.55rem',
+                          letterSpacing: '0.12em',
+                          textTransform: 'uppercase',
+                          color: 'var(--color-text-muted)',
+                          padding: '0.18rem 0.5rem',
+                          border: '1px solid var(--color-border-subtle)',
+                          borderRadius: '3px',
+                        }}
+                      >
+                        Coming soon
+                      </span>
+                    )}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '1.05rem',
+                      fontWeight: 600,
+                      letterSpacing: '-0.01em',
+                      lineHeight: 1.25,
+                      marginBottom: '0.4rem',
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.85rem',
+                      lineHeight: 1.55,
+                      color: 'var(--color-text-muted)',
+                      margin: 0,
+                    }}
+                  >
+                    {card.oneLiner}
+                  </p>
+                </div>
+              </div>
+            )
+            return isLive ? (
+              <a
+                key={card.title}
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                {cardInner}
+              </a>
+            ) : (
+              <div key={card.title}>{cardInner}</div>
+            )
+          })}
+        </SectionReveal>
+
+        {/* Bundles */}
+        <SectionReveal>
+          <div
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.68rem',
+              fontWeight: 500,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: 'var(--color-gold)',
+              marginTop: '2.5rem',
+              marginBottom: '1.25rem',
+            }}
+          >
+            Bundles
+          </div>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {aiBundles.map((card) => {
+            const isLive = card.status === 'live'
+            const cardInner = (
+              <div className="bezel-card flex flex-col h-full">
+                <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
+                  <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.6rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.14em',
+                        textTransform: 'uppercase',
+                        color: 'var(--color-gold)',
+                      }}
+                    >
+                      {card.bundlePrice} · {card.savings}
+                    </span>
+                    {!isLive && (
+                      <span
+                        style={{
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '0.55rem',
+                          letterSpacing: '0.12em',
+                          textTransform: 'uppercase',
+                          color: 'var(--color-text-muted)',
+                          padding: '0.18rem 0.5rem',
+                          border: '1px solid var(--color-border-subtle)',
+                          borderRadius: '3px',
+                        }}
+                      >
+                        Coming soon
+                      </span>
+                    )}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '1.05rem',
+                      fontWeight: 600,
+                      letterSpacing: '-0.01em',
+                      lineHeight: 1.25,
+                      marginBottom: '0.4rem',
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.85rem',
+                      lineHeight: 1.55,
+                      color: 'var(--color-text-muted)',
+                      margin: 0,
+                    }}
+                  >
+                    {card.oneLiner}
+                  </p>
+                </div>
+              </div>
+            )
+            return isLive ? (
+              <a
+                key={card.title}
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                {cardInner}
+              </a>
+            ) : (
+              <div key={card.title}>{cardInner}</div>
+            )
+          })}
+        </SectionReveal>
+
+        <SectionReveal className="text-right mt-8">
+          <a
+            href="https://sidequesthq.co/products"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+          >
+            See the slate on Side Quest HQ &rarr;
+          </a>
+        </SectionReveal>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* 6 — Recent Writing */}
       <section className="section">
         <SectionReveal>
           <div className="section-label">— Recent Writing —</div>

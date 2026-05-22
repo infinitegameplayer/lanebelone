@@ -245,3 +245,133 @@ export const sqhqChips: SQHQChip[] = [
   { title: 'Retreats', sub: 'Multi-day immersions', href: 'https://sidequesthq.co/explorers-side-quest' },
   { title: 'Private Advisory', sub: 'One-on-one', href: 'https://sidequesthq.co/one-on-one' },
 ]
+
+// ── AI for Business ───────────────────────────────────────────────────────────
+// New section on the homepage (added 2026-05-22). Surfaces the six-product AI
+// slate hosted on Side Quest HQ. Card data is scaffolded with placeholders
+// pending Phase 2 manuscript drafting. Wave 1 cards are live-eligible once
+// Stripe and Resend wiring complete; Wave 2 cards ship with "coming soon" tags
+// until Phase 7. Outbound links point at SQHQ checkout pages.
+
+export interface AIProductCard {
+  badge: string                    // "Business Arc" | "Personal Arc" | "Bundle"
+  title: string
+  oneLiner: string                 // single sentence positioning
+  price: string                    // "$9" | "$7" | "$13" | "$14" | "$27"
+  href: string                     // SQHQ checkout URL
+  wave: 1 | 2
+  status: 'live' | 'coming-soon'
+}
+
+export const aiForBusinessFrame =
+  'Whether you are starting with AI or stuck in the middle, the slate meets you where you are.'
+
+export const aiBusinessArc: AIProductCard[] = [
+  {
+    badge: 'Business Arc',
+    title: 'AI for the Business You Actually Want',
+    oneLiner:
+      'A first-principles starter for the owner who is already using AI and still feels off.',
+    price: '$9',
+    href: 'https://sidequesthq.co/products/ai-for-the-business-you-actually-want',
+    wave: 1,
+    status: 'coming-soon',
+  },
+  {
+    badge: 'Business Arc',
+    title: 'Stack Calm',
+    oneLiner:
+      'Your minimum viable AI setup. What to keep, what to cancel, what to add when.',
+    price: '$9',
+    href: 'https://sidequesthq.co/products/stack-calm',
+    wave: 1,
+    status: 'coming-soon',
+  },
+  {
+    badge: 'Business Arc',
+    title: 'Earn the Right to Automate',
+    oneLiner:
+      'A timing guide. Validate the workflow manually first. Automate when it is ready.',
+    price: '$9',
+    href: 'https://sidequesthq.co/products/earn-the-right-to-automate',
+    wave: 1,
+    status: 'coming-soon',
+  },
+]
+
+export const aiPersonalArc: AIProductCard[] = [
+  {
+    badge: 'Personal Arc',
+    title: 'Whose Game Are You Playing with AI',
+    oneLiner:
+      'The question before any AI skill. Whether your goals are actually yours.',
+    price: '$9',
+    href: 'https://sidequesthq.co/products/whose-game-with-ai',
+    wave: 2,
+    status: 'coming-soon',
+  },
+  {
+    badge: 'Personal Arc',
+    title: "The Pioneer's First Week with AI",
+    oneLiner:
+      'Seven days. One reflection and one AI conversation each. No prior experience assumed.',
+    price: '$9',
+    href: 'https://sidequesthq.co/products/pioneers-first-week-with-ai',
+    wave: 2,
+    status: 'coming-soon',
+  },
+  {
+    badge: 'Personal Arc',
+    title: 'Your Second Brain Without the Overwhelm',
+    oneLiner:
+      'A beginner capture-and-retrieve setup using free tools. Sovereign by design.',
+    price: '$7',
+    href: 'https://sidequesthq.co/products/second-brain-without-overwhelm',
+    wave: 2,
+    status: 'coming-soon',
+  },
+]
+
+export interface AIBundleCard {
+  badge: 'Bundle'
+  title: string
+  oneLiner: string
+  bundlePrice: string              // displayed price, e.g. "$13"
+  savings: string                  // "Save $12"
+  href: string
+  wave: 1 | 2
+  status: 'live' | 'coming-soon'
+}
+
+export const aiBundles: AIBundleCard[] = [
+  {
+    badge: 'Bundle',
+    title: 'Business Bundle',
+    oneLiner: 'B1, B2 and B3 together. The full business arc.',
+    bundlePrice: '$14',
+    savings: 'Save $13',
+    href: 'https://sidequesthq.co/products/ai-business-bundle',
+    wave: 1,
+    status: 'coming-soon',
+  },
+  {
+    badge: 'Bundle',
+    title: 'Personal Bundle',
+    oneLiner: 'P1, P2 and P3 together. The full personal arc.',
+    bundlePrice: '$13',
+    savings: 'Save $12',
+    href: 'https://sidequesthq.co/products/ai-personal-bundle',
+    wave: 2,
+    status: 'coming-soon',
+  },
+  {
+    badge: 'Bundle',
+    title: 'Full Slate',
+    oneLiner: 'All six products. Business arc and personal arc.',
+    bundlePrice: '$27',
+    savings: 'Save $25',
+    href: 'https://sidequesthq.co/products/ai-full-slate',
+    wave: 1,
+    status: 'coming-soon',
+  },
+]
