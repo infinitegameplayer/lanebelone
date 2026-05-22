@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import AmbientPulse from '@/components/AmbientPulse'
 import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
+import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
 
 export const metadata: Metadata = {
   title: {
@@ -128,6 +129,7 @@ export default function RootLayout({
           <Suspense>
             <PostHogPageView />
           </Suspense>
+          <CrossSiteLinkTracker />
           {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
             <Script
               defer
