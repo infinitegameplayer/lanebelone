@@ -69,7 +69,7 @@ Allow: /
 User-agent: Google-NotebookLM
 Allow: /
 
-User-agent: GoogleAgent-Mariner
+User-agent: Google-Agent
 Allow: /
 
 User-agent: Meta-ExternalAgent

@@ -65,12 +65,14 @@ const personJsonLd = {
     'Humble Alpha framework',
   ],
   sameAs: [
+    'https://www.wikidata.org/wiki/Q139889543',
     'https://sidequesthq.co',
     'https://infinitegameos.io',
     'https://www.instagram.com/increasefreedom/',
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',
     'https://lanebelone.substack.com/',
+    'https://github.com/InfiniteGamePlayer',
   ],
   image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
   alumniOf: {
