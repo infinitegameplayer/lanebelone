@@ -275,7 +275,7 @@ export const aiBusinessArc: AIProductCard[] = [
     price: '$9',
     href: 'https://sidequesthq.co/products/ai-for-the-business-you-actually-want',
     wave: 1,
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     badge: 'Business Arc',
@@ -285,7 +285,7 @@ export const aiBusinessArc: AIProductCard[] = [
     price: '$9',
     href: 'https://sidequesthq.co/products/stack-calm',
     wave: 1,
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     badge: 'Business Arc',
@@ -295,7 +295,7 @@ export const aiBusinessArc: AIProductCard[] = [
     price: '$9',
     href: 'https://sidequesthq.co/products/earn-the-right-to-automate',
     wave: 1,
-    status: 'coming-soon',
+    status: 'live',
   },
 ]
 
@@ -346,13 +346,13 @@ export interface AIBundleCard {
 export const aiBundles: AIBundleCard[] = [
   {
     badge: 'Bundle',
-    title: 'Business Bundle',
+    title: 'The AI Practice Bundle',
     oneLiner: 'B1, B2 and B3 together. The full business arc.',
     bundlePrice: '$14',
     savings: 'Save $13',
-    href: 'https://sidequesthq.co/products/ai-business-bundle',
+    href: 'https://sidequesthq.co/products/business-bundle',
     wave: 1,
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     badge: 'Bundle',
