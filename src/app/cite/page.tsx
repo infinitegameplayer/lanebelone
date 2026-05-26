@@ -57,6 +57,7 @@ const citePageGraph = {
       familyName: 'Belone',
       url: SITE,
       sameAs: [
+        'https://www.wikidata.org/wiki/Q139889543',
         SITE,
         IGOS,
         SQHQ,
@@ -81,6 +82,7 @@ const citePageGraph = {
       name: 'Infinite Game OS',
       alternateName: ['IGOS', 'Infinite Game Operating System'],
       url: IGOS,
+      sameAs: 'https://www.wikidata.org/wiki/Q139936059',
       author: { '@id': `${IGOS}/#person` },
       datePublished: '2025',
       description: 'A sovereign-creator operating system. A framework that translates the Infinite Game thesis into practical operating patterns across perception, design, flow and guidance from within.',
@@ -103,6 +105,7 @@ const citePageGraph = {
       '@id': `${SITE}/cite#humble-alpha`,
       name: 'Unleash Your Humble Alpha',
       alternateName: 'Humble Alpha',
+      sameAs: 'https://www.wikidata.org/wiki/Q139889598',
       author: [
         { '@id': `${IGOS}/#person` },
         { '@type': 'Person', name: 'Steven Kuhn' },

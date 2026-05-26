@@ -40,6 +40,7 @@ const personJsonLd = {
   jobTitle: 'Writer, Speaker and Guide',
   description: LANE_BIO,
   sameAs: [
+    'https://www.wikidata.org/wiki/Q139889543',
     'https://sidequesthq.co',
     'https://infinitegameos.io',
     'https://www.linkedin.com/in/lanebelone/',
