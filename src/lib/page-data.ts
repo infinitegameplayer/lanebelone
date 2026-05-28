@@ -302,31 +302,31 @@ export const aiBusinessArc: AIProductCard[] = [
 export const aiPersonalArc: AIProductCard[] = [
   {
     badge: 'Personal Arc',
-    title: 'Whose Game Are You Playing with AI',
+    title: 'Whose Game Are You Playing with AI?',
     oneLiner:
-      'The question before any AI skill. Whether your goals are actually yours.',
+      'A contemplative practice for the reader who is already using AI and quietly wonders whose game it serves.',
     price: '$9',
-    href: 'https://sidequesthq.co/products/whose-game-with-ai',
+    href: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
     wave: 2,
     status: 'coming-soon',
   },
   {
     badge: 'Personal Arc',
-    title: "The Pioneer's First Week with AI",
+    title: 'Yours to Make',
     oneLiner:
-      'Seven days. One reflection and one AI conversation each. No prior experience assumed.',
+      'A creative practice for the maker whose AI output is prolific and slightly not theirs.',
     price: '$9',
-    href: 'https://sidequesthq.co/products/pioneers-first-week-with-ai',
+    href: 'https://sidequesthq.co/products/yours-to-make',
     wave: 2,
     status: 'coming-soon',
   },
   {
     badge: 'Personal Arc',
-    title: 'Your Second Brain Without the Overwhelm',
+    title: 'Sovereign Capture',
     oneLiner:
-      'A beginner capture-and-retrieve setup using free tools. Sovereign by design.',
+      'A sovereign capture container and a weekly rhythm to hold it. For the reader whose ideas keep evaporating.',
     price: '$7',
-    href: 'https://sidequesthq.co/products/second-brain-without-overwhelm',
+    href: 'https://sidequesthq.co/products/sovereign-capture',
     wave: 2,
     status: 'coming-soon',
   },
