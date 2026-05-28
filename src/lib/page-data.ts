@@ -308,7 +308,7 @@ export const aiPersonalArc: AIProductCard[] = [
     price: '$9',
     href: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
     wave: 2,
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     badge: 'Personal Arc',
@@ -318,7 +318,7 @@ export const aiPersonalArc: AIProductCard[] = [
     price: '$9',
     href: 'https://sidequesthq.co/products/yours-to-make',
     wave: 2,
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     badge: 'Personal Arc',
@@ -328,7 +328,7 @@ export const aiPersonalArc: AIProductCard[] = [
     price: '$7',
     href: 'https://sidequesthq.co/products/sovereign-capture',
     wave: 2,
-    status: 'coming-soon',
+    status: 'live',
   },
 ]
 
@@ -356,22 +356,22 @@ export const aiBundles: AIBundleCard[] = [
   },
   {
     badge: 'Bundle',
-    title: 'Personal Bundle',
+    title: 'The Personal Practice Bundle',
     oneLiner: 'P1, P2 and P3 together. The full personal arc.',
     bundlePrice: '$13',
     savings: 'Save $12',
-    href: 'https://sidequesthq.co/products/ai-personal-bundle',
+    href: 'https://sidequesthq.co/products/personal-bundle',
     wave: 2,
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     badge: 'Bundle',
-    title: 'Full Slate',
-    oneLiner: 'All six products. Business arc and personal arc.',
+    title: 'The Foundation Bundle',
+    oneLiner: 'All six Field Guides. The business axis and the personal axis.',
     bundlePrice: '$27',
     savings: 'Save $25',
-    href: 'https://sidequesthq.co/products/ai-full-slate',
-    wave: 1,
-    status: 'coming-soon',
+    href: 'https://sidequesthq.co/products/foundation-bundle',
+    wave: 2,
+    status: 'live',
   },
 ]
