@@ -452,12 +452,6 @@ export const linkHub: LinkHubItem[] = [
     icon: 'spark',
   },
   {
-    label: 'Your Infinite RPG',
-    sublabel: 'A free playbook for designing an epic, authentic life',
-    href: '/files/your-infinite-rpg.pdf',
-    icon: 'compass',
-  },
-  {
     label: 'Invite Me to Speak',
     sublabel: 'Keynotes, workshops and retreats',
     href: '/speaking',
