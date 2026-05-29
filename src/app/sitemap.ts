@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/speaking`, changeFrequency: 'monthly', priority: 0.9, lastModified: now },
     { url: `${base}/about`, changeFrequency: 'monthly', priority: 0.8, lastModified: now },
     { url: `${base}/joyful-sovereignty`, changeFrequency: 'monthly', priority: 0.8, lastModified: now },
+    { url: `${base}/library`, changeFrequency: 'monthly', priority: 0.8, lastModified: now },
     { url: `${base}/cite`, changeFrequency: 'monthly', priority: 0.6, lastModified: now },
     { url: `${base}/blog`, changeFrequency: 'weekly', priority: 0.7, lastModified: now },
     ...blogEntries,

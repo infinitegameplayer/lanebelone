@@ -253,12 +253,19 @@ export const sqhqChips: SQHQChip[] = [
 // Stripe and Resend wiring complete; Wave 2 cards ship with "coming soon" tags
 // until Phase 7. Outbound links point at SQHQ checkout pages.
 
+// Card and /library imagery is hosted on the SQHQ Vercel Blob store (the
+// canonical product surface). Field Guides use the single 4:3 cover crop,
+// bundles use the fanned 4:3 bundle crop. Rendered with plain <img> since
+// next.config carries no remote-image allowlist.
+const SQHQ_BLOB = 'https://5xfilrcirjl3skmn.public.blob.vercel-storage.com'
+
 export interface AIProductCard {
   badge: string                    // "Business Arc" | "Personal Arc" | "Bundle"
   title: string
   oneLiner: string                 // single sentence positioning
   price: string                    // "$9" | "$7" | "$13" | "$14" | "$27"
   href: string                     // SQHQ checkout URL
+  image: string                    // SQHQ blob 4:3 cover crop
   wave: 1 | 2
   status: 'live' | 'coming-soon'
 }
@@ -274,6 +281,7 @@ export const aiBusinessArc: AIProductCard[] = [
       'A first-principles starter for the owner who is already using AI and still feels off.',
     price: '$9',
     href: 'https://sidequesthq.co/products/ai-for-the-business-you-actually-want',
+    image: `${SQHQ_BLOB}/ai-for-the-business-you-actually-want/cover-4x3.png`,
     wave: 1,
     status: 'live',
   },
@@ -284,6 +292,7 @@ export const aiBusinessArc: AIProductCard[] = [
       'Your minimum viable AI setup. What to keep, what to cancel, what to add when.',
     price: '$9',
     href: 'https://sidequesthq.co/products/stack-calm',
+    image: `${SQHQ_BLOB}/stack-calm/cover-4x3.png`,
     wave: 1,
     status: 'live',
   },
@@ -294,6 +303,7 @@ export const aiBusinessArc: AIProductCard[] = [
       'A timing guide. Validate the workflow manually first. Automate when it is ready.',
     price: '$9',
     href: 'https://sidequesthq.co/products/earn-the-right-to-automate',
+    image: `${SQHQ_BLOB}/earn-the-right-to-automate/cover-4x3.png`,
     wave: 1,
     status: 'live',
   },
@@ -307,6 +317,7 @@ export const aiPersonalArc: AIProductCard[] = [
       'A contemplative practice for the reader who is already using AI and quietly wonders whose game it serves.',
     price: '$9',
     href: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
+    image: `${SQHQ_BLOB}/whose-game-are-you-playing-with-ai/cover-4x3.png`,
     wave: 2,
     status: 'live',
   },
@@ -317,6 +328,7 @@ export const aiPersonalArc: AIProductCard[] = [
       'A creative practice for the maker whose AI output is prolific and slightly not theirs.',
     price: '$9',
     href: 'https://sidequesthq.co/products/yours-to-make',
+    image: `${SQHQ_BLOB}/yours-to-make/cover-4x3.png`,
     wave: 2,
     status: 'live',
   },
@@ -327,6 +339,7 @@ export const aiPersonalArc: AIProductCard[] = [
       'A sovereign capture container and a weekly rhythm to hold it. For the reader whose ideas keep evaporating.',
     price: '$7',
     href: 'https://sidequesthq.co/products/sovereign-capture',
+    image: `${SQHQ_BLOB}/sovereign-capture/cover-4x3.png`,
     wave: 2,
     status: 'live',
   },
@@ -339,6 +352,7 @@ export interface AIBundleCard {
   bundlePrice: string              // displayed price, e.g. "$13"
   savings: string                  // "Save $12"
   href: string
+  image: string                    // SQHQ blob 4:3 fanned bundle crop
   wave: 1 | 2
   status: 'live' | 'coming-soon'
 }
@@ -351,6 +365,7 @@ export const aiBundles: AIBundleCard[] = [
     bundlePrice: '$14',
     savings: 'Save $13',
     href: 'https://sidequesthq.co/products/business-bundle',
+    image: `${SQHQ_BLOB}/business-bundle/bundle-4x3.png`,
     wave: 1,
     status: 'live',
   },
@@ -361,6 +376,7 @@ export const aiBundles: AIBundleCard[] = [
     bundlePrice: '$13',
     savings: 'Save $12',
     href: 'https://sidequesthq.co/products/personal-bundle',
+    image: `${SQHQ_BLOB}/personal-bundle/bundle-4x3.png`,
     wave: 2,
     status: 'live',
   },
@@ -371,7 +387,30 @@ export const aiBundles: AIBundleCard[] = [
     bundlePrice: '$27',
     savings: 'Save $25',
     href: 'https://sidequesthq.co/products/foundation-bundle',
+    image: `${SQHQ_BLOB}/foundation-bundle/bundle-4x3.png`,
     wave: 2,
     status: 'live',
   },
 ]
+
+// ── Digital product library ─────────────────────────────────────────────────
+// The /library aggregator page. The flagship Playbook sits above the AI slate
+// (aiBusinessArc + aiPersonalArc + aiBundles). Every product is hosted and sold
+// on Side Quest HQ; this page is the catalog index, not a second storefront.
+
+export interface LibraryFlagship {
+  title: string
+  oneLiner: string
+  price: string
+  href: string
+  image: string
+}
+
+export const librarySlp: LibraryFlagship = {
+  title: 'The Sovereign Life Playbook',
+  oneLiner:
+    'A framework for designing your life from the inside out. Seven chapters, six exercises, eight files including an AI Companion Guide and Session Guide.',
+  price: '$37',
+  href: 'https://sidequesthq.co/products/sovereign-life-playbook',
+  image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
+}

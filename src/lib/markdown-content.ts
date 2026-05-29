@@ -14,6 +14,10 @@ import {
   happeningNow,
   books,
   sqhqChips,
+  librarySlp,
+  aiBusinessArc,
+  aiPersonalArc,
+  aiBundles,
 } from './page-data'
 
 const SITE = 'https://www.lanebelone.com'
@@ -215,11 +219,51 @@ ${post.content}
 `
 }
 
+function generateLibraryMarkdown(): string {
+  const slp = `- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${librarySlp.oneLiner}`
+  const business = aiBusinessArc
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${c.oneLiner}`)
+    .join('\n')
+  const personal = aiPersonalArc
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${c.oneLiner}`)
+    .join('\n')
+  const bundles = aiBundles
+    .map(c => `- **[${c.title}](${c.href})** (${c.bundlePrice}, ${c.savings}) · ${c.oneLiner}`)
+    .join('\n')
+
+  return `# Library · Lane Belone
+
+> The full library of Lane Belone digital products. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs and three bundles.
+
+Every digital product in one index. Each one is hosted and sold on Side Quest HQ (https://sidequesthq.co).
+
+## Flagship Playbook
+
+${slp}
+
+## Business Arc
+
+${business}
+
+## Personal Arc
+
+${personal}
+
+## Bundles
+
+${bundles}
+
+---
+*[Lane Belone](${SITE}) · [Library](${SITE}/library)*
+`
+}
+
 export function getMarkdownForPath(path: string): string | null {
   if (path === '') return generateHomeMarkdown()
   if (path === 'joyful-sovereignty') return generateJoyfulSovereigntyMarkdown()
   if (path === 'speaking') return generateSpeakingMarkdown()
   if (path === 'about') return generateAboutMarkdown()
+  if (path === 'library') return generateLibraryMarkdown()
   if (path === 'blog') return generateBlogIndexMarkdown()
   if (path.startsWith('blog/f/')) {
     const slug = path.replace('blog/f/', '')

@@ -63,6 +63,13 @@ export default function Nav() {
           >
             Writing
           </Link>
+          <Link
+            href="/library"
+            className="text-sm tracking-wide text-parchment/70 hover:text-parchment transition-colors"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            Library
+          </Link>
           <a
             href="#connect"
             className="btn-ghost text-parchment/60 hover:text-parchment"
@@ -108,6 +115,14 @@ export default function Nav() {
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Writing
+          </Link>
+          <Link
+            href="/library"
+            className="text-base text-parchment/80 hover:text-parchment transition-colors"
+            onClick={() => setMenuOpen(false)}
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            Library
           </Link>
           <a
             href="#connect"

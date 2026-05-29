@@ -375,6 +375,16 @@ export default function HomePage() {
             const cardInner = (
               <div className="bezel-card flex flex-col h-full">
                 <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
+                  {card.image && (
+                    <img
+                      src={card.image}
+                      alt={`${card.title} cover`}
+                      loading="lazy"
+                      width={400}
+                      height={300}
+                      style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
+                    />
+                  )}
                   <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
                     <span
                       style={{
@@ -470,6 +480,16 @@ export default function HomePage() {
             const cardInner = (
               <div className="bezel-card flex flex-col h-full">
                 <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
+                  {card.image && (
+                    <img
+                      src={card.image}
+                      alt={`${card.title} cover`}
+                      loading="lazy"
+                      width={400}
+                      height={300}
+                      style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
+                    />
+                  )}
                   <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
                     <span
                       style={{
@@ -565,6 +585,16 @@ export default function HomePage() {
             const cardInner = (
               <div className="bezel-card flex flex-col h-full">
                 <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
+                  {card.image && (
+                    <img
+                      src={card.image}
+                      alt={`${card.title} cover`}
+                      loading="lazy"
+                      width={400}
+                      height={300}
+                      style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
+                    />
+                  )}
                   <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
                     <span
                       style={{
@@ -637,7 +667,10 @@ export default function HomePage() {
           })}
         </SectionReveal>
 
-        <SectionReveal className="text-right mt-8">
+        <SectionReveal className="text-right mt-8 flex justify-end gap-6 flex-wrap">
+          <Link href="/library" className="btn-ghost">
+            Browse the full library &rarr;
+          </Link>
           <a
             href="https://sidequesthq.co/products"
             target="_blank"
