@@ -42,7 +42,7 @@ function generateHomeMarkdown(): string {
 
   return `# Lane Belone
 
-> Writer, speaker and guide. Former U.S. Army Green Beret, author of Unleash Your Humble Alpha, founder of Side Quest HQ, practitioner of joyful sovereignty and the Infinite Game.
+> Writer, speaker and guide. Former U.S. Army Green Beret, co-author of Unleash Your Humble Alpha, founder of Side Quest HQ, practitioner of joyful sovereignty and the Infinite Game.
 
 Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.
 

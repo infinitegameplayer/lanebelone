@@ -117,7 +117,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed" style={{ fontFamily: 'var(--font-display)' }}>
                 Lane Belone is a writer, speaker and guide. Former U.S. Army Green
-                Beret, author of <em>Unleash Your Humble Alpha</em> and founder
+                Beret, co-author of <em>Unleash Your Humble Alpha</em> and founder
                 of Side Quest HQ, where he leads workshops, retreats and private
                 advisory for founders and leaders playing the Infinite Game.
               </p>
