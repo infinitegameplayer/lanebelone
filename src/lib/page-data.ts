@@ -222,7 +222,7 @@ export const books: BookEntry[] = [
     title: 'Your Infinite RPG',
     description: 'A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life.',
     cta: 'Instant download',
-    href: 'https://drive.google.com/file/d/1nlRYiD-T7K5HgorKe4VzgD-AiO7uZ1Fr/view?usp=sharing',
+    href: '/files/your-infinite-rpg.pdf',
   },
   {
     badge: 'Book',
@@ -423,7 +423,7 @@ export interface LinkHubItem {
   label: string
   sublabel?: string
   href: string
-  external: boolean
+  icon: string
 }
 
 export const linkHub: LinkHubItem[] = [
@@ -431,43 +431,43 @@ export const linkHub: LinkHubItem[] = [
     label: 'Read the Writing',
     sublabel: 'Essays and breadcrumbs from inside the game',
     href: 'https://lanebelone.substack.com/',
-    external: true,
+    icon: 'writing',
   },
   {
     label: 'Infinite Game OS',
     sublabel: 'The framework, mapped',
     href: 'https://infinitegameos.io',
-    external: true,
+    icon: 'infinity',
   },
   {
     label: 'The Sovereign Life Playbook',
     sublabel: 'Design your life from the inside out · $37',
     href: 'https://sidequesthq.co/products/sovereign-life-playbook',
-    external: true,
+    icon: 'book',
   },
   {
     label: 'Sovereign Ecosystem Install',
     sublabel: 'Two sessions. Your AI workspace, standing on its own.',
     href: 'https://sidequesthq.co/sovereign-ecosystem-install',
-    external: true,
+    icon: 'spark',
+  },
+  {
+    label: 'Your Infinite RPG',
+    sublabel: 'A free playbook for designing an epic, authentic life',
+    href: '/files/your-infinite-rpg.pdf',
+    icon: 'compass',
   },
   {
     label: 'Invite Me to Speak',
     sublabel: 'Keynotes, workshops and retreats',
     href: '/speaking',
-    external: false,
+    icon: 'mic',
   },
   {
     label: 'The Full Library',
     sublabel: 'Every playbook and guide in one place',
     href: '/library',
-    external: false,
-  },
-  {
-    label: 'Humble Alpha',
-    sublabel: 'The book, on Amazon',
-    href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
-    external: true,
+    icon: 'library',
   },
 ]
 

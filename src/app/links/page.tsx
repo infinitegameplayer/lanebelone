@@ -65,6 +65,52 @@ const socialIcons: Record<string, React.ReactNode> = {
   ),
 }
 
+const linkIcons: Record<string, React.ReactNode> = {
+  writing: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+    </svg>
+  ),
+  infinity: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="12" r="4" />
+      <circle cx="15" cy="12" r="4" />
+    </svg>
+  ),
+  book: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H2z" />
+      <path d="M22 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z" />
+    </svg>
+  ),
+  spark: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3l1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8z" />
+    </svg>
+  ),
+  compass: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <polygon points="15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5" />
+    </svg>
+  ),
+  mic: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="9" y="2" width="6" height="11" rx="3" />
+      <path d="M5 10a7 7 0 0 0 14 0" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+    </svg>
+  ),
+  library: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="3" width="4" height="18" rx="1" />
+      <rect x="10" y="3" width="4" height="18" rx="1" />
+      <path d="M16.5 4.5l3.2.9-3.6 13.2-3.2-.9z" />
+    </svg>
+  ),
+}
+
 export default function LinksPage() {
   return (
     <>
@@ -98,25 +144,40 @@ export default function LinksPage() {
               const className =
                 'group block w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 text-left transition-all duration-200 hover:bg-white/[0.06] hover:border-white/20 active:scale-[0.99]'
               const inner = (
-                <>
-                  <span className="block text-parchment" style={{ fontFamily: 'var(--font-body)' }}>
-                    {item.label}
+                <span className="flex items-center gap-4">
+                  <span className="shrink-0 text-parchment/50 group-hover:text-parchment/90 transition-colors">
+                    {linkIcons[item.icon]}
                   </span>
-                  {item.sublabel && (
-                    <span className="block text-parchment/45 text-sm mt-0.5" style={{ fontFamily: 'var(--font-body)' }}>
-                      {item.sublabel}
+                  <span className="min-w-0">
+                    <span className="block text-parchment" style={{ fontFamily: 'var(--font-body)' }}>
+                      {item.label}
                     </span>
-                  )}
-                </>
+                    {item.sublabel && (
+                      <span className="block text-parchment/45 text-sm mt-0.5" style={{ fontFamily: 'var(--font-body)' }}>
+                        {item.sublabel}
+                      </span>
+                    )}
+                  </span>
+                </span>
               )
-              return item.external ? (
-                <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+              const isRoute = item.href.startsWith('/') && !item.href.startsWith('/files/')
+              if (isRoute) {
+                return (
+                  <Link key={item.href} href={item.href} className={className}>
+                    {inner}
+                  </Link>
+                )
+              }
+              const isFile = item.href.startsWith('/files/')
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  {...(isFile ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
+                  className={className}
+                >
                   {inner}
                 </a>
-              ) : (
-                <Link key={item.href} href={item.href} className={className}>
-                  {inner}
-                </Link>
               )
             })}
           </div>

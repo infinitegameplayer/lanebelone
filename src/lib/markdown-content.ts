@@ -263,7 +263,7 @@ ${bundles}
 function generateLinksMarkdown(): string {
   const linksMd = linkHub
     .map(item => {
-      const href = item.external ? item.href : `${SITE}${item.href}`
+      const href = item.href.startsWith('http') ? item.href : `${SITE}${item.href}`
       const sub = item.sublabel ? ` · ${item.sublabel}` : ''
       return `- **[${item.label}](${href})**${sub}`
     })
