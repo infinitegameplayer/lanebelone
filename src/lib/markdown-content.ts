@@ -18,6 +18,8 @@ import {
   aiBusinessArc,
   aiPersonalArc,
   aiBundles,
+  linkHub,
+  socialLinks,
 } from './page-data'
 
 const SITE = 'https://www.lanebelone.com'
@@ -258,12 +260,45 @@ ${bundles}
 `
 }
 
+function generateLinksMarkdown(): string {
+  const linksMd = linkHub
+    .map(item => {
+      const href = item.external ? item.href : `${SITE}${item.href}`
+      const sub = item.sublabel ? ` · ${item.sublabel}` : ''
+      return `- **[${item.label}](${href})**${sub}`
+    })
+    .join('\n')
+
+  const socialsMd = socialLinks
+    .map(s => `- [${s.label}](${s.href})`)
+    .join('\n')
+
+  return `# Links · Lane Belone
+
+> Every Lane Belone destination in one place.
+
+Writer, speaker and guide of the Infinite Game. Breadcrumbs along the way.
+
+## Destinations
+
+${linksMd}
+
+## Social
+
+${socialsMd}
+
+---
+*[Lane Belone](${SITE}) · [Links](${SITE}/links)*
+`
+}
+
 export function getMarkdownForPath(path: string): string | null {
   if (path === '') return generateHomeMarkdown()
   if (path === 'joyful-sovereignty') return generateJoyfulSovereigntyMarkdown()
   if (path === 'speaking') return generateSpeakingMarkdown()
   if (path === 'about') return generateAboutMarkdown()
   if (path === 'library') return generateLibraryMarkdown()
+  if (path === 'links') return generateLinksMarkdown()
   if (path === 'blog') return generateBlogIndexMarkdown()
   if (path.startsWith('blog/f/')) {
     const slug = path.replace('blog/f/', '')

@@ -414,3 +414,71 @@ export const librarySlp: LibraryFlagship = {
   href: 'https://sidequesthq.co/products/sovereign-life-playbook',
   image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
 }
+
+// ── Link hub (/links) ─────────────────────────────────────────────────────────
+// Sovereign replacement for the Linktree bio link. One branded destination for
+// every social profile. Edit this array to reorder, add or remove links.
+
+export interface LinkHubItem {
+  label: string
+  sublabel?: string
+  href: string
+  external: boolean
+}
+
+export const linkHub: LinkHubItem[] = [
+  {
+    label: 'Read the Writing',
+    sublabel: 'Essays and breadcrumbs from inside the game',
+    href: 'https://lanebelone.substack.com/',
+    external: true,
+  },
+  {
+    label: 'Infinite Game OS',
+    sublabel: 'The framework, mapped',
+    href: 'https://infinitegameos.io',
+    external: true,
+  },
+  {
+    label: 'The Sovereign Life Playbook',
+    sublabel: 'Design your life from the inside out · $37',
+    href: 'https://sidequesthq.co/products/sovereign-life-playbook',
+    external: true,
+  },
+  {
+    label: 'Sovereign Ecosystem Install',
+    sublabel: 'Two sessions. Your AI workspace, standing on its own.',
+    href: 'https://sidequesthq.co/sovereign-ecosystem-install',
+    external: true,
+  },
+  {
+    label: 'Invite Me to Speak',
+    sublabel: 'Keynotes, workshops and retreats',
+    href: '/speaking',
+    external: false,
+  },
+  {
+    label: 'The Full Library',
+    sublabel: 'Every playbook and guide in one place',
+    href: '/library',
+    external: false,
+  },
+  {
+    label: 'Humble Alpha',
+    sublabel: 'The book, on Amazon',
+    href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
+    external: true,
+  },
+]
+
+export interface SocialLink {
+  label: string
+  href: string
+}
+
+export const socialLinks: SocialLink[] = [
+  { label: 'Instagram', href: 'https://www.instagram.com/increasefreedom/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lanebelone/' },
+  { label: 'Facebook', href: 'https://www.facebook.com/increasefreedom' },
+  { label: 'Substack', href: 'https://lanebelone.substack.com/' },
+]

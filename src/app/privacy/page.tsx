@@ -58,7 +58,7 @@ export default function PrivacyPage() {
               Contact form data
             </h2>
             <p>
-              Inquiry form submissions are handled through our CRM (HubSpot). By submitting a form, you agree that your information may be stored within HubSpot&apos;s systems for the purposes of managing our communication. HubSpot&apos;s own privacy policy applies to that data.
+              Inquiry form submissions are stored securely in our own database and used solely to manage our communication with you. We do not pass your information to third-party marketing platforms.
             </p>
           </div>
 

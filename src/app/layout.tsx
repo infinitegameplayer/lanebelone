@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   description:
     'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
   metadataBase: new URL('https://www.lanebelone.com'),
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: 'Lane Belone',
@@ -144,10 +149,6 @@ export default function RootLayout({
           <Nav />
           <main>{children}</main>
           <Footer />
-          <Script
-            src="//js-na2.hsforms.net/forms/embed/v2.js"
-            strategy="afterInteractive"
-          />
         </body>
       </PostHogProvider>
     </html>
