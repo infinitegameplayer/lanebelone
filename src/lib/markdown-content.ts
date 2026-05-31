@@ -17,7 +17,10 @@ import {
   librarySlp,
   aiBusinessArc,
   aiPersonalArc,
-  aiBundles,
+  libraryBlurbs,
+  libraryCollections,
+  libraryFreeReading,
+  libraryPrintBooks,
   linkHub,
   socialLinks,
 } from './page-data'
@@ -222,24 +225,30 @@ ${post.content}
 }
 
 function generateLibraryMarkdown(): string {
-  const slp = `- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${librarySlp.oneLiner}`
+  const slp = `- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${libraryBlurbs[librarySlp.href]}`
   const business = aiBusinessArc
-    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${c.oneLiner}`)
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${libraryBlurbs[c.href]}`)
     .join('\n')
   const personal = aiPersonalArc
-    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${c.oneLiner}`)
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${libraryBlurbs[c.href]}`)
     .join('\n')
-  const bundles = aiBundles
-    .map(c => `- **[${c.title}](${c.href})** (${c.bundlePrice}, ${c.savings}) · ${c.oneLiner}`)
+  const collections = libraryCollections
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}, ${c.savings}) · ${c.blurb}`)
+    .join('\n')
+  const free = libraryFreeReading
+    .map(b => `- **[${b.title}](${SITE}${b.href})** (Free) · ${b.blurb}`)
+    .join('\n')
+  const print = libraryPrintBooks
+    .map(b => `- **[${b.title}](${b.href})** · ${b.blurb}`)
     .join('\n')
 
-  return `# Library · Lane Belone
+  return `# The Library · Lane Belone
 
-> The full library of Lane Belone digital products. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs and three bundles.
+> Tools for playing the game of your life more beautifully. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book.
 
-Every digital product in one index. Each one is hosted and sold on Side Quest HQ (https://sidequesthq.co).
+Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The Playbook, Field Guides and Collections are hosted on Side Quest HQ (https://sidequesthq.co).
 
-## Flagship Playbook
+## Featured Playbook
 
 ${slp}
 
@@ -251,9 +260,17 @@ ${business}
 
 ${personal}
 
-## Bundles
+## Collections
 
-${bundles}
+${collections}
+
+## Free Reading
+
+${free}
+
+## Books
+
+${print}
 
 ---
 *[Lane Belone](${SITE}) · [Library](${SITE}/library)*

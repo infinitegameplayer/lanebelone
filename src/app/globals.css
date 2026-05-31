@@ -397,8 +397,129 @@ a { color: inherit; text-decoration: none; }
   transition: width 0.08s linear;
 }
 
+/* ── Library page: book-shelf treatment ─────────────────────────────── */
+/* The /library page reads as a shelf of books. Every product uses its 4:5
+   portrait cover-display, books use their native portrait covers, and the
+   collections show only the real member covers. Classes are lib- namespaced
+   so nothing here touches other pages. */
+.lib-cosmology {
+  font-family: var(--font-voice);
+  font-size: 1.3rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 30em;
+  margin-bottom: 1.4rem;
+}
+.lib-host {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 38em;
+  margin-bottom: 3.5rem;
+}
+.lib-shelf-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 4rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.lib-shelf-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.25), transparent);
+}
+.lib-book { display: flex; flex-direction: column; height: 100%; }
+.lib-cover-frame {
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #060d06;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.lib-book:hover .lib-cover-frame {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.65);
+  border-color: rgba(201, 168, 76, 0.4);
+}
+.lib-cover-frame img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.lib-meta { padding-top: 0.9rem; }
+.lib-price {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.lib-price--free { color: var(--color-gold-light); }
+.lib-title {
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.lib-blurb {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: var(--color-text-muted);
+}
+.lib-featured { max-width: 300px; }
+
+/* Collections: horizontal card, image built from real member covers only */
+.lib-collection {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.6rem 1.8rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.lib-collection:hover { transform: translateY(-3px); border-color: rgba(201, 168, 76, 0.35); }
+.lib-cover-cluster { display: flex; padding-left: 14px; }
+.lib-cover-cluster img {
+  width: 84px;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #060d06;
+  border-radius: 3px;
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  box-shadow: -6px 8px 18px rgba(0, 0, 0, 0.55);
+  margin-left: -14px;
+}
+.lib-cover-cluster--six img { width: 64px; margin-left: -20px; }
+.lib-collection .lib-title { font-size: 1.15rem; margin-bottom: 0.55rem; }
+.lib-collection .lib-blurb { font-size: 0.9rem; line-height: 1.65; }
+.lib-savings { color: var(--color-gold); }
+@media (max-width: 800px) {
+  .lib-collection { grid-template-columns: 1fr; gap: 1.3rem; }
+}
+
 /* Accessibility: reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  .lib-cover-frame, .lib-collection { transition: none; }
+  .lib-book:hover .lib-cover-frame, .lib-collection:hover { transform: none; }
   .scroll-reveal {
     opacity: 1;
     transform: none;

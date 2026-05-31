@@ -415,6 +415,102 @@ export const librarySlp: LibraryFlagship = {
   image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
 }
 
+// ── Library shelf copy ──────────────────────────────────────────────────────
+// The /library page and its /markdown twin both read from here, so the two
+// surfaces never drift. Shelf copy carries the transformation, not chapter
+// counts (those live on the SQHQ landing pages). Keyed by canonical SQHQ href.
+export const libraryBlurbs: Record<string, string> = {
+  'https://sidequesthq.co/products/sovereign-life-playbook':
+    "The flagship, and the deepest single work in the library. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
+  'https://sidequesthq.co/products/ai-for-the-business-you-actually-want':
+    "A first-principles starter for the owner who's already using AI and still feels a little off. It returns to the question underneath the tools. What's the business you actually want, and what's AI for inside it. A clear place to begin when the stack is busy but the direction has gone fuzzy.",
+  'https://sidequesthq.co/products/stack-calm':
+    'Your minimum viable AI setup, made calm. What to keep, what to cancel and what to add only when you truly need it. For anyone whose subscriptions and open tabs have quietly multiplied past the point of usefulness, and who wants a stack that finally feels light.',
+  'https://sidequesthq.co/products/earn-the-right-to-automate':
+    'A timing guide for automation. Prove the workflow by hand first, then let the machine carry it once it has earned the trust. For the builder tempted to automate everything at once, and feeling the wobble that tends to follow.',
+  'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai':
+    'A contemplative practice for the reader who uses AI well and still wonders, quietly, whose game it serves. A handful of honest questions to make sure the tools are carrying your direction and not the other way around.',
+  'https://sidequesthq.co/products/yours-to-make':
+    'A creative practice for the maker whose AI output is prolific and somehow not quite theirs. How to keep your fingerprints on the work, so what you ship still sounds like you. For anyone producing a lot lately and recognizing themselves in it a little less.',
+  'https://sidequesthq.co/products/sovereign-capture':
+    'A capture container and a simple weekly rhythm to hold it, so your best thinking stops evaporating. For the reader whose ideas arrive faster than they can keep them, and who wants one trusted place for all of it.',
+}
+
+export interface LibraryCollection {
+  title: string
+  price: string
+  savings: string
+  href: string
+  members: AIProductCard[]
+  blurb: string
+}
+
+// Collections show only their member book covers. The display name is
+// "Collection"; the SQHQ product pages still read "Bundle" until renamed.
+export const libraryCollections: LibraryCollection[] = [
+  {
+    title: 'The Business Collection',
+    price: aiBundles[0].bundlePrice,
+    savings: aiBundles[0].savings,
+    href: aiBundles[0].href,
+    members: aiBusinessArc,
+    blurb:
+      'The full business arc in one collection. Three Field Guides for building a company with AI that still feels like yours. Where to begin, how to keep your stack light and how to know when automation has earned its place.',
+  },
+  {
+    title: 'The Personal Collection',
+    price: aiBundles[1].bundlePrice,
+    savings: aiBundles[1].savings,
+    href: aiBundles[1].href,
+    members: aiPersonalArc,
+    blurb:
+      "The full personal arc in one collection. Three Field Guides for staying the author of your own life as AI moves into it. Whose game you're really playing, how to keep your creative work yours and a way to stop losing your best ideas.",
+  },
+  {
+    title: 'The Foundation Collection',
+    price: aiBundles[2].bundlePrice,
+    savings: aiBundles[2].savings,
+    href: aiBundles[2].href,
+    members: [...aiBusinessArc, ...aiPersonalArc],
+    blurb:
+      'All six Field Guides, the business axis and the personal axis together. The complete practice for working with AI on your own terms, in your company and in your own mind both. The widest doorway into the whole approach.',
+  },
+]
+
+export interface LibraryBook {
+  title: string
+  priceLabel: string
+  href: string
+  image: string
+  blurb: string
+}
+
+// Free instant downloads. Grows into its own shelf near the top once it holds
+// three or more titles.
+export const libraryFreeReading: LibraryBook[] = [
+  {
+    title: 'Your Infinite RPG',
+    priceLabel: 'Free · Instant download',
+    href: '/files/your-infinite-rpg.pdf',
+    image: '/images/book-infinite-rpg.png',
+    blurb:
+      'A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life, one quest at a time. Yours to download and keep, no cost.',
+  },
+]
+
+// Print and purchase-elsewhere titles. The Infinite Game OS book joins here
+// when it ships.
+export const libraryPrintBooks: LibraryBook[] = [
+  {
+    title: 'Humble Alpha',
+    priceLabel: 'Book · On Amazon',
+    href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
+    image: '/images/book-humble-alpha.jpg',
+    blurb:
+      'A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating the meeting place of inner life and outer impact. A print book, available on Amazon.',
+  },
+]
+
 // ── Link hub (/links) ─────────────────────────────────────────────────────────
 // Sovereign replacement for the Linktree bio link. One branded destination for
 // every social profile. Edit this array to reorder, add or remove links.

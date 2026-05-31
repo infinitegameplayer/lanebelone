@@ -5,11 +5,14 @@ import {
   librarySlp,
   aiBusinessArc,
   aiPersonalArc,
-  aiBundles,
+  libraryBlurbs,
+  libraryCollections,
+  libraryFreeReading,
+  libraryPrintBooks,
 } from '@/lib/page-data'
 
 const DESCRIPTION =
-  'The full library of Lane Belone digital products. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs and three bundles. Each one hosted on Side Quest HQ.'
+  'The library of Lane Belone. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book. Tools for playing the game of your life more beautifully.'
 
 export const metadata: Metadata = {
   title: 'Library',
@@ -37,30 +40,42 @@ export const metadata: Metadata = {
   },
 }
 
-// ItemList over the canonical SQHQ product pages. No Product schema here: the
-// Product and Offer entities live canonically on Side Quest HQ. This page is
-// the catalog index, so it carries CollectionPage plus a lightweight ItemList.
-const itemListElement = [librarySlp, ...aiBusinessArc, ...aiPersonalArc, ...aiBundles].map(
-  (item, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    name: item.title,
-    url: item.href,
-  })
-)
+// Every product carries four cover variants on the SQHQ blob. The library uses
+// cover-display: the 4:5 portrait built for on-screen shelving (Product Cover
+// Design Codex). The shared page-data image points at cover-4x3 for the home
+// page's landscape cards, so we swap to the portrait here without disturbing it.
+const portrait = (img: string) => img.replace('cover-4x3', 'cover-display')
+
+// ItemList over the catalog. Product and Offer entities live canonically on
+// Side Quest HQ; this page carries CollectionPage plus a lightweight ItemList.
+const catalog = [
+  { name: librarySlp.title, url: librarySlp.href },
+  ...aiBusinessArc.map(c => ({ name: c.title, url: c.href })),
+  ...aiPersonalArc.map(c => ({ name: c.title, url: c.href })),
+  ...libraryCollections.map(c => ({ name: c.title, url: c.href })),
+  { name: libraryFreeReading[0].title, url: 'https://www.lanebelone.com/files/your-infinite-rpg.pdf' },
+  { name: libraryPrintBooks[0].title, url: libraryPrintBooks[0].href },
+]
+
+const itemListElement = catalog.map((item, i) => ({
+  '@type': 'ListItem',
+  position: i + 1,
+  name: item.name,
+  url: item.url,
+}))
 
 const collectionPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': 'https://www.lanebelone.com/library#collection',
   url: 'https://www.lanebelone.com/library',
-  name: 'Digital Product Library · Lane Belone',
+  name: 'The Library · Lane Belone',
   description: DESCRIPTION,
   isPartOf: { '@id': 'https://www.lanebelone.com/#website' },
   about: { '@id': 'https://infinitegameos.io/#person' },
   mainEntity: {
     '@type': 'ItemList',
-    name: 'Lane Belone Digital Products',
+    name: 'Lane Belone Library',
     numberOfItems: itemListElement.length,
     itemListElement,
   },
@@ -75,90 +90,78 @@ const breadcrumbJsonLd = {
   ],
 }
 
-function LibraryCard({
+function BookCard({
   title,
-  oneLiner,
+  blurb,
   priceLabel,
   href,
   image,
+  free,
+  className,
 }: {
   title: string
-  oneLiner: string
+  blurb: string
   priceLabel: string
   href: string
   image: string
+  free?: boolean
+  className?: string
 }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-      <div className="bezel-card flex flex-col h-full">
-        <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
-          <img
-            src={image}
-            alt={`${title} cover`}
-            loading="lazy"
-            width={400}
-            height={300}
-            style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
-          />
-          <span
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '0.6rem',
-              fontWeight: 500,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: 'var(--color-accent-hover)',
-              marginBottom: '0.2rem',
-            }}
-          >
-            {priceLabel}
-          </span>
-          <h3
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1.05rem',
-              fontWeight: 600,
-              letterSpacing: '-0.01em',
-              lineHeight: 1.25,
-              marginBottom: '0.4rem',
-            }}
-          >
-            {title}
-          </h3>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.85rem',
-              lineHeight: 1.55,
-              color: 'var(--color-text-muted)',
-              margin: 0,
-            }}
-          >
-            {oneLiner}
-          </p>
-        </div>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`lib-book${className ? ` ${className}` : ''}`}
+    >
+      <div className="lib-cover-frame">
+        <img src={image} alt={`${title} cover`} loading="lazy" />
+      </div>
+      <div className="lib-meta">
+        <span className={`lib-price${free ? ' lib-price--free' : ''}`}>{priceLabel}</span>
+        <h3 className="lib-title">{title}</h3>
+        <p className="lib-blurb">{blurb}</p>
       </div>
     </a>
   )
 }
 
-function ArcLabel({ children, marginTop }: { children: string; marginTop?: string }) {
+function CollectionCard({
+  title,
+  blurb,
+  price,
+  savings,
+  href,
+  members,
+}: {
+  title: string
+  blurb: string
+  price: string
+  savings: string
+  href: string
+  members: { title: string; image: string }[]
+}) {
+  const six = members.length > 3
   return (
-    <div
-      style={{
-        fontFamily: 'var(--font-display)',
-        fontSize: '0.68rem',
-        fontWeight: 500,
-        letterSpacing: '0.22em',
-        textTransform: 'uppercase',
-        color: 'var(--color-gold)',
-        marginTop,
-        marginBottom: '1.25rem',
-      }}
-    >
-      {children}
-    </div>
+    <a href={href} target="_blank" rel="noopener noreferrer" className="lib-collection">
+      <div className={`lib-cover-cluster${six ? ' lib-cover-cluster--six' : ''}`}>
+        {members.map(m => (
+          <img key={m.title} src={portrait(m.image)} alt="" loading="lazy" />
+        ))}
+      </div>
+      <div className="lib-meta">
+        <span className="lib-price">
+          {price} · <span className="lib-savings">{savings}</span>
+        </span>
+        <h3 className="lib-title">{title}</h3>
+        <p className="lib-blurb">{blurb}</p>
+      </div>
+    </a>
   )
+}
+
+function ShelfLabel({ children }: { children: string }) {
+  return <div className="lib-shelf-label">{children}</div>
 }
 
 export default function LibraryPage() {
@@ -167,10 +170,10 @@ export default function LibraryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
-      {/* Intro */}
       <section className="section" style={{ paddingTop: '9rem' }}>
+        {/* Intro */}
         <SectionReveal>
-          <div className="section-label">— Library —</div>
+          <div className="section-label">— The Library —</div>
         </SectionReveal>
         <SectionReveal>
           <h1
@@ -179,107 +182,146 @@ export default function LibraryPage() {
               fontSize: 'clamp(2rem, 5vw, 3rem)',
               fontWeight: 600,
               letterSpacing: '-0.025em',
-              lineHeight: 1.1,
-              marginBottom: '1.25rem',
-              maxWidth: '16em',
+              lineHeight: 1.12,
+              marginBottom: '1.6rem',
+              maxWidth: '17em',
             }}
           >
-            The whole catalog, in one place.
+            Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one.
           </h1>
         </SectionReveal>
         <SectionReveal>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '1.05rem',
-              lineHeight: 1.75,
-              color: 'var(--color-text-muted)',
-              maxWidth: '38em',
-              marginBottom: '3rem',
-            }}
-          >
-            Every digital product in one index. The flagship Playbook. Six AI Field Guides across the business and personal arcs. Three bundles. Each one lives on Side Quest HQ. Start wherever you are.
+          <p className="lib-cosmology">
+            There&apos;s a way of seeing your life as a game you&apos;re already playing. These are tools for playing it a little more beautifully. With more awareness, more creativity and a little more freedom to choose your own way.
+          </p>
+        </SectionReveal>
+        <SectionReveal>
+          <p className="lib-host">
+            So this is where the good stuff lives. Some are free, some carry a price. Open whatever catches your eye and stay as long as you like.
           </p>
         </SectionReveal>
 
-        {/* Flagship */}
+        {/* Featured Playbook */}
         <SectionReveal>
-          <ArcLabel>Flagship Playbook</ArcLabel>
+          <ShelfLabel>Featured Playbook</ShelfLabel>
         </SectionReveal>
         <SectionReveal className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <LibraryCard
+          <BookCard
             title={librarySlp.title}
-            oneLiner={librarySlp.oneLiner}
+            blurb={libraryBlurbs[librarySlp.href]}
             priceLabel={librarySlp.price}
             href={librarySlp.href}
-            image={librarySlp.image}
+            image={portrait(librarySlp.image)}
+            className="lib-featured"
           />
         </SectionReveal>
 
         {/* Business Arc */}
         <SectionReveal>
-          <ArcLabel marginTop="2.5rem">Business Arc</ArcLabel>
+          <ShelfLabel>Business Arc</ShelfLabel>
         </SectionReveal>
         <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {aiBusinessArc.map(card => (
-            <LibraryCard
+            <BookCard
               key={card.title}
               title={card.title}
-              oneLiner={card.oneLiner}
+              blurb={libraryBlurbs[card.href]}
               priceLabel={card.price}
               href={card.href}
-              image={card.image}
+              image={portrait(card.image)}
             />
           ))}
         </SectionReveal>
 
         {/* Personal Arc */}
         <SectionReveal>
-          <ArcLabel marginTop="2.5rem">Personal Arc</ArcLabel>
+          <ShelfLabel>Personal Arc</ShelfLabel>
         </SectionReveal>
         <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {aiPersonalArc.map(card => (
-            <LibraryCard
+            <BookCard
               key={card.title}
               title={card.title}
-              oneLiner={card.oneLiner}
+              blurb={libraryBlurbs[card.href]}
               priceLabel={card.price}
               href={card.href}
-              image={card.image}
+              image={portrait(card.image)}
             />
           ))}
         </SectionReveal>
 
-        {/* Bundles */}
+        {/* Collections */}
         <SectionReveal>
-          <ArcLabel marginTop="2.5rem">Bundles</ArcLabel>
+          <ShelfLabel>Collections</ShelfLabel>
         </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {aiBundles.map(card => (
-            <LibraryCard
-              key={card.title}
-              title={card.title}
-              oneLiner={card.oneLiner}
-              priceLabel={`${card.bundlePrice} · ${card.savings}`}
-              href={card.href}
-              image={card.image}
+        <SectionReveal className="flex flex-col gap-5">
+          {libraryCollections.map(c => (
+            <CollectionCard
+              key={c.title}
+              title={c.title}
+              blurb={c.blurb}
+              price={c.price}
+              savings={c.savings}
+              href={c.href}
+              members={c.members}
+            />
+          ))}
+        </SectionReveal>
+
+        {/* Free Reading */}
+        <SectionReveal>
+          <ShelfLabel>Free Reading</ShelfLabel>
+        </SectionReveal>
+        <SectionReveal className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {libraryFreeReading.map(b => (
+            <BookCard
+              key={b.title}
+              title={b.title}
+              blurb={b.blurb}
+              priceLabel={b.priceLabel}
+              href={b.href}
+              image={b.image}
+              free
+            />
+          ))}
+        </SectionReveal>
+
+        {/* Books */}
+        <SectionReveal>
+          <ShelfLabel>Books</ShelfLabel>
+        </SectionReveal>
+        <SectionReveal className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {libraryPrintBooks.map(b => (
+            <BookCard
+              key={b.title}
+              title={b.title}
+              blurb={b.blurb}
+              priceLabel={b.priceLabel}
+              href={b.href}
+              image={b.image}
             />
           ))}
         </SectionReveal>
 
         {/* Close */}
         <SectionReveal>
+          <ShelfLabel>The Open Door</ShelfLabel>
+        </SectionReveal>
+        <SectionReveal>
           <p
             style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.95rem',
+              fontFamily: 'var(--font-voice)',
+              fontSize: '1.18rem',
               lineHeight: 1.7,
-              color: 'var(--color-text-muted)',
+              color: 'var(--color-text)',
               maxWidth: '34em',
-              marginTop: '3.5rem',
             }}
           >
-            Prefer to wander first? The <Link href="/blog" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>writing</Link> is the open door, and the products are where the practice deepens.
+            There&apos;s no rush to decide anything. The{' '}
+            <Link href="/blog" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>writing</Link>
+            {' '}is free and always open, the easiest way to feel whether any of this is for you. The{' '}
+            <a href="https://infinitegameos.io" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Infinite Game OS</a>
+            {' '}site is the larger room down the hall, a whole world to roam at no cost. The shelves grow as I make more, so come back whenever you like.
           </p>
         </SectionReveal>
       </section>
