@@ -92,7 +92,7 @@ export default function HomePage() {
       {/* 2 — Happening Now */}
       <section className="section">
         <SectionReveal>
-          <div className="section-label">— Happening Now —</div>
+          <div className="section-label">· Happening Now ·</div>
         </SectionReveal>
         <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Featured: Install Session (gold shimmer bezel) */}
@@ -267,7 +267,7 @@ export default function HomePage() {
       {/* 4 — A Library Preview */}
       <section className="section">
         <SectionReveal>
-          <div className="section-label">— A Library Preview —</div>
+          <div className="section-label">· A Library Preview ·</div>
         </SectionReveal>
         <SectionReveal>
           <p
@@ -370,7 +370,7 @@ export default function HomePage() {
       {/* 6 — Recent Writing */}
       <section className="section">
         <SectionReveal>
-          <div className="section-label">— Recent Writing —</div>
+          <div className="section-label">· Recent Writing ·</div>
         </SectionReveal>
 
         {/* Featured row */}
@@ -553,7 +553,7 @@ export default function HomePage() {
               maxWidth: '40em',
             }}
           >
-            Where the tools, events and one-on-one work live. Four ways to go deeper.
+            This is where the tools, events and one-on-one work live. Four doors, all open.
           </p>
         </SectionReveal>
         <SectionReveal staggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -655,7 +655,7 @@ export default function HomePage() {
                 Stay connected
               </h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
-                Personal updates and fresh ideas. No filler.
+                Personal updates and fresh ideas. The kind you&rsquo;ll actually open.
               </p>
               <NewsletterForm />
             </div>

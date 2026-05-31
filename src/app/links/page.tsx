@@ -135,7 +135,7 @@ export default function LinksPage() {
             className="text-parchment/55 text-sm text-center mb-10 leading-relaxed"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Writer, speaker and guide of the Infinite Game. Breadcrumbs along the way.
+            Writer, speaker and guide of the Infinite Game. Everything worth pointing you to, in one place.
           </p>
 
           {/* Links */}

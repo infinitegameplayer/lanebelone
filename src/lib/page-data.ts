@@ -39,7 +39,7 @@ export const aboutStory: StorySection[] = [
   {
     heading: 'The becoming',
     paras: [
-      "After the military, moved to Panama and I launched business ventures. Most of them didn't grow the way I envisioned. Somewhere along the way, I flew to Peru for fun and exploration and was introduced to a realm I wasn't looking for. Plant medicine. Healing modalities. A reconnection with my native heritage. Wisdom traditions across the world. I was integrating life in leaps and bounds during this chapter. Learning to blend profound spiritual wisdom with practical, grounded, imperfect action.",
+      "After the military, I moved to Panama and launched business ventures. Most of them didn't grow the way I envisioned. Somewhere along the way, I flew to Peru for fun and exploration and was introduced to a realm I wasn't looking for. Plant medicine. Healing modalities. A reconnection with my native heritage. Wisdom traditions across the world. I was integrating life in leaps and bounds during this chapter. Learning to blend profound spiritual wisdom with practical, grounded, imperfect action.",
       "Along the way, I met Steven Kuhn. Together we built the Humble Alpha, a book, a community and a framework for leading with humility, depth and genuine strength. The work reached veterans, entrepreneurs and natural leaders navigating the intersection of inner life and outer impact.",
       { before: 'Toward the end of this chapter, a phrase kept surfacing. ', linkLabel: 'Joyful Sovereignty', linkHref: '/joyful-sovereignty', after: '. I let it find its shape on its own terms.' },
     ],
@@ -56,7 +56,7 @@ export const aboutStory: StorySection[] = [
     heading: 'Today',
     paras: [
       "I write, speak and lead experiences from inside that game.",
-      "My writings carries fresh ideas on joyful and sovereign living that moves through me like an Alive current. Speaking engagements bring the four territories: The Perception Upgrade, Sovereign Worldbuilding, Flow Intelligence and Guidance From Within, into rooms where something real needs to open.",
+      "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring the four territories: The Perception Upgrade, Sovereign Worldbuilding, Flow Intelligence and Guidance From Within, into rooms where something real needs to open.",
       "At Side Quest HQ, I lead retreats, workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
       "The intention has always been the same: help people move in a more beautiful direction.",
     ],
@@ -92,7 +92,7 @@ export const speakingTopics: SpeakingTopic[] = [
   {
     title: 'Guidance From Within',
     subtitle: 'Intuition, decision-making and moving through uncertainty with confidence',
-    body: 'Teaches participants to interpret subtle signals and trust their inner compass. Topics include next-move sensing, signal interpretation and making clear decisions in complex environments.',
+    body: "Teaches participants to read the subtle cues and trust their inner compass. Topics include next-move sensing, reading what's surfacing and making clear decisions in complex environments.",
   },
 ]
 
@@ -165,7 +165,7 @@ export const jsFaqs: FaqItem[] = [
   },
   {
     q: 'What is the Infinite Game?',
-    a: 'The Infinite Game is life played to keep playing, not to win. Finite arcs — projects, quests, retreats, creative sprints — create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures become growth obstacles, not permanent defeats. The infinite game never stops.',
+    a: 'The Infinite Game is life played to keep playing, not to win. Finite arcs like projects, quests, retreats and creative sprints create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures become growth obstacles, not permanent defeats. The infinite game never stops.',
   },
   {
     q: 'What are Playgrounds of Exploration?',
@@ -201,7 +201,7 @@ export const happeningNow: HappeningNowItem[] = [
   {
     badge: 'Playbook',
     title: 'The Sovereign Life Playbook',
-    description: "A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited, not just read once.",
+    description: "A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited. A book you return to.",
     cta: 'Get the Playbook',
     ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
     price: '$37',
@@ -271,7 +271,7 @@ export interface AIProductCard {
 }
 
 export const aiForBusinessFrame =
-  'Whether you are starting with AI or stuck in the middle, the Field Guides meet you where you are.'
+  "Whether you're starting with AI or stuck in the middle, the Field Guides begin where you are."
 
 export const aiBusinessArc: AIProductCard[] = [
   {
@@ -360,7 +360,7 @@ export interface AIBundleCard {
 export const aiBundles: AIBundleCard[] = [
   {
     badge: 'Bundle',
-    title: 'The AI Practice Bundle',
+    title: 'The Business Collection',
     oneLiner: 'B1, B2 and B3 together. The full business arc.',
     bundlePrice: '$14',
     savings: 'Save $13',
@@ -371,7 +371,7 @@ export const aiBundles: AIBundleCard[] = [
   },
   {
     badge: 'Bundle',
-    title: 'The Personal Practice Bundle',
+    title: 'The Personal Collection',
     oneLiner: 'P1, P2 and P3 together. The full personal arc.',
     bundlePrice: '$13',
     savings: 'Save $12',
@@ -382,7 +382,7 @@ export const aiBundles: AIBundleCard[] = [
   },
   {
     badge: 'Bundle',
-    title: 'The Foundation Bundle',
+    title: 'The Foundation Collection',
     oneLiner: 'All six Field Guides. The business axis and the personal axis.',
     bundlePrice: '$27',
     savings: 'Save $25',
@@ -446,7 +446,7 @@ export interface LibraryCollection {
 }
 
 // Collections show only their member book covers. The display name is
-// "Collection"; the SQHQ product pages still read "Bundle" until renamed.
+// "Collection", now matching the SQHQ product display titles (slugs stay business-bundle).
 export const libraryCollections: LibraryCollection[] = [
   {
     title: 'The Business Collection',

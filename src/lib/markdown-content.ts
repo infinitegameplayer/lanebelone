@@ -80,7 +80,7 @@ Essays on the infinite game, sovereignty, flow and perception. [Read the full ar
 
 ## Work with Me at Side Quest HQ
 
-Where the tools, events and one-on-one work live. Four ways to go deeper:
+This is where the tools, events and one-on-one work live. Four doors, all open:
 
 ${sqhqMd}
 
@@ -145,7 +145,7 @@ function generateSpeakingMarkdown(): string {
 
 Design. Play. Master.
 
-Inviting leaders, creators and communities into experiences that spark clarity, presence, creativity and transformational insight.
+Inviting leaders, creators and communities into experiences that spark clarity, presence and genuine insight.
 
 ## Topics
 
@@ -303,7 +303,7 @@ function generateLinksMarkdown(): string {
 
 > Every Lane Belone destination in one place.
 
-Writer, speaker and guide of the Infinite Game. Breadcrumbs along the way.
+Writer, speaker and guide of the Infinite Game. Everything worth pointing you to, in one place.
 
 ## Destinations
 

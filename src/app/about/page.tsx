@@ -170,6 +170,9 @@ export default function AboutPage() {
       {/* Cross-links */}
       <section className="section border-t border-white/5">
         <SectionReveal>
+          <p className="text-parchment/60 leading-relaxed mb-8" style={{ fontFamily: 'var(--font-body)' }}>
+            A few doors from here, if you&apos;d like to keep exploring.
+          </p>
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div>
               <p className="text-parchment/50 text-sm mb-3" style={{ fontFamily: 'var(--font-body)' }}>

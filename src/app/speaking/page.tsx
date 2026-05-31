@@ -85,7 +85,7 @@ export default function SpeakingPage() {
             className="hero-line hero-line-2 text-lg md:text-xl text-parchment/70 max-w-2xl"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Inviting leaders, creators and communities into experiences that spark clarity, presence, creativity and transformational insight.
+            Inviting leaders, creators and communities into experiences that spark clarity, presence and genuine insight.
           </p>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function SpeakingPage() {
         <SectionReveal>
           <div className="max-w-2xl">
             <p className="text-parchment/60 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              Looking for workshops, retreats or ongoing advisory work? That lives at{' '}
+              Looking for workshops, retreats or ongoing advisory work? That all lives over at{' '}
               <a
                 href="https://sidequesthq.co"
                 className="text-parchment/80 underline underline-offset-4 hover:text-parchment transition-colors"
@@ -168,7 +168,7 @@ export default function SpeakingPage() {
               Invite me to speak
             </h2>
             <p className="text-parchment/60 mb-10 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              Tell me about your event. The audience, the moment, what you&apos;re hoping to open. If there&apos;s a fit, we&apos;ll figure out the next step.
+              Tell me about your event. The audience, the moment, what you&apos;re hoping to open. If there&apos;s a fit, you&apos;ll feel it. We&apos;ll find the next step from there.
             </p>
             <InquiryForm
               formName="lanebelone-speaking"

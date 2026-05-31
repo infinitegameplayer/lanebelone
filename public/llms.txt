@@ -32,7 +32,7 @@ He served in the U.S. Army for over a decade, including Special Forces service (
 - [About](https://lanebelone.com/about): Five-chapter personal story: The beginning, The call (Special Forces), The becoming (Panama, Peru, Humble Alpha), The living (Joyful Sovereignty emergence), Today
 - [Joyful Sovereignty](https://lanebelone.com/joyful-sovereignty): Core philosophy in full — what it is, the infinite game, perception and clarity, how it shows up
 - [Speaking](https://lanebelone.com/speaking): Four speaking territories, formats and booking inquiry
-- [Library](https://lanebelone.com/library): The full digital product catalog index. The Sovereign Life Playbook, six AI Field Guides and three bundles, each hosted on Side Quest HQ
+- [Library](https://lanebelone.com/library): The full digital product catalog index. The Sovereign Life Playbook, six AI Field Guides and three collections, each hosted on Side Quest HQ
 - [Links](https://lanebelone.com/links): One branded hub of every Lane Belone destination — writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and the full library
 - [Cite this Work](https://lanebelone.com/cite): Structured citations (APA, Chicago, BibTeX) and machine-readable JSON-LD references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work
 - [Writing](https://lanebelone.com/blog): Essays and breadcrumbs from the infinite game (archive of 30 articles)
@@ -51,14 +51,14 @@ Lane's digital products live at Side Quest HQ (https://sidequesthq.co/products).
 - **[AI for the Business You Actually Want](https://sidequesthq.co/products/ai-for-the-business-you-actually-want)** ($9): A first-principles Field Guide for the owner already using AI productively who still feels off. Voice protection, pace-layer awareness, decision discipline.
 - **[Stack Calm](https://sidequesthq.co/products/stack-calm)** ($9): The minimum viable AI setup. Personal stack ledger, aliveness filter, the new-tool test.
 - **[Earn the Right to Automate](https://sidequesthq.co/products/earn-the-right-to-automate)** ($9): The timing practice. Twenty manual reps before automation is on the table. A five-question decision tree.
-- **[The AI Practice Bundle](https://sidequesthq.co/products/business-bundle)** ($14): All three business Field Guides as one practice. Save $13 versus separate.
+- **[The Business Collection](https://sidequesthq.co/products/business-bundle)** ($14): All three business Field Guides as one practice. Save $13 versus separate.
 - **[Whose Game Are You Playing with AI](https://sidequesthq.co/products/whose-game-are-you-playing-with-ai)** ($9): A Personal-arc Field Guide on AI as a mirror with limits, not an engine. Whose game you are playing.
 - **[Yours to Make](https://sidequesthq.co/products/yours-to-make)** ($9): A Personal-arc Field Guide on voice patterning through contrast. Keeping the making yours.
 - **[Sovereign Capture](https://sidequesthq.co/products/sovereign-capture)** ($7): A Personal-arc Field Guide on presence as the practice. The container that remembers so you can stay present.
-- **[The Personal Practice Bundle](https://sidequesthq.co/products/personal-bundle)** ($13): All three personal Field Guides as one practice. Save $12 versus separate.
-- **[The Foundation Bundle](https://sidequesthq.co/products/foundation-bundle)** ($27): All six Field Guides across both arcs as one foundation. Save $25 versus separate.
+- **[The Personal Collection](https://sidequesthq.co/products/personal-bundle)** ($13): All three personal Field Guides as one practice. Save $12 versus separate.
+- **[The Foundation Collection](https://sidequesthq.co/products/foundation-bundle)** ($27): All six Field Guides across both arcs as one foundation. Save $25 versus separate.
 
-The six Field Guides plus three bundles make up the AI Product Slate. Wave 1 is the business arc. Wave 2 is the personal arc plus the cross-arc Foundation Bundle. All are live.
+The six Field Guides plus three collections make up the AI Product Slate. Wave 1 is the business arc. Wave 2 is the personal arc plus the cross-arc Foundation Collection. All are live.
 
 ## Speaking Formats
 

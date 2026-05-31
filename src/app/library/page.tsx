@@ -173,7 +173,7 @@ export default function LibraryPage() {
       <section className="section" style={{ paddingTop: '9rem' }}>
         {/* Intro */}
         <SectionReveal>
-          <div className="section-label">— The Library —</div>
+          <div className="section-label">· The Library ·</div>
         </SectionReveal>
         <SectionReveal>
           <h1

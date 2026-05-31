@@ -17,7 +17,7 @@ export default function NotFound() {
         className="text-parchment/60 mb-8 max-w-md leading-relaxed"
         style={{ fontFamily: 'var(--font-body)' }}
       >
-        That path doesn&apos;t exist. The writing, speaking and ideas are still here.
+        That path doesn&apos;t exist. Or it wandered off. Either way, the writing, speaking and ideas are still right here.
       </p>
       <a href="/" className="btn-gold self-start">
         Back to home
