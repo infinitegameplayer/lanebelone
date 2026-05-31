@@ -12,7 +12,6 @@ import {
   speakingFormats,
   jsSections,
   happeningNow,
-  books,
   sqhqChips,
   librarySlp,
   aiBusinessArc,
@@ -37,8 +36,12 @@ function generateHomeMarkdown(): string {
     })
     .join('\n')
 
-  const booksMd = books
-    .map(b => `- **[${b.title}](${b.href})** · ${b.description}`)
+  const fieldGuidesMd = [...aiBusinessArc, ...aiPersonalArc]
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${c.oneLiner}`)
+    .join('\n')
+
+  const homeCollectionsMd = libraryCollections
+    .map(c => `- **[${c.title}](${c.href})** (${c.price}, ${c.savings}) · ${c.blurb}`)
     .join('\n')
 
   const sqhqMd = sqhqChips
@@ -61,9 +64,15 @@ ${happeningNowMd}
 
 An approach to playing the Infinite Game through joy and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort. [Explore Joyful Sovereignty](${SITE}/joyful-sovereignty)
 
-## Books
+## A Library Preview
 
-${booksMd}
+Six short Field Guides across two arcs, each built around the questions productivity AI skips. [Browse the full library](${SITE}/library)
+
+${fieldGuidesMd}
+
+### Collections
+
+${homeCollectionsMd}
 
 ## Recent Writing
 

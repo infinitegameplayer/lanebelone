@@ -271,14 +271,14 @@ export interface AIProductCard {
 }
 
 export const aiForBusinessFrame =
-  'Whether you are starting with AI or stuck in the middle, the slate meets you where you are.'
+  'Whether you are starting with AI or stuck in the middle, the Field Guides meet you where you are.'
 
 export const aiBusinessArc: AIProductCard[] = [
   {
     badge: 'Business Arc',
     title: 'AI for the Business You Actually Want',
     oneLiner:
-      'A first-principles starter for the owner who is already using AI and still feels off.',
+      "Return to the question underneath the tools. What's the business you actually want?",
     price: '$9',
     href: 'https://sidequesthq.co/products/ai-for-the-business-you-actually-want',
     image: `${SQHQ_BLOB}/ai-for-the-business-you-actually-want/cover-4x3.png`,
@@ -289,7 +289,7 @@ export const aiBusinessArc: AIProductCard[] = [
     badge: 'Business Arc',
     title: 'Stack Calm',
     oneLiner:
-      'Your minimum viable AI setup. What to keep, what to cancel, what to add when.',
+      'The minimum viable AI setup. What to keep, what to cancel, what to add when.',
     price: '$9',
     href: 'https://sidequesthq.co/products/stack-calm',
     image: `${SQHQ_BLOB}/stack-calm/cover-4x3.png`,
@@ -300,7 +300,7 @@ export const aiBusinessArc: AIProductCard[] = [
     badge: 'Business Arc',
     title: 'Earn the Right to Automate',
     oneLiner:
-      'A timing guide. Validate the workflow manually first. Automate when it is ready.',
+      'Prove the workflow by hand first. Automate once it has earned the trust.',
     price: '$9',
     href: 'https://sidequesthq.co/products/earn-the-right-to-automate',
     image: `${SQHQ_BLOB}/earn-the-right-to-automate/cover-4x3.png`,
@@ -314,7 +314,7 @@ export const aiPersonalArc: AIProductCard[] = [
     badge: 'Personal Arc',
     title: 'Whose Game Are You Playing with AI?',
     oneLiner:
-      'A contemplative practice for the reader who is already using AI and quietly wonders whose game it serves.',
+      'A few honest questions to keep the tools carrying your direction, not the other way around.',
     price: '$9',
     href: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
     image: `${SQHQ_BLOB}/whose-game-are-you-playing-with-ai/cover-4x3.png`,
@@ -325,7 +325,7 @@ export const aiPersonalArc: AIProductCard[] = [
     badge: 'Personal Arc',
     title: 'Yours to Make',
     oneLiner:
-      'A creative practice for the maker whose AI output is prolific and slightly not theirs.',
+      'Keep your fingerprints on the work, so what you ship still sounds like you.',
     price: '$9',
     href: 'https://sidequesthq.co/products/yours-to-make',
     image: `${SQHQ_BLOB}/yours-to-make/cover-4x3.png`,
@@ -336,7 +336,7 @@ export const aiPersonalArc: AIProductCard[] = [
     badge: 'Personal Arc',
     title: 'Sovereign Capture',
     oneLiner:
-      'A sovereign capture container and a weekly rhythm to hold it. For the reader whose ideas keep evaporating.',
+      'One trusted place for every idea, so your best thinking stops evaporating.',
     price: '$7',
     href: 'https://sidequesthq.co/products/sovereign-capture',
     image: `${SQHQ_BLOB}/sovereign-capture/cover-4x3.png`,

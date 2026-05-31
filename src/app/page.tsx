@@ -8,12 +8,11 @@ import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
 import {
   happeningNow,
-  books,
   sqhqChips,
   aiForBusinessFrame,
   aiBusinessArc,
   aiPersonalArc,
-  aiBundles,
+  libraryCollections,
 } from '@/lib/page-data'
 
 export const metadata: Metadata = {
@@ -46,6 +45,34 @@ const profilePageJsonLd = {
   description:
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
   mainEntity: { '@id': 'https://infinitegameos.io/#person' },
+}
+
+// Portrait cover crop (4:5 cover-display) for the library-style shelves, matching
+// the /library page. Shared page-data points image at the 4:3 landscape crop, so
+// we swap to the portrait here without disturbing it.
+const portrait = (img: string) => img.replace('cover-4x3', 'cover-display')
+
+// A single Field Guide on the home shelves. Reuses the lib- classes from the
+// /library page so the two surfaces read as one room.
+function ShelfCard({ title, hook, price, href, image }: {
+  title: string
+  hook: string
+  price: string
+  href: string
+  image: string
+}) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="lib-book">
+      <div className="lib-cover-frame">
+        <img src={portrait(image)} alt={`${title} cover`} loading="lazy" />
+      </div>
+      <div className="lib-meta">
+        <span className="lib-price">{price}</span>
+        <h3 className="lib-title">{title}</h3>
+        <p className="lib-blurb">{hook}</p>
+      </div>
+    </a>
+  )
 }
 
 export default function HomePage() {
@@ -237,106 +264,10 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 4 — Books */}
+      {/* 4 — A Library Preview */}
       <section className="section">
         <SectionReveal>
-          <div className="section-label">— Books —</div>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Your Infinite RPG */}
-          <div className="bezel-card">
-            <div className="bezel-inner">
-              <div className="grid grid-cols-[130px_1fr] gap-6 items-center">
-                <div className="relative w-32 aspect-[2/3] rounded-[3px] overflow-hidden border" style={{ borderColor: 'rgba(201, 168, 76, 0.2)', boxShadow: '0 10px 28px rgba(0,0,0,0.5)' }}>
-                  <Image src="/images/book-infinite-rpg.png" alt="Your Infinite RPG" fill className="object-cover" sizes="130px" />
-                </div>
-                <div>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '0.6rem',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                      color: 'var(--color-text-muted)',
-                      display: 'inline-block',
-                      padding: '0.2rem 0.55rem',
-                      border: '1px solid var(--color-border-subtle)',
-                      borderRadius: '3px',
-                      marginBottom: '0.65rem',
-                    }}
-                  >
-                    Free
-                  </span>
-                  <h3 style={{ fontFamily: 'var(--font-voice)', fontSize: '1.55rem', fontWeight: 500, lineHeight: 1.2, marginBottom: '0.85rem' }}>
-                    {books[0].title}
-                  </h3>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
-                    {books[0].description}
-                  </p>
-                  <a
-                    href={books[0].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-ghost"
-                  >
-                    {books[0].cta} &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Humble Alpha */}
-          <div className="bezel-card">
-            <div className="bezel-inner">
-              <div className="grid grid-cols-[130px_1fr] gap-6 items-center">
-                <div className="relative w-32 aspect-[2/3] rounded-[3px] overflow-hidden border" style={{ borderColor: 'rgba(201, 168, 76, 0.2)', boxShadow: '0 10px 28px rgba(0,0,0,0.5)' }}>
-                  <Image src="/images/book-humble-alpha.jpg" alt="Humble Alpha" fill className="object-cover" sizes="130px" />
-                </div>
-                <div>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '0.6rem',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                      color: 'var(--color-text-muted)',
-                      display: 'inline-block',
-                      padding: '0.2rem 0.55rem',
-                      border: '1px solid var(--color-border-subtle)',
-                      borderRadius: '3px',
-                      marginBottom: '0.65rem',
-                    }}
-                  >
-                    Book
-                  </span>
-                  <h3 style={{ fontFamily: 'var(--font-voice)', fontSize: '1.55rem', fontWeight: 500, lineHeight: 1.2, marginBottom: '0.85rem' }}>
-                    {books[1].title}
-                  </h3>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
-                    {books[1].description}
-                  </p>
-                  <a
-                    href={books[1].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-ghost"
-                  >
-                    {books[1].cta} &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SectionReveal>
-      </section>
-
-      <div className="section-divider" />
-
-      {/* 5 — AI for Business */}
-      <section className="section">
-        <SectionReveal>
-          <div className="section-label">— AI for Business —</div>
+          <div className="section-label">— A Library Preview —</div>
         </SectionReveal>
         <SectionReveal>
           <p
@@ -345,340 +276,92 @@ export default function HomePage() {
               fontSize: '1.05rem',
               lineHeight: 1.75,
               color: 'var(--color-text-muted)',
-              maxWidth: '36em',
-              marginBottom: '3rem',
+              maxWidth: '38em',
+              marginBottom: '1rem',
             }}
           >
-            {aiForBusinessFrame} A six-product slate of sub-$10 guides. Three for the business arc. Three for the personal arc. Built around the questions productivity AI skips.
+            {aiForBusinessFrame} Six short reads across two arcs, each built around the questions productivity AI skips.
+          </p>
+        </SectionReveal>
+        <SectionReveal>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <Link href="/library" className="btn-ghost">
+              Browse the full library &rarr;
+            </Link>
+          </div>
+        </SectionReveal>
+
+        {/* Business Arc */}
+        <SectionReveal>
+          <div className="lib-shelf-label">Business Arc</div>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {aiBusinessArc.map((card) => (
+            <ShelfCard
+              key={card.title}
+              title={card.title}
+              hook={card.oneLiner}
+              price={card.price}
+              href={card.href}
+              image={card.image}
+            />
+          ))}
+        </SectionReveal>
+        <SectionReveal>
+          <p className="home-collection-line">
+            Get all three.{' '}
+            <a href={libraryCollections[0].href} target="_blank" rel="noopener noreferrer">
+              {libraryCollections[0].title}, {libraryCollections[0].price}, {libraryCollections[0].savings.replace('Save ', 'saves you ')} &rarr;
+            </a>
           </p>
         </SectionReveal>
 
-        {/* Business Arc — Wave 1 */}
+        {/* Personal Arc */}
+        <SectionReveal>
+          <div className="lib-shelf-label">Personal Arc</div>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {aiPersonalArc.map((card) => (
+            <ShelfCard
+              key={card.title}
+              title={card.title}
+              hook={card.oneLiner}
+              price={card.price}
+              href={card.href}
+              image={card.image}
+            />
+          ))}
+        </SectionReveal>
+        <SectionReveal>
+          <p className="home-collection-line">
+            Get all three.{' '}
+            <a href={libraryCollections[1].href} target="_blank" rel="noopener noreferrer">
+              {libraryCollections[1].title}, {libraryCollections[1].price}, {libraryCollections[1].savings.replace('Save ', 'saves you ')} &rarr;
+            </a>
+          </p>
+        </SectionReveal>
+
+        {/* Closer: Foundation Collection + library doorway */}
         <SectionReveal>
           <div
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '0.68rem',
-              fontWeight: 500,
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: 'var(--color-gold)',
-              marginBottom: '1.25rem',
+              marginTop: '3.5rem',
+              paddingTop: '2rem',
+              borderTop: '1px solid var(--color-border-subtle)',
             }}
           >
-            Business Arc
-          </div>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {aiBusinessArc.map((card) => {
-            const isLive = card.status === 'live'
-            const cardInner = (
-              <div className="bezel-card flex flex-col h-full">
-                <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
-                  {card.image && (
-                    <img
-                      src={card.image}
-                      alt={`${card.title} cover`}
-                      loading="lazy"
-                      width={400}
-                      height={300}
-                      style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
-                    />
-                  )}
-                  <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '0.6rem',
-                        fontWeight: 500,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: 'var(--color-accent-hover)',
-                      }}
-                    >
-                      {card.price}
-                    </span>
-                    {!isLive && (
-                      <span
-                        style={{
-                          fontFamily: 'var(--font-display)',
-                          fontSize: '0.55rem',
-                          letterSpacing: '0.12em',
-                          textTransform: 'uppercase',
-                          color: 'var(--color-text-muted)',
-                          padding: '0.18rem 0.5rem',
-                          border: '1px solid var(--color-border-subtle)',
-                          borderRadius: '3px',
-                        }}
-                      >
-                        Coming soon
-                      </span>
-                    )}
-                  </div>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '1.05rem',
-                      fontWeight: 600,
-                      letterSpacing: '-0.01em',
-                      lineHeight: 1.25,
-                      marginBottom: '0.4rem',
-                    }}
-                  >
-                    {card.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '0.85rem',
-                      lineHeight: 1.55,
-                      color: 'var(--color-text-muted)',
-                      margin: 0,
-                    }}
-                  >
-                    {card.oneLiner}
-                  </p>
-                </div>
-              </div>
-            )
-            return isLive ? (
-              <a
-                key={card.title}
-                href={card.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
-              >
-                {cardInner}
+            <p className="home-collection-line" style={{ marginTop: 0, marginBottom: '1.5rem' }}>
+              Or take the whole shelf.{' '}
+              <a href={libraryCollections[2].href} target="_blank" rel="noopener noreferrer">
+                {libraryCollections[2].title}, all six, {libraryCollections[2].savings.replace('Save ', 'saves you ')} &rarr;
               </a>
-            ) : (
-              <div key={card.title}>{cardInner}</div>
-            )
-          })}
-        </SectionReveal>
-
-        {/* Personal Arc — Wave 2 */}
-        <SectionReveal>
-          <div
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '0.68rem',
-              fontWeight: 500,
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: 'var(--color-gold)',
-              marginTop: '2.5rem',
-              marginBottom: '1.25rem',
-            }}
-          >
-            Personal Arc
+            </p>
+            <div className="text-right">
+              <Link href="/library" className="btn-ghost">
+                Browse the full library &rarr;
+              </Link>
+            </div>
           </div>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {aiPersonalArc.map((card) => {
-            const isLive = card.status === 'live'
-            const cardInner = (
-              <div className="bezel-card flex flex-col h-full">
-                <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
-                  {card.image && (
-                    <img
-                      src={card.image}
-                      alt={`${card.title} cover`}
-                      loading="lazy"
-                      width={400}
-                      height={300}
-                      style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
-                    />
-                  )}
-                  <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '0.6rem',
-                        fontWeight: 500,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: 'var(--color-accent-hover)',
-                      }}
-                    >
-                      {card.price}
-                    </span>
-                    {!isLive && (
-                      <span
-                        style={{
-                          fontFamily: 'var(--font-display)',
-                          fontSize: '0.55rem',
-                          letterSpacing: '0.12em',
-                          textTransform: 'uppercase',
-                          color: 'var(--color-text-muted)',
-                          padding: '0.18rem 0.5rem',
-                          border: '1px solid var(--color-border-subtle)',
-                          borderRadius: '3px',
-                        }}
-                      >
-                        Coming soon
-                      </span>
-                    )}
-                  </div>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '1.05rem',
-                      fontWeight: 600,
-                      letterSpacing: '-0.01em',
-                      lineHeight: 1.25,
-                      marginBottom: '0.4rem',
-                    }}
-                  >
-                    {card.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '0.85rem',
-                      lineHeight: 1.55,
-                      color: 'var(--color-text-muted)',
-                      margin: 0,
-                    }}
-                  >
-                    {card.oneLiner}
-                  </p>
-                </div>
-              </div>
-            )
-            return isLive ? (
-              <a
-                key={card.title}
-                href={card.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
-              >
-                {cardInner}
-              </a>
-            ) : (
-              <div key={card.title}>{cardInner}</div>
-            )
-          })}
-        </SectionReveal>
-
-        {/* Bundles */}
-        <SectionReveal>
-          <div
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '0.68rem',
-              fontWeight: 500,
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: 'var(--color-gold)',
-              marginTop: '2.5rem',
-              marginBottom: '1.25rem',
-            }}
-          >
-            Bundles
-          </div>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {aiBundles.map((card) => {
-            const isLive = card.status === 'live'
-            const cardInner = (
-              <div className="bezel-card flex flex-col h-full">
-                <div className="bezel-inner flex flex-col gap-2 flex-1" style={{ padding: '1.25rem 1.1rem' }}>
-                  {card.image && (
-                    <img
-                      src={card.image}
-                      alt={`${card.title} cover`}
-                      loading="lazy"
-                      width={400}
-                      height={300}
-                      style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.6rem' }}
-                    />
-                  )}
-                  <div className="flex items-center justify-between" style={{ marginBottom: '0.4rem' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '0.6rem',
-                        fontWeight: 500,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: 'var(--color-gold)',
-                      }}
-                    >
-                      {card.bundlePrice} · {card.savings}
-                    </span>
-                    {!isLive && (
-                      <span
-                        style={{
-                          fontFamily: 'var(--font-display)',
-                          fontSize: '0.55rem',
-                          letterSpacing: '0.12em',
-                          textTransform: 'uppercase',
-                          color: 'var(--color-text-muted)',
-                          padding: '0.18rem 0.5rem',
-                          border: '1px solid var(--color-border-subtle)',
-                          borderRadius: '3px',
-                        }}
-                      >
-                        Coming soon
-                      </span>
-                    )}
-                  </div>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '1.05rem',
-                      fontWeight: 600,
-                      letterSpacing: '-0.01em',
-                      lineHeight: 1.25,
-                      marginBottom: '0.4rem',
-                    }}
-                  >
-                    {card.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '0.85rem',
-                      lineHeight: 1.55,
-                      color: 'var(--color-text-muted)',
-                      margin: 0,
-                    }}
-                  >
-                    {card.oneLiner}
-                  </p>
-                </div>
-              </div>
-            )
-            return isLive ? (
-              <a
-                key={card.title}
-                href={card.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
-              >
-                {cardInner}
-              </a>
-            ) : (
-              <div key={card.title}>{cardInner}</div>
-            )
-          })}
-        </SectionReveal>
-
-        <SectionReveal className="text-right mt-8 flex justify-end gap-6 flex-wrap">
-          <Link href="/library" className="btn-ghost">
-            Browse the full library &rarr;
-          </Link>
-          <a
-            href="https://sidequesthq.co/products"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-ghost"
-          >
-            See the slate on Side Quest HQ &rarr;
-          </a>
         </SectionReveal>
       </section>
 
