@@ -523,6 +523,13 @@ export interface LinkHubItem {
 }
 
 export const linkHub: LinkHubItem[] = [
+  // Rotating featured slot. Update each batch to the destination the current article and social posts drive to.
+  {
+    label: 'The Full Library',
+    sublabel: 'Start here · every playbook and field guide in one place',
+    href: '/library',
+    icon: 'compass',
+  },
   {
     label: 'Read the Writing',
     sublabel: 'Essays and breadcrumbs from inside the game',
@@ -552,12 +559,6 @@ export const linkHub: LinkHubItem[] = [
     sublabel: 'Keynotes, workshops and retreats',
     href: '/speaking',
     icon: 'mic',
-  },
-  {
-    label: 'The Full Library',
-    sublabel: 'Every playbook and guide in one place',
-    href: '/library',
-    icon: 'library',
   },
 ]
 
