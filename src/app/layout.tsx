@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Suspense } from 'react'
 import './globals.css'
 import Nav from '@/components/Nav'
@@ -8,6 +7,7 @@ import AmbientPulse from '@/components/AmbientPulse'
 import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
 import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
+import { UmamiAnalytics } from '@/components/UmamiAnalytics'
 
 export const metadata: Metadata = {
   title: {
@@ -135,14 +135,7 @@ export default function RootLayout({
             <PostHogPageView />
           </Suspense>
           <CrossSiteLinkTracker />
-          {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-            <Script
-              defer
-              src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
-              data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-              strategy="afterInteractive"
-            />
-          )}
+          <UmamiAnalytics />
           <AmbientPulse />
           <Nav />
           <main>{children}</main>
