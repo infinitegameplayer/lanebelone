@@ -6,6 +6,16 @@ import type { NextConfig } from 'next'
 const markdownAcceptRegex =
   '(?=.*(?:text/plain|text/markdown))(?!.*text/html.*(?:text/plain|text/markdown)).*'
 
+// CSP allowlist origins. Analytics hosts read from env at build time so changing
+// the env var updates the policy without a code edit. Empty values are filtered
+// out of the source lists. PostHog lazy-loads its session recorder from the assets
+// host, so that origin is explicit. Fonts are self-hosted via @fontsource (served
+// from 'self'), so no external font origin is needed. Cal.com appears only as
+// outbound links in article bodies, not an on-page embed, so it needs no origin.
+const UMAMI_URL = process.env.NEXT_PUBLIC_UMAMI_URL || ''
+const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
+const POSTHOG_ASSETS = 'https://us-assets.i.posthog.com'
+
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp'],
@@ -43,8 +53,28 @@ const nextConfig: NextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
           },
-          // Content-Security-Policy requires per-site tuning for HubSpot and Luma.
-          // Define and test before enabling.
+          {
+            // CSP tuned to lanebelone's client-side third parties: PostHog
+            // (analytics + session recording) and Umami (env-sourced analytics).
+            // unsafe-inline on script-src is required for Next.js hydration and the
+            // JSON-LD blocks in the document head. worker-src blob: is required by
+            // PostHog session recording. Fonts are self-hosted (@fontsource), so
+            // font-src needs no external origin. HubSpot and Luma are fully removed.
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              `script-src ${["'self'", "'unsafe-inline'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: https:",
+              "font-src 'self' data:",
+              `connect-src ${["'self'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
+              "worker-src 'self' blob:",
+              "frame-ancestors 'self'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "object-src 'none'",
+            ].join('; '),
+          },
           // RFC 8288 Link headers — point AI agents to structured resources
           {
             key: 'Link',

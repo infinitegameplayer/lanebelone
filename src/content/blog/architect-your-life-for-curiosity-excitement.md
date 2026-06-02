@@ -213,5 +213,4 @@ Wish you a great rest of your day!</p><p><br>
 Best,</p><p><br>
 Lane</p><p><br>
 P.S. If you enjoyed this edition, share this link on your social media or with a friend who you think would enjoy reading this.<br>
-</p><div><h2><strong>Next Joyful Sovereignty Weekly…</strong></h2></div><p>If you have a topic that you’d like to hear, let me know!</p><p><br></p><p><strong>Self-Mastery Operating System</strong><br>
-If you’re looking to create an ecosystem for your life towards Joyful Sovereignty and seeking guidance and accountability, <a href="https://share.hsforms.com/157kmHU6bR2q_wtlynqRuVQdz83e" rel="">join the waitlist for my upcoming <strong>Self-Mastery System</strong> by clicking here</a>. More info on that coming soon.&nbsp;</p>
+</p><div><h2><strong>Next Joyful Sovereignty Weekly…</strong></h2></div><p>If you have a topic that you’d like to hear, let me know!</p>

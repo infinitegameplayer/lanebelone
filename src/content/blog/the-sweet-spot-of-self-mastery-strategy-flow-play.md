@@ -164,4 +164,4 @@ That’s it for this edition of the Joyful Sovereignty Weekly!</p><p><br>
 Wish you a great rest of your day!</p><p><br>
 Best,</p><p><br>
 Lane</p><p><br>
-P.S. If you enjoyed this edition, share this on your social media or with a friend who you think would enjoy reading this.</p><p></p><hr><p></p><div><h2><strong>Next Joyful Sovereignty Weekly…</strong></h2></div><p>We will discuss how Self-Mastery is the key to unlock all the other doors in your life…</p><p></p><hr><p></p><p>If you’re looking to create an ecosystem for your life towards Joyful Sovereignty and seeking guidance and accountability, <a href="https://share.hsforms.com/157kmHU6bR2q_wtlynqRuVQdz83e" rel="">join the waitlist for my upcoming <strong>Self-Mastery System</strong> by clicking here</a>. More info on that coming very soon.&nbsp;</p>
+P.S. If you enjoyed this edition, share this on your social media or with a friend who you think would enjoy reading this.</p><p></p><hr><p></p><div><h2><strong>Next Joyful Sovereignty Weekly…</strong></h2></div><p>We will discuss how Self-Mastery is the key to unlock all the other doors in your life…</p>
