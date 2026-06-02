@@ -20,13 +20,11 @@ export const metadata: Metadata = {
     title: 'Speaking · Lane Belone',
     description: 'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
     url: 'https://www.lanebelone.com/speaking',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Speaking · Lane Belone',
     description: 'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
 

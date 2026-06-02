@@ -14,13 +14,11 @@ export const metadata: Metadata = {
     title: 'Cite this Work · Lane Belone',
     description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work.',
     url: 'https://www.lanebelone.com/cite',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cite this Work · Lane Belone',
     description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work.',
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
 

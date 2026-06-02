@@ -30,13 +30,11 @@ export const metadata: Metadata = {
     title: 'Library · Lane Belone',
     description: DESCRIPTION,
     url: 'https://www.lanebelone.com/library',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Library · Lane Belone',
     description: DESCRIPTION,
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
 

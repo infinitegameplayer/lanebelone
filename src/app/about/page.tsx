@@ -21,13 +21,11 @@ export const metadata: Metadata = {
     title: 'About Lane Belone | Writer and Guide of the Infinite Game',
     description: LANE_BIO,
     url: 'https://www.lanebelone.com/about',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Lane Belone | Writer and Guide of the Infinite Game',
     description: LANE_BIO,
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
 

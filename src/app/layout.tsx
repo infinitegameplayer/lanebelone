@@ -29,13 +29,11 @@ export const metadata: Metadata = {
     title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
     description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
     url: 'https://www.lanebelone.com',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
     description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
   robots: {
     index: true,

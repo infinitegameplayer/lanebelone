@@ -19,13 +19,11 @@ export const metadata: Metadata = {
     title: 'Links · Lane Belone',
     description: 'Every Lane Belone destination in one place. Writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and more.',
     url: 'https://www.lanebelone.com/links',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Links · Lane Belone',
     description: 'Every Lane Belone destination in one place.',
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
 

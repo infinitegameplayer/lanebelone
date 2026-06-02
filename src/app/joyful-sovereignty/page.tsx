@@ -19,13 +19,11 @@ export const metadata: Metadata = {
     title: 'Joyful Sovereignty · Lane Belone',
     description: JS_DESCRIPTION,
     url: 'https://www.lanebelone.com/joyful-sovereignty',
-    images: [{ url: '/images/lane-machu-picchu-square.webp', width: 1200, height: 1200, alt: 'Lane Belone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Joyful Sovereignty · Lane Belone',
     description: JS_DESCRIPTION,
-    images: ['/images/lane-machu-picchu-square.webp'],
   },
 }
 
