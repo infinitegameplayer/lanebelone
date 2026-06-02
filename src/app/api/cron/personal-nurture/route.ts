@@ -155,13 +155,18 @@ function buildBeat(stage: number, email: string, firstName: string): EmailTempla
 
 async function fetchCandidates(): Promise<Candidate[]> {
   const supabase = getSupabaseAdmin()
+  // The three send gates, enforced at the query: global flag clear, not paused
+  // (paused_until null or past), and the Personal tag present. A contact who
+  // paused everything drops out of the sequence until the pause passes.
+  const nowIso = new Date().toISOString()
   const { data: contacts, error } = await supabase
     .from('contacts')
-    .select('email, first_name, personal_nurture_stage, personal_joined_at, tags, unsubscribed')
+    .select('email, first_name, personal_nurture_stage, personal_joined_at, tags, unsubscribed, paused_until')
     .contains('tags', [PERSONAL_TAG])
     .eq('unsubscribed', false)
     .not('personal_joined_at', 'is', null)
     .lt('personal_nurture_stage', FINAL_STAGE)
+    .or(`paused_until.is.null,paused_until.lte.${nowIso}`)
   if (error) {
     console.error('Supabase personal nurture read failed:', error.message)
     return []
