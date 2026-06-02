@@ -17,6 +17,10 @@ type Props = {
   maskedEmail: string
   lists: ListView[]
   currentSite: string
+  // Raw email from the entry URL. Used only to prefill the fallback input when a
+  // tokenless or expired link lands here (broadcast links carry email, no token).
+  // Echoing the URL back confirms nothing about list membership.
+  prefillEmail?: string
 }
 
 // The playful wink for the curious soul who reads the under-the-hood page.
@@ -35,7 +39,7 @@ const hairline = 'rgba(245,240,232,0.12)'
 const gold = '#c8973a'
 
 export default function PreferencesClient(props: Props) {
-  if (!props.valid) return <FreshLinkFallback />
+  if (!props.valid) return <FreshLinkFallback prefillEmail={props.prefillEmail} />
   return <PreferenceManager {...props} />
 }
 
@@ -260,8 +264,8 @@ function Toggle({
 
 // ─── Expired or unknown token: the fresh-link fallback ───────────────────
 
-function FreshLinkFallback() {
-  const [email, setEmail] = useState('')
+function FreshLinkFallback({ prefillEmail }: { prefillEmail?: string }) {
+  const [email, setEmail] = useState(prefillEmail ?? '')
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   async function submit(e: React.FormEvent) {

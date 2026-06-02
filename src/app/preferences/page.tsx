@@ -70,6 +70,7 @@ export default async function PreferencesPage({
           maskedEmail={maskedEmail}
           lists={lists}
           currentSite="lanebelone"
+          prefillEmail={email}
         />
       </div>
     </main>
