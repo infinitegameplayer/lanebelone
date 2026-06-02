@@ -74,7 +74,7 @@ export async function applyNewsletterOptIn({
   try {
     const { data: existing, error: selectErr } = await supabase
       .from('contacts')
-      .select('id, tags, first_name, last_name, unsubscribed')
+      .select('id, tags, first_name, last_name, unsubscribed, personal_joined_at')
       .eq('email', normalizedEmail)
       .maybeSingle()
     if (selectErr) throw selectErr
@@ -97,6 +97,9 @@ export async function applyNewsletterOptIn({
       }
       if (firstName && !existing.first_name) updates.first_name = firstName
       if (lastName && !existing.last_name) updates.last_name = lastName
+      // Stamp the Personal-list join date the first time the tag lands. Preserves
+      // an earlier join on rejoin, so a returning contact never re-enters nurture.
+      if (!existing.personal_joined_at) updates.personal_joined_at = new Date().toISOString()
 
       const { error: updateErr } = await supabase
         .from('contacts')
@@ -111,6 +114,7 @@ export async function applyNewsletterOptIn({
         source_site: 'lanebelone',
         source_form: source,
         tags: [TAG],
+        personal_joined_at: new Date().toISOString(),
       })
       if (insertErr) throw insertErr
     }

@@ -185,5 +185,11 @@
       "destination": "/blog",
       "permanent": true
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/personal-nurture",
+      "schedule": "0 14 * * *"
+    }
   ]
 }
