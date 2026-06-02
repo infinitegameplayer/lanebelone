@@ -173,6 +173,18 @@ Outstanding: `/images/lane-cowboy-action.webp` (speaking page hero) is low quali
 
 ---
 
+## Voice and Copy Standard
+
+All outward copy on this site follows the per-site register in the Kingdom Site Voice Codex (`Council Chamber/Codices/Expression/Site Voice Codex.md`). Load it before writing or editing any page copy. lanebelone.com carries the full register: mythic warmth (the host voice, warm opens, open-door closes, plain naming) plus a featherweight nonchalant humor layer (the unbothered host and the knowing aside, used sparingly, never cheeky).
+
+Standing rules:
+- Tone goes unhurried. Direction stays specific. Never vague about where a link or offer points.
+- The library page is the frozen reference model. Match its register, do not edit its voice.
+- Joyful Sovereignty stays sacred: lightest warmth, no humor.
+- Legal and utility pages (terms, privacy, unsubscribe, cite) stay clinical.
+- The `/markdown` content twin (`src/lib/markdown-content.ts`) must stay synced with component copy. Some prose strings are hardcoded there in addition to the structured `page-data.ts` reads. The copy edit and the markdown sync are one unit of work.
+- Baseline always applies: no em dashes, no Oxford comma, short declarative sentences, affirmative framing, no "signal" in product copy. Infinite Game is a proper noun.
+
 ## Cross-Site Relationship
 
 lanebelone.com is the infinite game signal surface. sidequesthq.co is the practical contribution engine nested within it.
@@ -211,6 +223,9 @@ Cross-site note: security checks run against all Kingdom sites together. A findi
 
 **2026-04-10 — CLAUDE.md created (Session C, Post Web cross-plan sequence)**
 Context file created from BuildNotes. AI discoverability layer documented at current state. Phase 4 of the Post Web plan will expand this significantly — schema additions, validation pass, possible llms.txt restructure. Update this CLAUDE.md when Phase 4 closes and add a Refinements entry reflecting what changed.
+
+**2026-05-31 — Voice refresh and Site Voice Standard**
+Multi-layer copy refresh shipped across the durable pages (home, about, speaking, links, joyful-sovereignty, 404). Style and slop sweep, mythic warmth, nonchalant humor. Library cleanup-only, voice frozen as the reference model. Commit `7e84e52`, live at https://www.lanebelone.com. The standard is now canonical in the Site Voice Codex and enforced via the Voice and Copy Standard section above and the Kingdom pre-publish sweep gate. Cross-site carryover (SQHQ lighter register, IGOS none) scoped as a follow-on. When editing page copy, load the Site Voice Codex first and sync the `/markdown` twin in the same pass.
 
 **2026-04-10 — Phase 4 AI Discoverability Upgrade complete**
 Organization schema added to `layout.tsx` alongside existing Person schema (both with `@id` anchors for cross-page linking). Article JSON-LD added to `blog/f/[slug]/page.tsx` — fields: headline, description, datePublished, author, publisher, url, image. BreadcrumbList added to blog post pages (Home > Writing > Post Title) and `joyful-sovereignty/page.tsx` (Home > Joyful Sovereignty). FAQPage schema added to `joyful-sovereignty/page.tsx` with 4 Q&As sourced from page content. Schema pattern for future evergreen pages: FAQPage + BreadcrumbList in the page component following the joyful-sovereignty pattern. Verified by Google Rich Results Test before Phase 4 close (King action).
