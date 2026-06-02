@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug, CARRY_FORWARD_SLUGS } from '@/lib/blog'
 import ReadingProgress from '@/components/ReadingProgress'
-import SubstackSubscribeEmbed from '@/components/SubstackSubscribeEmbed'
+import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
 
 // Only statically generate carry-forward slugs. Expired slugs are handled by
 // Vercel redirects in vercel.json before this route is reached.
@@ -176,7 +176,7 @@ export default async function BlogPostPage({
 
         {/* Subscribe embed */}
         <div className="mt-16 pt-8 border-t border-parchment/10">
-          <SubstackSubscribeEmbed variant="full" />
+          <ArticlesSubscribeForm />
         </div>
 
         {/* Back link */}

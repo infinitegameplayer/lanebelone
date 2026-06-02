@@ -182,7 +182,7 @@
     },
     {
       "source": "/newsletter",
-      "destination": "https://lanebelone.substack.com/",
+      "destination": "/blog",
       "permanent": true
     }
   ]

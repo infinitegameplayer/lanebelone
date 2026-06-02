@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { lookupNativeFormConfig } from '@/lib/form-config'
 import { sendEmail } from '@/lib/email/resend'
-import { applyNewsletterOptIn } from '@/lib/newsletter'
+import { applyNewsletterOptIn, applyArticleOptIn } from '@/lib/newsletter'
 import {
   contactAutoResponse,
   speakingAutoResponse,
@@ -166,12 +166,21 @@ export async function POST(req: NextRequest) {
     (config.newsletterOptIn === 'explicit-checkbox' && body.newsletterConsent === true)
   if (shouldOptIn && !unsubscribed) {
     try {
-      await applyNewsletterOptIn({
-        email,
-        firstName,
-        lastName,
-        source: `form:${body.formName}`,
-      })
+      if (config.list === 'article') {
+        await applyArticleOptIn({
+          email,
+          firstName,
+          lastName,
+          source: `form:${body.formName}`,
+        })
+      } else {
+        await applyNewsletterOptIn({
+          email,
+          firstName,
+          lastName,
+          source: `form:${body.formName}`,
+        })
+      }
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
       console.error('newsletter opt-in error:', m)

@@ -66,6 +66,33 @@ ${welcomeSignoff()}
   }
 }
 
+// ─── Article Welcome Email ──────────────────────────────────────────
+//
+// Triggered by applyArticleOptIn after any form-side or one-click opt-in
+// to the Articles list. Confirms the subscription and sets the expectation
+// for full essays in the inbox. Sent from howdy@lanebelone.com.
+
+export function articleWelcomeEmail({
+  firstName,
+}: {
+  firstName?: string
+}) {
+  const opening = firstName && firstName.trim().length > 0
+    ? `Howdy, ${firstName.trim()}.`
+    : 'Howdy.'
+  return {
+    subject: "You're in. New writing, straight to you.",
+    previewText: 'The whole essay in your inbox, with a little something at the end.',
+    html: `
+${p(opening)}
+${p("You just opened a door. From here on, my new writing lands right here in your inbox. The whole piece, not a teaser, so you never have to click out to read.")}
+${p("Every one closes with a small breadcrumb at the bottom. A song, a side quest, a little surprise. Always worth a look.")}
+${p("Glad you're here.")}
+${welcomeSignoff()}
+`,
+  }
+}
+
 export function speakingAutoResponse(firstName?: string) {
   return {
     subject: 'Got your speaking inquiry',

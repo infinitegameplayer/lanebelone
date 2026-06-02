@@ -13,6 +13,8 @@ export type NativeFormConfig = {
   // The applyNewsletterOptIn helper owns the personal_subscriber tag,
   // Resend audience add and welcome email.
   newsletterOptIn?: 'implicit' | 'explicit-checkbox'
+  // Which list the opt-in applies to. Defaults to 'personal' when absent.
+  list?: 'personal' | 'article'
   allowedOrigins: string[]
 }
 
@@ -23,6 +25,13 @@ export const FORM_CONFIG_BY_NAME: Record<string, NativeFormConfig> = {
     sourceSite: 'lanebelone',
     sourceForm: 'newsletter_signup',
     newsletterOptIn: 'implicit',
+    allowedOrigins: LANEBELONE_ORIGINS,
+  },
+  'lanebelone-articles': {
+    sourceSite: 'lanebelone',
+    sourceForm: 'articles_signup',
+    newsletterOptIn: 'implicit',
+    list: 'article',
     allowedOrigins: LANEBELONE_ORIGINS,
   },
   'lanebelone-contact': {

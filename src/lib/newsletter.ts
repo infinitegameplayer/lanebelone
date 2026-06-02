@@ -9,7 +9,7 @@
 
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
-import { newsletterWelcomeEmail } from '@/lib/email/templates'
+import { newsletterWelcomeEmail, articleWelcomeEmail } from '@/lib/email/templates'
 import { sendEmail } from '@/lib/email/resend'
 import { signEmailToken } from '@/lib/unsubscribe-token'
 
@@ -17,6 +17,7 @@ export type OptInSource =
   | `form:${string}`
   | `success-page:${string}`
   | `migration:${string}`
+  | `one-click:${string}`
   | 'test'
 
 export type OptInResult = {
@@ -160,6 +161,161 @@ export async function applyNewsletterOptIn({
     }
   } else {
     console.log(`[newsletter opt-in dry-run] ${normalizedEmail} (source=${source}, rejoin=${rejoin})`)
+  }
+
+  return { status: rejoin ? 'unsubscribed-rejoin' : 'subscribed' }
+}
+
+// ─── Articles List Opt-In ───────────────────────────────────────────
+//
+// Parallel to applyNewsletterOptIn but for the Articles Resend audience.
+// Tags the contact as article_subscriber, adds them to the Articles
+// audience (inheriting first/last name from existing contact when the
+// caller did not supply them), and sends the articleWelcomeEmail.
+
+const ARTICLE_TAG = 'article_subscriber'
+const ARTICLE_AUDIENCE_NAME = 'Articles'
+
+let cachedArticleAudienceId: string | null = null
+
+async function resolveArticleAudienceId(resend: Resend): Promise<string | null> {
+  if (cachedArticleAudienceId) return cachedArticleAudienceId
+  const overrideId = process.env.RESEND_AUDIENCE_ARTICLES_ID
+  if (overrideId) {
+    cachedArticleAudienceId = overrideId
+    return cachedArticleAudienceId
+  }
+  try {
+    const list = await resend.audiences.list()
+    const found = list.data?.data?.find((a) => a.name === ARTICLE_AUDIENCE_NAME)
+    if (found?.id) {
+      cachedArticleAudienceId = found.id
+      return cachedArticleAudienceId
+    }
+  } catch (err) {
+    console.error('Resend audiences.list failed (articles):', err instanceof Error ? err.message : err)
+  }
+  return null
+}
+
+export async function applyArticleOptIn({
+  email,
+  firstName,
+  lastName,
+  source,
+}: {
+  email: string
+  firstName?: string
+  lastName?: string
+  source: OptInSource
+}): Promise<OptInResult> {
+  const normalizedEmail = email.trim().toLowerCase()
+  if (!normalizedEmail) {
+    return { status: 'error', error: 'missing email' }
+  }
+
+  const dryRun = process.env.NEWSLETTER_OPTIN_DRY_RUN === 'true'
+  const supabase = getSupabaseAdmin()
+
+  let rejoin = false
+  let alreadyTagged = false
+  let resolvedFirstName: string | undefined = firstName
+  let resolvedLastName: string | undefined = lastName
+
+  try {
+    const { data: existing, error: selectErr } = await supabase
+      .from('contacts')
+      .select('id, tags, first_name, last_name, unsubscribed')
+      .eq('email', normalizedEmail)
+      .maybeSingle()
+    if (selectErr) throw selectErr
+
+    if (existing) {
+      // Inherit first/last name from existing contact when caller did not supply them.
+      resolvedFirstName = firstName ?? existing.first_name ?? undefined
+      resolvedLastName = lastName ?? existing.last_name ?? undefined
+
+      const currentTags: string[] = Array.isArray(existing.tags) ? existing.tags : []
+      const isUnsub = existing.unsubscribed === true
+      alreadyTagged = currentTags.includes(ARTICLE_TAG) && !isUnsub
+      rejoin = currentTags.includes(ARTICLE_TAG) && isUnsub
+
+      if (alreadyTagged) {
+        return { status: 'already-subscribed' }
+      }
+
+      const mergedTags = currentTags.includes(ARTICLE_TAG) ? currentTags : [...currentTags, ARTICLE_TAG]
+      const updates: Record<string, unknown> = {
+        tags: mergedTags,
+        unsubscribed: false,
+        unsubscribed_at: null,
+      }
+      if (firstName && !existing.first_name) updates.first_name = firstName
+      if (lastName && !existing.last_name) updates.last_name = lastName
+
+      const { error: updateErr } = await supabase
+        .from('contacts')
+        .update(updates)
+        .eq('id', existing.id)
+      if (updateErr) throw updateErr
+    } else {
+      const { error: insertErr } = await supabase.from('contacts').insert({
+        email: normalizedEmail,
+        first_name: firstName ?? null,
+        last_name: lastName ?? null,
+        source_site: 'lanebelone',
+        source_form: source,
+        tags: [ARTICLE_TAG],
+      })
+      if (insertErr) throw insertErr
+    }
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    console.error('article opt-in supabase error:', m)
+    return { status: 'error', error: m }
+  }
+
+  if (!dryRun) {
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY)
+      const audienceId = await resolveArticleAudienceId(resend)
+      if (audienceId) {
+        await resend.contacts.create({
+          audienceId,
+          email: normalizedEmail,
+          firstName: resolvedFirstName ?? undefined,
+          lastName: resolvedLastName ?? undefined,
+          unsubscribed: false,
+        })
+      } else {
+        console.warn('article opt-in: Resend audience id not resolved, skipping eager-add')
+      }
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      if (!/already exists|409/i.test(m)) {
+        console.error('article opt-in resend audience error:', m)
+      }
+    }
+  }
+
+  if (!dryRun) {
+    try {
+      const token = signEmailToken(normalizedEmail)
+      const unsubUrl = `https://lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const template = articleWelcomeEmail({ firstName: resolvedFirstName })
+      await sendEmail({
+        to: normalizedEmail,
+        subject: template.subject,
+        html: template.html,
+        previewText: template.previewText,
+        unsubscribeUrl: unsubUrl,
+      })
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('article opt-in welcome send error:', m)
+    }
+  } else {
+    console.log(`[article opt-in dry-run] ${normalizedEmail} (source=${source}, rejoin=${rejoin})`)
   }
 
   return { status: rejoin ? 'unsubscribed-rejoin' : 'subscribed' }

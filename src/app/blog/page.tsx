@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import BlogCard from '@/components/BlogCard'
-import SubstackSubscribeEmbed from '@/components/SubstackSubscribeEmbed'
+import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
 
 export const metadata: Metadata = {
   title: 'Writing',
@@ -72,7 +72,7 @@ export default function BlogIndexPage() {
           Essays and breadcrumbs from the infinite game.
         </p>
         <div className="mb-12">
-          <SubstackSubscribeEmbed variant="slim" />
+          <ArticlesSubscribeForm />
         </div>
 
         {posts.length > 0 ? (
