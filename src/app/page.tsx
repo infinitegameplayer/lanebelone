@@ -61,7 +61,7 @@ function ShelfCard({ title, hook, price, href, image }: {
   image: string
 }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="lib-book">
+    <a href={href} target="_blank" rel="noopener" className="lib-book">
       <div className="lib-cover-frame">
         <img src={portrait(image)} alt={`${title} cover`} loading="lazy" />
       </div>
@@ -309,7 +309,7 @@ export default function HomePage() {
         <SectionReveal>
           <p className="home-collection-line">
             Get all three.{' '}
-            <a href={libraryCollections[0].href} target="_blank" rel="noopener noreferrer">
+            <a href={libraryCollections[0].href} target="_blank" rel="noopener">
               {libraryCollections[0].title}, {libraryCollections[0].price}, {libraryCollections[0].savings.replace('Save ', 'saves you ')} &rarr;
             </a>
           </p>
@@ -334,7 +334,7 @@ export default function HomePage() {
         <SectionReveal>
           <p className="home-collection-line">
             Get all three.{' '}
-            <a href={libraryCollections[1].href} target="_blank" rel="noopener noreferrer">
+            <a href={libraryCollections[1].href} target="_blank" rel="noopener">
               {libraryCollections[1].title}, {libraryCollections[1].price}, {libraryCollections[1].savings.replace('Save ', 'saves you ')} &rarr;
             </a>
           </p>
@@ -351,7 +351,7 @@ export default function HomePage() {
           >
             <p className="home-collection-line" style={{ marginTop: 0, marginBottom: '1.5rem' }}>
               Or take the whole shelf.{' '}
-              <a href={libraryCollections[2].href} target="_blank" rel="noopener noreferrer">
+              <a href={libraryCollections[2].href} target="_blank" rel="noopener">
                 {libraryCollections[2].title}, all six, {libraryCollections[2].savings.replace('Save ', 'saves you ')} &rarr;
               </a>
             </p>

@@ -195,7 +195,7 @@ export const happeningNow: HappeningNowItem[] = [
     title: 'Sovereign Ecosystem Install',
     description: 'Two sixty-minute sessions with Lane. Your AI workspace standing on its own legs by the end. $247.',
     cta: 'Book the Install',
-    ctaHref: 'https://sidequesthq.co/sovereign-ecosystem-install',
+    ctaHref: 'https://www.sidequesthq.co/sovereign-ecosystem-install',
     featured: true,
   },
   {
@@ -203,7 +203,7 @@ export const happeningNow: HappeningNowItem[] = [
     title: 'The Sovereign Life Playbook',
     description: "A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited. A book you return to.",
     cta: 'Get the Playbook',
-    ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+    ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
     price: '$37',
   },
 ]
@@ -240,10 +240,10 @@ export interface SQHQChip {
 }
 
 export const sqhqChips: SQHQChip[] = [
-  { title: 'Digital Products', sub: 'Playbooks · Guides', href: 'https://sidequesthq.co/products' },
-  { title: 'Workshops', sub: 'One-day intensives', href: 'https://sidequesthq.co/workshop' },
-  { title: 'Retreats', sub: 'Multi-day immersions', href: 'https://sidequesthq.co/explorers-side-quest' },
-  { title: 'Private Advisory', sub: 'One-on-one', href: 'https://sidequesthq.co/one-on-one' },
+  { title: 'Digital Products', sub: 'Playbooks · Guides', href: 'https://www.sidequesthq.co/products' },
+  { title: 'Workshops', sub: 'One-day intensives', href: 'https://www.sidequesthq.co/workshop' },
+  { title: 'Retreats', sub: 'Multi-day immersions', href: 'https://www.sidequesthq.co/explorers-side-quest' },
+  { title: 'Private Advisory', sub: 'One-on-one', href: 'https://www.sidequesthq.co/one-on-one' },
 ]
 
 // ── AI for Business ───────────────────────────────────────────────────────────
@@ -280,7 +280,7 @@ export const aiBusinessArc: AIProductCard[] = [
     oneLiner:
       "Return to the question underneath the tools. What's the business you actually want?",
     price: '$9',
-    href: 'https://sidequesthq.co/products/ai-for-the-business-you-actually-want',
+    href: 'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want',
     image: `${SQHQ_BLOB}/ai-for-the-business-you-actually-want/cover-4x3.png`,
     wave: 1,
     status: 'live',
@@ -291,7 +291,7 @@ export const aiBusinessArc: AIProductCard[] = [
     oneLiner:
       'The minimum viable AI setup. What to keep, what to cancel, what to add when.',
     price: '$9',
-    href: 'https://sidequesthq.co/products/stack-calm',
+    href: 'https://www.sidequesthq.co/products/stack-calm',
     image: `${SQHQ_BLOB}/stack-calm/cover-4x3.png`,
     wave: 1,
     status: 'live',
@@ -302,7 +302,7 @@ export const aiBusinessArc: AIProductCard[] = [
     oneLiner:
       'Prove the workflow by hand first. Automate once it has earned the trust.',
     price: '$9',
-    href: 'https://sidequesthq.co/products/earn-the-right-to-automate',
+    href: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
     image: `${SQHQ_BLOB}/earn-the-right-to-automate/cover-4x3.png`,
     wave: 1,
     status: 'live',
@@ -316,7 +316,7 @@ export const aiPersonalArc: AIProductCard[] = [
     oneLiner:
       'A few honest questions to keep the tools carrying your direction, not the other way around.',
     price: '$9',
-    href: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
+    href: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
     image: `${SQHQ_BLOB}/whose-game-are-you-playing-with-ai/cover-4x3.png`,
     wave: 2,
     status: 'live',
@@ -327,7 +327,7 @@ export const aiPersonalArc: AIProductCard[] = [
     oneLiner:
       'Keep your fingerprints on the work, so what you ship still sounds like you.',
     price: '$9',
-    href: 'https://sidequesthq.co/products/yours-to-make',
+    href: 'https://www.sidequesthq.co/products/yours-to-make',
     image: `${SQHQ_BLOB}/yours-to-make/cover-4x3.png`,
     wave: 2,
     status: 'live',
@@ -338,7 +338,7 @@ export const aiPersonalArc: AIProductCard[] = [
     oneLiner:
       'One trusted place for every idea, so your best thinking stops evaporating.',
     price: '$7',
-    href: 'https://sidequesthq.co/products/sovereign-capture',
+    href: 'https://www.sidequesthq.co/products/sovereign-capture',
     image: `${SQHQ_BLOB}/sovereign-capture/cover-4x3.png`,
     wave: 2,
     status: 'live',
@@ -364,7 +364,7 @@ export const aiBundles: AIBundleCard[] = [
     oneLiner: 'B1, B2 and B3 together. The full business arc.',
     bundlePrice: '$14',
     savings: 'Save $13',
-    href: 'https://sidequesthq.co/products/business-bundle',
+    href: 'https://www.sidequesthq.co/products/business-bundle',
     image: `${SQHQ_BLOB}/business-bundle/bundle-4x3.png`,
     wave: 1,
     status: 'live',
@@ -375,7 +375,7 @@ export const aiBundles: AIBundleCard[] = [
     oneLiner: 'P1, P2 and P3 together. The full personal arc.',
     bundlePrice: '$13',
     savings: 'Save $12',
-    href: 'https://sidequesthq.co/products/personal-bundle',
+    href: 'https://www.sidequesthq.co/products/personal-bundle',
     image: `${SQHQ_BLOB}/personal-bundle/bundle-4x3.png`,
     wave: 2,
     status: 'live',
@@ -386,7 +386,7 @@ export const aiBundles: AIBundleCard[] = [
     oneLiner: 'All six Field Guides. The business axis and the personal axis.',
     bundlePrice: '$27',
     savings: 'Save $25',
-    href: 'https://sidequesthq.co/products/foundation-bundle',
+    href: 'https://www.sidequesthq.co/products/foundation-bundle',
     image: `${SQHQ_BLOB}/foundation-bundle/bundle-4x3.png`,
     wave: 2,
     status: 'live',
@@ -411,7 +411,7 @@ export const librarySlp: LibraryFlagship = {
   oneLiner:
     'A framework for designing your life from the inside out. Seven chapters, six exercises, eight files including an AI Companion Guide and Session Guide.',
   price: '$37',
-  href: 'https://sidequesthq.co/products/sovereign-life-playbook',
+  href: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
   image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
 }
 
@@ -420,19 +420,19 @@ export const librarySlp: LibraryFlagship = {
 // surfaces never drift. Shelf copy carries the transformation, not chapter
 // counts (those live on the SQHQ landing pages). Keyed by canonical SQHQ href.
 export const libraryBlurbs: Record<string, string> = {
-  'https://sidequesthq.co/products/sovereign-life-playbook':
+  'https://www.sidequesthq.co/products/sovereign-life-playbook':
     "The flagship, and the deepest single work in the library. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
-  'https://sidequesthq.co/products/ai-for-the-business-you-actually-want':
+  'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want':
     "A first-principles starter for the owner who's already using AI and still feels a little off. It returns to the question underneath the tools. What's the business you actually want, and what's AI for inside it. A clear place to begin when the stack is busy but the direction has gone fuzzy.",
-  'https://sidequesthq.co/products/stack-calm':
+  'https://www.sidequesthq.co/products/stack-calm':
     'Your minimum viable AI setup, made calm. What to keep, what to cancel and what to add only when you truly need it. For anyone whose subscriptions and open tabs have quietly multiplied past the point of usefulness, and who wants a stack that finally feels light.',
-  'https://sidequesthq.co/products/earn-the-right-to-automate':
+  'https://www.sidequesthq.co/products/earn-the-right-to-automate':
     'A timing guide for automation. Prove the workflow by hand first, then let the machine carry it once it has earned the trust. For the builder tempted to automate everything at once, and feeling the wobble that tends to follow.',
-  'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai':
+  'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai':
     'A contemplative practice for the reader who uses AI well and still wonders, quietly, whose game it serves. A handful of honest questions to make sure the tools are carrying your direction and not the other way around.',
-  'https://sidequesthq.co/products/yours-to-make':
+  'https://www.sidequesthq.co/products/yours-to-make':
     'A creative practice for the maker whose AI output is prolific and somehow not quite theirs. How to keep your fingerprints on the work, so what you ship still sounds like you. For anyone producing a lot lately and recognizing themselves in it a little less.',
-  'https://sidequesthq.co/products/sovereign-capture':
+  'https://www.sidequesthq.co/products/sovereign-capture':
     'A capture container and a simple weekly rhythm to hold it, so your best thinking stops evaporating. For the reader whose ideas arrive faster than they can keep them, and who wants one trusted place for all of it.',
 }
 
@@ -545,13 +545,13 @@ export const linkHub: LinkHubItem[] = [
   {
     label: 'The Sovereign Life Playbook',
     sublabel: 'Design your life from the inside out · $37',
-    href: 'https://sidequesthq.co/products/sovereign-life-playbook',
+    href: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
     icon: 'book',
   },
   {
     label: 'Sovereign Ecosystem Install',
     sublabel: 'Two sessions. Your AI workspace, standing on its own.',
-    href: 'https://sidequesthq.co/sovereign-ecosystem-install',
+    href: 'https://www.sidequesthq.co/sovereign-ecosystem-install',
     icon: 'spark',
   },
   {

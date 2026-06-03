@@ -109,7 +109,7 @@ function BookCard({
     <a
       href={href}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
       className={`lib-book${className ? ` ${className}` : ''}`}
     >
       <div className="lib-cover-frame">
@@ -141,7 +141,7 @@ function CollectionCard({
 }) {
   const six = members.length > 3
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="lib-collection">
+    <a href={href} target="_blank" rel="noopener" className="lib-collection">
       <div className={`lib-cover-cluster${six ? ' lib-cover-cluster--six' : ''}`}>
         {members.map(m => (
           <img key={m.title} src={portrait(m.image)} alt="" loading="lazy" />
@@ -318,7 +318,7 @@ export default function LibraryPage() {
             There&apos;s no rush to decide anything. The{' '}
             <Link href="/blog" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>writing</Link>
             {' '}is free and always open, the easiest way to feel whether any of this is for you. The{' '}
-            <a href="https://infinitegameos.io" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Infinite Game OS</a>
+            <a href="https://infinitegameos.io" target="_blank" rel="noopener" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Infinite Game OS</a>
             {' '}site is the larger room down the hall, a whole world to roam at no cost. The shelves grow as I make more, so come back whenever you like.
           </p>
         </SectionReveal>
