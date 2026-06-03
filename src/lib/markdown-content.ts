@@ -94,7 +94,7 @@ Keynotes and talks on perception, flow, joyful sovereignty and the Infinite Game
 
 ## Connect
 
-Personal updates and fresh ideas. Newsletter and contact at [${SITE}/#connect](${SITE}/#connect).
+Start a conversation. Reach out at [${SITE}/#connect](${SITE}/#connect).
 
 ---
 *[Lane Belone](${SITE})*
@@ -183,6 +183,10 @@ function generateAboutMarkdown(): string {
 ${LANE_BIO}
 
 ${storyMd}
+
+## Stay Connected
+
+If the story resonated, this is the personal list. Updates and fresh ideas, the kind you'll actually open. Subscribe at [${SITE}/about#stay-connected](${SITE}/about#stay-connected).
 
 ## Ecosystem
 

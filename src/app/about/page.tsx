@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
+import NewsletterForm from '@/components/NewsletterForm'
 import { LANE_BIO, aboutStory, isLinkedPara, type Para } from '@/lib/page-data'
 
 export const metadata: Metadata = {
@@ -201,6 +202,21 @@ export default function AboutPage() {
                 Reach out &rarr;
               </a>
             </div>
+          </div>
+        </SectionReveal>
+      </section>
+
+      {/* Stay connected — the personal list */}
+      <section id="stay-connected" className="section border-t border-white/5">
+        <SectionReveal>
+          <div className="max-w-xl">
+            <h2 className="text-2xl md:text-3xl text-parchment/50 mb-3" style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic' }}>
+              Stay connected
+            </h2>
+            <p className="text-parchment/70 leading-relaxed mb-6" style={{ fontFamily: 'var(--font-body)' }}>
+              If the story resonated, this is the personal list. Updates and fresh ideas, the kind you&rsquo;ll actually open.
+            </p>
+            <NewsletterForm />
           </div>
         </SectionReveal>
       </section>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
-import NewsletterForm from '@/components/NewsletterForm'
 import InquiryForm from '@/components/InquiryForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
@@ -646,21 +645,10 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 9 — Newsletter / Contact */}
+      {/* 9 — Contact */}
       <section id="connect" className="section">
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-          <div className="bezel-card">
-            <div className="bezel-inner">
-              <h3 style={{ fontFamily: 'var(--font-voice)', fontSize: '1.5rem', fontWeight: 500, marginBottom: '0.6rem' }}>
-                Stay connected
-              </h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
-                Personal updates and fresh ideas. The kind you&rsquo;ll actually open.
-              </p>
-              <NewsletterForm />
-            </div>
-          </div>
-          <div className="bezel-card">
+        <SectionReveal>
+          <div className="bezel-card" style={{ maxWidth: '36rem', margin: '0 auto' }}>
             <div className="bezel-inner">
               <h3 style={{ fontFamily: 'var(--font-voice)', fontSize: '1.5rem', fontWeight: 500, marginBottom: '0.6rem' }}>
                 Start a conversation
