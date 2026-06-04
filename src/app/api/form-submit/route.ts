@@ -95,6 +95,14 @@ export async function POST(req: NextRequest) {
     console.error('form_submissions insert error:', m)
   }
 
+  // Owner notification. Fires for inquiry forms (those carrying a contactTag)
+  // so a real submission reaches the brand inbox, not just the Supabase audit
+  // row. The newsletter and articles forms carry no contactTag, so the welcome
+  // email stays their sole confirmation and no inquiry notification fires.
+  if (config.contactTag) {
+    await sendOwnerNotification(body.formName, { firstName, lastName, email, message })
+  }
+
   if (!email) {
     return NextResponse.json({ ok: true, contactUpserted: false, reason: 'no_email' })
   }
@@ -188,4 +196,47 @@ export async function POST(req: NextRequest) {
   }
 
   return NextResponse.json({ ok: true })
+}
+
+// Brand inbox that receives inquiry notifications. Env override repoints it
+// without a deploy.
+const OWNER_NOTIFY_TO = process.env.LANEBELONE_FORM_NOTIFY_TO || 'howdy@lanebelone.com'
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+// Notify the brand inbox that a new inquiry arrived. replyTo carries the
+// submitter's address so a reply from the inbox reaches them directly. Sent
+// independent of the submitter auto-response and never blocks the response.
+async function sendOwnerNotification(
+  formName: string,
+  fields: { firstName?: string; lastName?: string; email?: string; message?: string }
+) {
+  try {
+    const name = [fields.firstName, fields.lastName].filter(Boolean).join(' ') || 'Not provided'
+    const detail = [
+      `<strong>Form:</strong> ${escapeHtml(formName)}`,
+      `<strong>Name:</strong> ${escapeHtml(name)}`,
+      `<strong>Email:</strong> ${escapeHtml(fields.email || 'Not provided')}`,
+    ].join('<br>')
+    const messageBlock = fields.message
+      ? `<p style="margin-top:16px"><strong>Message:</strong></p><p>${escapeHtml(fields.message)}</p>`
+      : '<p style="margin-top:16px">No message was included.</p>'
+    await sendEmail({
+      to: OWNER_NOTIFY_TO,
+      replyTo: fields.email,
+      subject: `New lanebelone.com inquiry: ${formName}`,
+      previewText: `${fields.firstName || 'Someone'} submitted ${formName}.`,
+      html: `<p>A new inquiry just came in through lanebelone.com.</p><p>${detail}</p>${messageBlock}<p style="margin-top:16px">Reply to this email to respond to them directly.</p>`,
+    })
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    console.error('owner notification send error:', m)
+  }
 }

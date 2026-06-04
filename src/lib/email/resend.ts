@@ -19,9 +19,12 @@ interface SendEmailOptions {
   // footer next to the brand line. Used by the personal-list welcome email
   // and any future opt-in-based send that needs a manual unsubscribe surface.
   unsubscribeUrl?: string
+  // Overrides the default replyTo. Used by the owner-notification send so a
+  // reply from the brand inbox reaches the form submitter directly.
+  replyTo?: string
 }
 
-export async function sendEmail({ to, subject, html, previewText, unsubscribeUrl }: SendEmailOptions) {
+export async function sendEmail({ to, subject, html, previewText, unsubscribeUrl, replyTo }: SendEmailOptions) {
   const resend = getResend()
   // Every transactional send carries a per-recipient preference link. The
   // expiring token (30-day default) means a forwarded link stops working after
@@ -32,7 +35,7 @@ export async function sendEmail({ to, subject, html, previewText, unsubscribeUrl
 
   const { data, error } = await resend.emails.send({
     from: FROM,
-    replyTo: REPLY_TO,
+    replyTo: replyTo ?? REPLY_TO,
     to,
     subject,
     html: fullHtml,
