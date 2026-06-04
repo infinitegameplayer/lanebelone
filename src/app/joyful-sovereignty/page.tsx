@@ -129,10 +129,10 @@ export default function JoyfulSovereigntyPage() {
                 The work
               </p>
               <a
-                href="https://sidequesthq.co"
+                href="https://www.sidequesthq.co"
                 className="btn-ghost"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
               >
                 Side Quest HQ &rarr;
               </a>

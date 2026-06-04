@@ -20,7 +20,7 @@ export default function GoldButton({
 
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <a href={href} target="_blank" rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(href) ? 'noopener' : 'noopener noreferrer'} className={cls}>
         {children}
       </a>
     )

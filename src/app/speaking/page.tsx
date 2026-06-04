@@ -145,10 +145,10 @@ export default function SpeakingPage() {
             <p className="text-parchment/60 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               Looking for workshops, retreats or ongoing advisory work? That all lives over at{' '}
               <a
-                href="https://sidequesthq.co"
+                href="https://www.sidequesthq.co"
                 className="text-parchment/80 underline underline-offset-4 hover:text-parchment transition-colors"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
               >
                 Side Quest HQ
               </a>

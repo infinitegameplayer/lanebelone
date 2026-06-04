@@ -171,7 +171,7 @@ export default function LinksPage() {
                 <a
                   key={item.href}
                   href={item.href}
-                  {...(isFile ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
+                  {...(isFile ? { download: true } : { target: '_blank', rel: /(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(item.href) ? 'noopener' : 'noopener noreferrer' })}
                   className={className}
                 >
                   {inner}

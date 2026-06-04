@@ -126,7 +126,7 @@ export default function HomePage() {
                 <a
                   href={happeningNow[0].ctaHref}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(happeningNow[0].ctaHref) ? 'noopener' : 'noopener noreferrer'}
                   className="btn-gold"
                   style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
                 >
@@ -167,7 +167,7 @@ export default function HomePage() {
                 <a
                   href={happeningNow[1].ctaHref}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(happeningNow[1].ctaHref) ? 'noopener' : 'noopener noreferrer'}
                   className="btn-outline"
                   style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
                 >
@@ -561,7 +561,7 @@ export default function HomePage() {
               key={chip.title}
               href={chip.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(chip.href) ? 'noopener' : 'noopener noreferrer'}
               className="block"
               style={{ textDecoration: 'none' }}
             >
@@ -580,9 +580,9 @@ export default function HomePage() {
         </SectionReveal>
         <SectionReveal className="text-right mt-8">
           <a
-            href="https://sidequesthq.co"
+            href="https://www.sidequesthq.co"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="btn-ghost"
           >
             Visit Side Quest HQ &rarr;
