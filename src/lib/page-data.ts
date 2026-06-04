@@ -165,7 +165,7 @@ export const jsFaqs: FaqItem[] = [
   },
   {
     q: 'What is the Infinite Game?',
-    a: 'The Infinite Game is life played to keep playing, not to win. Finite arcs like projects, quests, retreats and creative sprints create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures become growth obstacles, not permanent defeats. The infinite game never stops.',
+    a: 'The Infinite Game is life played to keep playing, not to win. Finite arcs like projects, quests, retreats and creative sprints create structure and texture within the infinite whole. Challenges become worthy rivals, not enemies. Failures become growth obstacles, not permanent defeats. The Infinite Game never stops.',
   },
   {
     q: 'What are Playgrounds of Exploration?',
