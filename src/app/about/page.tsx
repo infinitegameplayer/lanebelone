@@ -30,28 +30,10 @@ export const metadata: Metadata = {
   },
 }
 
-const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': 'https://www.lanebelone.com/about#lane-belone',
-  name: 'Lane Belone',
-  url: 'https://www.lanebelone.com',
-  jobTitle: 'Writer, Speaker and Guide',
-  description: LANE_BIO,
-  sameAs: [
-    'https://www.wikidata.org/wiki/Q139889543',
-    'https://sidequesthq.co',
-    'https://infinitegameos.io',
-    'https://www.linkedin.com/in/lanebelone/',
-    'https://www.instagram.com/increasefreedom/',
-    'https://lanebelone.substack.com/',
-  ],
-}
-
 const profilePageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  mainEntity: { '@id': 'https://www.lanebelone.com/about#lane-belone' },
+  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/about',
   name: 'About Lane Belone',
   description: LANE_BIO,
@@ -84,7 +66,6 @@ function renderPara(para: Para, key: number) {
 export default function AboutPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Hero portrait */}
