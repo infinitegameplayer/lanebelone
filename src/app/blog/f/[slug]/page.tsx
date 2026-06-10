@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug, CARRY_FORWARD_SLUGS } from '@/lib/blog'
 import ReadingProgress from '@/components/ReadingProgress'
 import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
+import GoldButton from '@/components/GoldButton'
 
 // Only statically generate carry-forward slugs. Expired slugs are handled by
 // Vercel redirects in vercel.json before this route is reached.
@@ -173,6 +174,21 @@ export default async function BlogPostPage({
           className="prose-blog"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Lead magnet CTA: the Creator Flywheel Starter Kit */}
+        <div className="mt-16 pt-8 border-t border-parchment/10">
+          <div className="rounded-xl border border-[#c9a84c]/30 bg-[#c9a84c]/[0.05] p-6">
+            <p
+              className="text-parchment/85 mb-5 leading-relaxed"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Done performing? The Creator Flywheel Starter Kit is the paradigm in a guide and worksheet. Yours free.
+            </p>
+            <GoldButton href="https://www.sidequesthq.co/creator-flywheel" external>
+              Get the kit
+            </GoldButton>
+          </div>
+        </div>
 
         {/* Subscribe embed */}
         <div className="mt-16 pt-8 border-t border-parchment/10">

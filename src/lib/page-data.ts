@@ -520,10 +520,24 @@ export interface LinkHubItem {
   sublabel?: string
   href: string
   icon: string
+  // Distinguished featured treatment: gold border, soft gold tint, a Free pill
+  // and a hover glow. Reserved for the current funnel mouth.
+  featured?: boolean
+  // Small accent pill rendered next to the label (e.g. "Free").
+  pill?: string
 }
 
 export const linkHub: LinkHubItem[] = [
-  // Rotating featured slot. Update each batch to the destination the current article and social posts drive to.
+  // Featured funnel mouth. The free lead magnet, distinguished with the gold
+  // treatment so the eye lands here first.
+  {
+    label: 'The Creator Flywheel Starter Kit',
+    sublabel: 'A guide and worksheet for Creators who are done performing',
+    href: 'https://www.sidequesthq.co/creator-flywheel',
+    icon: 'spark',
+    featured: true,
+    pill: 'Free',
+  },
   {
     label: 'The Full Library',
     sublabel: 'Start here · every playbook and field guide in one place',
