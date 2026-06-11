@@ -415,6 +415,16 @@ export const librarySlp: LibraryFlagship = {
   image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
 }
 
+// Second playbook on the shelf. Live 2026-06-11.
+export const libraryCfp: LibraryFlagship = {
+  title: 'Creator Flywheel Playbook',
+  oneLiner:
+    'Install the machine that compounds your creative work. The flywheel anatomy, the Three Laws and your AI running the system with you.',
+  price: '$77',
+  href: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+  image: `${SQHQ_BLOB}/creator-flywheel-playbook/cover-4x3.png`,
+}
+
 // ── Library shelf copy ──────────────────────────────────────────────────────
 // The /library page and its /markdown twin both read from here, so the two
 // surfaces never drift. Shelf copy carries the transformation, not chapter
@@ -422,6 +432,8 @@ export const librarySlp: LibraryFlagship = {
 export const libraryBlurbs: Record<string, string> = {
   'https://www.sidequesthq.co/products/sovereign-life-playbook':
     "The flagship, and the deepest single work in the library. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
+  'https://www.sidequesthq.co/products/creator-flywheel-playbook':
+    "The machine under your creative work. Where the free kit makes your flywheel visible, this one installs it: a working system that compounds, with your AI running it beside you. For the Creator who's done starting over every season.",
   'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want':
     "A first-principles starter for the owner who's already using AI and still feels a little off. It returns to the question underneath the tools. What's the business you actually want, and what's AI for inside it. A clear place to begin when the stack is busy but the direction has gone fuzzy.",
   'https://www.sidequesthq.co/products/stack-calm':
@@ -537,6 +549,14 @@ export const linkHub: LinkHubItem[] = [
     icon: 'spark',
     featured: true,
     pill: 'Free',
+  },
+  // The kit's next rung. Swapped in at the Creator Flywheel Playbook
+  // launch (2026-06-11) per the brief's funnel wiring.
+  {
+    label: 'Creator Flywheel Playbook',
+    sublabel: 'Install the machine that compounds your creative work · $77',
+    href: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+    icon: 'book',
   },
   {
     label: 'The Full Library',

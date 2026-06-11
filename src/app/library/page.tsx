@@ -3,6 +3,7 @@ import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import {
   librarySlp,
+  libraryCfp,
   aiBusinessArc,
   aiPersonalArc,
   libraryBlurbs,
@@ -12,7 +13,7 @@ import {
 } from '@/lib/page-data'
 
 const DESCRIPTION =
-  'The library of Lane Belone. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book. Tools for playing the game of your life more beautifully.'
+  'The library of Lane Belone. Two playbooks, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book. Tools for playing the game of your life more beautifully.'
 
 export const metadata: Metadata = {
   title: 'Library',
@@ -48,6 +49,7 @@ const portrait = (img: string) => img.replace('cover-4x3', 'cover-display')
 // Side Quest HQ; this page carries CollectionPage plus a lightweight ItemList.
 const catalog = [
   { name: librarySlp.title, url: librarySlp.href },
+  { name: libraryCfp.title, url: libraryCfp.href },
   ...aiBusinessArc.map(c => ({ name: c.title, url: c.href })),
   ...aiPersonalArc.map(c => ({ name: c.title, url: c.href })),
   ...libraryCollections.map(c => ({ name: c.title, url: c.href })),
@@ -199,17 +201,25 @@ export default function LibraryPage() {
           </p>
         </SectionReveal>
 
-        {/* Featured Playbook */}
+        {/* Playbooks */}
         <SectionReveal>
-          <ShelfLabel>Featured Playbook</ShelfLabel>
+          <ShelfLabel>Playbooks</ShelfLabel>
         </SectionReveal>
-        <SectionReveal className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <BookCard
             title={librarySlp.title}
             blurb={libraryBlurbs[librarySlp.href]}
             priceLabel={librarySlp.price}
             href={librarySlp.href}
             image={portrait(librarySlp.image)}
+            className="lib-featured"
+          />
+          <BookCard
+            title={libraryCfp.title}
+            blurb={libraryBlurbs[libraryCfp.href]}
+            priceLabel={libraryCfp.price}
+            href={libraryCfp.href}
+            image={portrait(libraryCfp.image)}
             className="lib-featured"
           />
         </SectionReveal>

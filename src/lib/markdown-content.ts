@@ -14,6 +14,7 @@ import {
   happeningNow,
   sqhqChips,
   librarySlp,
+  libraryCfp,
   aiBusinessArc,
   aiPersonalArc,
   libraryBlurbs,
@@ -239,6 +240,7 @@ ${post.content}
 
 function generateLibraryMarkdown(): string {
   const slp = `- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${libraryBlurbs[librarySlp.href]}`
+  const cfp = `- **[${libraryCfp.title}](${libraryCfp.href})** (${libraryCfp.price}) · ${libraryBlurbs[libraryCfp.href]}`
   const business = aiBusinessArc
     .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${libraryBlurbs[c.href]}`)
     .join('\n')
@@ -257,13 +259,14 @@ function generateLibraryMarkdown(): string {
 
   return `# The Library · Lane Belone
 
-> Tools for playing the game of your life more beautifully. The Sovereign Life Playbook, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book.
+> Tools for playing the game of your life more beautifully. Two playbooks, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book.
 
-Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The Playbook, Field Guides and Collections are hosted on Side Quest HQ (https://sidequesthq.co).
+Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The playbooks, Field Guides and Collections are hosted on Side Quest HQ (https://sidequesthq.co).
 
-## Featured Playbook
+## Playbooks
 
 ${slp}
+${cfp}
 
 ## Business Arc
 
