@@ -79,9 +79,13 @@ Lane leads immersive workshops, curated retreats and selective private advisory 
 
 - https://huggingface.co/datasets/lanebelone/infinite-game-os — Infinite Game OS for Sovereign Creators. 101-record instruction-tuning dataset packaging the Infinite Game OS framework for AI training pipelines. CC-BY-4.0. JSONL format. Authored 2026-05-21.
 
+## Open Source
+
+- [The Sovereign Ecosystem](https://infinitegameos.io/sovereign-ecosystem): A free vault template for building a personal, AI-native operating system. The open-source foundation beneath the Infinite Game OS practice. Repo: https://github.com/infinitegameplayer/sovereign-ecosystem
+
 ## AI Companion Surfaces
 
-The Infinite Game OS Companion is published on major bot directories as a conversational entry point to the framework. Both surfaces point back to the canonical Kingdom sites.
+The Infinite Game OS Companion is published on major bot directories as a conversational entry point to the framework. Both surfaces point back to the three canonical sites.
 
 - https://poe.com/Infinite-Game-OS — Conversational companion powered by Claude. Ask about Joyful Sovereignty, the Pioneer, the Wayfarer arc, the Flywheel. Deployed 2026-05-21.
 - https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ — Perplexity research space with lanebelone.com, infinitegameos.io and sidequesthq.co pinned as focus sources. Deployed 2026-05-21.
