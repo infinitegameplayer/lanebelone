@@ -8,6 +8,6 @@ export default async function Image() {
   return ogCard({
     eyebrow: 'Library',
     title: 'The Library.',
-    body: 'Playbooks, six AI Field Guides, three Collections and a free ebook. Tools for playing the game of your life more beautifully.',
+    body: 'Playbooks, Field Guides, Collections and a free ebook. Tools for playing the game of your life more beautifully.',
   })
 }

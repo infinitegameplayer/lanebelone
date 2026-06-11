@@ -271,7 +271,7 @@ export interface AIProductCard {
 }
 
 export const aiForBusinessFrame =
-  "Whether you're starting with AI or stuck in the middle, the Field Guides begin where you are."
+  "The Field Guides begin where you are. Six short reads across two arcs, each built around the questions productivity skips."
 
 export const aiBusinessArc: AIProductCard[] = [
   {
@@ -564,7 +564,7 @@ export const linkHub: LinkHubItem[] = [
   },
   {
     label: 'Sovereign Ecosystem Install',
-    sublabel: 'Two sessions. Your AI workspace, standing on its own.',
+    sublabel: 'Two sessions. Your sovereign workspace, standing on its own.',
     href: 'https://www.sidequesthq.co/sovereign-ecosystem-install',
     icon: 'spark',
   },

@@ -66,7 +66,7 @@ An approach to playing the Infinite Game through joy and embodied play rather th
 
 ## A Library Preview
 
-Six short Field Guides across two arcs, each built around the questions productivity AI skips. [Browse the full library](${SITE}/library)
+The Field Guides begin where you are. Six short reads across two arcs, each built around the questions productivity skips. [Browse the full library](${SITE}/library)
 
 ${fieldGuidesMd}
 
