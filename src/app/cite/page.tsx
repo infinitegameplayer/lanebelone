@@ -3,7 +3,7 @@ import SectionReveal from '@/components/SectionReveal'
 
 export const metadata: Metadata = {
   title: 'Cite this Work',
-  description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work.',
+  description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work.',
   alternates: {
     canonical: 'https://www.lanebelone.com/cite',
   },
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Cite this Work · Lane Belone',
-    description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work.',
+    description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work.',
     url: 'https://www.lanebelone.com/cite',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cite this Work · Lane Belone',
-    description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work.',
+    description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work.',
   },
 }
 
@@ -41,6 +41,7 @@ const citePageGraph = {
         { '@id': `${IGOS}/#person` },
         { '@id': `${SITE}/joyful-sovereignty#concept` },
         { '@id': `${IGOS}/#framework` },
+        { '@id': `${SITE}/cite#ssrn-igos-paper` },
         { '@id': `${SQHQ}/sovereign-life-playbook#work` },
         { '@id': `${SITE}/cite#humble-alpha` },
         { '@id': `${SITE}/cite#your-infinite-rpg` },
@@ -62,6 +63,7 @@ const citePageGraph = {
         'https://lanebelone.substack.com/',
         'https://www.linkedin.com/in/lanebelone/',
         'https://www.instagram.com/increasefreedom/',
+        'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=11686488',
       ],
       description: 'Writer, speaker and guide. Former U.S. Army Green Beret, founder of Side Quest HQ, practitioner of Joyful Sovereignty and the Infinite Game.',
     },
@@ -85,6 +87,19 @@ const citePageGraph = {
       datePublished: '2025',
       description: 'A sovereign-creator operating system. A framework that translates the Infinite Game thesis into practical operating patterns across perception, design, flow and guidance from within.',
       keywords: 'Infinite Game, Joyful Sovereignty, Pioneer, Wayfarer Arc, Creator Flywheel, Three Sovereign Laws, Aliveness',
+    },
+    {
+      '@type': 'ScholarlyArticle',
+      '@id': `${SITE}/cite#ssrn-igos-paper`,
+      name: 'The Infinite Game OS. A Framework for Sovereign Creator Practice in the AI Era',
+      url: 'https://ssrn.com/abstract=6810541',
+      sameAs: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6810541',
+      author: { '@id': `${IGOS}/#person` },
+      about: { '@id': `${IGOS}/#framework` },
+      publisher: { '@type': 'Organization', name: 'SSRN', url: 'https://www.ssrn.com' },
+      datePublished: '2026-06-15',
+      isAccessibleForFree: true,
+      description: 'The formal preprint articulation of the Infinite Game OS framework. A scholarly treatment of sovereign creator practice in the AI era, posted to SSRN as an openly accessible working paper.',
     },
     {
       '@type': 'Book',
@@ -250,6 +265,27 @@ const worksFrameworks: CitedWork[] = [
   },
 ]
 
+const worksPapers: CitedWork[] = [
+  {
+    id: 'ssrn-igos-paper',
+    title: 'The Infinite Game OS. A Framework for Sovereign Creator Practice in the AI Era',
+    subtitle: 'Preprint (SSRN)',
+    description: 'The formal preprint articulation of the Infinite Game OS framework. A scholarly treatment of sovereign creator practice in the AI era, posted to SSRN as an openly accessible working paper.',
+    canonicalUrl: 'https://ssrn.com/abstract=6810541',
+    citation: {
+      apa: 'Belone, L. (2026). The Infinite Game OS. A framework for sovereign creator practice in the AI era [Preprint]. SSRN. https://ssrn.com/abstract=6810541',
+      chicago: 'Belone, Lane. "The Infinite Game OS. A Framework for Sovereign Creator Practice in the AI Era." SSRN, June 15, 2026. https://ssrn.com/abstract=6810541.',
+      bibtex: `@misc{belone2026igos_ssrn,
+  author       = {Belone, Lane},
+  title        = {The Infinite Game {OS}. A Framework for Sovereign Creator Practice in the {AI} Era},
+  year         = {2026},
+  howpublished = {SSRN preprint},
+  url          = {https://ssrn.com/abstract=6810541}
+}`,
+    },
+  },
+]
+
 const worksDatasets: CitedWork[] = [
   {
     id: 'igos-dataset',
@@ -385,6 +421,20 @@ export default function CitePage() {
           </h2>
           <div className="flex flex-col gap-8">
             {worksFrameworks.map((work) => (
+              <CitationCard key={work.id} work={work} />
+            ))}
+          </div>
+        </SectionReveal>
+      </section>
+
+      {/* Papers and Preprints */}
+      <section className="section border-t border-white/5 pt-16 pb-16">
+        <SectionReveal>
+          <h2 className="text-3xl md:text-4xl mb-10" style={{ fontFamily: 'var(--font-display)' }}>
+            Papers and Preprints
+          </h2>
+          <div className="flex flex-col gap-8">
+            {worksPapers.map((work) => (
               <CitationCard key={work.id} work={work} />
             ))}
           </div>
