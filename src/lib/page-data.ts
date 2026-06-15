@@ -550,12 +550,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // The kit's next rung. Swapped in at the Creator Flywheel Playbook
-  // launch (2026-06-11) per the brief's funnel wiring.
+  // Rotating episode slot. Open Studio Episode 3 (2026-06-15) points it at the
+  // B1 Field Guide spotlighted that week. Resting default is the Creator
+  // Flywheel Playbook; a future episode swaps it again.
   {
-    label: 'Creator Flywheel Playbook',
-    sublabel: 'Install the machine that compounds your creative work · $77',
-    href: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+    label: 'AI for the Business You Actually Want',
+    sublabel: 'A Field Guide for owners who want their business, their voice, their terms · $9',
+    href: 'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want',
     icon: 'book',
   },
   {

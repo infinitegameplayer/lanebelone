@@ -56,6 +56,7 @@ export const LIVE_SLUGS: string[] = [
   'the-dance-youre-already-in',
   'the-dance-were-all-in',
   'you-feel-your-way-in',
+  'what-game-of-business-do-you-want-to-play',
 ]
 
 // Combined set used for static generation and URL resolution.
