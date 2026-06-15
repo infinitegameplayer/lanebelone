@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import {
+  libraryAliveBusiness,
   librarySlp,
   libraryCfp,
   aiBusinessArc,
@@ -13,7 +14,7 @@ import {
 } from '@/lib/page-data'
 
 const DESCRIPTION =
-  'The library of Lane Belone. Two playbooks, six AI Field Guides across the business and personal arcs, three Collections, a free ebook and a book. Tools for playing the game of your life more beautifully.'
+  'The library of Lane Belone. An operating system, two playbooks, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book. Tools for playing the game of your life more beautifully.'
 
 export const metadata: Metadata = {
   title: 'Library',
@@ -48,12 +49,16 @@ const portrait = (img: string) => img.replace('cover-4x3', 'cover-display')
 // ItemList over the catalog. Product and Offer entities live canonically on
 // Side Quest HQ; this page carries CollectionPage plus a lightweight ItemList.
 const catalog = [
+  { name: libraryAliveBusiness.title, url: libraryAliveBusiness.href },
   { name: librarySlp.title, url: librarySlp.href },
   { name: libraryCfp.title, url: libraryCfp.href },
   ...aiBusinessArc.map(c => ({ name: c.title, url: c.href })),
   ...aiPersonalArc.map(c => ({ name: c.title, url: c.href })),
   ...libraryCollections.map(c => ({ name: c.title, url: c.href })),
-  { name: libraryFreeReading[0].title, url: 'https://www.lanebelone.com/files/your-infinite-rpg.pdf' },
+  ...libraryFreeReading.map(b => ({
+    name: b.title,
+    url: b.href.startsWith('http') ? b.href : `https://www.lanebelone.com${b.href}`,
+  })),
   { name: libraryPrintBooks[0].title, url: libraryPrintBooks[0].href },
 ]
 
@@ -199,6 +204,21 @@ export default function LibraryPage() {
           <p className="lib-host">
             So this is where the good stuff lives. Some are free, some carry a price. Open whatever catches your eye and stay as long as you like.
           </p>
+        </SectionReveal>
+
+        {/* Operating System */}
+        <SectionReveal>
+          <ShelfLabel>The Operating System</ShelfLabel>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <BookCard
+            title={libraryAliveBusiness.title}
+            blurb={libraryBlurbs[libraryAliveBusiness.href]}
+            priceLabel={libraryAliveBusiness.price}
+            href={libraryAliveBusiness.href}
+            image={portrait(libraryAliveBusiness.image)}
+            className="lib-featured"
+          />
         </SectionReveal>
 
         {/* Playbooks */}
