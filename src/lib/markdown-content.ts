@@ -253,7 +253,7 @@ function generateLibraryMarkdown(): string {
     .map(c => `- **[${c.title}](${c.href})** (${c.price}, ${c.savings}) · ${c.blurb}`)
     .join('\n')
   const free = libraryFreeReading
-    .map(b => `- **[${b.title}](${SITE}${b.href})** (Free) · ${b.blurb}`)
+    .map(b => `- **[${b.title}](${b.href.startsWith('http') ? b.href : `${SITE}${b.href}`})** (Free) · ${b.blurb}`)
     .join('\n')
   const print = libraryPrintBooks
     .map(b => `- **[${b.title}](${b.href})** · ${b.blurb}`)
