@@ -84,7 +84,7 @@ export default function Footer() {
           <Link href="/blog#subscribe" className="hover:text-parchment/80 transition-colors">Get articles by email</Link>
           <Link href="/links" className="hover:text-parchment/80 transition-colors">Links</Link>
           <a href="https://infinitegameos.io" target="_blank" rel="noopener" className="hover:text-parchment/80 transition-colors">Infinite Game OS</a>
-          <a href="https://www.sidequesthq.co/creator-flywheel" target="_blank" rel="noopener" className="hover:text-parchment/80 transition-colors">Free Starter Kit</a>
+          <a href="https://www.sidequesthq.co/one-alive-thing" target="_blank" rel="noopener" className="hover:text-parchment/80 transition-colors">One Alive Thing</a>
           <a href="https://github.com/InfiniteGamePlayer/sovereign-ecosystem" target="_blank" rel="noopener noreferrer" className="hover:text-parchment/80 transition-colors">Sovereign Ecosystem</a>
           <Link href="/privacy" className="hover:text-parchment/80 transition-colors">Privacy</Link>
           <Link href="/terms" className="hover:text-parchment/80 transition-colors">Terms</Link>

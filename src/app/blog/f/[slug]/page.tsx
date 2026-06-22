@@ -175,17 +175,17 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        {/* Lead magnet CTA: the Creator Flywheel Starter Kit */}
+        {/* Lead magnet CTA: One Alive Thing */}
         <div className="mt-16 pt-8 border-t border-parchment/10">
           <div className="rounded-xl border border-[#c9a84c]/30 bg-[#c9a84c]/[0.05] p-6">
             <p
               className="text-parchment/85 mb-5 leading-relaxed"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              Done performing? The Creator Flywheel Starter Kit is the paradigm in a guide and worksheet. Yours free.
+              Something in you that wants to move? One Alive Thing is a free mini side quest. Find it, name it and make it real in under an hour.
             </p>
-            <GoldButton href="https://www.sidequesthq.co/creator-flywheel" external>
-              Get the kit
+            <GoldButton href="https://www.sidequesthq.co/one-alive-thing" external>
+              Start your One Alive Thing
             </GoldButton>
           </div>
         </div>

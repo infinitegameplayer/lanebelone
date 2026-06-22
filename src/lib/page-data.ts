@@ -523,12 +523,12 @@ export const libraryFreeReading: LibraryBook[] = [
       'A free ebook presenting personal growth as a customizable role-playing game. A gamified framework for designing an epic, authentic life, one quest at a time. Yours to download and keep, no cost.',
   },
   {
-    title: 'The Creator Flywheel Starter Kit',
-    priceLabel: 'Free · Guide and worksheet',
-    href: 'https://www.sidequesthq.co/creator-flywheel',
-    image: '/images/creator-flywheel-starter-kit-cover.png',
+    title: 'One Alive Thing',
+    priceLabel: 'Free · A mini side quest',
+    href: 'https://www.sidequesthq.co/one-alive-thing',
+    image: '/images/one-alive-thing-cover.png',
     blurb:
-      "A guide and a worksheet that make your creative flywheel visible. The first turn of the system the Playbook installs in full. For the Creator who's done performing and ready to build something that compounds. Yours free.",
+      "A free mini side quest. In under an hour you find what's alive in you, choose one small thing and make it real. You finish holding something that wasn't there when you sat down. Yours free.",
   },
 ]
 
@@ -565,9 +565,9 @@ export const linkHub: LinkHubItem[] = [
   // Featured funnel mouth. The free lead magnet, distinguished with the gold
   // treatment so the eye lands here first.
   {
-    label: 'The Creator Flywheel Starter Kit',
-    sublabel: 'A guide and worksheet for Creators who are done performing',
-    href: 'https://www.sidequesthq.co/creator-flywheel',
+    label: 'One Alive Thing',
+    sublabel: 'A free mini side quest. Make one real thing in under an hour',
+    href: 'https://www.sidequesthq.co/one-alive-thing',
     icon: 'spark',
     featured: true,
     pill: 'Free',
