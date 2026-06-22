@@ -415,7 +415,7 @@ export const librarySlp: LibraryFlagship = {
   image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
 }
 
-// Flagship operating system on the shelf. Top of the ladder above both
+// Flagship operating system on the shelf. The deepest build, sitting above both
 // playbooks. Live on SQHQ at $197. Rendered on its own "The Operating System"
 // shelf above Playbooks since it is an operating system, not a playbook.
 export const libraryAliveBusiness: LibraryFlagship = {
@@ -443,7 +443,7 @@ export const libraryCfp: LibraryFlagship = {
 // counts (those live on the SQHQ landing pages). Keyed by canonical SQHQ href.
 export const libraryBlurbs: Record<string, string> = {
   'https://www.sidequesthq.co/products/the-alive-business':
-    "The deepest build in the library, and the top of the ladder. Where the Playbook installs your flywheel, this installs the whole business around it. Eleven systems, the governance your AI holds and the instruments that keep it running. For the Creator ready to run a company that still feels entirely their own.",
+    "The deepest build in the library. Where the Playbook installs your flywheel, this installs the whole business around it. Eleven systems, the governance your AI holds and the instruments that keep it running. For the Creator ready to run a company that still feels entirely their own.",
   'https://www.sidequesthq.co/products/sovereign-life-playbook':
     "The flagship, and the deepest single work in the library. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
   'https://www.sidequesthq.co/products/creator-flywheel-playbook':

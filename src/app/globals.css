@@ -534,10 +534,182 @@ a { color: inherit; text-decoration: none; }
 }
 .home-collection-line a:hover { color: var(--color-gold); border-color: var(--color-gold); }
 
+/* ── Home page: library-preview ladder ──────────────────────────────── */
+/* The homepage Library Preview mirrors the /library shelf in compressed form:
+   an operating-system marquee, the playbooks, a tight Field Guide strip and the
+   free door. Classes are os-/pb-/fg-/oat- namespaced so nothing here reaches
+   other pages. */
+
+/* Operating-system marquee */
+.os-marquee {
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.2rem;
+  align-items: center;
+  background: rgba(13, 26, 16, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.05);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.os-marquee:hover { border-color: rgba(201, 168, 76, 0.45); transform: translateY(-2px); }
+.os-cover {
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #060d06;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.6);
+}
+.os-cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.os-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.7rem;
+}
+.os-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  margin-bottom: 0.7rem;
+}
+.os-blurb {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 40em;
+  margin-bottom: 1.4rem;
+}
+.os-price {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+}
+@media (max-width: 720px) {
+  .os-marquee { grid-template-columns: 1fr; gap: 1.4rem; }
+  .os-cover { max-width: 200px; }
+}
+
+/* Playbook pair */
+.pb-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 280px)); gap: 1.5rem; }
+@media (max-width: 560px) { .pb-grid { grid-template-columns: 1fr; } }
+
+/* Compressed Field Guide strip */
+.fg-frame {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 40em;
+  margin-bottom: 1.5rem;
+}
+.fg-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.9rem; }
+.fg-card { display: flex; flex-direction: column; }
+.fg-cover {
+  aspect-ratio: 4 / 5;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #060d06;
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.fg-card:hover .fg-cover { transform: translateY(-4px); border-color: rgba(201, 168, 76, 0.4); }
+.fg-cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.fg-name {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--color-text);
+  margin-top: 0.6rem;
+}
+.fg-price {
+  font-family: var(--font-display);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+  margin-top: 0.25rem;
+}
+@media (max-width: 860px) { .fg-strip { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; } }
+@media (max-width: 460px) { .fg-strip { grid-template-columns: repeat(2, 1fr); } }
+
+/* Free door — One Alive Thing, given real room */
+.oat-feature {
+  display: grid;
+  grid-template-columns: 172px 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 700px;
+  background: rgba(13, 26, 16, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 28px rgba(201, 168, 76, 0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.oat-feature:hover { transform: translateY(-3px); border-color: rgba(201, 168, 76, 0.55); }
+.oat-cover {
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #060d06;
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.6);
+}
+.oat-cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.oat-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin-bottom: 0.7rem;
+}
+.oat-sub {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: var(--color-text-muted);
+  margin-bottom: 1.3rem;
+}
+.free-pill {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 600px) {
+  .oat-feature { grid-template-columns: 1fr; gap: 1.4rem; }
+  .oat-cover { max-width: 172px; }
+}
+
 /* Accessibility: reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .lib-cover-frame, .lib-collection { transition: none; }
   .lib-book:hover .lib-cover-frame, .lib-collection:hover { transform: none; }
+  .os-marquee, .fg-cover, .oat-feature { transition: none; }
+  .os-marquee:hover, .fg-card:hover .fg-cover, .oat-feature:hover { transform: none; }
   .scroll-reveal {
     opacity: 1;
     transform: none;

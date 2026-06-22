@@ -8,10 +8,13 @@ import { getAllPosts } from '@/lib/blog'
 import {
   happeningNow,
   sqhqChips,
-  aiForBusinessFrame,
   aiBusinessArc,
   aiPersonalArc,
+  libraryAliveBusiness,
+  librarySlp,
+  libraryCfp,
   libraryCollections,
+  libraryFreeReading,
 } from '@/lib/page-data'
 
 export const metadata: Metadata = {
@@ -78,6 +81,12 @@ export default function HomePage() {
   const allPosts = getAllPosts()
   const featuredPosts = allPosts.filter(p => p.featured).slice(0, 2).reverse()
   const latestPosts = allPosts.slice(0, 2)
+
+  // Library-preview ladder: the six Field Guides as one compressed strip, the
+  // Foundation Collection nudge and the free One Alive Thing door.
+  const fieldGuides = [...aiBusinessArc, ...aiPersonalArc]
+  const foundation = libraryCollections[2]
+  const oat = libraryFreeReading.find((b) => b.title === 'One Alive Thing')!
 
   return (
     <>
@@ -263,7 +272,7 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 4 — A Library Preview */}
+      {/* 4 — A Library Preview (the shelf, compressed) */}
       <section className="section">
         <SectionReveal>
           <div className="section-label">· A Library Preview ·</div>
@@ -279,68 +288,116 @@ export default function HomePage() {
               marginBottom: '1rem',
             }}
           >
-            {aiForBusinessFrame} Six short reads across two arcs, each built around the questions productivity AI skips.
+            A small shelf of tools for playing the game of your life more beautifully. Start free, go as deep as you like. Each one meets you where you are and opens a door to where you&rsquo;re headed.
           </p>
         </SectionReveal>
         <SectionReveal>
-          <div style={{ marginBottom: '1.5rem' }}>
+          <div style={{ marginBottom: '0.5rem' }}>
             <Link href="/library" className="btn-ghost">
               Browse the full library &rarr;
             </Link>
           </div>
         </SectionReveal>
 
-        {/* Business Arc */}
+        {/* The Operating System — marquee */}
         <SectionReveal>
-          <div className="lib-shelf-label">Business Arc</div>
+          <div className="lib-shelf-label">The Operating System</div>
         </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {aiBusinessArc.map((card) => (
-            <ShelfCard
-              key={card.title}
-              title={card.title}
-              hook={card.oneLiner}
-              price={card.price}
-              href={card.href}
-              image={card.image}
-            />
+        <SectionReveal>
+          <a href={libraryAliveBusiness.href} target="_blank" rel="noopener" style={{ display: 'block' }}>
+            <div className="os-marquee">
+              <div className="os-cover">
+                <img src={portrait(libraryAliveBusiness.image)} alt={`${libraryAliveBusiness.title} cover`} loading="lazy" />
+              </div>
+              <div>
+                <div className="os-eyebrow">Where the whole business lives</div>
+                <div className="os-title">{libraryAliveBusiness.title}</div>
+                <p className="os-blurb">{libraryAliveBusiness.oneLiner}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.3rem', flexWrap: 'wrap' }}>
+                  <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
+                    Explore the Operating System
+                  </span>
+                  <span className="os-price">{libraryAliveBusiness.price}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </SectionReveal>
+
+        {/* Playbooks */}
+        <SectionReveal>
+          <div className="lib-shelf-label">Playbooks</div>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="pb-grid">
+          <ShelfCard
+            title={libraryCfp.title}
+            hook={libraryCfp.oneLiner}
+            price={libraryCfp.price}
+            href={libraryCfp.href}
+            image={libraryCfp.image}
+          />
+          <ShelfCard
+            title={librarySlp.title}
+            hook="A framework for designing your life from the inside out. Comes with an AI Companion to walk the whole thing beside you."
+            price={librarySlp.price}
+            href={librarySlp.href}
+            image={librarySlp.image}
+          />
+        </SectionReveal>
+
+        {/* Field Guides — compressed strip */}
+        <SectionReveal>
+          <div className="lib-shelf-label">Field Guides</div>
+        </SectionReveal>
+        <SectionReveal>
+          <p className="fg-frame">
+            <strong style={{ color: 'var(--color-text)', fontWeight: 500 }}>Six short reads, $9 each. Start anywhere.</strong>{' '}
+            Small, legible entry points built around the questions productivity skips. The business you actually want, the calm stack, the right time to automate and three for keeping the work yours.
+          </p>
+        </SectionReveal>
+        <SectionReveal staggerChildren className="fg-strip">
+          {fieldGuides.map((card) => (
+            <a key={card.title} href={card.href} target="_blank" rel="noopener" className="fg-card">
+              <div className="fg-cover">
+                <img src={portrait(card.image)} alt={`${card.title} cover`} loading="lazy" />
+              </div>
+              <div className="fg-name">{card.title}</div>
+              <div className="fg-price">{card.price}</div>
+            </a>
           ))}
         </SectionReveal>
         <SectionReveal>
           <p className="home-collection-line">
-            Get all three.{' '}
-            <a href={libraryCollections[0].href} target="_blank" rel="noopener">
-              {libraryCollections[0].title}, {libraryCollections[0].price}, {libraryCollections[0].savings.replace('Save ', 'saves you ')} &rarr;
+            Or take all six.{' '}
+            <a href={foundation.href} target="_blank" rel="noopener">
+              {foundation.title}, {foundation.price}, {foundation.savings.replace('Save ', 'saves you ')} &rarr;
             </a>
           </p>
         </SectionReveal>
 
-        {/* Personal Arc */}
+        {/* Start Free — One Alive Thing */}
         <SectionReveal>
-          <div className="lib-shelf-label">Personal Arc</div>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {aiPersonalArc.map((card) => (
-            <ShelfCard
-              key={card.title}
-              title={card.title}
-              hook={card.oneLiner}
-              price={card.price}
-              href={card.href}
-              image={card.image}
-            />
-          ))}
+          <div className="lib-shelf-label">Start Free</div>
         </SectionReveal>
         <SectionReveal>
-          <p className="home-collection-line">
-            Get all three.{' '}
-            <a href={libraryCollections[1].href} target="_blank" rel="noopener">
-              {libraryCollections[1].title}, {libraryCollections[1].price}, {libraryCollections[1].savings.replace('Save ', 'saves you ')} &rarr;
-            </a>
-          </p>
+          <a href={oat.href} target="_blank" rel="noopener" className="oat-feature">
+            <div className="oat-cover">
+              <img src={oat.image} alt={`${oat.title} cover`} loading="lazy" />
+            </div>
+            <div>
+              <span className="free-pill">{oat.priceLabel}</span>
+              <div className="oat-title">{oat.title}</div>
+              <p className="oat-sub">
+                The easiest door in, and a real one. In under an hour you find what&rsquo;s alive in you and make one small thing real. You finish holding something that wasn&rsquo;t there when you sat down, and the path keeps unfolding from there at your own pace.
+              </p>
+              <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
+                Begin the side quest
+              </span>
+            </div>
+          </a>
         </SectionReveal>
 
-        {/* Closer: Foundation Collection + library doorway */}
+        {/* Closer: library doorway */}
         <SectionReveal>
           <div
             style={{
@@ -349,12 +406,6 @@ export default function HomePage() {
               borderTop: '1px solid var(--color-border-subtle)',
             }}
           >
-            <p className="home-collection-line" style={{ marginTop: 0, marginBottom: '1.5rem' }}>
-              Or take the whole shelf.{' '}
-              <a href={libraryCollections[2].href} target="_blank" rel="noopener">
-                {libraryCollections[2].title}, all six, {libraryCollections[2].savings.replace('Save ', 'saves you ')} &rarr;
-              </a>
-            </p>
             <div className="text-right">
               <Link href="/library" className="btn-ghost">
                 Browse the full library &rarr;

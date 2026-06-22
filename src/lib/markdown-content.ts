@@ -46,6 +46,8 @@ function generateHomeMarkdown(): string {
     .map(c => `- **[${c.title}](${c.href})** (${c.price}, ${c.savings}) · ${c.blurb}`)
     .join('\n')
 
+  const oat = libraryFreeReading.find(b => b.title === 'One Alive Thing')!
+
   const sqhqMd = sqhqChips
     .map(c => `- **[${c.title}](${c.href})** · ${c.sub}`)
     .join('\n')
@@ -68,13 +70,30 @@ An approach to playing the Infinite Game through joy and embodied play rather th
 
 ## A Library Preview
 
-The Field Guides begin where you are. Six short reads across two arcs, each built around the questions productivity skips. [Browse the full library](${SITE}/library)
+A small shelf of tools for playing the game of your life more beautifully. Start free, go as deep as you like. Each one meets you where you are and opens a door to where you're headed. [Browse the full library](${SITE}/library)
+
+### The Operating System
+
+- **[${libraryAliveBusiness.title}](${libraryAliveBusiness.href})** (${libraryAliveBusiness.price}) · ${libraryAliveBusiness.oneLiner}
+
+### Playbooks
+
+- **[${libraryCfp.title}](${libraryCfp.href})** (${libraryCfp.price}) · ${libraryCfp.oneLiner}
+- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${librarySlp.oneLiner}
+
+### Field Guides
+
+Six short reads, $9 each. Start anywhere.
 
 ${fieldGuidesMd}
 
 ### Collections
 
 ${homeCollectionsMd}
+
+### Start Free
+
+- **[${oat.title}](${oat.href})** (${oat.priceLabel}) · ${oat.blurb}
 
 ## Recent Writing
 
