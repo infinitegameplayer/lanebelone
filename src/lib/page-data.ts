@@ -572,13 +572,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 3 (2026-06-15) points it at the
-  // B1 Field Guide spotlighted that week. Resting default is the Creator
+  // Rotating episode slot. Open Studio Episode 4 (2026-06-22) points it at the
+  // B2 Field Guide spotlighted that week. Resting default is the Creator
   // Flywheel Playbook; a future episode swaps it again.
   {
-    label: 'AI for the Business You Actually Want',
-    sublabel: 'A Field Guide for owners who want their business, their voice, their terms · $9',
-    href: 'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want',
+    label: 'Stack Calm',
+    sublabel: 'A Field Guide for the minimum viable AI setup that actually holds · $9',
+    href: 'https://www.sidequesthq.co/products/stack-calm',
     icon: 'book',
   },
   {
