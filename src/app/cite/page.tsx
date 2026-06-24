@@ -57,6 +57,7 @@ const citePageGraph = {
       url: SITE,
       sameAs: [
         'https://www.wikidata.org/wiki/Q139889543',
+        'https://orcid.org/0009-0002-7774-5513',
         SITE,
         IGOS,
         SQHQ,
@@ -65,6 +66,7 @@ const citePageGraph = {
         'https://www.instagram.com/increasefreedom/',
         'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=11686488',
       ],
+      identifier: { '@type': 'PropertyValue', propertyID: 'ORCID', value: '0009-0002-7774-5513' },
       description: 'Writer, speaker and guide. Former U.S. Army Green Beret, founder of Side Quest HQ, practitioner of Joyful Sovereignty and the Infinite Game.',
     },
     {
@@ -146,6 +148,8 @@ const citePageGraph = {
       '@id': `${HF_DATASET}#dataset`,
       name: 'Infinite Game OS for Sovereign Creators',
       url: HF_DATASET,
+      sameAs: ['https://doi.org/10.5281/zenodo.20836262', 'https://zenodo.org/records/20836262'],
+      identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: '10.5281/zenodo.20836262' },
       creator: { '@id': `${IGOS}/#person` },
       about: { '@id': `${IGOS}/#framework` },
       datePublished: '2026-05-21',
@@ -308,6 +312,25 @@ const worksDatasets: CitedWork[] = [
   year         = {2026},
   howpublished = {Hugging Face Datasets},
   url          = {https://huggingface.co/datasets/lanebelone/infinite-game-os}
+}`,
+    },
+  },
+  {
+    id: 'igos-dataset-zenodo',
+    title: 'Infinite Game OS: Concept Corpus for Sovereign Creator Practice',
+    subtitle: 'Archival dataset with DOI (Zenodo)',
+    description: 'The archival, DOI-bearing release of the Infinite Game OS concept corpus. The same corpus as the Hugging Face dataset, deposited to Zenodo under CC-BY-4.0 for permanent citation. Supplement to the SSRN preprint. DOI: 10.5281/zenodo.20836262.',
+    canonicalUrl: 'https://doi.org/10.5281/zenodo.20836262',
+    citation: {
+      apa: 'Belone, L. (2026). Infinite Game OS: Concept corpus for sovereign creator practice [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20836262',
+      chicago: 'Belone, Lane. "Infinite Game OS: Concept Corpus for Sovereign Creator Practice." Dataset. Zenodo, 2026. https://doi.org/10.5281/zenodo.20836262.',
+      bibtex: `@misc{belone2026igos_zenodo,
+  author    = {Belone, Lane},
+  title     = {Infinite Game {OS}: Concept Corpus for Sovereign Creator Practice},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20836262},
+  url       = {https://doi.org/10.5281/zenodo.20836262}
 }`,
     },
   },
