@@ -572,13 +572,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 4 (2026-06-22) points it at the
-  // B2 Field Guide spotlighted that week. Resting default is the Creator
+  // Rotating episode slot. Open Studio Episode 5 (2026-06-29) points it at the
+  // B3 Field Guide spotlighted that week. Resting default is the Creator
   // Flywheel Playbook; a future episode swaps it again.
   {
-    label: 'Stack Calm',
-    sublabel: 'A Field Guide for the minimum viable AI setup that actually holds · $9',
-    href: 'https://www.sidequesthq.co/products/stack-calm',
+    label: 'Earn the Right to Automate',
+    sublabel: 'A Field Guide for automation that lasts · earn the turn before you wire it · $9',
+    href: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
     icon: 'book',
   },
   {
