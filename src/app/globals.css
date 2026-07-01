@@ -28,6 +28,7 @@
 
   /* Shared structural tokens */
   --radius: 6px;
+  --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Geist Sans', system-ui, sans-serif;
   --font-voice: 'EB Garamond', Georgia, serif;
@@ -704,6 +705,40 @@ a { color: inherit; text-decoration: none; }
   .oat-cover { max-width: 172px; }
 }
 
+/* Primary nav links. Underline-tick active state and a half-width hover ghost,
+   both on the entrance curve. Brighter-forest wayfinding, ported from the IGOS
+   Phase 4 nav pattern in lanebelone's own accent. The active underline layers
+   on top of the existing parchment hover. */
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(245, 240, 232, 0.7);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s var(--ease-entrance);
+}
+.nav-link:hover { color: #f5f0e8; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-accent-hover);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.3s var(--ease-entrance), opacity 0.3s var(--ease-entrance);
+}
+.nav-link:hover::after { transform: scaleX(0.5); opacity: 0.5; }
+.nav-link.active { color: #f5f0e8; }
+.nav-link.active::after,
+.nav-link.active:hover::after { transform: scaleX(1); opacity: 1; }
+
 /* Accessibility: reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .lib-cover-frame, .lib-collection { transition: none; }
@@ -724,4 +759,9 @@ a { color: inherit; text-decoration: none; }
   .btn-gold, .btn-outline, .btn-ghost { transition: none; }
   .reading-progress { transition: none; }
   .reading-progress__fill { transition: none; box-shadow: none; }
+  .nav-link,
+  .nav-link::after { transition: none; }
+  .nav-link:hover::after { transform: scaleX(0); opacity: 0; }
+  .nav-link.active::after,
+  .nav-link.active:hover::after { transform: scaleX(1); opacity: 1; }
 }
