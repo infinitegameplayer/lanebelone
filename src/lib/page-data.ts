@@ -572,13 +572,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 5 (2026-06-29) points it at the
-  // B3 Field Guide spotlighted that week. Resting default is the Creator
-  // Flywheel Playbook; a future episode swaps it again.
+  // Rotating episode slot. Open Studio Episode 6 (2026-07-06) points it at the
+  // Business Collection, the week's team-up spotlight. Resting default is the
+  // Creator Flywheel Playbook; a future episode swaps it again.
   {
-    label: 'Earn the Right to Automate',
-    sublabel: 'A Field Guide for automation that lasts · earn the turn before you wire it · $9',
-    href: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
+    label: 'The Business Collection',
+    sublabel: 'Three Field Guides as one practice · the framework, the stack, the timing · $14',
+    href: 'https://www.sidequesthq.co/products/business-bundle',
     icon: 'book',
   },
   {

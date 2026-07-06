@@ -60,6 +60,7 @@ export const LIVE_SLUGS: string[] = [
   'what-the-quiet-is-for',
   'the-average-is-out-there-you-arent',
   'build-the-mill-where-the-water-flows',
+  'what-are-we-going-to-play',
 ]
 
 // Combined set used for static generation and URL resolution.
