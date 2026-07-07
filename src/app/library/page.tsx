@@ -4,7 +4,9 @@ import SectionReveal from '@/components/SectionReveal'
 import {
   libraryAliveBusiness,
   librarySlp,
+  librarySqp,
   libraryCfp,
+  libraryTrilogy,
   aiBusinessArc,
   aiPersonalArc,
   libraryBlurbs,
@@ -14,7 +16,7 @@ import {
 } from '@/lib/page-data'
 
 const DESCRIPTION =
-  'The library of Lane Belone. An operating system, two playbooks, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book. Tools for playing the game of your life more beautifully.'
+  'The library of Lane Belone. An operating system, three playbooks and the Trilogy that binds them, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book. Tools for playing the game of your life more beautifully.'
 
 export const metadata: Metadata = {
   title: 'Library',
@@ -51,7 +53,9 @@ const portrait = (img: string) => img.replace('cover-4x3', 'cover-display')
 const catalog = [
   { name: libraryAliveBusiness.title, url: libraryAliveBusiness.href },
   { name: librarySlp.title, url: librarySlp.href },
+  { name: librarySqp.title, url: librarySqp.href },
   { name: libraryCfp.title, url: libraryCfp.href },
+  { name: libraryTrilogy.title, url: libraryTrilogy.href },
   ...aiBusinessArc.map(c => ({ name: c.title, url: c.href })),
   ...aiPersonalArc.map(c => ({ name: c.title, url: c.href })),
   ...libraryCollections.map(c => ({ name: c.title, url: c.href })),
@@ -235,12 +239,30 @@ export default function LibraryPage() {
             className="lib-featured"
           />
           <BookCard
+            title={librarySqp.title}
+            blurb={libraryBlurbs[librarySqp.href]}
+            priceLabel={librarySqp.price}
+            href={librarySqp.href}
+            image={portrait(librarySqp.image)}
+            className="lib-featured"
+          />
+          <BookCard
             title={libraryCfp.title}
             blurb={libraryBlurbs[libraryCfp.href]}
             priceLabel={libraryCfp.price}
             href={libraryCfp.href}
             image={portrait(libraryCfp.image)}
             className="lib-featured"
+          />
+        </SectionReveal>
+        <SectionReveal className="flex flex-col gap-5">
+          <CollectionCard
+            title={libraryTrilogy.title}
+            blurb={libraryTrilogy.blurb}
+            price={libraryTrilogy.price}
+            savings={libraryTrilogy.savings}
+            href={libraryTrilogy.href}
+            members={libraryTrilogy.members}
           />
         </SectionReveal>
 

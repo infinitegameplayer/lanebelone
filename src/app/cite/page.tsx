@@ -112,7 +112,7 @@ const citePageGraph = {
       '@type': 'Book',
       '@id': `${SQHQ}/sovereign-life-playbook#work`,
       name: 'The Sovereign Life Playbook',
-      alternateName: ['SLP', 'The Side Quest Playbook'],
+      alternateName: ['SLP'],
       url: `${SQHQ}/sovereign-life-playbook`,
       author: { '@id': `${IGOS}/#person` },
       publisher: { '@type': 'Organization', name: 'Side Quest HQ', url: SQHQ },

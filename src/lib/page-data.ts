@@ -199,12 +199,12 @@ export const happeningNow: HappeningNowItem[] = [
     featured: true,
   },
   {
-    badge: 'Playbook',
-    title: 'The Sovereign Life Playbook',
-    description: "A framework for peeling away the inherited game and designing what's actually yours. Built to be revisited. A book you return to.",
-    cta: 'Get the Playbook',
-    ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-    price: '$37',
+    badge: 'The Trilogy',
+    title: 'The Playbook Trilogy',
+    description: 'Three playbooks as one arc. The life you design, the adventure you live and the engine that carries the work. Twenty-one files, three AI companions. Save $54.',
+    cta: 'Get the Trilogy',
+    ctaHref: 'https://www.sidequesthq.co/products/playbook-trilogy',
+    price: '$97',
   },
 ]
 
@@ -415,6 +415,18 @@ export const librarySlp: LibraryFlagship = {
   image: `${SQHQ_BLOB}/sovereign-life-playbook/cover-4x3.png`,
 }
 
+// Third playbook on the shelf. Live 2026-07-06. The adventure frame, twin to the
+// Sovereign Life Playbook at the same price and a distinct room: where SLP designs
+// the life, this one designs the quests you live inside it.
+export const librarySqp: LibraryFlagship = {
+  title: 'Side Quest Playbook',
+  oneLiner:
+    'Life as a series of quests you get to choose. Twelve chapters on the games worth your time, with an AI companion walking each one beside you.',
+  price: '$37',
+  href: 'https://www.sidequesthq.co/products/side-quest-playbook',
+  image: `${SQHQ_BLOB}/side-quest-playbook/cover-4x3.png`,
+}
+
 // Flagship operating system on the shelf. The deepest build, sitting above both
 // playbooks. Live on SQHQ at $197. Rendered on its own "The Operating System"
 // shelf above Playbooks since it is an operating system, not a playbook.
@@ -446,6 +458,8 @@ export const libraryBlurbs: Record<string, string> = {
     "The deepest build in the library. Where the Playbook installs your flywheel, this installs the whole business around it. Eleven systems, the governance your AI holds and the instruments that keep it running. For the Creator ready to run a company that still feels entirely their own.",
   'https://www.sidequesthq.co/products/sovereign-life-playbook':
     "The flagship, and the deepest single work in the library. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
+  'https://www.sidequesthq.co/products/side-quest-playbook':
+    'Life as a series of quests you get to choose. Twelve chapters on picking the games worth your time, running them well and closing them clean. An AI companion walks each practice with you as a conversation. Where the Sovereign Life Playbook designs the life from the inside out, this one designs the adventure you live inside it.',
   'https://www.sidequesthq.co/products/creator-flywheel-playbook':
     "The machine under your creative work. Where the free kit makes your flywheel visible, this one installs it: a working system that compounds, with your AI running it beside you. For the Creator who's done starting over every season.",
   'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want':
@@ -467,7 +481,9 @@ export interface LibraryCollection {
   price: string
   savings: string
   href: string
-  members: AIProductCard[]
+  // Structural member shape so a collection can hold Field Guides (AIProductCard)
+  // or Playbooks (LibraryFlagship). The card renders only the cover and title.
+  members: { title: string; image: string }[]
   blurb: string
 }
 
@@ -502,6 +518,19 @@ export const libraryCollections: LibraryCollection[] = [
       'All six Field Guides, the business axis and the personal axis together. The complete practice for working with AI on your own terms, in your company and in your own mind both. The widest doorway into the whole approach.',
   },
 ]
+
+// The playbook bundle. Lives with the Playbooks shelf, not the Field Guide
+// Collections, since its members are the three playbooks. Live 2026-07-06 at $97,
+// saving $54 against the three bought separately.
+export const libraryTrilogy: LibraryCollection = {
+  title: 'The Playbook Trilogy',
+  price: '$97',
+  savings: 'Save $54',
+  href: 'https://www.sidequesthq.co/products/playbook-trilogy',
+  members: [librarySlp, librarySqp, libraryCfp],
+  blurb:
+    'The three playbooks as one arc. The Sovereign Life Playbook, the Side Quest Playbook and the Creator Flywheel Playbook. The life you design, the adventure you live and the engine that carries the work. Twenty-one files and three AI companions, the whole practice held together.',
+}
 
 export interface LibraryBook {
   title: string

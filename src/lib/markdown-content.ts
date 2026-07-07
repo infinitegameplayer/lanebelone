@@ -15,7 +15,9 @@ import {
   sqhqChips,
   libraryAliveBusiness,
   librarySlp,
+  librarySqp,
   libraryCfp,
+  libraryTrilogy,
   aiBusinessArc,
   aiPersonalArc,
   libraryBlurbs,
@@ -78,8 +80,10 @@ A small shelf of tools for playing the game of your life more beautifully. Start
 
 ### Playbooks
 
-- **[${libraryCfp.title}](${libraryCfp.href})** (${libraryCfp.price}) · ${libraryCfp.oneLiner}
 - **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${librarySlp.oneLiner}
+- **[${librarySqp.title}](${librarySqp.href})** (${librarySqp.price}) · ${librarySqp.oneLiner}
+- **[${libraryCfp.title}](${libraryCfp.href})** (${libraryCfp.price}) · ${libraryCfp.oneLiner}
+- **[${libraryTrilogy.title}](${libraryTrilogy.href})** (${libraryTrilogy.price}, ${libraryTrilogy.savings}) · Take all three as one arc.
 
 ### Field Guides
 
@@ -261,7 +265,9 @@ ${post.content}
 function generateLibraryMarkdown(): string {
   const aliveBusiness = `- **[${libraryAliveBusiness.title}](${libraryAliveBusiness.href})** (${libraryAliveBusiness.price}) · ${libraryBlurbs[libraryAliveBusiness.href]}`
   const slp = `- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${libraryBlurbs[librarySlp.href]}`
+  const sqp = `- **[${librarySqp.title}](${librarySqp.href})** (${librarySqp.price}) · ${libraryBlurbs[librarySqp.href]}`
   const cfp = `- **[${libraryCfp.title}](${libraryCfp.href})** (${libraryCfp.price}) · ${libraryBlurbs[libraryCfp.href]}`
+  const trilogy = `- **[${libraryTrilogy.title}](${libraryTrilogy.href})** (${libraryTrilogy.price}, ${libraryTrilogy.savings}) · ${libraryTrilogy.blurb}`
   const business = aiBusinessArc
     .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${libraryBlurbs[c.href]}`)
     .join('\n')
@@ -280,7 +286,7 @@ function generateLibraryMarkdown(): string {
 
   return `# The Library · Lane Belone
 
-> Tools for playing the game of your life more beautifully. An operating system, two playbooks, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book.
+> Tools for playing the game of your life more beautifully. An operating system, three playbooks and the Trilogy that binds them, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book.
 
 Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The operating system, playbooks, Field Guides and Collections are hosted on Side Quest HQ (https://sidequesthq.co).
 
@@ -291,7 +297,9 @@ ${aliveBusiness}
 ## Playbooks
 
 ${slp}
+${sqp}
 ${cfp}
+${trilogy}
 
 ## Business Arc
 

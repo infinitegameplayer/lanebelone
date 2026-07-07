@@ -12,7 +12,9 @@ import {
   aiPersonalArc,
   libraryAliveBusiness,
   librarySlp,
+  librarySqp,
   libraryCfp,
+  libraryTrilogy,
   libraryCollections,
   libraryFreeReading,
 } from '@/lib/page-data'
@@ -164,7 +166,7 @@ export default function HomePage() {
                   marginBottom: '0.5rem',
                 }}
               >
-                Playbook
+                {happeningNow[1].badge}
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
                 {happeningNow[1].title}
@@ -330,19 +332,34 @@ export default function HomePage() {
         </SectionReveal>
         <SectionReveal staggerChildren className="pb-grid">
           <ShelfCard
-            title={libraryCfp.title}
-            hook={libraryCfp.oneLiner}
-            price={libraryCfp.price}
-            href={libraryCfp.href}
-            image={libraryCfp.image}
-          />
-          <ShelfCard
             title={librarySlp.title}
             hook="A framework for designing your life from the inside out. Comes with an AI Companion to walk the whole thing beside you."
             price={librarySlp.price}
             href={librarySlp.href}
             image={librarySlp.image}
           />
+          <ShelfCard
+            title={librarySqp.title}
+            hook={librarySqp.oneLiner}
+            price={librarySqp.price}
+            href={librarySqp.href}
+            image={librarySqp.image}
+          />
+          <ShelfCard
+            title={libraryCfp.title}
+            hook={libraryCfp.oneLiner}
+            price={libraryCfp.price}
+            href={libraryCfp.href}
+            image={libraryCfp.image}
+          />
+        </SectionReveal>
+        <SectionReveal>
+          <p className="home-collection-line">
+            Or take all three.{' '}
+            <a href={libraryTrilogy.href} target="_blank" rel="noopener">
+              {libraryTrilogy.title}, {libraryTrilogy.price}, {libraryTrilogy.savings.replace('Save ', 'saves you ')} &rarr;
+            </a>
+          </p>
         </SectionReveal>
 
         {/* Field Guides — compressed strip */}
