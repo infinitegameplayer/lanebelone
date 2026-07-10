@@ -1,6 +1,6 @@
 # Lane Belone — Full Content
 
-This document contains the full text of lanebelone.com's core pages for AI comprehension and citation. Last updated: 2026-05-29.
+This document contains the full text of lanebelone.com's core pages for AI comprehension and citation. Last updated: 2026-07-09.
 
 ---
 
@@ -175,4 +175,9 @@ Active writing: https://lanebelone.substack.com/
 - [The Charter Jarvis and I Wrote](https://www.lanebelone.com/blog/f/the-charter-jarvis-and-i-wrote) · A charter for human-AI partnership sat in a Google Doc for eight months. Today Jarvis and I made it public on the site we built together.
 - [The Dance You're Already In](https://www.lanebelone.com/blog/f/the-dance-youre-already-in) · The change you keep reaching for is not a clean break. It is a dance you are already in, opening the moment you meet your own resistance with softness instead of judgment.
 - [The Dance We're All In](https://www.lanebelone.com/blog/f/the-dance-were-all-in) · The friction so many of us feel right now is not an ending but a dance from one way of living to the next, a turn we are all already inside.
+- [You Feel Your Way In](https://www.lanebelone.com/blog/f/you-feel-your-way-in) · You do not think your way into a new life. You feel your way in. The body is the compass. A well-built day moves in a rhythm that does the work you were trying to force.
+- [What Game of Business Do You Want to Play?](https://www.lanebelone.com/blog/f/what-game-of-business-do-you-want-to-play) · You absorbed the rules of business the way you absorbed everything else, then a decade of feeds made them invisible. AI accelerates whatever game you point it at. The move before the tool is to pause and ask what game of business you actually want to play.
+- [What the Quiet Is For](https://www.lanebelone.com/blog/f/what-the-quiet-is-for) · A noisy tool stack charges a tax you can't see while you're paying it, a low hum that pulls energy off the work you care about. The calm you build by subtracting isn't the destination. It's the room where the real question finally has space: let the energy come home, then choose where it goes.
 - [The Average Is Out There. You Aren't.](https://www.lanebelone.com/blog/f/the-average-is-out-there-you-arent) · The loud road hands your creative work to AI and gets back the aggregate average. There's a quieter road that keeps you the source and lets AI carry the weight around a direction only you hold.
+- [Build the Mill Where the Water Flows](https://www.lanebelone.com/blog/f/build-the-mill-where-the-water-flows) · Automating something feels incredible. The catch is timing, not effort. Let the workflow show you where it wants to flow, then build the automation around what's actually there. The water never earned the mill. The timing did.
+- [What Are We Going to Play?](https://www.lanebelone.com/blog/f/what-are-we-going-to-play) · You don't master the tools in order and then arrive. You take the real work you're Alive about and let the separate skills mesh into one operating system. Once the foundation is in your hands, the uncertain next step stops being a threat and becomes the fun.
