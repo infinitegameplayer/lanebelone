@@ -601,13 +601,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 6 (2026-07-06) points it at the
-  // Business Collection, the week's team-up spotlight. Resting default is the
-  // Creator Flywheel Playbook; a future episode swaps it again.
+  // Rotating episode slot. Open Studio Episode 7 (2026-07-13) is the mid-season
+  // rest beat with no product spotlight, so the slot returns to its resting
+  // default, the Creator Flywheel Playbook. A future episode swaps it again.
   {
-    label: 'The Business Collection',
-    sublabel: 'Three Field Guides as one practice · the framework, the stack, the timing · $14',
-    href: 'https://www.sidequesthq.co/products/business-bundle',
+    label: 'The Creator Flywheel Playbook',
+    sublabel: 'Install the system that makes the work compound · $77',
+    href: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
     icon: 'book',
   },
   {
