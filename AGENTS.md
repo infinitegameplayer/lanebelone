@@ -54,7 +54,7 @@ These are non-negotiable. Each has caused real production problems when violated
 
 **No em dashes.** Replace with a period and new sentence, or a comma. This applies everywhere: JSX strings, markdown content, copy, frontmatter. No exceptions.
 
-**Blog URL pattern is SEO-critical and fixed.** All 31 articles must be served at `/blog/f/[slug]`. This matches legacy GoDaddy URLs indexed in search engines. Never simplify to `/blog/[slug]`. The canonical slug list lives in `src/lib/blog.ts` → `CARRY_FORWARD_SLUGS`.
+**Blog URL pattern is SEO-critical and fixed.** All 43 articles must be served at `/blog/f/[slug]`. This matches legacy GoDaddy URLs indexed in search engines. Never simplify to `/blog/[slug]`. The canonical slug list lives in `src/lib/blog.ts` → `CARRY_FORWARD_SLUGS`.
 
 **HubSpot button styling requires `!important` on every property.** HubSpot injects portal-level `<style>` tags that override standard specificity. Both the `cssRequired` string and the `globals.css` `.hs-form-override` block must carry `!important`. Do not simplify.
 
