@@ -36,7 +36,7 @@ He served in the U.S. Army for over a decade, including Special Forces service (
 - [Library](https://lanebelone.com/library): The full digital product catalog index. The Sovereign Life Playbook, six AI Field Guides and three collections, each hosted on Side Quest HQ
 - [Links](https://lanebelone.com/links): One branded hub of every Lane Belone destination — writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and the full library
 - [Cite this Work](https://lanebelone.com/cite): Structured citations (APA, Chicago, BibTeX) and machine-readable JSON-LD references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work
-- [Writing](https://lanebelone.com/blog): Essays and breadcrumbs from the Infinite Game (43 articles)
+- [Writing](https://lanebelone.com/blog): Essays and breadcrumbs from the Infinite Game (44 articles)
 - [Active Writing / Newsletter](https://lanebelone.substack.com/): Current essays and updates
 
 ## Books
