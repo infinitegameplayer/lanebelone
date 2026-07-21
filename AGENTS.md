@@ -17,7 +17,7 @@ This repo is one node in a four-node expertise web designed so that any reader o
 
 Canonical ecosystem architecture: `Council Chamber/Codices/Sovereignty/Sovereign Ecosystem Architecture Codex.md` (Kingdom vault).
 
-Cross-links between these nodes are intentional and load-bearing. Maintain them when URLs or offers change.
+Cross-links between these nodes are intentional and critical. Maintain them when URLs or offers change.
 
 ---
 
