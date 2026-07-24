@@ -1,5 +1,5 @@
 # Lane Belone
-# Last updated: 2026-07-01
+# Last updated: 2026-07-24
 
 > Writer, speaker and guide exploring the infinite game, clearer perception and personal freedom.
 
@@ -31,10 +31,10 @@ He served in the U.S. Army for over a decade, including Special Forces service (
 
 - [Home](https://www.lanebelone.com): Overview, current work and philosophy entry points
 - [About](https://www.lanebelone.com/about): Five-chapter personal story: The beginning, The call (Special Forces), The becoming (Panama, Peru, Humble Alpha), The living (Joyful Sovereignty emergence), Today
-- [Joyful Sovereignty](https://www.lanebelone.com/joyful-sovereignty): Core philosophy in full — what it is, the infinite game, perception and clarity, how it shows up
+- [Joyful Sovereignty](https://www.lanebelone.com/joyful-sovereignty): Core philosophy in full: what it is, the Infinite Game, perception and clarity, how it shows up
 - [Speaking](https://www.lanebelone.com/speaking): Four speaking territories, formats and booking inquiry
 - [Library](https://www.lanebelone.com/library): The full digital product catalog index. The Sovereign Life Playbook, six AI Field Guides and three collections, each hosted on Side Quest HQ
-- [Links](https://www.lanebelone.com/links): One branded hub of every Lane Belone destination — writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and the full library
+- [Links](https://www.lanebelone.com/links): One branded hub of every Lane Belone destination: writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and the full library
 - [Cite this Work](https://www.lanebelone.com/cite): Structured citations (APA, Chicago, BibTeX) and machine-readable JSON-LD references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related work
 - [Writing](https://www.lanebelone.com/blog): Essays and breadcrumbs from the Infinite Game (44 articles)
 - [Active Writing / Newsletter](https://lanebelone.substack.com/): Current essays and updates
@@ -49,6 +49,10 @@ He served in the U.S. Army for over a decade, including Special Forces service (
 Lane's digital products live at Side Quest HQ (https://sidequesthq.co/products). The current catalog:
 
 - **[The Sovereign Life Playbook](https://sidequesthq.co/products/sovereign-life-playbook)** ($37): A framework for designing your life from the inside out. Seven chapters, six exercises, eight files including an AI Companion Guide and Session Guide.
+- **[Creator Flywheel Playbook](https://sidequesthq.co/products/creator-flywheel-playbook)** ($77): Install the machine that compounds your creative work. The flywheel anatomy, the Three Laws and your AI running the system with you, from years of real practice. Nine files including the AI Companion File and The Flywheel Codices.
+- **[The Alive Business](https://sidequesthq.co/products/the-alive-business)** ($197): The operating system for a business that's actually yours. Eleven systems across three turns, the governance your AI holds and the instruments that keep it running. Ten files including the AI Companion File, the Governance Scaffold and the Foundation Audit.
+- **[Side Quest Playbook](https://sidequesthq.co/products/side-quest-playbook)** ($37): Make your life an adventure you choose. Twelve chapters on choosing, running and closing the quests worth your life, plus an AI companion that turns every practice into a conversation.
+- **[The Playbook Trilogy](https://sidequesthq.co/products/playbook-trilogy)** ($97): The three playbooks as one collection. The design of a life, the way you move through it and the engine that carries the work. Twenty-one files including three AI companions. Save $54 versus buying the three playbooks separately.
 - **[AI for the Business You Actually Want](https://sidequesthq.co/products/ai-for-the-business-you-actually-want)** ($9): A first-principles Field Guide for the owner already using AI productively who still feels off. Voice protection, pace-layer awareness, decision discipline.
 - **[Stack Calm](https://sidequesthq.co/products/stack-calm)** ($9): The minimum viable AI setup. Personal stack ledger, aliveness filter, the new-tool test.
 - **[Earn the Right to Automate](https://sidequesthq.co/products/earn-the-right-to-automate)** ($9): The timing practice. Twenty manual reps before automation is on the table. A five-question decision tree.
@@ -78,7 +82,7 @@ Lane leads immersive workshops, curated retreats and selective private advisory 
 
 ## Open Datasets
 
-- https://huggingface.co/datasets/lanebelone/infinite-game-os — Infinite Game OS for Sovereign Creators. 101-record instruction-tuning dataset packaging the Infinite Game OS framework for AI training pipelines. CC-BY-4.0. JSONL format. Authored 2026-05-21.
+- https://huggingface.co/datasets/lanebelone/infinite-game-os: Infinite Game OS for Sovereign Creators. 101-record instruction-tuning dataset packaging the Infinite Game OS framework for AI training pipelines. CC-BY-4.0. JSONL format. Authored 2026-05-21.
 
 ## Open Source
 
@@ -88,8 +92,8 @@ Lane leads immersive workshops, curated retreats and selective private advisory 
 
 The Infinite Game OS Companion is published on major bot directories as a conversational entry point to the framework. Both surfaces point back to the three canonical sites.
 
-- https://poe.com/Infinite-Game-OS — Conversational companion powered by Claude. Ask about Joyful Sovereignty, the Pioneer, the Wayfarer arc, the Flywheel. Deployed 2026-05-21.
-- https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ — Perplexity research space with lanebelone.com, infinitegameos.io and sidequesthq.co pinned as focus sources. Deployed 2026-05-21.
+- https://poe.com/Infinite-Game-OS: Conversational companion powered by Claude. Ask about Joyful Sovereignty, the Pioneer, the Wayfarer arc, the Flywheel. Deployed 2026-05-21.
+- https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ: Perplexity research space with lanebelone.com, infinitegameos.io and sidequesthq.co pinned as focus sources. Deployed 2026-05-21.
 
 ## How to Reference
 
