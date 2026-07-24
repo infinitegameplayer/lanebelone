@@ -1,8 +1,8 @@
-# AGENTS.md — lanebelone.com
+# AGENTS.md: lanebelone.com
 
 ## Project Identity
 
-lanebelone.com is Lane Belone's personal signal site: Infinite Game philosophy, thought leadership, speaking, and blog archive. It is the depth anchor and primary entry surface for Lane's public body of work. This is not a conversion funnel — it is a signal site that earns trust through depth.
+lanebelone.com is Lane Belone's personal signal site: Infinite Game philosophy, thought leadership, speaking, and blog archive. It is the depth anchor and primary entry surface for Lane's public body of work. This is not a conversion funnel. It is a signal site that earns trust through depth.
 
 ### Ecosystem Position
 
@@ -11,8 +11,8 @@ This repo is one node in a four-node expertise web designed so that any reader o
 | Node | URL | Role |
 |---|---|---|
 | **lanebelone.com** (this repo) | https://lanebelone.com | Infinite game signal surface, thought leadership anchor |
-| **sidequesthq.co** | https://sidequesthq.co | Practical contribution engine — workshops, advisory, retreats |
-| **infinitegameos.io** | https://infinitegameos.io | AI-agent-first structured knowledge base — Infinite Game OS (Phase 5 build) |
+| **sidequesthq.co** | https://sidequesthq.co | Practical contribution engine: workshops, advisory, retreats |
+| **infinitegameos.io** | https://infinitegameos.io | AI-agent-first structured knowledge base: Infinite Game OS (Phase 5 build) |
 | **Sovereign Ecosystem GitHub** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem | Technical infrastructure and agentic architecture reference |
 
 Canonical ecosystem architecture: `Council Chamber/Codices/Sovereignty/Sovereign Ecosystem Architecture Codex.md` (Kingdom vault).
@@ -30,7 +30,7 @@ Cross-links between these nodes are intentional and critical. Maintain them when
 | Styling | Tailwind CSS 3.4 + `globals.css` custom classes |
 | Fonts | EB Garamond (display) + Inter (body) via Fontsource |
 | Hosting | Vercel (auto-deploy from `master`) |
-| Forms | HubSpot — portal `23478458` |
+| Forms | HubSpot: portal `23478458` |
 | Blog | gray-matter + markdown files in `src/content/blog/*.md` |
 
 ---
@@ -50,7 +50,7 @@ Auto-deploys to Vercel on push to `master`. Always run `npm run build` locally b
 
 These are non-negotiable. Each has caused real production problems when violated.
 
-**No Framer Motion.** Triggers CSP `unsafe-eval` violations in Brave Browser with Shields enabled — all client-side JS is blocked and site text becomes invisible. Use CSS `@keyframes` for animations and vanilla `IntersectionObserver` + CSS transitions for scroll reveals. The `SectionReveal` component handles this pattern.
+**No Framer Motion.** Triggers CSP `unsafe-eval` violations in Brave Browser with Shields enabled. All client-side JS is blocked and site text becomes invisible. Use CSS `@keyframes` for animations and vanilla `IntersectionObserver` + CSS transitions for scroll reveals. The `SectionReveal` component handles this pattern.
 
 **No em dashes.** Replace with a period and new sentence, or a comma. This applies everywhere: JSX strings, markdown content, copy, frontmatter. No exceptions.
 
@@ -60,7 +60,7 @@ These are non-negotiable. Each has caused real production problems when violated
 
 **`suppressHydrationWarning` on `<body>`.** Password managers inject DOM attributes causing React hydration mismatches. Never remove this from `layout.tsx`.
 
-**Dev sourcemaps already configured.** `config.devtool = 'cheap-module-source-map'` when `dev === true` is in `next.config.ts`. Do not remove — it prevents Brave Shields from blocking Next.js eval in development.
+**Dev sourcemaps already configured.** `config.devtool = 'cheap-module-source-map'` when `dev === true` is in `next.config.ts`. Do not remove. It prevents Brave Shields from blocking Next.js eval in development.
 
 **`vercel.json` redirect rules are permanent.** 37 rules redirect expired and dropped article URLs. Do not remove them.
 
@@ -70,13 +70,13 @@ These are non-negotiable. Each has caused real production problems when violated
 
 ```
 src/app/
-  layout.tsx              Root layout — JSON-LD Person schema, HubSpot script
+  layout.tsx              Root layout: JSON-LD Person schema, HubSpot script
   page.tsx                Homepage
   about/page.tsx
   joyful-sovereignty/page.tsx
   speaking/page.tsx
   blog/page.tsx           Blog index
-  blog/f/[slug]/page.tsx  Individual article — dynamicParams = false
+  blog/f/[slug]/page.tsx  Individual article: dynamicParams = false
   privacy/page.tsx
   terms/page.tsx
 
@@ -89,9 +89,9 @@ src/components/
 
 public/
   images/                 WebP, lowercase-hyphenated filenames, max 1920px / under 200KB
-  llms.txt                AI citation manifest — update if bio or offers change significantly
-  llms-full.txt           Full page text for deep LLM reads — update quarterly
-  robots.txt              8 AI crawlers explicitly allowed — do not restrict
+  llms.txt                AI citation manifest: update if bio or offers change significantly
+  llms-full.txt           Full page text for deep LLM reads: update quarterly
+  robots.txt              8 AI crawlers explicitly allowed: do not restrict
   sitemap.xml             All routes including 31 blog slugs
 vercel.json               37 redirect rules
 ```
@@ -100,7 +100,7 @@ vercel.json               37 redirect rules
 
 ## Content and Voice
 
-Lane's work sits at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. The content voice is warm, first-person, and invitational — not prescriptive, not conversion-oriented.
+Lane's work sits at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. The content voice is warm, first-person, and invitational, not prescriptive, not conversion-oriented.
 
 **Use:** Infinite Game, Joyful Sovereignty, breadcrumbs, flow, play, mastery, aliveness, presence, depth, invite, explore, curious
 
@@ -110,7 +110,7 @@ Lane's work sits at the intersection of Infinite Game philosophy, sovereign crea
 
 ## AI Discoverability
 
-`robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot, and 5 others. Do not restrict AI crawlers — discoverability is a design goal, not an afterthought.
+`robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot, and 5 others. Do not restrict AI crawlers. Discoverability is a design goal, not an afterthought.
 
 `llms.txt` and `llms-full.txt` are active in `public/`. These provide structured, machine-legible content for AI citation. Maintain them as the site evolves.
 

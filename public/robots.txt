@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI training crawlers — explicitly permitted
+# AI training crawlers: explicitly permitted
 User-agent: GPTBot
 Allow: /
 
@@ -35,7 +35,7 @@ Allow: /
 User-agent: MistralAI-Index
 Allow: /
 
-# AI search and citation bots — explicitly permitted
+# AI search and citation bots: explicitly permitted
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -87,7 +87,7 @@ Allow: /
 User-agent: MSNBot
 Allow: /
 
-# Search engines — exclude /markdown/ (AI-agent surface) to prevent duplicate
+# Search engines: exclude /markdown/ (AI-agent surface) to prevent duplicate
 # indexing. Per Web Strategy Codex Conflict 8: per-bot Disallow only, never blanket.
 User-agent: Googlebot
 Allow: /
@@ -97,14 +97,14 @@ User-agent: Bingbot
 Allow: /
 Disallow: /markdown/
 
-# Bulk training — blocked (Common Crawl corpus, no traffic or citation return)
+# Bulk training: blocked (Common Crawl corpus, no traffic or citation return)
 User-agent: CCBot
 Disallow: /
 
 User-agent: Bytespider
 Disallow: /
 
-# Content signals — explicit opt-in posture
+# Content signals: explicit opt-in posture
 # Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://www.lanebelone.com/sitemap.xml
