@@ -57,9 +57,9 @@ const personJsonLd = {
   jobTitle: 'Writer, Speaker and Guide',
   knowsAbout: [
     'Infinite Game philosophy',
+    'The Infinite Player',
     'Joyful Sovereignty',
     'Leadership development',
-    'Flow Intelligence',
     'Sovereign Worldbuilding',
     'Perception and clarity',
     'Personal freedom',

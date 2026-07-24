@@ -10,6 +10,8 @@ import {
   JS_DESCRIPTION,
   speakingTopics,
   speakingFormats,
+  SPEAKING_ANCHOR,
+  SPEAKING_LADDER_NOTE,
   jsSections,
   happeningNow,
   sqhqChips,
@@ -115,7 +117,7 @@ I'm a former Green Beret turned life designer. Published author, retreat leader 
 
 ## Speaking
 
-Keynotes and talks on perception, flow, joyful sovereignty and the Infinite Game. [Invite me to speak](${SITE}/speaking)
+Keynotes, workshops and retreats on The Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
 
 ## Connect
 
@@ -166,17 +168,21 @@ function generateSpeakingMarkdown(): string {
 
   return `# Speaking · Lane Belone
 
-> Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.
+> Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.
 
 Design. Play. Master.
 
-Inviting leaders, creators and communities into experiences that spark clarity, presence and genuine insight.
+Keynotes, workshops and retreats built on The Infinite Player, inviting leaders and teams to author the games they play.
+
+${SPEAKING_ANCHOR}
 
 ## Topics
 
 ${topicsMd}
 
 ## Formats
+
+${SPEAKING_LADDER_NOTE}
 
 ${formatsMd}
 

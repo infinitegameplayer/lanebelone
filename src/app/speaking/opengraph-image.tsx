@@ -8,6 +8,6 @@ export default async function Image() {
   return ogCard({
     eyebrow: 'Speaking',
     title: 'Keynotes, workshops and retreats.',
-    body: 'On the Infinite Game, perception, flow and leadership.',
+    body: 'The Infinite Player: identity, authorship and the game within the game.',
   })
 }

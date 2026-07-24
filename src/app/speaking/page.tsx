@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
 import InquiryForm from '@/components/InquiryForm'
-import { speakingTopics, speakingFormats } from '@/lib/page-data'
+import { speakingTopics, speakingFormats, SPEAKING_ANCHOR, SPEAKING_LADDER_NOTE } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Speaking',
-  description: 'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
+  description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
   alternates: {
     canonical: 'https://www.lanebelone.com/speaking',
     types: {
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Speaking · Lane Belone',
-    description: 'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
+    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
     url: 'https://www.lanebelone.com/speaking',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Speaking · Lane Belone',
-    description: 'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
+    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
   },
 }
 
@@ -33,15 +33,28 @@ const speakingServiceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Speaking and Workshops',
-  serviceType: 'Speaking, keynotes, workshops, retreats',
+  serviceType: 'The Infinite Player: keynotes, workshops, retreats and private sessions',
+  category: 'Leadership and Change',
   description:
-    'Lane Belone speaks on the infinite game, perception, flow and leadership. Keynotes, workshops, retreats and private sessions.',
+    'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
   provider: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/speaking',
   areaServed: 'Worldwide',
   audience: {
     '@type': 'Audience',
     audienceType: 'Leaders, founders, creators, communities',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'The Infinite Player speaking topics',
+    itemListElement: speakingTopics.map((topic) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: topic.title,
+        description: `${topic.subtitle}. ${topic.body}`,
+      },
+    })),
   },
 }
 
@@ -83,18 +96,24 @@ export default function SpeakingPage() {
             className="hero-line hero-line-2 text-lg md:text-xl text-parchment/70 max-w-2xl"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Inviting leaders, creators and communities into experiences that spark clarity, presence and genuine insight.
+            Keynotes, workshops and retreats built on The Infinite Player, inviting leaders and teams to author the games they play.
           </p>
         </div>
       </section>
 
-      {/* What I speak about */}
+      {/* The framework anchor + what I speak about */}
       <section className="section">
         <SectionReveal>
+          <p
+            className="text-parchment/70 text-lg leading-relaxed max-w-2xl mb-16"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            {SPEAKING_ANCHOR}
+          </p>
           <h2 className="text-3xl md:text-4xl mb-12" style={{ fontFamily: 'var(--font-display)' }}>
             What I speak about
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {speakingTopics.map((topic) => (
               <div key={topic.title} className="dark-card p-8">
                 <h3 className="text-xl mb-1" style={{ fontFamily: 'var(--font-display)' }}>
@@ -120,6 +139,9 @@ export default function SpeakingPage() {
               <h2 className="text-3xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 How I show up
               </h2>
+              <p className="text-parchment/50 text-sm mb-6 italic" style={{ fontFamily: 'var(--font-body)' }}>
+                {SPEAKING_LADDER_NOTE}
+              </p>
               <ul className="flex flex-col gap-3" style={{ fontFamily: 'var(--font-body)' }}>
                 {speakingFormats.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-parchment/70">

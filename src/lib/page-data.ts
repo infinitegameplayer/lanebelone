@@ -56,7 +56,7 @@ export const aboutStory: StorySection[] = [
     heading: 'Today',
     paras: [
       "I write, speak and lead experiences from inside that game.",
-      "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring the four territories: The Perception Upgrade, Sovereign Worldbuilding, Flow Intelligence and Guidance From Within, into rooms where something real needs to open.",
+      "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring The Infinite Player into rooms where something real needs to open: play the player, design the board, find the game within the game.",
       "At Side Quest HQ, I lead retreats, workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
       "The intention has always been the same: help people move in a more beautiful direction.",
     ],
@@ -73,28 +73,31 @@ export interface SpeakingTopic {
   body: string
 }
 
+export const SPEAKING_FRAMEWORK = 'The Infinite Player'
+
+export const SPEAKING_ANCHOR =
+  'Every role is a character worn for a season. The Infinite Player speaks to the one wearing it: the person who remains when a defining game ends and the author of the game that comes next. Every room below opens that same door at a different depth.'
+
 export const speakingTopics: SpeakingTopic[] = [
   {
-    title: 'The Perception Upgrade',
-    subtitle: 'Seeing reality through a more empowered lens',
-    body: 'Guides audiences into renewed clarity through metaphor, perspective-shifts and practical tools. Covers the infinite game mindset, Side Quest psychology, pattern-recognition and expanding what you can perceive.',
+    title: 'Play the Player',
+    subtitle: 'Who you are when the role ends: identity that survives every game',
+    body: 'The move underneath every reinvention. A role, a title, a skill set is a character worn for a season. The player wearing it is the constant. Teams navigating AI disruption, reorgs and role changes learn to locate what remains and lead from it.',
   },
   {
-    title: 'Sovereign Worldbuilding',
-    subtitle: 'Designing the systems, environments and structures that shape your life and leadership',
-    body: 'How to shape your world intentionally through personal rhythms, boundaries, team culture and organizational architecture. Explores reality design frameworks, natural law and structural coherence.',
+    title: 'Design the Board',
+    subtitle: 'Authoring the environments, rules and rhythms your life and team run on',
+    body: 'Every game was designed by someone. This talk hands the room the pen: chosen rules, built environments, structures that hold what you value. Sovereign Worldbuilding for leaders ready to build their own.',
   },
   {
-    title: 'Flow Intelligence',
-    subtitle: 'Unlocking creative rhythm, nervous system balance and sustainable momentum',
-    body: 'Reconnects people with creative energy through embodied rhythm and emotional awareness. Covers flow science, archetypal flow states and the practical mechanics of staying in motion.',
-  },
-  {
-    title: 'Guidance From Within',
-    subtitle: 'Intuition, decision-making and moving through uncertainty with confidence',
-    body: "Teaches participants to read the subtle cues and trust their inner compass. Topics include next-move sensing, reading what's surfacing and making clear decisions in complex environments.",
+    title: 'The Game Within the Game',
+    subtitle: 'Reconnecting the work in front of you to the reason it moves you',
+    body: 'Under every outer game runs an inner one. Disengagement lifts when the inner game gets named and restored to the work already on the table. Aliveness as a compass, the body heard first and a rhythm that sustains the play.',
   },
 ]
+
+export const SPEAKING_LADDER_NOTE =
+  'One framework, deepening by room. Each format goes further into the same three moves.'
 
 export const speakingFormats: string[] = [
   'Keynotes for conferences and summits',
@@ -150,7 +153,7 @@ export const jsSections: StorySection[] = [
     paras: [
       'This philosophy is lived, refined and shared from inside the game.',
       'The writing is where the threads surface. Essays and reflections from someone actively playing. Breadcrumbs from the field. Those live at the Substack.',
-      'In speaking, it becomes an experience. The Perception Upgrade, Sovereign Worldbuilding, Flow Intelligence and Guidance From Within are all doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
+      'In speaking, it becomes an experience. The Infinite Player carries the philosophy onto a stage: play the player, design the board, find the game within the game. Three doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
       "The deeper work, the retreats, the advisory containers, the extended engagements, lives at Side Quest HQ. That's where Joyful Sovereignty meets real creative and strategic change.",
     ],
   },

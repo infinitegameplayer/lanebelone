@@ -699,7 +699,7 @@ export default function HomePage() {
                     Want me on your stage?
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--color-text-muted)', margin: 0 }}>
-                    Keynotes and talks on perception, flow, joyful sovereignty and the Infinite Game.
+                    Keynotes, workshops and retreats on The Infinite Player: who you are when the role ends and how you author what comes next.
                   </p>
                 </div>
                 <Link href="/speaking" className="btn-outline">
