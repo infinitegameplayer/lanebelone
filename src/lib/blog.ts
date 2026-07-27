@@ -63,6 +63,7 @@ export const LIVE_SLUGS: string[] = [
   'what-are-we-going-to-play',
   'nobodys-good-at-it-yet',
   'nobody-thinks-about-gravity',
+  'the-wheels-have-to-touch',
 ]
 
 // Combined set used for static generation and URL resolution.

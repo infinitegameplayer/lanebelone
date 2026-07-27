@@ -604,13 +604,12 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 8 (2026-07-20) is the Side Quest
-  // Playbook solo arc, so the slot points at the spotlight product. Episode 9
-  // (2026-07-27) is the Creator Flywheel Playbook's own day and swaps it back.
+  // Rotating episode slot. Open Studio Episode 9 (2026-07-27) is the Creator
+  // Flywheel Playbook's own day, so the slot returns to its resting default.
   {
-    label: 'The Side Quest Playbook',
-    sublabel: 'Run the quests worth your life · $37',
-    href: 'https://www.sidequesthq.co/products/side-quest-playbook',
+    label: 'The Creator Flywheel Playbook',
+    sublabel: 'Install the machine that compounds your work · $77',
+    href: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
     icon: 'book',
   },
   {
