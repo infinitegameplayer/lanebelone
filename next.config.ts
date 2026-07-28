@@ -21,6 +21,16 @@ const nextConfig: NextConfig = {
     formats: ['image/webp'],
   },
   turbopack: {},
+  async redirects() {
+    return [
+      // The two policy paths the rest of the web assumes. Search Console
+      // reported both as 404s, /privacy-policy crawled as recently as
+      // 2026-07-23. The site serves /privacy and /terms, so the long forms
+      // redirect rather than dead-end.
+      { source: '/privacy-policy', destination: '/privacy', permanent: true },
+      { source: '/terms-and-conditions', destination: '/terms', permanent: true },
+    ]
+  },
   async rewrites() {
     return {
       beforeFiles: [
