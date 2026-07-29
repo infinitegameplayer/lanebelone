@@ -154,8 +154,13 @@ function CollectionCard({
   return (
     <a href={href} target="_blank" rel="noopener" className="lib-collection">
       <div className={`lib-cover-cluster${six ? ' lib-cover-cluster--six' : ''}`}>
+        {/* Each cover names its own title, matching BookCard above. These are not
+            decoration: the cluster is how a sighted visitor learns which titles a
+            collection holds, and an empty alt kept that from anyone using a screen
+            reader. The card's own heading gives the collection name, so the covers
+            supply the members. */}
         {members.map(m => (
-          <img key={m.title} src={portrait(m.image)} alt="" loading="lazy" />
+          <img key={m.title} src={portrait(m.image)} alt={`${m.title} cover`} loading="lazy" />
         ))}
       </div>
       <div className="lib-meta">
