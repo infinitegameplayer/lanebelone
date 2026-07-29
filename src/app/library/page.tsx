@@ -81,7 +81,7 @@ const collectionPageJsonLd = {
   name: 'The Library · Lane Belone',
   description: DESCRIPTION,
   isPartOf: { '@id': 'https://www.lanebelone.com/#website' },
-  about: { '@id': 'https://infinitegameos.io/#person' },
+  about: { '@id': 'https://www.infinitegameos.io/#person' },
   mainEntity: {
     '@type': 'ItemList',
     name: 'Lane Belone Library',
@@ -370,7 +370,7 @@ export default function LibraryPage() {
             There&apos;s no rush to decide anything. The{' '}
             <Link href="/blog" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>writing</Link>
             {' '}is free and always open, the easiest way to feel whether any of this is for you. The{' '}
-            <a href="https://infinitegameos.io" target="_blank" rel="noopener" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Infinite Game OS</a>
+            <a href="https://www.infinitegameos.io" target="_blank" rel="noopener" style={{ color: 'var(--color-accent-hover)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Infinite Game OS</a>
             {' '}site is the larger room down the hall, a whole world to roam at no cost. The shelves grow as I make more, so come back whenever you like.
           </p>
         </SectionReveal>

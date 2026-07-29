@@ -18,6 +18,10 @@ export type NativeFormConfig = {
   allowedOrigins: string[]
 }
 
+// Both host forms stay listed on purpose. This is an inbound origin allowlist,
+// not an outbound link, so it accepts whatever a browser actually sends. The
+// bare domain 308s to www, and a request can still originate from it.
+// A 2026-07-29 www-normalization pass collapsed these into a duplicate. Do not.
 const LANEBELONE_ORIGINS = ['https://www.lanebelone.com', 'https://lanebelone.com']
 
 export const FORM_CONFIG_BY_NAME: Record<string, NativeFormConfig> = {

@@ -7,7 +7,7 @@ heroImage: "/images/blog/7-aligned-strategies-to-gamify-self-mastery-hero.png"
 description: "My Intention For this 4th edition of the Joyful Sovereignty Weekly, my intention is to widen your view of Self-Mastery. To provide the context needed to..."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/7%20Strategies-1ccd216.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 4th edition of the Joyful Sovereignty Weekly, my intention is to widen your view of Self-Mastery. To provide the context needed to start your Self-Mastery journey powerfully.</em><br>
-<a href="https://lanebelone.com/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Moving towards a meaningful endeavor can sometimes be serious. That can take away from the enjoyment of the process.</p><p><br>
+<a href="https://www.lanebelone.com/blog/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Moving towards a meaningful endeavor can sometimes be serious. That can take away from the enjoyment of the process.</p><p><br>
 I know this from experience.</p><p><br>
 The seriousness of the Special Forces mission set carried over into my life after I got out.</p><p><br>
 I was focused and determined on my path. Intentional, yet serious about my actions.</p><p><br>
@@ -89,7 +89,7 @@ We discussed the sections of your Arena, now let's go over the sub-sections.</p>
 Create 5 topics or skills that excite you will create an environment of "good stuff".</p><p><br>
 Imagine that every hour of your day is filled with activities you're curious about, excite you or bring you joy?</p><p><br>
 You can engineer your day to be like that. That is what the Arena of Mastery does for you.</p><p><br>
-If you remember <a href="https://lanebelone.com/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="">in our previous edition of the Joyful Sovereignty Weekly</a>, we discussed the effect of dopamine.</p><p><br>
+If you remember <a href="https://www.lanebelone.com/blog/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="">in our previous edition of the Joyful Sovereignty Weekly</a>, we discussed the effect of dopamine.</p><p><br>
 Each time you feel excitement, you are likely receiving dopamine in your body. This is a reward chemical that feels great.</p><p><br>
 When you create an Arena of Mastery, you are engineering your life to frequently and consistently be rewarded for doing the things you enjoy.</p><p><br>
 See how this can be beautiful cycle of "good stuff"?</p><p><br>

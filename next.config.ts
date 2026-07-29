@@ -29,6 +29,13 @@ const nextConfig: NextConfig = {
       // redirect rather than dead-end.
       { source: '/privacy-policy', destination: '/privacy', permanent: true },
       { source: '/terms-and-conditions', destination: '/terms', permanent: true },
+      // Legacy blog URL structure. Posts lived at /f/:slug before the move to
+      // /blog/f/:slug, and inbound links from the old platform era still point
+      // there. Bing Site Scan 2026-07-29 reported 11 pages affected by 4xx on
+      // this site; every one traced to a /f/ link. The internal links were
+      // repointed in the same pass, so this rule exists for external inbound
+      // traffic, which no content edit can reach.
+      { source: '/f/:slug', destination: '/blog/f/:slug', permanent: true },
     ]
   },
   async rewrites() {

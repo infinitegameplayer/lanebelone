@@ -12,7 +12,7 @@ about:
   - https://www.infinitegameos.io/concepts/joyful-sovereignty
   - https://www.infinitegameos.io/infinite-game
 mentions:
-  - https://sidequesthq.co/products/sovereign-life-playbook
+  - https://www.sidequesthq.co/products/sovereign-life-playbook
   - https://www.infinitegameos.io/concepts/the-pioneer
 ---
 
@@ -104,7 +104,7 @@ Playing this way in the current era asks something new.
 
 The [Pioneer](https://www.infinitegameos.io/concepts/the-pioneer) isn't defined by what they've built. The Pioneer is the person willing to go where the map runs out. Into the Post Web. Into the AI moment. Into the sovereign moment, which is this one.
 
-My digital operating system, the Kingdom, is one wing of a three-plane life: the subconscious, the digital and the physical. [Side Quest HQ](https://sidequesthq.co) houses the finite games nested within the Infinite Game. What once felt like problems became worthy rivals. What once felt like permanent failures became growth obstacles, always temporary.
+My digital operating system, the Kingdom, is one wing of a three-plane life: the subconscious, the digital and the physical. [Side Quest HQ](https://www.sidequesthq.co) houses the finite games nested within the Infinite Game. What once felt like problems became worthy rivals. What once felt like permanent failures became growth obstacles, always temporary.
 
 Sovereignty stays the source. The Kingdom organizes. The finite games run. The Infinite Game keeps playing.
 
@@ -134,4 +134,4 @@ Lane
 
 ---
 
-**P.S.** The Sovereign Life Playbook walks through how to build the practice, not just understand the philosophy. If the Three Movements resonated and you want the implementation layer, that's where to start: [sidequesthq.co/products/sovereign-life-playbook](https://sidequesthq.co/products/sovereign-life-playbook)
+**P.S.** The Sovereign Life Playbook walks through how to build the practice, not just understand the philosophy. If the Three Movements resonated and you want the implementation layer, that's where to start: [sidequesthq.co/products/sovereign-life-playbook](https://www.sidequesthq.co/products/sovereign-life-playbook)

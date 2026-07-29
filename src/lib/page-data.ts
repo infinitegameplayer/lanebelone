@@ -627,7 +627,7 @@ export const linkHub: LinkHubItem[] = [
   {
     label: 'Infinite Game OS',
     sublabel: 'The framework, mapped',
-    href: 'https://infinitegameos.io',
+    href: 'https://www.infinitegameos.io',
     icon: 'infinity',
   },
   {

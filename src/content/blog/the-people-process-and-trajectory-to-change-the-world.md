@@ -6,7 +6,7 @@ category: "philosophy"
 heroImage: "/images/blog/the-people-process-and-trajectory-to-change-the-world-hero.png"
 description: "My Intention For this 10th edition of the Joyful Sovereignty Weekly, my intention is to share a vision of how humanity can support each other moving..."
 ---
-<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2310%20-%20Vision.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 10th edition of the Joyful Sovereignty Weekly, my intention is to share a vision of how humanity can support each other moving forward over the next decade.</em></p><p><a href="https://lanebelone.com/f/an-ancient-path-to-wisdom" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>When I first drafted this, I was very hesitant.</p><p><br>
+<p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2310%20-%20Vision.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 10th edition of the Joyful Sovereignty Weekly, my intention is to share a vision of how humanity can support each other moving forward over the next decade.</em></p><p><a href="https://www.lanebelone.com/blog/f/an-ancient-path-to-wisdom" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>When I first drafted this, I was very hesitant.</p><p><br>
 I felt like I don’t have enough clarity to articulate what I feel.</p><p><br>
 But here it goes anyways.</p><p><br>
 This is what I see as the current vision. It will be updated with more conversations with people. One of my abilities is to bring in many different perspectives and harmonize them into a coherent vision.</p><p><br>
@@ -99,7 +99,7 @@ When we aim to feel Joyful Sovereignty in the moment, it will be reflected in su
 Tiny little chunks of joyfulness and sovereignty baked into each moment. Building momentum and feeling it more and more each day.</p><p><br>
 As long as you hold your intentions and act upon them, you will arrive at a beautiful state of being. It’ll be both the present moment, and the trajectory at the same time.</p><p><br>
 The essence of your approach is folded within the result.</p><p><br>
-To read more about Joyful Sovereignty, <a href="https://lanebelone.com/joyful-sovereignty" rel="">click here</a>.</p><p><br>
+To read more about Joyful Sovereignty, <a href="https://www.lanebelone.com/joyful-sovereignty" rel="">click here</a>.</p><p><br>
 <em><strong>Joyful Sovereignty is the trajectory.</strong></em></p><p><br>
 </p><div><h2><strong>Harmonizing Humanity and Technology</strong></h2></div><p>As we move forward, there will be opportunities to allow emerging technology to support us.</p><p><br>
 AI can play a potent role in our Self-Mastery process and subtle azimuth checks on our trajectory.</p><p><br>

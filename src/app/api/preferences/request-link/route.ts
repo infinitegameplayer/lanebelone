@@ -11,7 +11,7 @@ import { getContactMembership } from '@/lib/email-lists'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { sendEmail } from '@/lib/email/resend'
 
-const SITE_URL = 'https://lanebelone.com'
+const SITE_URL = 'https://www.lanebelone.com'
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {

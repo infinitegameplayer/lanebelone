@@ -20,7 +20,7 @@ Simplify it as best I could (for now).</p><p><br>
 Read further to find out what I “discovered”.</p><p><br>
 </p><div><h2><strong>Game Within The Game</strong></h2></div><p>The (external) game I’m referring to is the collective Infinite Game.</p><p><br>
 All of us humans on the planet are playing. Many playing finite games within.</p><p><br>
-I share more about the Infinite Game <a href="https://lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game" rel="">in a previous Distillation</a>.</p><p><br>
+I share more about the Infinite Game <a href="https://www.lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game" rel="">in a previous Distillation</a>.</p><p><br>
 Within this Infinite Game, there is an inner game we play with ourselves.</p><p><br>
 It’s a “secret” game that most others don’t know we're playing. Often we’re actually blind to this inner game.</p><p><br>
 In unhealthy ways, it can look like following rules or goals (games) that society feeds us.</p><p><br>

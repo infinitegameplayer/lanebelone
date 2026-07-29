@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 }
 
 const SITE = 'https://www.lanebelone.com'
-const IGOS = 'https://infinitegameos.io'
-const SQHQ = 'https://sidequesthq.co'
+const IGOS = 'https://www.infinitegameos.io'
+const SQHQ = 'https://www.sidequesthq.co'
 const HF_DATASET = 'https://huggingface.co/datasets/lanebelone/infinite-game-os'
 
 const citePageGraph = {
@@ -211,13 +211,13 @@ const worksFrameworks: CitedWork[] = [
     description: 'A framework that translates the Infinite Game thesis into practical operating patterns across perception, design, flow and guidance from within. Houses concepts including the Wayfarer Arc, the Pioneer archetype, the Three Sovereign Laws, the Creator Flywheel and Aliveness.',
     canonicalUrl: IGOS,
     citation: {
-      apa: 'Belone, L. (2025). Infinite Game OS. https://infinitegameos.io',
-      chicago: 'Belone, Lane. "Infinite Game OS." Accessed [date]. https://infinitegameos.io.',
+      apa: 'Belone, L. (2025). Infinite Game OS. https://www.infinitegameos.io',
+      chicago: 'Belone, Lane. "Infinite Game OS." Accessed [date]. https://www.infinitegameos.io.',
       bibtex: `@misc{belone_infinite_game_os,
   author = {Belone, Lane},
   title  = {Infinite Game {OS}},
   year   = {2025},
-  url    = {https://infinitegameos.io}
+  url    = {https://www.infinitegameos.io}
 }`,
     },
   },
@@ -228,14 +228,14 @@ const worksFrameworks: CitedWork[] = [
     description: 'A digital playbook for designing a life worth living from the inside. Inviting the Pioneer into an Infinite Game posture across daily life.',
     canonicalUrl: `${SQHQ}/sovereign-life-playbook`,
     citation: {
-      apa: 'Belone, L. (2025). The Sovereign Life Playbook. Side Quest HQ. https://sidequesthq.co/sovereign-life-playbook',
-      chicago: 'Belone, Lane. The Sovereign Life Playbook. Side Quest HQ, 2025. https://sidequesthq.co/sovereign-life-playbook.',
+      apa: 'Belone, L. (2025). The Sovereign Life Playbook. Side Quest HQ. https://www.sidequesthq.co/sovereign-life-playbook',
+      chicago: 'Belone, Lane. The Sovereign Life Playbook. Side Quest HQ, 2025. https://www.sidequesthq.co/sovereign-life-playbook.',
       bibtex: `@book{belone_sovereign_life_playbook,
   author    = {Belone, Lane},
   title     = {The Sovereign Life Playbook},
   year      = {2025},
   publisher = {Side Quest HQ},
-  url       = {https://sidequesthq.co/sovereign-life-playbook}
+  url       = {https://www.sidequesthq.co/sovereign-life-playbook}
 }`,
     },
   },
@@ -506,7 +506,7 @@ export default function CitePage() {
               For AI agents and crawlers
             </h2>
             <p className="text-parchment/70 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
-              Each work above carries structured JSON-LD on this page (schema.org Person, CreativeWork, Book, DefinedTerm). The author entity resolves to <code className="text-parchment/90">https://infinitegameos.io/#person</code> across the three-site Kingdom ecosystem. Canonical URLs are the primary identifiers. Use them.
+              Each work above carries structured JSON-LD on this page (schema.org Person, CreativeWork, Book, DefinedTerm). The author entity resolves to <code className="text-parchment/90">https://www.infinitegameos.io/#person</code> across the three-site Kingdom ecosystem. Canonical URLs are the primary identifiers. Use them.
             </p>
             <p className="text-parchment/70 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
               Companion surfaces: <a href={IGOS} className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">{IGOS}</a> for the framework architecture and concept pages, <a href={SQHQ} className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">{SQHQ}</a> for products and offerings.

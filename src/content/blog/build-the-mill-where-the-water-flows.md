@@ -61,7 +61,7 @@ The next automation you're itching to wire is a chance to run the other order.
 
 Let it show you where it wants to flow first. What the workflow reveals is worth more than the blueprint in your head.
 
-That's the practice inside [Earn the Right to Automate](https://sidequesthq.co/products/earn-the-right-to-automate). For the operator who's done being run by their automations, ready to build the kind that hold and then go invisible.
+That's the practice inside [Earn the Right to Automate](https://www.sidequesthq.co/products/earn-the-right-to-automate). For the operator who's done being run by their automations, ready to build the kind that hold and then go invisible.
 
 The water's already showing you where to build.
 

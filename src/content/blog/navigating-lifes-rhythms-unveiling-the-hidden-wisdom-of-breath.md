@@ -29,7 +29,7 @@ It was a solution to the internal friction I had.</p><p><br>
 I was finally able to sit deep within myself with greater peace.</p><p><br>
 My mind was able to be at rest.</p><p><br>
 <strong>The answer: the breath.</strong><br>
-</p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280" alt="Sign Up For The Distillation Newsletter Now" title="Sign Up For The Distillation Newsletter Now"></a></div></figure><p></p><div><h2><strong>The Breath</strong></h2></div><p>When I’m a guest on podcasts, I’m often asked what is my go-to practice for shifting my energy.</p><p><br>
+</p><p><a href="https://www.lanebelone.com/blog" target="_blank" rel="noopener"></a></p><figure><div><a href="https://www.lanebelone.com/blog" target="_blank" rel="noopener"><img src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280" alt="Sign Up For The Distillation Newsletter Now" title="Sign Up For The Distillation Newsletter Now"></a></div></figure><p></p><div><h2><strong>The Breath</strong></h2></div><p>When I’m a guest on podcasts, I’m often asked what is my go-to practice for shifting my energy.</p><p><br>
 My answer has been the breath.</p><p><br>
 In my most intense and chaotic moments, the breath was there for me.</p><p><br>
 If there was a lot of things happening, I would simply take a deep breath and a great mind would assume command.</p><p><br>

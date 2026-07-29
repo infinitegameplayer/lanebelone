@@ -39,7 +39,7 @@ const PERSONAL_NURTURE_SCHEDULE = [
   { stage: 2, daysSinceJoin: 9 },
 ]
 
-const SITE = 'https://lanebelone.com'
+const SITE = 'https://www.lanebelone.com'
 const BLOG_URL = `${SITE}/blog`
 const SOFT_TEST_RECIPIENT = 'belone@tutamail.com'
 

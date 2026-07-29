@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://infinitegameos.io/#person',
+  '@id': 'https://www.infinitegameos.io/#person',
   name: 'Lane Belone',
   url: 'https://www.lanebelone.com',
   description:
@@ -69,8 +69,8 @@ const personJsonLd = {
   ],
   sameAs: [
     'https://www.wikidata.org/wiki/Q139889543',
-    'https://sidequesthq.co',
-    'https://infinitegameos.io',
+    'https://www.sidequesthq.co',
+    'https://www.infinitegameos.io',
     'https://www.instagram.com/increasefreedom/',
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',
@@ -99,12 +99,12 @@ const orgJsonLd = {
   logo: 'https://www.lanebelone.com/images/lane-belone-icon-color.png',
   founder: {
     '@type': 'Person',
-    '@id': 'https://infinitegameos.io/#person',
+    '@id': 'https://www.infinitegameos.io/#person',
     name: 'Lane Belone',
   },
   sameAs: [
-    'https://sidequesthq.co',
-    'https://infinitegameos.io',
+    'https://www.sidequesthq.co',
+    'https://www.infinitegameos.io',
     'https://www.instagram.com/increasefreedom/',
     'https://www.linkedin.com/in/lanebelone/',
     'https://www.facebook.com/increasefreedom',

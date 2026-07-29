@@ -150,9 +150,9 @@ ${sectionsMd}
 
 ## Related
 
-- [Infinite Game OS](https://infinitegameos.io) · The structured knowledge base
-- [Joyful Sovereignty concept](https://infinitegameos.io/concepts/joyful-sovereignty) · Deeper exploration
-- [Side Quest HQ](https://sidequesthq.co) · The practical container
+- [Infinite Game OS](https://www.infinitegameos.io) · The structured knowledge base
+- [Joyful Sovereignty concept](https://www.infinitegameos.io/concepts/joyful-sovereignty) · Deeper exploration
+- [Side Quest HQ](https://www.sidequesthq.co) · The practical container
 
 ---
 *[Lane Belone](${SITE}) · [Joyful Sovereignty](${SITE}/joyful-sovereignty)*
@@ -221,8 +221,8 @@ If the story resonated, this is the personal list. Updates and fresh ideas, the 
 
 ## Ecosystem
 
-- **[Side Quest HQ](https://sidequesthq.co)** · Playbooks, workshops and advisory
-- **[Infinite Game OS](https://infinitegameos.io)** · The structured knowledge base
+- **[Side Quest HQ](https://www.sidequesthq.co)** · Playbooks, workshops and advisory
+- **[Infinite Game OS](https://www.infinitegameos.io)** · The structured knowledge base
 - **[Substack](https://lanebelone.substack.com/)** · Essays and breadcrumbs
 - **[LinkedIn](https://www.linkedin.com/in/lanebelone/)**
 - **[Instagram](https://www.instagram.com/increasefreedom/)**
@@ -294,7 +294,7 @@ function generateLibraryMarkdown(): string {
 
 > Tools for playing the game of your life more beautifully. An operating system, three playbooks and the Trilogy that binds them, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book.
 
-Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The operating system, playbooks, Field Guides and Collections are hosted on Side Quest HQ (https://sidequesthq.co).
+Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The operating system, playbooks, Field Guides and Collections are hosted on Side Quest HQ (https://www.sidequesthq.co).
 
 ## The Operating System
 

@@ -7,7 +7,7 @@ heroImage: "/images/blog/the-joyful-sovereignty-infinite-game-hero.png"
 description: "My Intention For this 11th edition of the Joyful Sovereignty Weekly, my intention is bring an awareness of an infinite game that is already being played...."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2311%20-%20Infinite%20Game.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 11th edition of the Joyful Sovereignty Weekly, my intention is bring an awareness of an infinite game that is already being played. With that awareness, can spark insight and action as needed.</em><br>
-<a href="https://lanebelone.com/blog/f/the-people-process-and-trajectory-to-change-the-world" rel="noopener" target="_blank"><strong>Read The</strong></a><strong> Previous Edition Here</strong></p><p></p><hr><p></p><p><br>
+<a href="https://www.lanebelone.com/blog/f/the-people-process-and-trajectory-to-change-the-world" rel="noopener" target="_blank"><strong>Read The</strong></a><strong> Previous Edition Here</strong></p><p></p><hr><p></p><p><br>
 As you read these very words, there is almost certainly some kids playing tag on a playground somewhere in the world.</p><p><br>
 Kids running around with smiles on their faces.</p><p><br>
 It’s almost as if there is a frequency of “tag” that surrounds the planet.</p><p><br>
@@ -34,7 +34,7 @@ Like the “tag frequency” example, there are many infinite games being played
 More and more versions of infinite games are emerging. Each one complementing others, bringing about an awareness for people.</p><p><br>
 The Joyful Sovereignty Infinite Game is the game that lives forever, and the players rotate in and out on the planet.</p><p><br>
 Joy and Sovereignty are the primary drivers for this particular infinite game.</p><p><br>
-<a href="https://lanebelone.com/blog/f/we-the-people-will-create-a-joyful-sovereign-society" rel="">In previous Joyful Sovereignty Weekly editions</a>, we discuss the role Joy and Sovereignty play in supporting humanity in a beautiful and profound way.</p><p><br>
+<a href="https://www.lanebelone.com/blog/f/we-the-people-will-create-a-joyful-sovereign-society" rel="">In previous Joyful Sovereignty Weekly editions</a>, we discuss the role Joy and Sovereignty play in supporting humanity in a beautiful and profound way.</p><p><br>
 The game itself can be carried forward. Because it’s an infinite game, future generations can adjust accordingly.</p><p><br>
 The Joyful Sovereignty Infinite Game welcomes challenges, beautiful gifts and unexpected surprises. It’s because it gives you the flavor of life, brought to your doorstep.</p><p><br>
 All part of a story worth telling. YOUR story. OUR story.</p><p><br>
@@ -171,4 +171,4 @@ That’s it for this edition of the Joyful Sovereignty Weekly!</p><p><br>
 Wish you a great rest of your day!</p><p><br>
 Best,</p><p><br>
 Lane</p><p><br>
-P.S. If you enjoyed this edition, <a href="https://lanebelone.com/blog/f/the-key-to-joyful-sovereignty-is-gratitude" rel="">share the online version on your social media</a> or with a friend who you think would enjoy reading this.&nbsp;</p>
+P.S. If you enjoyed this edition, <a href="https://www.lanebelone.com/blog/f/the-key-to-joyful-sovereignty-is-gratitude" rel="">share the online version on your social media</a> or with a friend who you think would enjoy reading this.&nbsp;</p>

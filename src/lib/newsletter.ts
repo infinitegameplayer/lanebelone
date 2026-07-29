@@ -150,7 +150,7 @@ export async function applyNewsletterOptIn({
   if (!dryRun) {
     try {
       const token = signEmailToken(normalizedEmail)
-      const unsubUrl = `https://lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const unsubUrl = `https://www.lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
       const template = newsletterWelcomeEmail({ firstName })
       await sendEmail({
         to: normalizedEmail,
@@ -305,7 +305,7 @@ export async function applyArticleOptIn({
   if (!dryRun) {
     try {
       const token = signEmailToken(normalizedEmail)
-      const unsubUrl = `https://lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const unsubUrl = `https://www.lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
       const template = articleWelcomeEmail({ firstName: resolvedFirstName })
       await sendEmail({
         to: normalizedEmail,

@@ -11,9 +11,9 @@ Ever feel like you’re being jerked around by life?</p><p><br>
 That feeling where you’re tugged in one direction one day, then a completely different direction the next.</p><p><br>
 Part of you wants life to be easier, but you know that’s not the deepest truth.</p><p><br>
 Welcoming the challenges is good in theory, but often difficult in practice.</p><p><br>
-In addition to <a href="https://lanebelone.com/blog/f/transmuting-pressure-cultivating-the-anti-fragility-mindset" rel="">becoming anti-fragile</a>, you can integrate the Sweet Spot in your life.</p><p><br>
+In addition to <a href="https://www.lanebelone.com/blog/f/transmuting-pressure-cultivating-the-anti-fragility-mindset" rel="">becoming anti-fragile</a>, you can integrate the Sweet Spot in your life.</p><p><br>
 It’s a simple concept, but there are some best practices (and obstacles to avoid).</p><p><br>
-Read further to explore this concept deeper and how to avoid unnecessary detours.</p><p><br></p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
+Read further to explore this concept deeper and how to avoid unnecessary detours.</p><p><br></p><p><a href="https://www.lanebelone.com/blog" target="_blank" rel="noopener"></a></p><figure><div><a href="https://www.lanebelone.com/blog" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
 </p><div><h2><strong>The Sweet Spot</strong></h2></div><p>You’re probably familiar with the concept of the Sweet Spot.</p><p><br>
 A definition from <a href="https://www.dictionary.com/browse/sweet%20spot" rel="">Dictionary.com</a>: “a point, range, or particular set of conditions that will achieve the most desirable or effective outcome.”</p><p><br>
 Achieving the most desirable or effective outcome can be a tall order.</p><p><br>
@@ -42,7 +42,7 @@ Then repeat.</p><p><br>
 The second secret is to embrace the journey and the unfolding process, not what the “idea” of the sweet spot “should” be.</p><p><br>
 The Sweet Spot is a feeling, not an idea.</p><p><br>
 The idea sets the wheels in motion for the Sweet Spot, while feeling it anchors it in your bones.</p><p><br>
-</p><div><h2><strong>Exploring The Edges</strong></h2></div><p><a href="https://lanebelone.com/blog/f/restoration-revolution-redefining-rest-for-optimal-living" rel="">Going back to a previous Distillation</a>, we discussed the formula: Stress + Rest = Growth.</p><p><br>
+</p><div><h2><strong>Exploring The Edges</strong></h2></div><p><a href="https://www.lanebelone.com/blog/f/restoration-revolution-redefining-rest-for-optimal-living" rel="">Going back to a previous Distillation</a>, we discussed the formula: Stress + Rest = Growth.</p><p><br>
 If you have too much stress, then it’s no good.</p><p><br>
 If you have too much rest, that’s no good either.</p><p><br>
 The only way to know what is “too much” one way or the other, is to explore the edges.</p><p><br>
@@ -59,7 +59,7 @@ Further, your Sweet Spot changes (adapts) over time.</p><p><br>
 Know that the sweet spot is in constant change.</p><p><br>
 Once you “arrive” to the feeling of the sweet spot, then ride WITH it.</p><p><br>
 Not being attached to yesterdays Sweet Spot.</p><p><br>
-<a href="https://lanebelone.com/blog/f/the-structure-flow-of-creativity" rel="">In another Distillation</a>, we discussed the integration of structure and flow.</p><p><br>
+<a href="https://www.lanebelone.com/blog/f/the-structure-flow-of-creativity" rel="">In another Distillation</a>, we discussed the integration of structure and flow.</p><p><br>
 The Sweet Spot can be applied to that dynamic.</p><p><br>
 Establish just enough structure for you to explore the flow of the adaptive Sweet Spot.</p><p><br>
 The structure gets you going, helps build momentum.</p><p><br>

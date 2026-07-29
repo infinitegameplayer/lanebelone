@@ -14,7 +14,7 @@ about:
   - https://www.infinitegameos.io/concepts/playgrounds-of-exploration
   - https://www.infinitegameos.io/concepts/infinite-playlist
 mentions:
-  - https://sidequesthq.co/products/sovereign-life-playbook
+  - https://www.sidequesthq.co/products/sovereign-life-playbook
   - https://www.lanebelone.com/blog/f/the-infinite-game-is-already-in-progress
   - https://www.infinitegameos.io/concepts/joyful-sovereignty
 ---
@@ -173,4 +173,4 @@ Enjoy the Journey
 
 ---
 
-P.S. Both concepts live deeper in the [Sovereign Life Playbook](https://sidequesthq.co/products/sovereign-life-playbook). Chapter 4 for the Playgrounds. Chapter 5 for the Playlist.
+P.S. Both concepts live deeper in the [Sovereign Life Playbook](https://www.sidequesthq.co/products/sovereign-life-playbook). Chapter 4 for the Playgrounds. Chapter 5 for the Playlist.

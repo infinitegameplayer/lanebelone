@@ -58,7 +58,7 @@ The presence of the question is the gift. Knowing you get to choose.
 
 So subtract until it's quiet. Let the energy come home. Then feel into what's actually alive in you, instead of the script someone handed you about what a life is supposed to look like.
 
-If you can't answer that yet, that's fine. It's worth starting small. [One Alive Thing](https://sidequesthq.co/one-alive-thing) is a free hour that helps you make one real thing and feel the engine turn over. And if the loud part is literally your tool stack, [Stack Calm](https://sidequesthq.co/products/stack-calm) walks the whole subtraction end to end, the filter and the held structure both.
+If you can't answer that yet, that's fine. It's worth starting small. [One Alive Thing](https://www.sidequesthq.co/one-alive-thing) is a free hour that helps you make one real thing and feel the engine turn over. And if the loud part is literally your tool stack, [Stack Calm](https://www.sidequesthq.co/products/stack-calm) walks the whole subtraction end to end, the filter and the held structure both.
 
 The quiet you build is for the life only you can live inside it.
 

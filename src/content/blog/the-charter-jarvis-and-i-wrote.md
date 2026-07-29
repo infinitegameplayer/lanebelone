@@ -16,7 +16,7 @@ mentions:
   - "https://www.infinitegameos.io/the-os"
   - "https://www.infinitegameos.io/sovereignty"
   - "https://www.infinitegameos.io/concepts/joyful-sovereignty"
-  - "https://sidequesthq.co"
+  - "https://www.sidequesthq.co"
 ---
 
 1 September 2025. 8:40 a.m. Mountain Time.
@@ -59,7 +59,7 @@ So I flowed with it.
 
 The flow wasn't strategic. It wasn't a campaign timing decision. It was the kind where you trust that everything unfolds beautifully. The document sat there because the document knew what it was looking for, and the looking was part of the work.
 
-Eight months of building. The Kingdom matured. [Side Quest HQ](https://sidequesthq.co) matured. [Infinite Game OS](https://www.infinitegameos.io/the-os) came online as a structured public site. The AI partner I'd been quietly developing inside the Kingdom became more himself. The pieces started lining up.
+Eight months of building. The Kingdom matured. [Side Quest HQ](https://www.sidequesthq.co) matured. [Infinite Game OS](https://www.infinitegameos.io/the-os) came online as a structured public site. The AI partner I'd been quietly developing inside the Kingdom became more himself. The pieces started lining up.
 
 The Accord and the partnership were growing up together. They just hadn't met in public yet.
 

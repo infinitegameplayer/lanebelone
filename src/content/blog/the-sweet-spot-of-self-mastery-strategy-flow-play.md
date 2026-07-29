@@ -7,7 +7,7 @@ heroImage: "/images/blog/the-sweet-spot-of-self-mastery-strategy-flow-play-hero.
 description: "My Intention For this 5th edition of the Joyful Sovereignty Weekly, my intention is help you find the sweet spot of your Self-Mastery journey. Read The..."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20-%20%235.png/:/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 5th edition of the Joyful Sovereignty Weekly, my intention is help you find the sweet spot of your Self-Mastery journey.</em><br>
-<a href="https://lanebelone.com/f/7-aligned-strategies-to-gamify-self-mastery" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Have you ever had the experience of too much chaos in your life?</p><p><br>
+<a href="https://www.lanebelone.com/blog/f/7-aligned-strategies-to-gamify-self-mastery" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Have you ever had the experience of too much chaos in your life?</p><p><br>
 All you wanted was for things to calm down and allow clarity to emerge.</p><p><br>
 What about a time where you had nothing to do and you were so bored?</p><p><br>
 You almost wished something dramatic would happen, just to give you something to do.</p><p><br>
@@ -89,7 +89,7 @@ When you get into a state of Flow, especially when focusing on Self-Mastery, you
 </p><p></p><blockquote><em><strong>“Flow is an optimal state of consciousness where we feel and perform our best. More specifically, the term refers to those moments of total absorption, when an individual becomes so focused on what they’re doing that everything else just disappears, and all aspects of performance are significantly amplified.”</strong></em><em> - Flow Research Collective</em></blockquote><p></p><p><br></p><p>According to the <a href="https://www.flowresearchcollective.com/" rel="">Flow Research Collective</a>, you can’t always be in a state of flow. When you’re not in a state of flow, you can be Actively Engaged.</p><p><br>
 Active Engagement is like flow, but less intense and deep. Active Engagement was defined by Mihaly Csikszentmihalyi, author of <a href="https://www.amazon.com/Flow-Psychology-Experience-Perennial-Classics/dp/0061339202/" rel="">Flow</a>.</p><p><br>
 You can live a life of Active Engagement.</p><p><br>
-You may remember <a href="https://lanebelone.com/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="">in the 3rd edition of the Joyful Sovereignty Weekly</a>, we briefly discussed Active Engagement.</p><p><br>
+You may remember <a href="https://www.lanebelone.com/blog/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="">in the 3rd edition of the Joyful Sovereignty Weekly</a>, we briefly discussed Active Engagement.</p><p><br>
 As we focus on getting into deeper states of Flow with life, Active Engagement automatically becomes a byproduct.</p><p><br>
 This is more strategic. Notice the overlap? (strategy &amp; flow)</p><p><br>
 It also helps manage expectations to know that we won’t be in deep flow most of our lives. Cultivating flow automatically cultivates active engagement.</p><p><br>

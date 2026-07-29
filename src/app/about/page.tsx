@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const profilePageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
+  mainEntity: { '@id': 'https://www.infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/about',
   name: 'About Lane Belone',
   description: LANE_BIO,

@@ -37,7 +37,7 @@ const websiteJsonLd = {
   name: 'Lane Belone',
   description:
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
-  publisher: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#person' },
   inLanguage: 'en-US',
 }
 
@@ -48,7 +48,7 @@ const profilePageJsonLd = {
   name: 'Lane Belone',
   description:
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
-  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
+  mainEntity: { '@id': 'https://www.infinitegameos.io/#person' },
 }
 
 // Portrait cover crop (4:5 cover-display) for the library-style shelves, matching

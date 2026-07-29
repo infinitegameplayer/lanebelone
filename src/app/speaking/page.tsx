@@ -37,7 +37,7 @@ const speakingServiceJsonLd = {
   category: 'Leadership and Change',
   description:
     'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
-  provider: { '@id': 'https://infinitegameos.io/#person' },
+  provider: { '@id': 'https://www.infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/speaking',
   areaServed: 'Worldwide',
   audience: {

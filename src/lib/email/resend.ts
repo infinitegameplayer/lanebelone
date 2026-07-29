@@ -5,7 +5,7 @@ const getResend = () => new Resend(process.env.RESEND_API_KEY)
 
 const FROM = 'Lane Belone <howdy@lanebelone.com>'
 const REPLY_TO = 'howdy@lanebelone.com'
-const SITE_URL = 'https://lanebelone.com'
+const SITE_URL = 'https://www.lanebelone.com'
 // CAN-SPAM physical address. Mail reaches the box under Lane Belone and Side
 // Quest Trust, so the display name stays brand-aligned and the address stays legal.
 const POSTAL_ADDRESS = 'Lane Belone, PO Box 6128, Colorado Springs, CO 80934'
@@ -91,7 +91,7 @@ function buildEmailHtml({
           <tr>
             <td style="padding-top:40px;border-top:1px solid rgba(245,240,232,0.07)">
               <p style="margin:0;font-size:13px;color:rgba(245,240,232,0.3);font-family:Arial,sans-serif">
-                Lane Belone &middot; <a href="https://lanebelone.com" style="color:rgba(201,168,76,0.6);text-decoration:none">lanebelone.com</a>${preferencesFragment}${unsubscribeFragment}
+                Lane Belone &middot; <a href="https://www.lanebelone.com" style="color:rgba(201,168,76,0.6);text-decoration:none">lanebelone.com</a>${preferencesFragment}${unsubscribeFragment}
               </p>
               <p style="margin:10px 0 0;font-size:12px;color:rgba(245,240,232,0.22);font-family:Arial,sans-serif">
                 ${POSTAL_ADDRESS}

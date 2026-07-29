@@ -82,7 +82,7 @@ export default async function BlogPostPage({
     inLanguage: 'en-US',
     author: {
       '@type': 'Person',
-      '@id': 'https://infinitegameos.io/#person',
+      '@id': 'https://www.infinitegameos.io/#person',
       name: post.author ?? 'Lane Belone',
       url: post.authorUrl ?? 'https://www.lanebelone.com',
     },

@@ -15,8 +15,8 @@ about:
 mentions:
   - "https://www.infinitegameos.io/updates/the-infinite-game-i-built-after-reading-sinek"
   - "https://www.infinitegameos.io/concepts/playgrounds-of-exploration"
-  - "https://lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game"
-  - "https://sidequesthq.co"
+  - "https://www.lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game"
+  - "https://www.sidequesthq.co"
 ---
 
 I came home from Peru in 2018 with something opened in me. A lot of people would call it an awakening. Over the next several months, I moved through all kinds of "spiritual things". Spirit. Infinite awareness. Asking: "What is reality"? Noticing the air I was breathing. It wasn't that serious lol, but it seemed like it at the time.
@@ -29,7 +29,7 @@ The strange thing about reading *The Infinite Game* was that it felt more spirit
 
 In any case, he opened a doorway for me. A wider audience encountered the Infinite Game in language that worked in conference rooms. The doorway was real. I walked through.
 
-The reframe of challenges as Worthy Rivals was especially impactful to me. Shifting challenges from bad to "Oh wait, this is actually trying to help me, almost like a sparring partner." That orientation rearranged how I held difficulty (and eventually embracing anti-fragility). I've been working with the concept ever since. [I wrote my own version of it in 2023](https://lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game), after I'd lived with the idea long enough to make it mine.
+The reframe of challenges as Worthy Rivals was especially impactful to me. Shifting challenges from bad to "Oh wait, this is actually trying to help me, almost like a sparring partner." That orientation rearranged how I held difficulty (and eventually embracing anti-fragility). I've been working with the concept ever since. [I wrote my own version of it in 2023](https://www.lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game), after I'd lived with the idea long enough to make it mine.
 
 The book set down a structural handle while the thing underneath kept building itself.
 
@@ -45,7 +45,7 @@ I'd never thought of myself that way. The moment he said it, I knew it was true.
 
 What if life worked the same way?
 
-All these things began to coalesce. The Infinite Game as the wider container. [Side quests](https://sidequesthq.co) as the finite games nested inside it. Play as the daily texture. Adventure as the orientation. Worthy Rivals showing up as the friction that polishes. It was just a gradual unfolding.
+All these things began to coalesce. The Infinite Game as the wider container. [Side quests](https://www.sidequesthq.co) as the finite games nested inside it. Play as the daily texture. Adventure as the orientation. Worthy Rivals showing up as the friction that polishes. It was just a gradual unfolding.
 
 I started writing about it when I started my first newsletter. It was me expressing from a person that was practicing but wasn't fully embodied. That's totally cool. That's where I was. The synthesis was alive, the words were still catching up.
 

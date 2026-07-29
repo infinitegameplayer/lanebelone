@@ -19,7 +19,7 @@ But by the time we hear those loud sirens, its already become a big issue.</p><p
 There is a way to look at rest that will increase creativity, boost your sense of well-being and give you greater states of peace and joy.</p><p><br>
 There is a way to consistently rest throughout your days and week.</p><p><br>
 There is a way to reprogram yourself in an empowering way.</p><p><br>
-Read further with an open mind to shift your perspective of rest and how to integrate it into your life.</p><p><br></p><p><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"></a></p><figure><div><a href="https://lanebelone.com/newsletter" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
+Read further with an open mind to shift your perspective of rest and how to integrate it into your life.</p><p><br></p><p><a href="https://www.lanebelone.com/blog" target="_blank" rel="noopener"></a></p><figure><div><a href="https://www.lanebelone.com/blog" target="_blank" rel="noopener"><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Newsletter%20Signup%20(in%20Newsletter)%20(1).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></a></div></figure><p></p><p><br>
 </p><div><h2><strong>Work &amp; Rest Complement Each Other</strong></h2></div><p>Stress + Rest = Growth.</p><p><br>
 This is a formula that brings awareness that work and rest can’t exist without the other.</p><p><br>
 Work and rest are two sides of the same coin.</p><p><br>
@@ -27,7 +27,7 @@ When you work (stress), you take action and usually exceed your limits (even if 
 When you rest, you allow yourself to recover and grow in many ways.</p><p><br>
 Lifting weights is a common example.</p><p><br>
 If you workout 5 times a week at 1 hour each session, that adds up to a tiny fraction of the hours in a given week. You spend the majority of the time actually recovering (resting) from the workout (stress).</p><p><br>
-<a href="https://lanebelone.com/f/transmuting-pressure-cultivating-the-anti-fragility-mindset" rel="">In a previous edition of The Distillation</a>, we discussed becoming anti-fragile and welcoming the stress and pressures of life.</p><p><br>
+<a href="https://www.lanebelone.com/blog/f/transmuting-pressure-cultivating-the-anti-fragility-mindset" rel="">In a previous edition of The Distillation</a>, we discussed becoming anti-fragile and welcoming the stress and pressures of life.</p><p><br>
 Here, we discuss how rest plays into this holistic approach to living.</p><p><br>
 </p><div><h2><strong>Production vs Cultivation</strong></h2></div><p>For decades, there has been a workhorse mentality surrounding work and rest.</p><p><br>
 The story goes something like this: That if something profound, great or impactful is created, it would “mean more” if we worked hard for it.</p><p><br>
