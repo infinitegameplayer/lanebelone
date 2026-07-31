@@ -53,6 +53,7 @@
  */
 
 const DEFAULT_BASE = 'https://www.lanebelone.com'
+const APEX_ORIGIN = 'https://lanebelone.com'
 const APEX_RE = /https:\/\/lanebelone\.com/g
 const UA =
   'LaneBelone-DiscoverabilityBaseline/1.0 (+https://www.lanebelone.com; Kingdom discoverability self-audit)'
@@ -137,6 +138,58 @@ function sanityRobots(body) {
   return v
 }
 
+// The line this script used to assert exists and never read. A robots.txt can
+// point a crawler at an apex-form or dead sitemap while every other check
+// passes. Backported from the infinitegameos net, 2026-07-31.
+async function checkRobotsSitemapDirective(base) {
+  const violations = []
+  let body
+  try {
+    const res = await fetchResource(`${base}/robots.txt`, '*/*')
+    if (res.status !== 200) {
+      return { name: 'robots.txt Sitemap directive', violations: [`robots.txt HTTP ${res.status}`] }
+    }
+    body = res.body
+  } catch (err) {
+    return { name: 'robots.txt Sitemap directive', violations: [`fetch error: ${err.message}`] }
+  }
+
+  const lines = [...body.matchAll(/^\s*sitemap:\s*(\S+)\s*$/gim)].map((m) => m[1])
+  if (lines.length === 0) {
+    return { name: 'robots.txt Sitemap directive', violations: ['no Sitemap directive'] }
+  }
+
+  for (const url of lines) {
+    if (!url.startsWith(`${base}/`)) {
+      violations.push(`Sitemap directive is ${url}, expected the ${base} origin`)
+      continue
+    }
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': UA } })
+      if (res.status !== 200) violations.push(`Sitemap directive ${url} -> HTTP ${res.status}`)
+    } catch (err) {
+      violations.push(`Sitemap directive ${url} -> ${err.message}`)
+    }
+  }
+  return { name: `robots.txt Sitemap directive (${lines.length})`, violations }
+}
+
+// Proves the redirect detector can see a redirect that is present, before any
+// absence of redirects is believed. The apex origin is known to redirect to www.
+async function redirectDetectorControl() {
+  try {
+    const res = await fetch(`${APEX_ORIGIN}/`, {
+      method: 'HEAD',
+      redirect: 'manual',
+      headers: { 'User-Agent': UA },
+    })
+    if (res.status >= 300 && res.status < 400) return { ok: true, observed: res.status }
+    return { ok: false, observed: `HTTP ${res.status} from ${APEX_ORIGIN} (expected a 3xx)` }
+  } catch (err) {
+    return { ok: false, observed: `control fetch error: ${err.message}` }
+  }
+}
+
 function sanityLlms(body) {
   const v = []
   if (!/^#\s+Lane Belone/m.test(body)) v.push('missing "# Lane Belone" header')
@@ -207,19 +260,41 @@ async function checkSitemapUrls(base) {
   const locs = [...body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim())
   if (locs.length === 0) return [{ name: 'sitemap URLs', violations: ['no <loc> entries'] }]
 
-  const dead = []
+  // Resolved with redirect: 'manual' since 2026-07-31. A plain fetch follows
+  // redirects, so a sitemap URL that 301s elsewhere reported 200 and passed,
+  // and a sitemap advertising a hop spends crawler budget the site does not get
+  // back. The commit that fixed 116 redirect hops on this site landed while this
+  // very check was reporting PASS.
+  const control = await redirectDetectorControl()
+  const results = [
+    {
+      name: 'redirect detector control',
+      violations: control.ok ? [] : [`control failed, redirect result is void: ${control.observed}`],
+    },
+  ]
+  if (!control.ok) {
+    results.push({ name: 'sitemap URLs', violations: ['skipped: redirect detector control failed'] })
+    return results
+  }
+
+  const bad = []
   // Sequential rather than parallel: this is a courtesy crawl of the Kingdom's
   // own origin, and a burst of 50+ concurrent requests is what a crawler that
   // gets blocked looks like.
   for (const url of locs) {
     try {
-      const res = await fetch(url, { method: 'HEAD', headers: { 'User-Agent': UA } })
-      if (res.status !== 200) dead.push(`${url} -> HTTP ${res.status}`)
+      const res = await fetch(url, { method: 'HEAD', redirect: 'manual', headers: { 'User-Agent': UA } })
+      if (res.status >= 300 && res.status < 400) {
+        bad.push(`${url} -> HTTP ${res.status} redirect to ${res.headers.get('location') ?? 'unknown'}`)
+      } else if (res.status !== 200) {
+        bad.push(`${url} -> HTTP ${res.status}`)
+      }
     } catch (err) {
-      dead.push(`${url} -> ${err.message}`)
+      bad.push(`${url} -> ${err.message}`)
     }
   }
-  return [{ name: `sitemap URLs (${locs.length} checked)`, violations: dead }]
+  results.push({ name: `sitemap URLs (${locs.length} checked, hop-free)`, violations: bad })
+  return results
 }
 
 async function main() {
@@ -235,6 +310,7 @@ async function main() {
 
   const results = []
   results.push(await checkStaticFile(base, '/robots.txt', sanityRobots))
+  results.push(await checkRobotsSitemapDirective(base))
   results.push(await checkStaticFile(base, '/llms.txt', sanityLlms))
   results.push(await checkStaticFile(base, '/llms-full.txt', sanityLlmsFull))
   results.push(await checkStaticFile(base, '/sitemap.xml', sanitySitemap))
