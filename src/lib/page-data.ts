@@ -604,12 +604,12 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 9 (2026-07-27) is the Creator
-  // Flywheel Playbook's own day, so the slot returns to its resting default.
+  // Rotating episode slot. Open Studio Episode 11 (2026-08-03) is the flagship
+  // convergence peak, so the slot carries The Alive Business.
   {
-    label: 'The Creator Flywheel Playbook',
-    sublabel: 'Install the machine that compounds your work · $77',
-    href: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+    label: 'The Alive Business',
+    sublabel: 'The operating system for a business that is actually yours · $197',
+    href: 'https://www.sidequesthq.co/products/the-alive-business',
     icon: 'book',
   },
   {
