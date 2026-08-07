@@ -84,6 +84,9 @@ Allow: /
 User-agent: Meta-ExternalFetcher
 Allow: /
 
+User-agent: Meta-WebIndexer
+Allow: /
+
 User-agent: MSNBot
 Allow: /
 

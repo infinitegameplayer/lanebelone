@@ -81,7 +81,7 @@ const collectionPageJsonLd = {
   name: 'The Library · Lane Belone',
   description: DESCRIPTION,
   isPartOf: { '@id': 'https://www.lanebelone.com/#website' },
-  about: { '@id': 'https://www.infinitegameos.io/#person' },
+  about: { '@id': 'https://infinitegameos.io/#person' },
   mainEntity: {
     '@type': 'ItemList',
     name: 'Lane Belone Library',

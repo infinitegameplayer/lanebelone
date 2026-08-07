@@ -35,9 +35,9 @@ export default function BlogIndexPage() {
     '@type': 'Blog',
     '@id': 'https://www.lanebelone.com/blog#blog',
     url: 'https://www.lanebelone.com/blog',
-    name: 'Lane Belone — Writing',
+    name: 'Lane Belone · Writing',
     description: 'Essays on the infinite game, sovereignty, flow and perception.',
-    author: { '@id': 'https://www.infinitegameos.io/#person' },
+    author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': 'https://www.lanebelone.com/#organization' },
   }
 

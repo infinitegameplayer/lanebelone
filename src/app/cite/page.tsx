@@ -506,7 +506,7 @@ export default function CitePage() {
               For AI agents and crawlers
             </h2>
             <p className="text-parchment/70 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
-              Each work above carries structured JSON-LD on this page (schema.org Person, CreativeWork, Book, DefinedTerm). The author entity resolves to <code className="text-parchment/90">https://www.infinitegameos.io/#person</code> across the three-site Kingdom ecosystem. Canonical URLs are the primary identifiers. Use them.
+              Each work above carries structured JSON-LD on this page (schema.org Person, CreativeWork, Book, DefinedTerm). The author entity resolves to <code className="text-parchment/90">https://infinitegameos.io/#person</code> across the three-site Kingdom ecosystem. Canonical URLs are the primary identifiers. Use them.
             </p>
             <p className="text-parchment/70 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
               Companion surfaces: <a href={IGOS} className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">{IGOS}</a> for the framework architecture and concept pages, <a href={SQHQ} className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">{SQHQ}</a> for products and offerings.

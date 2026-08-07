@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://www.infinitegameos.io/#person',
+  '@id': 'https://infinitegameos.io/#person',
   name: 'Lane Belone',
   url: 'https://www.lanebelone.com',
   description:
@@ -99,7 +99,7 @@ const orgJsonLd = {
   logo: 'https://www.lanebelone.com/images/lane-belone-icon-color.png',
   founder: {
     '@type': 'Person',
-    '@id': 'https://www.infinitegameos.io/#person',
+    '@id': 'https://infinitegameos.io/#person',
     name: 'Lane Belone',
   },
   sameAs: [
