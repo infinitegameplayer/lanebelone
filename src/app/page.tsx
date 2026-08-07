@@ -39,6 +39,9 @@ const websiteJsonLd = {
     'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
   publisher: { '@id': 'https://infinitegameos.io/#person' },
   inLanguage: 'en-US',
+  // The footer, /terms and every per-article node already say CC BY 4.0.
+  // The site-level node was the one place that stayed silent.
+  license: 'https://creativecommons.org/licenses/by/4.0/',
 }
 
 const profilePageJsonLd = {
