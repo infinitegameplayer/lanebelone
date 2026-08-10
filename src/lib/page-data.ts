@@ -604,13 +604,14 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 11 (2026-08-03) is the flagship
-  // convergence peak, so the slot carries The Alive Business.
+  // Rotating episode slot. Open Studio Episode 12 (2026-08-10) names the
+  // operating system and carries no product spotlight, so the slot points at
+  // the Held by Structure practice page, the episode's core destination.
   {
-    label: 'The Alive Business',
-    sublabel: 'The operating system for a business that is actually yours · $197',
-    href: 'https://www.sidequesthq.co/products/the-alive-business',
-    icon: 'book',
+    label: 'Held by Structure',
+    sublabel: 'The practice of trusting the structure you built to hold you',
+    href: 'https://www.infinitegameos.io/concepts/held-by-structure',
+    icon: 'compass',
   },
   {
     label: 'The Full Library',
