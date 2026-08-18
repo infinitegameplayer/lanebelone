@@ -604,13 +604,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 12 (2026-08-10) names the
-  // operating system and carries no product spotlight, so the slot points at
-  // the Held by Structure practice page, the episode's core destination.
+  // Rotating episode slot. Open Studio Episode 13 (2026-08-17) carries no
+  // product spotlight, so the slot points at Puzzles, Not Problems, the
+  // episode's core destination.
   {
-    label: 'Held by Structure',
-    sublabel: 'The practice of trusting the structure you built to hold you',
-    href: 'https://www.infinitegameos.io/concepts/held-by-structure',
+    label: 'Puzzles, Not Problems',
+    sublabel: 'One word, changed on purpose. The posture that decides how the work feels',
+    href: 'https://www.infinitegameos.io/concepts/puzzles-not-problems',
     icon: 'compass',
   },
   {
