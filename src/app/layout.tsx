@@ -120,6 +120,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="describedby" href="https://www.lanebelone.com/llms.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
