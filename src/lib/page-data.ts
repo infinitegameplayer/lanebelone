@@ -604,13 +604,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 13 (2026-08-17) carries no
-  // product spotlight, so the slot points at Puzzles, Not Problems, the
+  // Rotating episode slot. Open Studio Episode 14 (2026-08-26) carries no
+  // product spotlight, so the slot points at the Infinite Playlist, the
   // episode's core destination.
   {
-    label: 'Puzzles, Not Problems',
-    sublabel: 'One word, changed on purpose. The posture that decides how the work feels',
-    href: 'https://www.infinitegameos.io/concepts/puzzles-not-problems',
+    label: 'The Infinite Playlist',
+    sublabel: 'Some stretches run smooth and some arrive all at once. Both are the music',
+    href: 'https://www.infinitegameos.io/concepts/infinite-playlist',
     icon: 'compass',
   },
   {
