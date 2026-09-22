@@ -187,7 +187,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
-/* Featured card — gold border + rotating shimmer glow */
+/* Featured card. Gold border plus rotating shimmer glow */
 .bezel-card.featured {
   border-color: rgba(201, 168, 76, 0.3);
   box-shadow: 0 0 24px rgba(201, 168, 76, 0.04);
@@ -284,7 +284,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1rem;
 }
 
-/* About hero — responsive object-position */
+/* About hero. Responsive object-position */
 .about-hero-img { object-position: 50% 47%; }
 @media (min-width: 768px) {
   .about-hero-img { object-position: 78% 47%; }
@@ -314,7 +314,7 @@ a { color: inherit; text-decoration: none; }
   50% { opacity: 0.6; transform: scale(1.08); }
 }
 
-/* Blog article prose — forest-adapted */
+/* Blog article prose, forest-adapted */
 .prose-blog {
   font-family: var(--font-body);
   font-size: 1.05rem;
@@ -651,7 +651,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 860px) { .fg-strip { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; } }
 @media (max-width: 460px) { .fg-strip { grid-template-columns: repeat(2, 1fr); } }
 
-/* Free door — One Alive Thing, given real room */
+/* Free door. One Alive Thing, given real room */
 .oat-feature {
   display: grid;
   grid-template-columns: 172px 1fr;
@@ -764,4 +764,54 @@ a { color: inherit; text-decoration: none; }
   .nav-link:hover::after { transform: scaleX(0); opacity: 0; }
   .nav-link.active::after,
   .nav-link.active:hover::after { transform: scaleX(1); opacity: 1; }
+}
+
+/* Explorer card. An in-article invitation to the Explorer's Side Quest page on
+   sidequesthq.co. Dropped into a blog post as raw HTML, which the markdown
+   pipeline passes through. The trip slug rides in the link as ?m=, so the
+   signup records which article brought the person without a second form.
+   Canonical snippet and the reasoning: Side Quest HQ/Marketing/The SQHQ List.md */
+.explorer-card {
+  margin: 2.5rem 0;
+  padding: 1.75rem;
+  border: 1px solid var(--color-gold-dim);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.06), rgba(13, 26, 16, 0.6));
+}
+.explorer-card p { margin-bottom: 0.9rem; }
+.explorer-card p:last-child { margin-bottom: 0; }
+.explorer-card .explorer-card-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+.explorer-card .explorer-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+}
+.explorer-card a.explorer-card-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  border-bottom: 1px solid var(--color-gold-dim);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.explorer-card a.explorer-card-link:hover {
+  color: #ffffff;
+  border-color: var(--color-gold-light);
+}
+@media (max-width: 640px) {
+  .explorer-card { padding: 1.35rem; }
 }
