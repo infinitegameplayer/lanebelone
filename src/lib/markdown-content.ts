@@ -113,11 +113,11 @@ ${sqhqMd}
 
 ## About Lane
 
-I'm a former Green Beret turned life designer. Published author, retreat leader and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
+I'm a former Green Beret turned life designer. Published author, Side Quest host and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
 
 ## Speaking
 
-Keynotes, workshops and retreats on The Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
+Keynotes, workshops and Side Quests on The Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
 
 ## Connect
 
@@ -168,11 +168,11 @@ function generateSpeakingMarkdown(): string {
 
   return `# Speaking · Lane Belone
 
-> Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.
+> Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.
 
 Design. Play. Master.
 
-Keynotes, workshops and retreats built on The Infinite Player, inviting leaders and teams to author the games they play.
+Keynotes, workshops and Side Quests built on The Infinite Player, inviting leaders and teams to author the games they play.
 
 ${SPEAKING_ANCHOR}
 

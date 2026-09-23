@@ -7,7 +7,7 @@ export const contentType = OG_CONTENT_TYPE
 export default async function Image() {
   return ogCard({
     eyebrow: 'Speaking',
-    title: 'Keynotes, workshops and retreats.',
+    title: 'Keynotes, workshops and Side Quests.',
     body: 'The Infinite Player: identity, authorship and the game within the game.',
   })
 }

@@ -677,7 +677,7 @@ export default function HomePage() {
                     About Lane
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-text-muted)', margin: 0, maxWidth: '40em' }}>
-                    I&rsquo;m a former Green Beret turned life designer. Published author, retreat leader and advisor to founders and entrepreneurs navigating real transitions.
+                    I&rsquo;m a former Green Beret turned life designer. Published author, Side Quest host and advisor to founders and entrepreneurs navigating real transitions.
                   </p>
                 </div>
                 <Link href="/about" className="btn-ghost self-end md:self-center">
@@ -702,7 +702,7 @@ export default function HomePage() {
                     Want me on your stage?
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--color-text-muted)', margin: 0 }}>
-                    Keynotes, workshops and retreats on The Infinite Player: who you are when the role ends and how you author what comes next.
+                    Keynotes, workshops and Side Quests on The Infinite Player: who you are when the role ends and how you author what comes next.
                   </p>
                 </div>
                 <Link href="/speaking" className="btn-outline">

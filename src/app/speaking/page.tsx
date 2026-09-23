@@ -6,7 +6,7 @@ import { speakingTopics, speakingFormats, SPEAKING_ANCHOR, SPEAKING_LADDER_NOTE 
 
 export const metadata: Metadata = {
   title: 'Speaking',
-  description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
+  description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
   alternates: {
     canonical: 'https://www.lanebelone.com/speaking',
     types: {
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Speaking · Lane Belone',
-    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
+    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
     url: 'https://www.lanebelone.com/speaking',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Speaking · Lane Belone',
-    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
+    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
   },
 }
 
@@ -33,10 +33,10 @@ const speakingServiceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Speaking and Workshops',
-  serviceType: 'The Infinite Player: keynotes, workshops, retreats and private sessions',
+  serviceType: 'The Infinite Player: keynotes, workshops, Side Quests and private sessions',
   category: 'Leadership and Change',
   description:
-    'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, retreats and private sessions.',
+    'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
   provider: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/speaking',
   areaServed: 'Worldwide',
@@ -96,7 +96,7 @@ export default function SpeakingPage() {
             className="hero-line hero-line-2 text-lg md:text-xl text-parchment/70 max-w-2xl"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Keynotes, workshops and retreats built on The Infinite Player, inviting leaders and teams to author the games they play.
+            Keynotes, workshops and Side Quests built on The Infinite Player, inviting leaders and teams to author the games they play.
           </p>
         </div>
       </section>
@@ -165,7 +165,7 @@ export default function SpeakingPage() {
         <SectionReveal>
           <div className="max-w-2xl">
             <p className="text-parchment/60 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              Looking for workshops, retreats or ongoing advisory work? That all lives over at{' '}
+              Looking for workshops, Side Quests or ongoing advisory work? That all lives over at{' '}
               <a
                 href="https://www.sidequesthq.co"
                 className="text-parchment/80 underline underline-offset-4 hover:text-parchment transition-colors"

@@ -63,7 +63,7 @@ const personJsonLd = {
     'Sovereign Worldbuilding',
     'Perception and clarity',
     'Personal freedom',
-    'Experiential retreats',
+    "Explorer's Side Quests",
     'Special Forces leadership',
     'Humble Alpha framework',
   ],

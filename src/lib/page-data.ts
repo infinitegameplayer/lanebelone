@@ -57,7 +57,7 @@ export const aboutStory: StorySection[] = [
     paras: [
       "I write, speak and lead experiences from inside that game.",
       "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring The Infinite Player into rooms where something real needs to open: play the player, design the board, find the game within the game.",
-      "At Side Quest HQ, I lead retreats, workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
+      "At Side Quest HQ, I lead Side Quests, workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
       "The intention has always been the same: help people move in a more beautiful direction.",
     ],
     signature: 'Lane',
@@ -102,7 +102,7 @@ export const SPEAKING_LADDER_NOTE =
 export const speakingFormats: string[] = [
   'Keynotes for conferences and summits',
   'Workshops for leadership teams',
-  'Retreat sessions and multi-day experiences',
+  'Side Quests and multi-day experiences',
   'Nature-based activations and embodied adventures',
   'Private sessions for founders and visionaries',
 ]
@@ -154,7 +154,7 @@ export const jsSections: StorySection[] = [
       'This philosophy is lived, refined and shared from inside the game.',
       'The writing is where the threads surface. Essays and reflections from someone actively playing. Breadcrumbs from the field. Those live at the Substack.',
       'In speaking, it becomes an experience. The Infinite Player carries the philosophy onto a stage: play the player, design the board, find the game within the game. Three doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
-      "The deeper work, the retreats, the advisory containers, the extended engagements, lives at Side Quest HQ. That's where Joyful Sovereignty meets real creative and strategic change.",
+      "The deeper work, the Side Quests, the advisory containers, the extended engagements, lives at Side Quest HQ. That's where Joyful Sovereignty meets real creative and strategic change.",
     ],
   },
 ]
@@ -245,7 +245,7 @@ export interface SQHQChip {
 export const sqhqChips: SQHQChip[] = [
   { title: 'Digital Products', sub: 'Playbooks · Guides', href: 'https://www.sidequesthq.co/products' },
   { title: 'Workshops', sub: 'One-day intensives', href: 'https://www.sidequesthq.co/workshop' },
-  { title: 'Retreats', sub: 'Multi-day immersions', href: 'https://www.sidequesthq.co/explorers-side-quest' },
+  { title: 'Side Quests', sub: 'Small-group adventures', href: 'https://www.sidequesthq.co/explorers-side-quest' },
   { title: 'Private Advisory', sub: 'One-on-one', href: 'https://www.sidequesthq.co/one-on-one' },
 ]
 
@@ -645,7 +645,7 @@ export const linkHub: LinkHubItem[] = [
   },
   {
     label: 'Invite Me to Speak',
-    sublabel: 'Keynotes, workshops and retreats',
+    sublabel: 'Keynotes, workshops and Side Quests',
     href: '/speaking',
     icon: 'mic',
   },
