@@ -410,7 +410,7 @@ export interface LibraryFlagship {
 }
 
 export const librarySlp: LibraryFlagship = {
-  title: 'The Sovereign Life Playbook',
+  title: 'Sovereign Life Playbook',
   oneLiner:
     'A framework for designing your life from the inside out. Seven chapters, six exercises, eight files including an AI Companion Guide and Session Guide.',
   price: '$37',
@@ -632,7 +632,7 @@ export const linkHub: LinkHubItem[] = [
     icon: 'infinity',
   },
   {
-    label: 'The Sovereign Life Playbook',
+    label: 'Sovereign Life Playbook',
     sublabel: 'Design your life from the inside out · $37',
     href: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
     icon: 'book',

@@ -111,7 +111,7 @@ const citePageGraph = {
     {
       '@type': 'Book',
       '@id': `${SQHQ}/sovereign-life-playbook#work`,
-      name: 'The Sovereign Life Playbook',
+      name: 'Sovereign Life Playbook',
       alternateName: ['SLP'],
       url: `${SQHQ}/sovereign-life-playbook`,
       author: { '@id': `${IGOS}/#person` },
@@ -223,16 +223,16 @@ const worksFrameworks: CitedWork[] = [
   },
   {
     id: 'sovereign-life-playbook',
-    title: 'The Sovereign Life Playbook',
+    title: 'Sovereign Life Playbook',
     subtitle: 'Digital playbook (ebook)',
     description: 'A digital playbook for designing a life worth living from the inside. Inviting the Pioneer into an Infinite Game posture across daily life.',
     canonicalUrl: `${SQHQ}/sovereign-life-playbook`,
     citation: {
-      apa: 'Belone, L. (2025). The Sovereign Life Playbook. Side Quest HQ. https://www.sidequesthq.co/sovereign-life-playbook',
-      chicago: 'Belone, Lane. The Sovereign Life Playbook. Side Quest HQ, 2025. https://www.sidequesthq.co/sovereign-life-playbook.',
+      apa: 'Belone, L. (2025). Sovereign Life Playbook. Side Quest HQ. https://www.sidequesthq.co/sovereign-life-playbook',
+      chicago: 'Belone, Lane. Sovereign Life Playbook. Side Quest HQ, 2025. https://www.sidequesthq.co/sovereign-life-playbook.',
       bibtex: `@book{belone_sovereign_life_playbook,
   author    = {Belone, Lane},
-  title     = {The Sovereign Life Playbook},
+  title     = {Sovereign Life Playbook},
   year      = {2025},
   publisher = {Side Quest HQ},
   url       = {https://www.sidequesthq.co/sovereign-life-playbook}
