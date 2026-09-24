@@ -214,6 +214,16 @@ export default function LibraryPage() {
             So this is where the good stuff lives. Some are free, some carry a price. Open whatever catches your eye and stay as long as you like.
           </p>
         </SectionReveal>
+        {/* The one choosing line (King-ruled 2026-09-24): the library stays a
+            showcase of the shelf, and Side Quest HQ helps people choose. */}
+        <SectionReveal>
+          <p className="lib-host">
+            If you&apos;d like a hand choosing your way forward,{' '}
+            <a href="https://www.sidequesthq.co/products#start-here" target="_blank" rel="noopener" style={{ color: 'var(--color-gold-light)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+              Side Quest HQ can help you find where to begin &rarr;
+            </a>
+          </p>
+        </SectionReveal>
 
         {/* Operating System */}
         <SectionReveal>

@@ -356,7 +356,15 @@ a { color: inherit; text-decoration: none; }
   font-style: italic;
   font-family: var(--font-voice);
 }
+/* Long links and captions wrap inside the column rather than pushing past it. */
+.prose-blog { overflow-wrap: break-word; }
 .prose-blog figure { margin: 2rem 0; }
+.prose-blog figcaption {
+  font-size: 0.85rem;
+  color: rgba(232, 232, 216, 0.55);
+  text-align: center;
+  margin-top: 0.6rem;
+}
 .prose-blog figure img, .prose-blog img {
   max-width: 100%;
   height: auto;
@@ -364,7 +372,9 @@ a { color: inherit; text-decoration: none; }
   display: block;
   margin: 0 auto;
 }
-.prose-blog figure div { display: flex; justify-content: center; }
+/* A column, so the caption sits under its image. As a row it sat beside the
+   image and ran past the right edge at phone width. */
+.prose-blog figure div, .prose-blog figure a { display: flex; flex-direction: column; align-items: center; }
 .prose-blog div[class] { margin-bottom: 1rem; }
 
 /* Download links */
@@ -534,6 +544,17 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 1px;
 }
 .home-collection-line a:hover { color: var(--color-gold); border-color: var(--color-gold); }
+
+/* Home page: Recent Writing, latest row. A 120px thumbnail beside the text at
+   desktop; at phone width it stacks full-width above the text, since a 120px
+   thumbnail in a 342px card left the text a sliver (mobile instrument, 2026-09-24). */
+.latest-card { display: flex; flex-direction: row; align-items: flex-start; gap: 1rem; }
+.latest-thumb { flex-shrink: 0; width: 120px; overflow: hidden; border-radius: 2px; }
+.latest-thumb img { width: 120px; height: 68px; object-fit: cover; display: block; }
+@media (max-width: 560px) {
+  .latest-card { flex-direction: column; }
+  .latest-thumb, .latest-thumb img { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+}
 
 /* ── Home page: library-preview ladder ──────────────────────────────── */
 /* The homepage Library Preview mirrors the /library shelf in compressed form:

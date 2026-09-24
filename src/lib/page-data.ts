@@ -192,24 +192,11 @@ export interface HappeningNowItem {
   featured?: boolean
 }
 
-export const happeningNow: HappeningNowItem[] = [
-  {
-    badge: 'Install Session',
-    title: 'Sovereign Ecosystem Install',
-    description: 'Two sixty-minute sessions with Lane. Your AI workspace standing on its own legs by the end. $247.',
-    cta: 'Book the Install',
-    ctaHref: 'https://www.sidequesthq.co/sovereign-ecosystem-install',
-    featured: true,
-  },
-  {
-    badge: 'The Trilogy',
-    title: 'The Playbook Trilogy',
-    description: 'Three playbooks as one arc. The life you design, the adventure you live and the engine that carries the work. Twenty-one files, three AI companions. Save $54.',
-    cta: 'Get the Trilogy',
-    ctaHref: 'https://www.sidequesthq.co/products/playbook-trilogy',
-    price: '$97',
-  },
-]
+// Happening Now is an option, not a fixture (King-ruled 2026-09-24, Three-Site
+// Discoverability Sitting 3). Empty by default, and the homepage section and its
+// markdown twin render only when an item is here. It returns for something with a
+// real window: a launch, a workshop date, an Explorer's Side Quest opening.
+export const happeningNow: HappeningNowItem[] = []
 
 export interface BookEntry {
   badge: string
@@ -244,7 +231,6 @@ export interface SQHQChip {
 
 export const sqhqChips: SQHQChip[] = [
   { title: 'Digital Products', sub: 'Playbooks · Guides', href: 'https://www.sidequesthq.co/products' },
-  { title: 'Workshops', sub: 'One-day intensives', href: 'https://www.sidequesthq.co/workshop' },
   { title: 'Side Quests', sub: 'Small-group adventures', href: 'https://www.sidequesthq.co/explorers-side-quest' },
   { title: 'Private Advisory', sub: 'One-on-one', href: 'https://www.sidequesthq.co/one-on-one' },
 ]
@@ -436,7 +422,7 @@ export const librarySqp: LibraryFlagship = {
 export const libraryAliveBusiness: LibraryFlagship = {
   title: 'The Alive Business',
   oneLiner:
-    "The operating system for a business that's actually yours. Eleven systems, the governance your AI holds and the instruments that keep it running.",
+    'The whole operating system for a business that stays yours.',
   price: '$197',
   href: 'https://www.sidequesthq.co/products/the-alive-business',
   image: `${SQHQ_BLOB}/the-alive-business/cover-4x3.png`,
@@ -458,9 +444,9 @@ export const libraryCfp: LibraryFlagship = {
 // counts (those live on the SQHQ landing pages). Keyed by canonical SQHQ href.
 export const libraryBlurbs: Record<string, string> = {
   'https://www.sidequesthq.co/products/the-alive-business':
-    "The deepest build in the library. Where the Playbook installs your flywheel, this installs the whole business around it. Eleven systems, the governance your AI holds and the instruments that keep it running. For the Creator ready to run a company that still feels entirely their own.",
+    "The deepest build in the library. Where the Playbook installs your flywheel, this installs the whole business around it, from the governance your AI holds to the instruments that keep it running. For the Creator ready to run a company that still feels entirely their own.",
   'https://www.sidequesthq.co/products/sovereign-life-playbook':
-    "The flagship, and the deepest single work in the library. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
+    "The ground the other two playbooks stand on. A framework for designing your life from the inside out, from what you actually want to how you live it day to day. It comes with an AI Companion to walk the whole thing beside you. The place to go when you're ready to go all in.",
   'https://www.sidequesthq.co/products/side-quest-playbook':
     'Life as a series of quests you get to choose. Twelve chapters on picking the games worth your time, running them well and closing them clean. An AI companion walks each practice with you as a conversation. Where the Sovereign Life Playbook designs the life from the inside out, this one designs the adventure you live inside it.',
   'https://www.sidequesthq.co/products/creator-flywheel-playbook':
@@ -532,7 +518,7 @@ export const libraryTrilogy: LibraryCollection = {
   href: 'https://www.sidequesthq.co/products/playbook-trilogy',
   members: [librarySlp, librarySqp, libraryCfp],
   blurb:
-    'The three playbooks as one arc. The Sovereign Life Playbook, the Side Quest Playbook and the Creator Flywheel Playbook. The life you design, the adventure you live and the engine that carries the work. Twenty-one files and three AI companions, the whole practice held together.',
+    'The three playbooks as one arc. The Sovereign Life Playbook, the Side Quest Playbook and the Creator Flywheel Playbook. The life you design, the adventure you live and the engine that carries the work, the whole practice held together.',
 }
 
 export interface LibraryBook {
@@ -568,12 +554,12 @@ export const libraryFreeReading: LibraryBook[] = [
 // when it ships.
 export const libraryPrintBooks: LibraryBook[] = [
   {
-    title: 'Humble Alpha',
+    title: 'Unleash Your Humble Alpha',
     priceLabel: 'Book · On Amazon',
     href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
     image: '/images/book-humble-alpha.jpg',
     blurb:
-      'A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating the meeting place of inner life and outer impact. A print book, available on Amazon.',
+      'Co-written with Steven Kuhn. A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating the meeting place of inner life and outer impact. A print book, available on Amazon.',
   },
 ]
 

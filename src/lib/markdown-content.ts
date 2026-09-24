@@ -35,22 +35,20 @@ const SITE = 'https://www.lanebelone.com'
 const pages: Record<string, string> = {}
 
 function generateHomeMarkdown(): string {
-  const happeningNowMd = happeningNow
-    .map(item => {
-      const pricePart = item.price ? ` · ${item.price}` : ''
-      return `- **${item.title}**${pricePart} · ${item.description} [${item.cta}](${item.ctaHref})`
-    })
-    .join('\n')
-
-  const fieldGuidesMd = [...aiBusinessArc, ...aiPersonalArc]
-    .map(c => `- **[${c.title}](${c.href})** (${c.price}) · ${c.oneLiner}`)
-    .join('\n')
-
-  const homeCollectionsMd = libraryCollections
-    .map(c => `- **[${c.title}](${c.href})** (${c.price}, ${c.savings}) · ${c.blurb}`)
-    .join('\n')
+  // Happening Now renders only when page-data holds an item, same as the page.
+  const happeningNowMd = happeningNow.length
+    ? `## Happening Now\n\n${happeningNow
+        .map(item => {
+          const pricePart = item.price ? ` · ${item.price}` : ''
+          return `- **${item.title}**${pricePart} · ${item.description} [${item.cta}](${item.ctaHref})`
+        })
+        .join('\n')}\n\n`
+    : ''
 
   const oat = libraryFreeReading.find(b => b.title === 'One Alive Thing')!
+
+  const playbookPrices = [librarySlp, librarySqp, libraryCfp].map(p => Number(p.price.replace('$', '')))
+  const fieldGuideFloor = Math.min(...[...aiBusinessArc, ...aiPersonalArc].map(c => Number(c.price.replace('$', ''))))
 
   const sqhqMd = sqhqChips
     .map(c => `- **[${c.title}](${c.href})** · ${c.sub}`)
@@ -62,62 +60,41 @@ function generateHomeMarkdown(): string {
 
 Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.
 
-## Happening Now
+## Start Free
 
-${happeningNowMd}
+- **[${oat.title}](${oat.href})** (${oat.priceLabel}) · The easiest door in, and a real one. In under an hour you find what's alive in you and make one small thing real. You finish holding something that wasn't there when you sat down, and the path keeps unfolding from there at your own pace.
 
-## Joyful Sovereignty
+${happeningNowMd}## Joyful Sovereignty
 
 "Spacious. Playful. At peace. The whole game, played from the inside."
 
 An approach to playing the Infinite Game through joy and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort. [Explore Joyful Sovereignty](${SITE}/joyful-sovereignty)
 
-## A Library Preview
-
-A small shelf of tools for playing the game of your life more beautifully. Start free, go as deep as you like. Each one meets you where you are and opens a door to where you're headed. [Browse the full library](${SITE}/library)
-
-### The Operating System
-
-- **[${libraryAliveBusiness.title}](${libraryAliveBusiness.href})** (${libraryAliveBusiness.price}) · ${libraryAliveBusiness.oneLiner}
-
-### Playbooks
-
-- **[${librarySlp.title}](${librarySlp.href})** (${librarySlp.price}) · ${librarySlp.oneLiner}
-- **[${librarySqp.title}](${librarySqp.href})** (${librarySqp.price}) · ${librarySqp.oneLiner}
-- **[${libraryCfp.title}](${libraryCfp.href})** (${libraryCfp.price}) · ${libraryCfp.oneLiner}
-- **[${libraryTrilogy.title}](${libraryTrilogy.href})** (${libraryTrilogy.price}, ${libraryTrilogy.savings}) · Take all three as one arc.
-
-### Field Guides
-
-Six short reads, $9 each. Start anywhere.
-
-${fieldGuidesMd}
-
-### Collections
-
-${homeCollectionsMd}
-
-### Start Free
-
-- **[${oat.title}](${oat.href})** (${oat.priceLabel}) · ${oat.blurb}
-
 ## Recent Writing
 
-Essays on the infinite game, sovereignty, flow and perception. [Read the full archive](${SITE}/blog)
+Essays on the Infinite Game, sovereignty, flow and perception. [Read the full archive](${SITE}/blog)
+
+## The Library
+
+A small shelf of tools for playing the game of your life more beautifully. Go as deep as you like. Each one meets you where you are and opens a door to where you're headed.
+
+- **[${libraryAliveBusiness.title}](${libraryAliveBusiness.href})** (${libraryAliveBusiness.price}) · ${libraryAliveBusiness.oneLiner}
+- Three playbooks for the life, the motion and the engine, $${Math.min(...playbookPrices)} to $${Math.max(...playbookPrices)} each. Or all three as [${libraryTrilogy.title}](${libraryTrilogy.href}), ${libraryTrilogy.price}.
+- Field Guides on AI, the practice underneath the tool, from $${fieldGuideFloor}. [All of them in the library](${SITE}/library)
+
+[Browse the full library](${SITE}/library)
 
 ## Work with Me at Side Quest HQ
 
-This is where the tools, events and one-on-one work live. Four doors, all open:
+This is where the tools, events and one-on-one work live. Three doors, all open:
 
 ${sqhqMd}
+
+Want me on your stage? Keynotes, workshops and Side Quests on the Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
 
 ## About Lane
 
 I'm a former Green Beret turned life designer. Published author, Side Quest host and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
-
-## Speaking
-
-Keynotes, workshops and Side Quests on The Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
 
 ## Connect
 
@@ -295,6 +272,8 @@ function generateLibraryMarkdown(): string {
 > Tools for playing the game of your life more beautifully. An operating system, three playbooks and the Trilogy that binds them, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book.
 
 Your life is a game you get to co-create. With awareness, creativity and sovereignty, you play a more beautiful one. So this is where the good stuff lives. Some of it is free, some carries a price. The operating system, playbooks, Field Guides and Collections are hosted on Side Quest HQ (https://www.sidequesthq.co).
+
+If you'd like a hand choosing your way forward, [Side Quest HQ can help you find where to begin](https://www.sidequesthq.co/products#start-here).
 
 ## The Operating System
 

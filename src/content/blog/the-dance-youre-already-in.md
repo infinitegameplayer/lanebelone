@@ -77,7 +77,7 @@ Call this new way of living the Infinite Game if you like. Or don't name it at a
 
 I've curated a few things for the people walking this exact path. If you feel like wandering through them, [they're gathered in one place](https://www.lanebelone.com/library). Explore what piques your interest.
 
-And if you do wander in, start with the Foundation. There's a frame underneath all of it, the piece everything else leans on. We can begin there.
+And if you do wander in, start with the Sovereign Life Playbook. There's a frame underneath all of it, the piece everything else leans on. We can begin there.
 
 Lane
 

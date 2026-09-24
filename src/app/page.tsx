@@ -15,7 +15,6 @@ import {
   librarySqp,
   libraryCfp,
   libraryTrilogy,
-  libraryCollections,
   libraryFreeReading,
 } from '@/lib/page-data'
 
@@ -59,27 +58,12 @@ const profilePageJsonLd = {
 // we swap to the portrait here without disturbing it.
 const portrait = (img: string) => img.replace('cover-4x3', 'cover-display')
 
-// A single Field Guide on the home shelves. Reuses the lib- classes from the
-// /library page so the two surfaces read as one room.
-function ShelfCard({ title, hook, price, href, image }: {
-  title: string
-  hook: string
-  price: string
-  href: string
-  image: string
-}) {
-  return (
-    <a href={href} target="_blank" rel="noopener" className="lib-book">
-      <div className="lib-cover-frame">
-        <img src={portrait(image)} alt={`${title} cover`} loading="lazy" />
-      </div>
-      <div className="lib-meta">
-        <span className="lib-price">{price}</span>
-        <h3 className="lib-title">{title}</h3>
-        <p className="lib-blurb">{hook}</p>
-      </div>
-    </a>
-  )
+// "$37 to $77" from a list of "$NN" prices, or the single price when they agree.
+function priceRange(prices: string[]): string {
+  const n = prices.map((p) => Number(p.replace('$', '')))
+  const lo = Math.min(...n)
+  const hi = Math.max(...n)
+  return lo === hi ? `$${lo}` : `$${lo} to $${hi}`
 }
 
 export default function HomePage() {
@@ -87,115 +71,107 @@ export default function HomePage() {
   const featuredPosts = allPosts.filter(p => p.featured).slice(0, 2).reverse()
   const latestPosts = allPosts.slice(0, 2)
 
-  // Library-preview ladder: the six Field Guides as one compressed strip, the
-  // Foundation Collection nudge and the free One Alive Thing door.
-  const fieldGuides = [...aiBusinessArc, ...aiPersonalArc]
-  const foundation = libraryCollections[2]
+  // The free door, and the two prices the compact Library module quotes.
+  // Both are computed from the shelf data, so they move when a price does.
   const oat = libraryFreeReading.find((b) => b.title === 'One Alive Thing')!
+  const playbookRange = priceRange([librarySlp, librarySqp, libraryCfp].map((p) => p.price))
+  const fieldGuideFloor = priceRange([...aiBusinessArc, ...aiPersonalArc].map((c) => c.price)).split(' to ')[0]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }} />
-      {/* 1 — Hero (client component for useRef + CursorParallax) */}
+      {/* 1. Hero (client component for useRef + CursorParallax) */}
       <Hero />
 
       <div className="section-divider" />
 
-      {/* 2 — Happening Now */}
+      {/* 2. Start Free: One Alive Thing, the free door */}
       <section className="section">
         <SectionReveal>
-          <div className="section-label">· Happening Now ·</div>
+          <div className="section-label">· Start Free ·</div>
         </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Featured: Install Session (gold shimmer bezel) */}
-          <div className="bezel-card featured flex flex-col">
-            <div className="shimmer-border" />
-            <div className="bezel-inner flex flex-col gap-3 flex-1">
-              <div
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '0.62rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-gold)',
-                  display: 'inline-block',
-                  padding: '0.3rem 0.7rem',
-                  border: '1px solid rgba(201, 168, 76, 0.3)',
-                  borderRadius: '3px',
-                  alignSelf: 'flex-start',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                Install Session
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
-                {happeningNow[0].title}
-              </h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.65 }}>
-                {happeningNow[0].description}
-              </p>
-              <div className="mt-auto pt-4" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
-                <a
-                  href={happeningNow[0].ctaHref}
-                  target="_blank"
-                  rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(happeningNow[0].ctaHref) ? 'noopener' : 'noopener noreferrer'}
-                  className="btn-gold"
-                  style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
-                >
-                  {happeningNow[0].cta}
-                </a>
-              </div>
+        <SectionReveal>
+          <a href={oat.href} target="_blank" rel="noopener" className="oat-feature">
+            <div className="oat-cover">
+              <img src={oat.image} alt={`${oat.title} cover`} loading="lazy" />
             </div>
-          </div>
-
-          {/* Playbook (plain bezel) */}
-          <div className="bezel-card flex flex-col">
-            <div className="bezel-inner flex flex-col gap-3 flex-1">
-              <div
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '0.62rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-accent-hover)',
-                  display: 'inline-block',
-                  padding: '0.3rem 0.7rem',
-                  border: '1px solid rgba(90, 160, 96, 0.3)',
-                  borderRadius: '3px',
-                  alignSelf: 'flex-start',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                {happeningNow[1].badge}
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
-                {happeningNow[1].title}
-              </h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.65 }}>
-                {happeningNow[1].description}
+            <div>
+              <span className="free-pill">{oat.priceLabel}</span>
+              <div className="oat-title">{oat.title}</div>
+              <p className="oat-sub">
+                The easiest door in, and a real one. In under an hour you find what&rsquo;s alive in you and make one small thing real. You finish holding something that wasn&rsquo;t there when you sat down, and the path keeps unfolding from there at your own pace.
               </p>
-              <div className="mt-auto pt-4" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
-                <a
-                  href={happeningNow[1].ctaHref}
-                  target="_blank"
-                  rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(happeningNow[1].ctaHref) ? 'noopener' : 'noopener noreferrer'}
-                  className="btn-outline"
-                  style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
-                >
-                  {happeningNow[1].cta}{happeningNow[1].price ? ` · ${happeningNow[1].price}` : ''}
-                </a>
-              </div>
+              <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
+                Begin the side quest
+              </span>
             </div>
-          </div>
+          </a>
         </SectionReveal>
       </section>
 
       <div className="section-divider" />
 
-      {/* 3 — Joyful Sovereignty (full-width contemplative break) */}
+      {/* Happening Now: an option, empty by default (see page-data). When an item
+          has a real window it renders here, after the free door, which holds
+          position two either way. */}
+      {happeningNow.length > 0 && (
+        <>
+          <section className="section">
+            <SectionReveal>
+              <div className="section-label">· Happening Now ·</div>
+            </SectionReveal>
+            <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {happeningNow.map((item) => (
+                <div key={item.title} className={`bezel-card${item.featured ? ' featured' : ''} flex flex-col`}>
+                  {item.featured && <div className="shimmer-border" />}
+                  <div className="bezel-inner flex flex-col gap-3 flex-1">
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.62rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.16em',
+                        textTransform: 'uppercase',
+                        color: item.featured ? 'var(--color-gold)' : 'var(--color-accent-hover)',
+                        display: 'inline-block',
+                        padding: '0.3rem 0.7rem',
+                        border: item.featured ? '1px solid rgba(201, 168, 76, 0.3)' : '1px solid rgba(90, 160, 96, 0.3)',
+                        borderRadius: '3px',
+                        alignSelf: 'flex-start',
+                        marginBottom: '0.5rem',
+                      }}
+                    >
+                      {item.badge}
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.15 }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: 1.65 }}>
+                      {item.description}
+                    </p>
+                    <div className="mt-auto pt-4" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
+                      <a
+                        href={item.ctaHref}
+                        target="_blank"
+                        rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(item.ctaHref) ? 'noopener' : 'noopener noreferrer'}
+                        className={item.featured ? 'btn-gold' : 'btn-outline'}
+                        style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
+                      >
+                        {item.cta}{item.price ? ` · ${item.price}` : ''}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </SectionReveal>
+          </section>
+
+          <div className="section-divider" />
+        </>
+      )}
+
+      {/* 3. Joyful Sovereignty (full-width contemplative break) */}
       <section
         className="relative"
         style={{
@@ -277,167 +253,7 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 4 — A Library Preview (the shelf, compressed) */}
-      <section className="section">
-        <SectionReveal>
-          <div className="section-label">· A Library Preview ·</div>
-        </SectionReveal>
-        <SectionReveal>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '1.05rem',
-              lineHeight: 1.75,
-              color: 'var(--color-text-muted)',
-              maxWidth: '38em',
-              marginBottom: '1rem',
-            }}
-          >
-            A small shelf of tools for playing the game of your life more beautifully. Start free, go as deep as you like. Each one meets you where you are and opens a door to where you&rsquo;re headed.
-          </p>
-        </SectionReveal>
-        <SectionReveal>
-          <div style={{ marginBottom: '0.5rem' }}>
-            <Link href="/library" className="btn-ghost">
-              Browse the full library &rarr;
-            </Link>
-          </div>
-        </SectionReveal>
-
-        {/* The Operating System — marquee */}
-        <SectionReveal>
-          <div className="lib-shelf-label">The Operating System</div>
-        </SectionReveal>
-        <SectionReveal>
-          <a href={libraryAliveBusiness.href} target="_blank" rel="noopener" style={{ display: 'block' }}>
-            <div className="os-marquee">
-              <div className="os-cover">
-                <img src={portrait(libraryAliveBusiness.image)} alt={`${libraryAliveBusiness.title} cover`} loading="lazy" />
-              </div>
-              <div>
-                <div className="os-eyebrow">Where the whole business lives</div>
-                <div className="os-title">{libraryAliveBusiness.title}</div>
-                <p className="os-blurb">{libraryAliveBusiness.oneLiner}</p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.3rem', flexWrap: 'wrap' }}>
-                  <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
-                    Explore the Operating System
-                  </span>
-                  <span className="os-price">{libraryAliveBusiness.price}</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </SectionReveal>
-
-        {/* Playbooks */}
-        <SectionReveal>
-          <div className="lib-shelf-label">Playbooks</div>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="pb-grid">
-          <ShelfCard
-            title={librarySlp.title}
-            hook="A framework for designing your life from the inside out. Comes with an AI Companion to walk the whole thing beside you."
-            price={librarySlp.price}
-            href={librarySlp.href}
-            image={librarySlp.image}
-          />
-          <ShelfCard
-            title={librarySqp.title}
-            hook={librarySqp.oneLiner}
-            price={librarySqp.price}
-            href={librarySqp.href}
-            image={librarySqp.image}
-          />
-          <ShelfCard
-            title={libraryCfp.title}
-            hook={libraryCfp.oneLiner}
-            price={libraryCfp.price}
-            href={libraryCfp.href}
-            image={libraryCfp.image}
-          />
-        </SectionReveal>
-        <SectionReveal>
-          <p className="home-collection-line">
-            Or take all three.{' '}
-            <a href={libraryTrilogy.href} target="_blank" rel="noopener">
-              {libraryTrilogy.title}, {libraryTrilogy.price}, {libraryTrilogy.savings.replace('Save ', 'saves you ')} &rarr;
-            </a>
-          </p>
-        </SectionReveal>
-
-        {/* Field Guides — compressed strip */}
-        <SectionReveal>
-          <div className="lib-shelf-label">Field Guides</div>
-        </SectionReveal>
-        <SectionReveal>
-          <p className="fg-frame">
-            <strong style={{ color: 'var(--color-text)', fontWeight: 500 }}>Six short reads, $9 each. Start anywhere.</strong>{' '}
-            Small, legible entry points built around the questions productivity skips. The business you actually want, the calm stack, the right time to automate and three for keeping the work yours.
-          </p>
-        </SectionReveal>
-        <SectionReveal staggerChildren className="fg-strip">
-          {fieldGuides.map((card) => (
-            <a key={card.title} href={card.href} target="_blank" rel="noopener" className="fg-card">
-              <div className="fg-cover">
-                <img src={portrait(card.image)} alt={`${card.title} cover`} loading="lazy" />
-              </div>
-              <div className="fg-name">{card.title}</div>
-              <div className="fg-price">{card.price}</div>
-            </a>
-          ))}
-        </SectionReveal>
-        <SectionReveal>
-          <p className="home-collection-line">
-            Or take all six.{' '}
-            <a href={foundation.href} target="_blank" rel="noopener">
-              {foundation.title}, {foundation.price}, {foundation.savings.replace('Save ', 'saves you ')} &rarr;
-            </a>
-          </p>
-        </SectionReveal>
-
-        {/* Start Free — One Alive Thing */}
-        <SectionReveal>
-          <div className="lib-shelf-label">Start Free</div>
-        </SectionReveal>
-        <SectionReveal>
-          <a href={oat.href} target="_blank" rel="noopener" className="oat-feature">
-            <div className="oat-cover">
-              <img src={oat.image} alt={`${oat.title} cover`} loading="lazy" />
-            </div>
-            <div>
-              <span className="free-pill">{oat.priceLabel}</span>
-              <div className="oat-title">{oat.title}</div>
-              <p className="oat-sub">
-                The easiest door in, and a real one. In under an hour you find what&rsquo;s alive in you and make one small thing real. You finish holding something that wasn&rsquo;t there when you sat down, and the path keeps unfolding from there at your own pace.
-              </p>
-              <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
-                Begin the side quest
-              </span>
-            </div>
-          </a>
-        </SectionReveal>
-
-        {/* Closer: library doorway */}
-        <SectionReveal>
-          <div
-            style={{
-              marginTop: '3.5rem',
-              paddingTop: '2rem',
-              borderTop: '1px solid var(--color-border-subtle)',
-            }}
-          >
-            <div className="text-right">
-              <Link href="/library" className="btn-ghost">
-                Browse the full library &rarr;
-              </Link>
-            </div>
-          </div>
-        </SectionReveal>
-      </section>
-
-      <div className="section-divider" />
-
-      {/* 6 — Recent Writing */}
+      {/* 4. Recent Writing */}
       <section className="section">
         <SectionReveal>
           <div className="section-label">· Recent Writing ·</div>
@@ -516,11 +332,8 @@ export default function HomePage() {
           {latestPosts.map((post) => (
             <Link key={post.slug} href={`/blog/f/${post.slug}`} className="group block" style={{ textDecoration: 'none' }}>
               <article
+                className="latest-card"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'flex-start',
-                  gap: '1rem',
                   paddingTop: '1.5rem',
                   paddingBottom: '1.5rem',
                   marginBottom: '1.5rem',
@@ -528,18 +341,11 @@ export default function HomePage() {
                   borderBottom: '1px solid rgba(232, 232, 216, 0.06)',
                 }}
               >
-                <div style={{ flexShrink: 0, width: '120px', overflow: 'hidden', borderRadius: '2px' }}>
+                <div className="latest-thumb">
                   <img
                     src={post.heroImage}
                     alt={post.title}
-                    style={{
-                      width: '120px',
-                      height: '68px',
-                      objectFit: 'cover',
-                      display: 'block',
-                      transition: 'transform 0.3s ease',
-                      aspectRatio: '16/9',
-                    }}
+                    style={{ transition: 'transform 0.3s ease' }}
                     className="group-hover:scale-[1.03]"
                   />
                 </div>
@@ -598,7 +404,81 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 6 — Work with me at Side Quest HQ */}
+      {/* 5. The Library, one compact module. The full shelf lives at /library
+          and every product is sold on Side Quest HQ, so the home carries the
+          flagship, one line for the playbooks and one for the Field Guides. */}
+      <section className="section">
+        <SectionReveal>
+          <div className="section-label">· The Library ·</div>
+        </SectionReveal>
+        <SectionReveal>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '1.05rem',
+              lineHeight: 1.75,
+              color: 'var(--color-text-muted)',
+              maxWidth: '38em',
+              marginBottom: '2rem',
+            }}
+          >
+            A small shelf of tools for playing the game of your life more beautifully. Go as deep as you like. Each one meets you where you are and opens a door to where you&rsquo;re headed.
+          </p>
+        </SectionReveal>
+        <SectionReveal>
+          <a href={libraryAliveBusiness.href} target="_blank" rel="noopener" style={{ display: 'block' }}>
+            <div className="os-marquee">
+              <div className="os-cover">
+                <img src={portrait(libraryAliveBusiness.image)} alt={`${libraryAliveBusiness.title} cover`} loading="lazy" />
+              </div>
+              <div>
+                <div className="os-eyebrow">Where the whole business lives</div>
+                <div className="os-title">{libraryAliveBusiness.title}</div>
+                <p className="os-blurb">{libraryAliveBusiness.oneLiner}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.3rem', flexWrap: 'wrap' }}>
+                  <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
+                    Explore The Alive Business
+                  </span>
+                  <span className="os-price">{libraryAliveBusiness.price}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </SectionReveal>
+        <SectionReveal>
+          <p className="home-collection-line">
+            Three playbooks for the life, the motion and the engine, {playbookRange} each. Or{' '}
+            <a href={libraryTrilogy.href} target="_blank" rel="noopener">
+              all three as {libraryTrilogy.title}, {libraryTrilogy.price} &rarr;
+            </a>
+          </p>
+        </SectionReveal>
+        <SectionReveal>
+          <p className="home-collection-line">
+            Field Guides on AI, the practice underneath the tool, from {fieldGuideFloor}.{' '}
+            <Link href="/library">All of them in the library &rarr;</Link>
+          </p>
+        </SectionReveal>
+        <SectionReveal>
+          <div
+            style={{
+              marginTop: '2.5rem',
+              paddingTop: '2rem',
+              borderTop: '1px solid var(--color-border-subtle)',
+            }}
+          >
+            <div className="text-right">
+              <Link href="/library" className="btn-ghost">
+                Browse the full library &rarr;
+              </Link>
+            </div>
+          </div>
+        </SectionReveal>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* 6. Work with me at Side Quest HQ, with Speaking beside it */}
       <section className="section">
         <SectionReveal>
           <h2
@@ -623,10 +503,10 @@ export default function HomePage() {
               maxWidth: '40em',
             }}
           >
-            This is where the tools, events and one-on-one work live. Four doors, all open.
+            This is where the tools, events and one-on-one work live. Three doors, all open.
           </p>
         </SectionReveal>
-        <SectionReveal staggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <SectionReveal staggerChildren className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {sqhqChips.map((chip) => (
             <a
               key={chip.title}
@@ -659,11 +539,30 @@ export default function HomePage() {
             Visit Side Quest HQ &rarr;
           </a>
         </SectionReveal>
+        <SectionReveal>
+          <div className="bezel-card" style={{ marginTop: '2.5rem' }}>
+            <div className="bezel-inner">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center" style={{ padding: '0.5rem 0.5rem' }}>
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.5rem', color: 'var(--color-text)' }}>
+                    Want me on your stage?
+                  </h3>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--color-text-muted)', margin: 0 }}>
+                    Keynotes, workshops and Side Quests on the Infinite Player: who you are when the role ends and how you author what comes next.
+                  </p>
+                </div>
+                <Link href="/speaking" className="btn-outline">
+                  Invite me to speak &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+        </SectionReveal>
       </section>
 
       <div className="section-divider" />
 
-      {/* 7 — About */}
+      {/* 7. About */}
       <section className="section">
         <SectionReveal>
           <div className="bezel-card">
@@ -691,32 +590,7 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* 8 — Speaking */}
-      <section className="section">
-        <SectionReveal>
-          <div className="bezel-card">
-            <div className="bezel-inner">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center" style={{ padding: '0.5rem 0.5rem' }}>
-                <div>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.5rem', color: 'var(--color-text)' }}>
-                    Want me on your stage?
-                  </h3>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--color-text-muted)', margin: 0 }}>
-                    Keynotes, workshops and Side Quests on The Infinite Player: who you are when the role ends and how you author what comes next.
-                  </p>
-                </div>
-                <Link href="/speaking" className="btn-outline">
-                  Invite me to speak &rarr;
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SectionReveal>
-      </section>
-
-      <div className="section-divider" />
-
-      {/* 9 — Contact */}
+      {/* 8. Contact */}
       <section id="connect" className="section">
         <SectionReveal>
           <div className="bezel-card" style={{ maxWidth: '36rem', margin: '0 auto' }}>

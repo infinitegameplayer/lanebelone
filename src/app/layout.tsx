@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: '%s | Lane Belone',
   },
   description:
-    'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
+    'Lane Belone writes and speaks on the Infinite Game and the Infinite Player. Former Green Beret, founder of Side Quest HQ. Start free with One Alive Thing.',
   metadataBase: new URL('https://www.lanebelone.com'),
   alternates: {
     types: {
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
-    description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
+    description: 'Lane Belone writes and speaks on the Infinite Game and the Infinite Player. Former Green Beret, founder of Side Quest HQ. Start free with One Alive Thing.',
     url: 'https://www.lanebelone.com',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
-    description: 'Lane Belone is a writer, speaker and guide on the Infinite Game and Joyful Sovereignty. Former Green Beret. Founder of Side Quest HQ. Breadcrumbs along the way.',
+    description: 'Lane Belone writes and speaks on the Infinite Game and the Infinite Player. Former Green Beret, founder of Side Quest HQ. Start free with One Alive Thing.',
   },
   robots: {
     index: true,

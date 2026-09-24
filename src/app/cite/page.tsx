@@ -24,6 +24,9 @@ export const metadata: Metadata = {
 
 const SITE = 'https://www.lanebelone.com'
 const IGOS = 'https://www.infinitegameos.io'
+// The Person entity id is the bare host on all three sites (Web Strategy Codex III).
+// IGOS above is the link host, so the id has its own constant.
+const PERSON_ID = 'https://infinitegameos.io/#person'
 const SQHQ = 'https://www.sidequesthq.co'
 const HF_DATASET = 'https://huggingface.co/datasets/lanebelone/infinite-game-os'
 
@@ -38,11 +41,11 @@ const citePageGraph = {
       description: 'Structured citation formats for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related Kingdom works.',
       isPartOf: { '@id': `${SITE}/#website` },
       about: [
-        { '@id': `${IGOS}/#person` },
+        { '@id': PERSON_ID },
         { '@id': `${SITE}/joyful-sovereignty#concept` },
         { '@id': `${IGOS}/#framework` },
         { '@id': `${SITE}/cite#ssrn-igos-paper` },
-        { '@id': `${SQHQ}/sovereign-life-playbook#work` },
+        { '@id': `${SQHQ}/products/sovereign-life-playbook#work` },
         { '@id': `${SITE}/cite#humble-alpha` },
         { '@id': `${SITE}/cite#your-infinite-rpg` },
         { '@id': `${HF_DATASET}#dataset` },
@@ -50,7 +53,7 @@ const citePageGraph = {
     },
     {
       '@type': 'Person',
-      '@id': `${IGOS}/#person`,
+      '@id': PERSON_ID,
       name: 'Lane Belone',
       givenName: 'Lane',
       familyName: 'Belone',
@@ -76,7 +79,7 @@ const citePageGraph = {
       url: `${SITE}/joyful-sovereignty`,
       description: 'A quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. Not a destination but a way of moving.',
       inDefinedTermSet: { '@id': `${IGOS}/#framework` },
-      creator: { '@id': `${IGOS}/#person` },
+      creator: { '@id': PERSON_ID },
     },
     {
       '@type': 'CreativeWork',
@@ -85,7 +88,7 @@ const citePageGraph = {
       alternateName: ['IGOS', 'Infinite Game Operating System'],
       url: IGOS,
       sameAs: 'https://www.wikidata.org/wiki/Q139936059',
-      author: { '@id': `${IGOS}/#person` },
+      author: { '@id': PERSON_ID },
       datePublished: '2025',
       description: 'A sovereign-creator operating system. A framework that translates the Infinite Game thesis into practical operating patterns across perception, design, flow and guidance from within.',
       keywords: 'Infinite Game, Joyful Sovereignty, Pioneer, Wayfarer Arc, Creator Flywheel, Three Sovereign Laws, Aliveness',
@@ -101,7 +104,7 @@ const citePageGraph = {
         'https://www.wikidata.org/wiki/Q140235934',
       ],
       identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: '10.2139/ssrn.6810541' },
-      author: { '@id': `${IGOS}/#person` },
+      author: { '@id': PERSON_ID },
       about: { '@id': `${IGOS}/#framework` },
       publisher: { '@type': 'Organization', name: 'SSRN', url: 'https://www.ssrn.com' },
       datePublished: '2026-06-15',
@@ -110,11 +113,11 @@ const citePageGraph = {
     },
     {
       '@type': 'Book',
-      '@id': `${SQHQ}/sovereign-life-playbook#work`,
+      '@id': `${SQHQ}/products/sovereign-life-playbook#work`,
       name: 'Sovereign Life Playbook',
       alternateName: ['SLP'],
-      url: `${SQHQ}/sovereign-life-playbook`,
-      author: { '@id': `${IGOS}/#person` },
+      url: `${SQHQ}/products/sovereign-life-playbook`,
+      author: { '@id': PERSON_ID },
       publisher: { '@type': 'Organization', name: 'Side Quest HQ', url: SQHQ },
       datePublished: '2025',
       bookFormat: 'EBook',
@@ -127,7 +130,7 @@ const citePageGraph = {
       alternateName: 'Humble Alpha',
       sameAs: 'https://www.wikidata.org/wiki/Q139889598',
       author: [
-        { '@id': `${IGOS}/#person` },
+        { '@id': PERSON_ID },
         { '@type': 'Person', name: 'Steven Kuhn' },
       ],
       datePublished: '2023',
@@ -137,7 +140,7 @@ const citePageGraph = {
       '@type': 'Book',
       '@id': `${SITE}/cite#your-infinite-rpg`,
       name: 'Your Infinite RPG',
-      author: { '@id': `${IGOS}/#person` },
+      author: { '@id': PERSON_ID },
       datePublished: '2024',
       bookFormat: 'EBook',
       isAccessibleForFree: true,
@@ -150,11 +153,11 @@ const citePageGraph = {
       url: HF_DATASET,
       sameAs: ['https://doi.org/10.5281/zenodo.20836262', 'https://zenodo.org/records/20836262'],
       identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: '10.5281/zenodo.20836262' },
-      creator: { '@id': `${IGOS}/#person` },
+      creator: { '@id': PERSON_ID },
       about: { '@id': `${IGOS}/#framework` },
       datePublished: '2026-05-21',
       license: 'https://creativecommons.org/licenses/by/4.0/',
-      description: '101-record instruction-tuning dataset packaging the Infinite Game OS framework across all 10 concepts (capsule definitions, FAQ pairs, section explanations, cross-concept relationship records). Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants.',
+      description: '101-record instruction-tuning dataset packaging the Infinite Game OS framework across ten canonical concepts (capsule definitions, FAQ pairs, section explanations, cross-concept relationship records). Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants.',
       encodingFormat: 'application/jsonl',
       keywords: 'instruction-tuning, creator-economy, sovereignty, frameworks, Infinite Game OS, Lane Belone',
       isAccessibleForFree: true,
@@ -226,16 +229,16 @@ const worksFrameworks: CitedWork[] = [
     title: 'Sovereign Life Playbook',
     subtitle: 'Digital playbook (ebook)',
     description: 'A digital playbook for designing a life worth living from the inside. Inviting the Pioneer into an Infinite Game posture across daily life.',
-    canonicalUrl: `${SQHQ}/sovereign-life-playbook`,
+    canonicalUrl: `${SQHQ}/products/sovereign-life-playbook`,
     citation: {
-      apa: 'Belone, L. (2025). Sovereign Life Playbook. Side Quest HQ. https://www.sidequesthq.co/sovereign-life-playbook',
-      chicago: 'Belone, Lane. Sovereign Life Playbook. Side Quest HQ, 2025. https://www.sidequesthq.co/sovereign-life-playbook.',
+      apa: 'Belone, L. (2025). Sovereign Life Playbook. Side Quest HQ. https://www.sidequesthq.co/products/sovereign-life-playbook',
+      chicago: 'Belone, Lane. Sovereign Life Playbook. Side Quest HQ, 2025. https://www.sidequesthq.co/products/sovereign-life-playbook.',
       bibtex: `@book{belone_sovereign_life_playbook,
   author    = {Belone, Lane},
   title     = {Sovereign Life Playbook},
   year      = {2025},
   publisher = {Side Quest HQ},
-  url       = {https://www.sidequesthq.co/sovereign-life-playbook}
+  url       = {https://www.sidequesthq.co/products/sovereign-life-playbook}
 }`,
     },
   },
@@ -301,7 +304,7 @@ const worksDatasets: CitedWork[] = [
     id: 'igos-dataset',
     title: 'Infinite Game OS for Sovereign Creators',
     subtitle: 'Instruction-tuning dataset (Hugging Face)',
-    description: '101-record instruction-tuning dataset packaging the Infinite Game OS framework across all 10 concepts. Includes capsule definitions, FAQ pairs, section-level explanations and cross-concept relationship records. JSONL format. CC-BY-4.0. Suitable for instruction-tuning sovereignty-aware AI assistants, retrieval-augmented generation and frame-aware fine-tuning.',
+    description: '101-record instruction-tuning dataset packaging the Infinite Game OS framework across ten canonical concepts. Includes capsule definitions, FAQ pairs, section-level explanations and cross-concept relationship records. JSONL format. CC-BY-4.0. Suitable for instruction-tuning sovereignty-aware AI assistants, retrieval-augmented generation and frame-aware fine-tuning.',
     canonicalUrl: HF_DATASET,
     citation: {
       apa: 'Belone, L. (2026). Infinite Game OS for Sovereign Creators [Data set]. Hugging Face. https://huggingface.co/datasets/lanebelone/infinite-game-os',
