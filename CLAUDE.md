@@ -182,7 +182,7 @@ Standing rules:
 - The library page is the frozen reference model. Match its register, do not edit its voice.
 - Joyful Sovereignty stays sacred: lightest warmth, no humor.
 - Legal and utility pages (terms, privacy, unsubscribe, cite) stay clinical.
-- The `/markdown` content twin (`src/lib/markdown-content.ts`) must stay synced with component copy. Some prose strings are hardcoded there in addition to the structured `page-data.ts` reads. The copy edit and the markdown sync are one unit of work.
+- The `/markdown` twin is generated from the rendered page by `src/lib/twin.ts` (byte-identical in the three Kingdom repos), so a copy edit needs no markdown work. Prove it with `verify-twin-parity.mjs` in the vault. If a twin loses an ask, fix the page: render it on the server, inside `<main>`.
 - Baseline always applies: no em dashes, no Oxford comma, short declarative sentences, affirmative framing, no "signal" in product copy. Infinite Game is a proper noun.
 
 ## Cross-Site Relationship
