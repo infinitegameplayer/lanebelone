@@ -35,7 +35,7 @@ const websiteJsonLd = {
   url: 'https://www.lanebelone.com',
   name: 'Lane Belone',
   description:
-    'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    'Lane Belone, writer on the Infinite Game, sharing breadcrumbs along the way.',
   publisher: { '@id': 'https://infinitegameos.io/#person' },
   inLanguage: 'en-US',
   // The footer, /terms and every per-article node already say CC BY 4.0.
@@ -49,7 +49,7 @@ const profilePageJsonLd = {
   url: 'https://www.lanebelone.com',
   name: 'Lane Belone',
   description:
-    'Writer, speaker and guide. Exploring the infinite game and sharing breadcrumbs along the way.',
+    'Lane Belone, writer on the Infinite Game, sharing breadcrumbs along the way.',
   mainEntity: { '@id': 'https://infinitegameos.io/#person' },
 }
 
@@ -231,7 +231,7 @@ export default function HomePage() {
                 margin: '0 auto 3rem',
               }}
             >
-              An approach to playing the Infinite Game through joy and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort.
+              A way of playing the Infinite Game from within: purposeful, playful and free. Power that arrives with ease. Aliveness that moves on its own.
             </p>
             <Link href="/joyful-sovereignty" className="btn-ghost">
               Explore Joyful Sovereignty &rarr;
@@ -576,7 +576,7 @@ export default function HomePage() {
                     About Lane
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-text-muted)', margin: 0, maxWidth: '40em' }}>
-                    I&rsquo;m a former Green Beret turned life designer. Co-author of Unleash Your Humble Alpha, Side Quest host and advisor to founders and entrepreneurs navigating real transitions.
+                    I&rsquo;m a writer on the Infinite Game, a former Green Beret and co-author of <em>Unleash Your Humble Alpha</em>. My work centers on the Infinite Player, the player underneath every role. At Side Quest HQ I build The Alive Business and the playbooks, and at Infinite Game OS I keep an open library of the ideas beneath them.
                   </p>
                 </div>
                 <Link href="/about" className="btn-ghost self-end md:self-center">

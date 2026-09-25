@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
 import InquiryForm from '@/components/InquiryForm'
-import { speakingTopics, speakingFormats, SPEAKING_ANCHOR, SPEAKING_LADDER_NOTE } from '@/lib/page-data'
+import { speakingTopics, speakingFormats, SPEAKING_ANCHOR, SPEAKING_BIO, SPEAKING_LADDER_NOTE } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Speaking',
-  description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
+  description: 'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He brings The Infinite Player into rooms as a keynote, a workshop or a Side Quest.',
   alternates: {
     canonical: 'https://www.lanebelone.com/speaking',
     types: {
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Speaking · Lane Belone',
-    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
+    description: 'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He brings The Infinite Player into rooms as a keynote, a workshop or a Side Quest.',
     url: 'https://www.lanebelone.com/speaking',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Speaking · Lane Belone',
-    description: 'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
+    description: 'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He brings The Infinite Player into rooms as a keynote, a workshop or a Side Quest.',
   },
 }
 
@@ -36,7 +36,7 @@ const speakingServiceJsonLd = {
   serviceType: 'The Infinite Player: keynotes, workshops, Side Quests and private sessions',
   category: 'Leadership and Change',
   description:
-    'Lane Belone speaks on The Infinite Player: identity beyond the role, designing the games you play and the game within the game. Keynotes, workshops, Side Quests and private sessions.',
+    'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He brings The Infinite Player into rooms as a keynote, a workshop or a Side Quest.',
   provider: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.lanebelone.com/speaking',
   areaServed: 'Worldwide',
@@ -104,6 +104,12 @@ export default function SpeakingPage() {
       {/* The framework anchor + what I speak about */}
       <section className="section">
         <SectionReveal>
+          <p
+            className="text-parchment/90 text-lg leading-relaxed max-w-2xl mb-6"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            {SPEAKING_BIO}
+          </p>
           <p
             className="text-parchment/70 text-lg leading-relaxed max-w-2xl mb-16"
             style={{ fontFamily: 'var(--font-body)' }}

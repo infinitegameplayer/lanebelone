@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import BlogCard from '@/components/BlogCard'
 import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
+import { PERSON_ID } from '@/lib/identity'
 
 export const metadata: Metadata = {
   title: 'Writing',
@@ -38,7 +39,7 @@ export default function BlogIndexPage() {
     name: 'Lane Belone · Writing',
     description: 'Essays on the infinite game, sovereignty, flow and perception.',
     author: { '@id': 'https://infinitegameos.io/#person' },
-    publisher: { '@id': 'https://www.lanebelone.com/#organization' },
+    publisher: { '@id': PERSON_ID },
   }
 
   const itemListJsonLd = {

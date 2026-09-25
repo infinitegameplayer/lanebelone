@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug, CARRY_FORWARD_SLUGS } from '@/lib/blog'
 import ReadingProgress from '@/components/ReadingProgress'
 import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
 import GoldButton from '@/components/GoldButton'
+import { personRef } from '@/lib/identity'
 
 // Only statically generate carry-forward slugs. Expired slugs are handled by
 // Vercel redirects in vercel.json before this route is reached.
@@ -86,11 +87,7 @@ export default async function BlogPostPage({
       name: post.author ?? 'Lane Belone',
       url: post.authorUrl ?? 'https://www.lanebelone.com',
     },
-    publisher: {
-      '@type': 'Organization',
-      '@id': 'https://www.lanebelone.com/#organization',
-      name: 'Lane Belone',
-    },
+    publisher: personRef,
     url: `https://www.lanebelone.com/blog/f/${slug}`,
     license: 'https://creativecommons.org/licenses/by/4.0/',
     ...(post.heroImage && { image: `https://www.lanebelone.com${post.heroImage}` }),
@@ -182,7 +179,7 @@ export default async function BlogPostPage({
               className="text-parchment/85 mb-5 leading-relaxed"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              Something in you that wants to move? One Alive Thing is a free mini side quest. Find it, name it and make it real in under an hour.
+              Something in you that wants to move? One Alive Thing is a free mini side quest, a finite adventure you choose inside the Infinite Game. Find it, name it and make it real in under an hour.
             </p>
             <GoldButton href="https://www.sidequesthq.co/one-alive-thing" external>
               Start your One Alive Thing

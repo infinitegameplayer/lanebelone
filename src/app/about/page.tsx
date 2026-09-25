@@ -6,7 +6,7 @@ import { LANE_BIO, aboutStory, isLinkedPara, type Para } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'About Lane Belone | Writer and Guide of the Infinite Game',
+    absolute: 'About Lane Belone | Writer on the Infinite Game',
   },
   description: LANE_BIO,
   alternates: {
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Lane Belone',
     locale: 'en_US',
-    title: 'About Lane Belone | Writer and Guide of the Infinite Game',
+    title: 'About Lane Belone | Writer on the Infinite Game',
     description: LANE_BIO,
     url: 'https://www.lanebelone.com/about',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Lane Belone | Writer and Guide of the Infinite Game',
+    title: 'About Lane Belone | Writer on the Infinite Game',
     description: LANE_BIO,
   },
 }
@@ -96,13 +96,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div className="flex flex-col gap-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed" style={{ fontFamily: 'var(--font-display)' }}>
-                Lane Belone is a writer, speaker and guide. Former U.S. Army Green
-                Beret, co-author of <em>Unleash Your Humble Alpha</em> and founder
-                of Side Quest HQ, where he leads workshops, Side Quests and private
-                advisory for founders and leaders playing the Infinite Game.
+                Lane Belone is a writer on the Infinite Game, a former Green Beret
+                and co-author of <em>Unleash Your Humble Alpha</em>. His work centers
+                on the Infinite Player, the player underneath every role. At Side
+                Quest HQ he builds The Alive Business and the playbooks, and at
+                Infinite Game OS he keeps an open library of the ideas beneath them.
               </p>
               <p className="text-parchment/70">
-                My work orbits a simple question: how can I flow with aliveness and allow the &ldquo;success&rdquo; to be the byproduct? In retrospect, that question has (often) silently been answered in every chapter of my story. It sent me to Germany. It led me into Special Forces. It brought me to Peru, to Panama, to mountain retreats and deep conversations on many continents. It keeps asking.
+                My work orbits a simple question: how can I flow with aliveness, the emerging energy that moves through me when an idea or a moment feels exciting and true to me, and allow the &ldquo;success&rdquo; to be the byproduct? In retrospect, that question has (often) silently been answered in every chapter of my story. It sent me to Germany. It led me into Special Forces. It brought me to Peru, to Panama, to mountain retreats and deep conversations on many continents. It keeps asking.
               </p>
               <p className="text-parchment/70">
                 The through-line has always been the same. I&apos;m a curious explorer at heart, finding harmony in the co-creation of ideas, and telling the story of what happened along the way.

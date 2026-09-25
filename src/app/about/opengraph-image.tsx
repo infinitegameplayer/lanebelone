@@ -8,6 +8,6 @@ export default async function Image() {
   return ogCard({
     eyebrow: 'About',
     title: 'Lane Belone.',
-    body: 'Writer, speaker and guide. Former Green Beret. Founder of Side Quest HQ.',
+    body: 'Writer on the Infinite Game. Former Green Beret. Co-author of Unleash Your Humble Alpha.',
   })
 }

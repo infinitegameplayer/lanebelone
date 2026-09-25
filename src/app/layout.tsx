@@ -8,14 +8,15 @@ import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
 import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
 import { UmamiAnalytics } from '@/components/UmamiAnalytics'
+import { personJsonLd } from '@/lib/identity'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
+    default: 'Lane Belone | Writer on the Infinite Game',
     template: '%s | Lane Belone',
   },
   description:
-    'Lane Belone writes and speaks on the Infinite Game and the Infinite Player. Former Green Beret, founder of Side Quest HQ. Start free with One Alive Thing.',
+    'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. His work centers on the Infinite Player. Start free with One Alive Thing.',
   metadataBase: new URL('https://www.lanebelone.com'),
   alternates: {
     types: {
@@ -26,14 +27,14 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Lane Belone',
     locale: 'en_US',
-    title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
-    description: 'Lane Belone writes and speaks on the Infinite Game and the Infinite Player. Former Green Beret, founder of Side Quest HQ. Start free with One Alive Thing.',
+    title: 'Lane Belone | Writer on the Infinite Game',
+    description: 'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. His work centers on the Infinite Player. Start free with One Alive Thing.',
     url: 'https://www.lanebelone.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lane Belone | Writer, Speaker and Guide of the Infinite Game',
-    description: 'Lane Belone writes and speaks on the Infinite Game and the Infinite Player. Former Green Beret, founder of Side Quest HQ. Start free with One Alive Thing.',
+    title: 'Lane Belone | Writer on the Infinite Game',
+    description: 'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. His work centers on the Infinite Player. Start free with One Alive Thing.',
   },
   robots: {
     index: true,
@@ -44,72 +45,6 @@ export const metadata: Metadata = {
     icon: '/images/lane-belone-icon-color.png',
     apple: '/images/lane-belone-icon-color.png',
   },
-}
-
-const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': 'https://infinitegameos.io/#person',
-  name: 'Lane Belone',
-  url: 'https://www.lanebelone.com',
-  description:
-    'Writer, speaker and guide exploring the infinite game, clearer perception and personal freedom.',
-  jobTitle: 'Writer, Speaker and Guide',
-  knowsAbout: [
-    'Infinite Game philosophy',
-    'The Infinite Player',
-    'Joyful Sovereignty',
-    'Leadership development',
-    'Sovereign Worldbuilding',
-    'Perception and clarity',
-    'Personal freedom',
-    "Explorer's Side Quests",
-    'Special Forces leadership',
-    'Humble Alpha framework',
-  ],
-  sameAs: [
-    'https://www.wikidata.org/wiki/Q139889543',
-    'https://www.sidequesthq.co',
-    'https://www.infinitegameos.io',
-    'https://www.instagram.com/increasefreedom/',
-    'https://www.linkedin.com/in/lanebelone/',
-    'https://www.facebook.com/increasefreedom',
-    'https://lanebelone.substack.com/',
-    'https://github.com/InfiniteGamePlayer',
-  ],
-  image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
-  alumniOf: {
-    '@type': 'Organization',
-    name: 'U.S. Army Special Forces',
-    sameAs: 'https://en.wikipedia.org/wiki/United_States_Army_Special_Forces',
-  },
-  hasCredential: {
-    '@type': 'EducationalOccupationalCredential',
-    name: 'Special Forces Qualification (Green Beret)',
-    credentialCategory: 'military qualification',
-  },
-}
-
-const orgJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': 'https://www.lanebelone.com/#organization',
-  name: 'Lane Belone',
-  url: 'https://www.lanebelone.com',
-  logo: 'https://www.lanebelone.com/images/lane-belone-icon-color.png',
-  founder: {
-    '@type': 'Person',
-    '@id': 'https://infinitegameos.io/#person',
-    name: 'Lane Belone',
-  },
-  sameAs: [
-    'https://www.sidequesthq.co',
-    'https://www.infinitegameos.io',
-    'https://www.instagram.com/increasefreedom/',
-    'https://www.linkedin.com/in/lanebelone/',
-    'https://www.facebook.com/increasefreedom',
-    'https://lanebelone.substack.com/',
-  ],
 }
 
 export default function RootLayout({
@@ -124,10 +59,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
       <PostHogProvider>

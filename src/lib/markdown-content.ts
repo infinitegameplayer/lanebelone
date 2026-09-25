@@ -5,12 +5,14 @@
 import { getAllPosts, getPostBySlug } from './blog'
 import {
   LANE_BIO,
+  LANE_BIO_THREE_LINES,
   aboutStory,
   isLinkedPara,
   JS_DESCRIPTION,
   speakingTopics,
   speakingFormats,
   SPEAKING_ANCHOR,
+  SPEAKING_BIO,
   SPEAKING_LADDER_NOTE,
   jsSections,
   happeningNow,
@@ -56,7 +58,7 @@ function generateHomeMarkdown(): string {
 
   return `# Lane Belone
 
-> Writer, speaker and guide. Former U.S. Army Green Beret, co-author of Unleash Your Humble Alpha, founder of Side Quest HQ, practitioner of joyful sovereignty and the Infinite Game.
+> Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. His work centers on the Infinite Player, the player underneath every role. At Side Quest HQ he builds The Alive Business and the playbooks, and at Infinite Game OS he keeps an open library of the ideas beneath them.
 
 Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.
 
@@ -68,7 +70,7 @@ ${happeningNowMd}## Joyful Sovereignty
 
 "Spacious. Playful. At peace. The whole game, played from the inside."
 
-An approach to playing the Infinite Game through joy and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort. [Explore Joyful Sovereignty](${SITE}/joyful-sovereignty)
+A way of playing the Infinite Game from within: purposeful, playful and free. Power that arrives with ease. Aliveness that moves on its own. [Explore Joyful Sovereignty](${SITE}/joyful-sovereignty)
 
 ## Recent Writing
 
@@ -94,7 +96,7 @@ Want me on your stage? Keynotes, workshops and Side Quests on The Infinite Playe
 
 ## About Lane
 
-I'm a former Green Beret turned life designer. Co-author of Unleash Your Humble Alpha, Side Quest host and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
+I'm a writer on the Infinite Game, a former Green Beret and co-author of *Unleash Your Humble Alpha*. My work centers on the Infinite Player, the player underneath every role. At Side Quest HQ I build The Alive Business and the playbooks, and at Infinite Game OS I keep an open library of the ideas beneath them. [Read the full story](${SITE}/about)
 
 ## Connect
 
@@ -151,6 +153,8 @@ Design. Play. Master.
 
 Keynotes, workshops and Side Quests built on The Infinite Player, inviting leaders and teams to author the games they play.
 
+${SPEAKING_BIO}
+
 ${SPEAKING_ANCHOR}
 
 ## Topics
@@ -188,7 +192,7 @@ function generateAboutMarkdown(): string {
 
 > ${LANE_BIO}
 
-${LANE_BIO}
+${LANE_BIO_THREE_LINES}
 
 ${storyMd}
 
@@ -328,7 +332,7 @@ function generateLinksMarkdown(): string {
 
 > Every Lane Belone destination in one place.
 
-Writer, speaker and guide of the Infinite Game. Everything worth pointing you to, in one place.
+Writer on the Infinite Game. Everything worth pointing you to, in one place.
 
 ## Destinations
 

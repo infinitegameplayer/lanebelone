@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import SectionReveal from '@/components/SectionReveal'
+import { BIO_ONE_LINE, personNode, sqhqOrgRef } from '@/lib/identity'
 
 export const metadata: Metadata = {
   title: 'Cite this Work',
@@ -51,33 +52,13 @@ const citePageGraph = {
         { '@id': `${HF_DATASET}#dataset` },
       ],
     },
-    {
-      '@type': 'Person',
-      '@id': PERSON_ID,
-      name: 'Lane Belone',
-      givenName: 'Lane',
-      familyName: 'Belone',
-      url: SITE,
-      sameAs: [
-        'https://www.wikidata.org/wiki/Q139889543',
-        'https://orcid.org/0009-0002-7774-5513',
-        SITE,
-        IGOS,
-        SQHQ,
-        'https://lanebelone.substack.com/',
-        'https://www.linkedin.com/in/lanebelone/',
-        'https://www.instagram.com/increasefreedom/',
-        'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=11686488',
-      ],
-      identifier: { '@type': 'PropertyValue', propertyID: 'ORCID', value: '0009-0002-7774-5513' },
-      description: 'Writer, speaker and guide. Former U.S. Army Green Beret, founder of Side Quest HQ, practitioner of Joyful Sovereignty and the Infinite Game.',
-    },
+    personNode,
     {
       '@type': 'DefinedTerm',
       '@id': `${SITE}/joyful-sovereignty#concept`,
       name: 'Joyful Sovereignty',
       url: `${SITE}/joyful-sovereignty`,
-      description: 'A quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. Not a destination but a way of moving.',
+      description: 'A way of playing the Infinite Game from within: purposeful, playful and free. A quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. A way of moving.',
       inDefinedTermSet: { '@id': `${IGOS}/#framework` },
       creator: { '@id': PERSON_ID },
     },
@@ -118,7 +99,7 @@ const citePageGraph = {
       alternateName: ['SLP'],
       url: `${SQHQ}/products/sovereign-life-playbook`,
       author: { '@id': PERSON_ID },
-      publisher: { '@type': 'Organization', name: 'Side Quest HQ', url: SQHQ },
+      publisher: sqhqOrgRef,
       datePublished: '2025',
       bookFormat: 'EBook',
       description: 'A digital playbook for designing a life worth living from the inside. Inviting the Pioneer into an Infinite Game posture across daily life.',
@@ -192,7 +173,7 @@ interface CitedWork {
 const workPerson: CitedWork = {
   id: 'lane-belone',
   title: 'Lane Belone (Author Profile)',
-  description: 'Writer, speaker and guide. Former U.S. Army Green Beret, founder of Side Quest HQ, practitioner of Joyful Sovereignty and the Infinite Game.',
+  description: BIO_ONE_LINE,
   canonicalUrl: SITE,
   citation: {
     apa: 'Belone, L. (n.d.). Lane Belone [Personal website]. https://www.lanebelone.com/',
@@ -211,7 +192,7 @@ const worksFrameworks: CitedWork[] = [
     id: 'infinite-game-os',
     title: 'Infinite Game OS',
     subtitle: 'A sovereign-creator operating system',
-    description: 'A framework that translates the Infinite Game thesis into practical operating patterns across perception, design, flow and guidance from within. Houses concepts including the Wayfarer Arc, the Pioneer archetype, the Three Sovereign Laws, the Creator Flywheel and Aliveness.',
+    description: "A framework that translates the Infinite Game thesis into practical operating patterns across perception, design, flow and guidance from within. Houses concepts including the Wayfarer Arc, the Pioneer archetype, the Three Sovereign Laws, the Creator Flywheel and Aliveness.",
     canonicalUrl: IGOS,
     citation: {
       apa: 'Belone, L. (2025). Infinite Game OS. https://www.infinitegameos.io',
@@ -344,7 +325,7 @@ const worksConcepts: CitedWork[] = [
     id: 'joyful-sovereignty',
     title: 'Joyful Sovereignty',
     subtitle: 'Core philosophy',
-    description: 'A quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. Not a destination but a way of moving. The whole game, played from the inside.',
+    description: 'A way of playing the Infinite Game from within: purposeful, playful and free. A quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. A way of moving. The whole game, played from the inside.',
     canonicalUrl: `${SITE}/joyful-sovereignty`,
     citation: {
       apa: 'Belone, L. (2024). Joyful Sovereignty. https://www.lanebelone.com/joyful-sovereignty',
@@ -425,7 +406,7 @@ export default function CitePage() {
             Cite this Work
           </h1>
           <p className="text-parchment/70 text-lg leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
-            Structured citations for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related published work. Provided in APA, Chicago and BibTeX so the work travels cleanly into research, journalism and AI-citation contexts.
+            Structured citations for Lane Belone, Joyful Sovereignty, a way of playing the Infinite Game from within: purposeful, playful and free, the Infinite Game OS framework and related published work. Provided in APA, Chicago and BibTeX so the work travels cleanly into research, journalism and AI-citation contexts.
           </p>
           <p className="text-parchment/50 text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
             Use the canonical URL for each work as the primary identifier. Replace [date] with the access date when citing online sources.

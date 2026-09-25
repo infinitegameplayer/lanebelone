@@ -1,8 +1,9 @@
+import { BIO_ONE_LINE, BIO_THREE_LINES } from '@/lib/identity'
 // Single source of truth for static page content consumed by both React components
 // and the /markdown content-negotiation layer. Eliminates drift between surfaces.
 
-export const LANE_BIO =
-  'Lane Belone is a writer, speaker and guide. Former U.S. Army Green Beret, founder of Side Quest HQ and practitioner of Joyful Sovereignty and the Infinite Game.'
+export const LANE_BIO = BIO_ONE_LINE
+export const LANE_BIO_THREE_LINES = BIO_THREE_LINES
 
 type InlinePara = string
 type LinkedPara = { before: string; linkLabel: string; linkHref: string; after: string }
@@ -49,15 +50,15 @@ export const aboutStory: StorySection[] = [
     paras: [
       "In 2022, the calling turned inward. Curiosity became devotion. The adventure shifted from external terrain to the territory of archetype, myth, energy and embodiment. I studied what I think of as the invisible systems: sacred timing, subtle magnetism, soul ecosystems, authentic expression.",
       "I redefined what power meant to me. Presence over performance. Depth over volume. Directed stillness over relentless drive.",
-      "What emerged was Joyful Sovereignty expressed fully. A path, a frequency, a way of inhabiting every day. The whole game, played from the inside.",
+      "What emerged was Joyful Sovereignty expressed fully, a way of playing the Infinite Game from within: purposeful, playful and free. A path, a frequency, a way of inhabiting every day. The whole game, played from the inside.",
     ],
   },
   {
     heading: 'Today',
     paras: [
       "I write, speak and lead experiences from inside that game.",
-      "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring The Infinite Player into rooms where something real needs to open: play the player, design the board, find the game within the game.",
-      "At Side Quest HQ, I lead Side Quests, workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
+      "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring The Infinite Player into rooms where something real needs to open: play the player, design the board, find the game within the game, the inner game running under every outer one.",
+      "At Side Quest HQ, I lead Side Quests, finite adventures you choose inside the Infinite Game, along with workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
       "The intention has always been the same: help people move in a more beautiful direction.",
     ],
     signature: 'Lane',
@@ -74,6 +75,11 @@ export interface SpeakingTopic {
 }
 
 export const SPEAKING_FRAMEWORK = 'The Infinite Player'
+
+// The Speaking room's opening from the identity spine (Sitting A, 2026-09-25):
+// the constant first, then the title this room needs.
+export const SPEAKING_BIO =
+  'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He brings The Infinite Player into rooms as a keynote, a workshop or a Side Quest.'
 
 export const SPEAKING_ANCHOR =
   'Every role is a character worn for a season. The Infinite Player speaks to the one wearing it: the person who remains when a defining game ends and the author of the game that comes next. Every room below opens that same door at a different depth.'
@@ -110,13 +116,13 @@ export const speakingFormats: string[] = [
 // ── Joyful Sovereignty ────────────────────────────────────────────────────────
 
 export const JS_DESCRIPTION =
-  "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. Power without performance. Aliveness without effort."
+  "Joyful Sovereignty is Lane Belone's way of playing the Infinite Game from within: purposeful, playful and free. Power that arrives with ease. Aliveness that moves on its own."
 
 export const jsSections: StorySection[] = [
   {
     heading: 'What this is',
     paras: [
-      "Joyful Sovereignty is Lane Belone's approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and optimization. It is a philosophy and a lived practice. When your choices come from genuine alignment rather than conditioned obligation, there is a felt quality: power without performance, aliveness without effort.",
+      "Joyful Sovereignty is Lane Belone's way of playing the Infinite Game from within: purposeful, playful and free. It is a philosophy and a lived practice. When your choices come from genuine alignment, there is a felt quality: power that arrives with ease and aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you.",
       "The word sovereign carries a certain gravity. It points to something earned, fought for, liberated from. And there's truth in that direction.",
       'But when you add joyful to it, the whole energy shifts.',
       "What was serious becomes spacious. What was a battle becomes a game. What was a destination becomes a way of moving through life. Joyful Sovereignty is a quality of presence you can inhabit right now.",
@@ -133,7 +139,7 @@ export const jsSections: StorySection[] = [
       "The words need, should and have to carry a binding quality. They narrow. They flatten what's actually a wide-open playing field into something that feels more like an obligation. Joyful Sovereignty releases that. By recognizing that you were always free to choose.",
       "You can play the infinite game with joy. With playful mischief. With laughter, with levity, with a smirk at the edge of a challenge. And finite games are the texture of the infinite one. Start something, let it have chapters, let it reach its natural conclusion. Quest it. A retreat in the mountains. A book. A creative sprint. These finite arcs are how you experiment with life. They have structure, rules and a clear game board. And when the game ends, you're still playing. The infinite game never stops.",
       'Structure is the design of the playground.',
-      "The lived expression of this is what I call Playgrounds of Exploration. Each part of the day is a distinct playground with its own energy and essence. The morning playground. The midday playground. The afternoon playground. The evening. The night. Each one moves like a track on a playlist, seamlessly, deliberately, alive. You architect these. You design them. And the act of that design is itself an expression of joyful sovereignty, because you're playing the day, not reacting to it.",
+      "The lived expression of this is what I call Playgrounds of Exploration: a domain of life entered with curiosity and explored with the courage to discover what it holds. Each part of the day is a distinct playground with its own energy and essence. The morning playground. The midday playground. The afternoon playground. The evening. The night. Each one moves like a track on a playlist, seamlessly, deliberately, alive. You architect these. You design them. And the act of that design is itself an expression of joyful sovereignty, because you're playing the day, not reacting to it.",
     ],
   },
   {
@@ -153,7 +159,7 @@ export const jsSections: StorySection[] = [
     paras: [
       'This philosophy is lived, refined and shared from inside the game.',
       'The writing is where the threads surface. Essays and reflections from someone actively playing. Breadcrumbs from the field. Those live at the Substack.',
-      'In speaking, it becomes an experience. The Infinite Player carries the philosophy onto a stage: play the player, design the board, find the game within the game. Three doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
+      'In speaking, it becomes an experience. The Infinite Player, the one who plays the Infinite Game, carries the philosophy onto a stage: play the player, design the board, find the game within the game, the inner game running under every outer one. Three doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
       "The deeper work, the Side Quests, the advisory containers, the extended engagements, lives at Side Quest HQ. That's where Joyful Sovereignty meets real creative and strategic change.",
     ],
   },
@@ -164,7 +170,7 @@ export interface FaqItem { q: string; a: string }
 export const jsFaqs: FaqItem[] = [
   {
     q: 'What is Joyful Sovereignty?',
-    a: 'Joyful Sovereignty is a quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. It is not a destination but a way of moving. Sovereignty is understood as a birthright, not something to fight for. The phrase "the whole game, played from the inside" captures its essence.',
+    a: 'Joyful Sovereignty is a way of playing the Infinite Game from within: purposeful, playful and free. It is a quality of presence in which life is inhabited fully, from the inside, with spaciousness, playfulness and genuine peace. It is a way of moving. Sovereignty is understood as a birthright, already yours. The phrase "the whole game, played from the inside" captures its essence.',
   },
   {
     q: 'What is the Infinite Game?',
@@ -546,7 +552,7 @@ export const libraryFreeReading: LibraryBook[] = [
     href: 'https://www.sidequesthq.co/one-alive-thing',
     image: '/images/one-alive-thing-cover.png',
     blurb:
-      "A free mini side quest. In under an hour you find what's alive in you, choose one small thing and make it real. You finish holding something that wasn't there when you sat down. Yours free.",
+      "A free mini side quest, a finite adventure you choose inside the Infinite Game. In under an hour you find what's alive in you, choose one small thing and make it real. You finish holding something that wasn't there when you sat down. Yours free.",
   },
 ]
 

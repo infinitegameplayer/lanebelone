@@ -23,6 +23,15 @@ const nextConfig: NextConfig = {
   turbopack: {},
   async redirects() {
     return [
+      // The project's own vercel.app host served the whole site as a duplicate
+      // (Brand Audit Sitting A, 2026-09-25). Exact host only, so preview
+      // deployment URLs still answer. 308, path kept.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'lanebelone.vercel.app' }],
+        destination: 'https://www.lanebelone.com/:path*',
+        permanent: true,
+      },
       // The two policy paths the rest of the web assumes. Search Console
       // reported both as 404s, /privacy-policy crawled as recently as
       // 2026-07-23. The site serves /privacy and /terms, so the long forms
