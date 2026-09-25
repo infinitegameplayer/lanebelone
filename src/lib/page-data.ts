@@ -216,8 +216,8 @@ export const books: BookEntry[] = [
   },
   {
     badge: 'Book',
-    title: 'Humble Alpha',
-    description: 'A framework for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.',
+    title: 'Unleash Your Humble Alpha',
+    description: 'The book behind the Humble Alpha framework, for leading with humility, depth and genuine strength. Written for veterans, entrepreneurs and natural leaders navigating inner life and outer impact.',
     cta: 'Get the book',
     href: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
   },

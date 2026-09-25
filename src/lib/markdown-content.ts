@@ -90,11 +90,11 @@ This is where the tools, events and one-on-one work live. Three doors, all open:
 
 ${sqhqMd}
 
-Want me on your stage? Keynotes, workshops and Side Quests on the Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
+Want me on your stage? Keynotes, workshops and Side Quests on The Infinite Player: who you are when the role ends and how you author what comes next. [Invite me to speak](${SITE}/speaking)
 
 ## About Lane
 
-I'm a former Green Beret turned life designer. Published author, Side Quest host and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
+I'm a former Green Beret turned life designer. Co-author of Unleash Your Humble Alpha, Side Quest host and advisor to founders and entrepreneurs navigating real transitions. [Read the full story](${SITE}/about)
 
 ## Connect
 
