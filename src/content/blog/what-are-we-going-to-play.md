@@ -2,7 +2,7 @@
 title: "What Are We Going to Play?"
 slug: "what-are-we-going-to-play"
 date: "2026-07-06"
-dateModified: "2026-07-06"
+dateModified: "2026-09-25"
 description: "You don't master the tools in order and then arrive. You take the real work you're Alive about and let the separate skills mesh into one operating system. Once the foundation is in your hands, the uncertain next step stops being a threat and becomes the fun."
 category: "infinite-game"
 heroImage: "/images/blog/what-are-we-going-to-play-hero.png"
@@ -12,7 +12,7 @@ authorUrl: "https://www.lanebelone.com"
 about:
   - "https://www.infinitegameos.io/infinite-game"
 mentions:
-  - "https://www.sidequesthq.co/products/business-bundle"
+  - "https://www.sidequesthq.co/products/the-alive-business"
   - "https://www.sidequesthq.co/products/creator-flywheel-playbook"
 ---
 
@@ -52,7 +52,7 @@ The structure is there when you want it. The chart is on the stand. You can read
 
 We're not reinventing the Flywheel here.
 
-We stand on what already works and build from it. A few guides in conversation, each one a foundation for a different move. The strategist and the architect and the kinetic one, all pointing at the same thing: your own game, played on your own terms. That's the whole idea behind the [Business Collection](https://www.sidequesthq.co/products/business-bundle). Three instruments. You don't finish one before you're allowed to touch the next.
+We stand on what already works and build from it. Systems in conversation, each one a foundation for a different move, all pointing at the same thing: your own game, played on your own terms. That's the whole idea behind [The Alive Business](https://www.sidequesthq.co/products/the-alive-business). Eleven systems, and every one installs with whatever you already have.
 
 You bring them all to the real work and let them mesh on their own.
 

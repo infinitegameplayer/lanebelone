@@ -45,7 +45,7 @@ I'd never thought of myself that way. The moment he said it, I knew it was true.
 
 What if life worked the same way?
 
-All these things began to coalesce. The Infinite Game as the wider container. [Side quests](https://www.sidequesthq.co) as the finite games nested inside it. Play as the daily texture. Adventure as the orientation. Worthy Rivals showing up as the friction that polishes. It was just a gradual unfolding.
+All these things began to coalesce. The Infinite Game as the wider container. [Side quests](https://www.infinitegameos.io/infinite-game) as the finite games nested inside it. Play as the daily texture. Adventure as the orientation. Worthy Rivals showing up as the friction that polishes. It was just a gradual unfolding.
 
 I started writing about it when I started my first newsletter. It was me expressing from a person that was practicing but wasn't fully embodied. That's totally cool. That's where I was. The synthesis was alive, the words were still catching up.
 

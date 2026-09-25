@@ -165,16 +165,25 @@ export default function SpeakingPage() {
         <SectionReveal>
           <div className="max-w-2xl">
             <p className="text-parchment/60 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              Looking for workshops, Side Quests or ongoing advisory work? That all lives over at{' '}
+              Looking for a{' '}
               <a
-                href="https://www.sidequesthq.co"
+                href="https://www.sidequesthq.co/explorers-side-quest"
                 className="text-parchment/80 underline underline-offset-4 hover:text-parchment transition-colors"
                 target="_blank"
                 rel="noopener"
               >
-                Side Quest HQ
+                Side Quest
+              </a>{' '}
+              or a{' '}
+              <a
+                href="https://www.sidequesthq.co/workshop"
+                className="text-parchment/80 underline underline-offset-4 hover:text-parchment transition-colors"
+                target="_blank"
+                rel="noopener"
+              >
+                workshop
               </a>
-              .
+              ? Both live at Side Quest HQ.
             </p>
           </div>
         </SectionReveal>

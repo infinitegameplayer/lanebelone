@@ -624,10 +624,10 @@ export const linkHub: LinkHubItem[] = [
     icon: 'book',
   },
   {
-    label: 'Sovereign Ecosystem Install',
-    sublabel: 'Two sessions. Your sovereign workspace, standing on its own.',
-    href: 'https://www.sidequesthq.co/sovereign-ecosystem-install',
-    icon: 'spark',
+    label: 'The Alive Business',
+    sublabel: 'The whole operating system for a business that stays yours · $197',
+    href: 'https://www.sidequesthq.co/products/the-alive-business',
+    icon: 'book',
   },
   {
     label: 'Invite Me to Speak',

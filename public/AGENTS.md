@@ -25,7 +25,7 @@ Category themes: Infinite Game philosophy, Joyful Sovereignty, flow and self-mas
 | Page | URL | Description |
 |---|---|---|
 | Library | https://www.lanebelone.com/library | The library of Lane Belone. An operating system, three playbooks and the Trilogy that binds them, six AI Field Guides across the business and personal arcs, three Collections, two free reads and a book. Tools for playing the game of your life more beautifully. |
-| Links | https://www.lanebelone.com/links | Every Lane Belone destination in one place. Writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and more. |
+| Links | https://www.lanebelone.com/links | Every Lane Belone destination in one place. Writing, the Infinite Game OS, The Alive Business, the Sovereign Life Playbook, speaking and more. |
 | Cite this Work | https://www.lanebelone.com/cite | Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work. |
 
 ## Discovery Stack

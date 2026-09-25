@@ -2,7 +2,7 @@
 title: "What Game of Business Do You Want to Play?"
 slug: "what-game-of-business-do-you-want-to-play"
 date: "2026-06-15"
-dateModified: "2026-06-15"
+dateModified: "2026-09-25"
 description: "You absorbed the rules of business the way you absorbed everything else, then a decade of feeds made them invisible. AI accelerates whatever game you point it at. The move before the tool is to pause and ask what game of business you actually want to play."
 category: "infinite-game"
 heroImage: "/images/blog/what-game-of-business-do-you-want-to-play-hero.png"
@@ -12,7 +12,7 @@ authorUrl: "https://www.lanebelone.com"
 about:
   - "https://www.infinitegameos.io/infinite-game"
 mentions:
-  - "https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want"
+  - "https://www.sidequesthq.co/products/the-alive-business"
 ---
 
 When you were a kid, there was a game everyone played. Tag, or four square, or whatever the block had decided that summer. And there was probably a day you wanted to play a different one. You said so.
@@ -55,7 +55,7 @@ What game of business do I actually want to play?
 
 Don't answer it on the spot. Hold it loosely for a few days and let the back of your mind do its slow work. The question is the revealer. The answer tends to arrive on its own.
 
-And if the answer makes you want to move, I made a small map for the part that's genuinely hard. It's [AI for the Business You Actually Want](https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want). It walks the recalibration step by step, including how to keep AI deepening your voice instead of quietly sanding it down. Call it a Field Guide. Call it whatever gets you moving.
+And if the answer makes you want to move, I built the whole map for it. It's [The Alive Business](https://www.sidequesthq.co/products/the-alive-business). It opens on this exact question, whose game your business is playing, then builds your answer into the business one system at a time, with AI carrying the draining work while the voice stays yours. Call it an operating system. Call it whatever gets you moving.
 
 Because once you know which game you're playing, the next question is quieter and more practical. What does an ordinary week actually look like when it's built on your terms. More on that soon.
 
