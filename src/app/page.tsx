@@ -576,7 +576,7 @@ export default function HomePage() {
                     About Lane
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-text-muted)', margin: 0, maxWidth: '40em' }}>
-                    I&rsquo;m a writer on the Infinite Game, a former Green Beret and co-author of <em>Unleash Your Humble Alpha</em>. My work centers on the Infinite Player, the player underneath every role. At Side Quest HQ I build The Alive Business and the playbooks, and at Infinite Game OS I keep an open library of the ideas beneath them.
+                    I&rsquo;m a writer on the Infinite Game, a former Green Beret and co-author of <em>Unleash Your Humble Alpha</em>. My work centers on the <a href="https://www.sidequesthq.co/infinite-player" className="underline underline-offset-4 transition-colors" style={{ color: 'rgba(232, 228, 240, 0.85)' }}>Infinite Player</a>, the player underneath every role. At Side Quest HQ I build The Alive Business and the playbooks, and at Infinite Game OS I keep an open library of the ideas beneath them.
                   </p>
                 </div>
                 <Link href="/about" className="btn-ghost self-end md:self-center">

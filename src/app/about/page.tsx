@@ -98,7 +98,7 @@ export default function AboutPage() {
               <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed" style={{ fontFamily: 'var(--font-display)' }}>
                 Lane Belone is a writer on the Infinite Game, a former Green Beret
                 and co-author of <em>Unleash Your Humble Alpha</em>. His work centers
-                on the Infinite Player, the player underneath every role. At Side
+                on the <a href="https://www.sidequesthq.co/infinite-player" className="underline underline-offset-4 transition-colors" style={{ color: 'rgba(232, 228, 240, 0.85)' }}>Infinite Player</a>, the player underneath every role. At Side
                 Quest HQ he builds The Alive Business and the playbooks, and at
                 Infinite Game OS he keeps an open library of the ideas beneath them.
               </p>

@@ -159,7 +159,12 @@ export const jsSections: StorySection[] = [
     paras: [
       'This philosophy is lived, refined and shared from inside the game.',
       'The writing is where the threads surface. Essays and reflections from someone actively playing. Breadcrumbs from the field. Those live at the Substack.',
-      'In speaking, it becomes an experience. The Infinite Player, the one who plays the Infinite Game, carries the philosophy onto a stage: play the player, design the board, find the game within the game, the inner game running under every outer one. Three doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
+      {
+        before: 'In speaking, it becomes an experience. ',
+        linkLabel: 'The Infinite Player',
+        linkHref: 'https://www.sidequesthq.co/infinite-player',
+        after: ', the one who plays the Infinite Game, carries the philosophy onto a stage: play the player, design the board, find the game within the game, the inner game running under every outer one. Three doorways into the same open field. Every room becomes an invitation to see more clearly and move more freely.',
+      },
       "The deeper work, the Side Quests, the advisory containers, the extended engagements, lives at Side Quest HQ. That's where Joyful Sovereignty meets real creative and strategic change.",
     ],
   },
