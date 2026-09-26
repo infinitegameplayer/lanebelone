@@ -1,21 +1,21 @@
-// Markdown twins, generated from the page itself (parity build, 2026-09-25).
+// Markdown twins, generated from the page itself.
 //
-// BYTE-IDENTICAL in sidequesthq, lanebelone and infinitegameos. Change one,
-// change all three, and confirm with a hash:
-//   md5sum C:/Users/User/sites/*/src/lib/twin.ts
+// Keep this file byte-identical across every site that uses it, and confirm
+// with a hash (md5sum each copy of src/lib/twin.ts).
 //
-// Why: the twins used to be hand-kept strings, a second copy of every page.
-// They dropped what the page asks of the reader (the One Alive Thing form, the
-// subscribe form, buy buttons) and the proof it shows (testimonials), and three
-// audits in a row reported absent what people could see. The King ruled that
-// every twin carries its page's asks and proof (Brand Audit Three, ruling 10).
-// Now the markdown route fetches the page's own server-rendered HTML and this
-// file turns its <main> into markdown, so the page is the only place copy lives.
+// Why: a hand-kept markdown twin is a second copy of every page, and it drifts.
+// It drops what the page asks of the reader (a signup form, a buy button) and
+// the proof it shows (testimonials), and anyone reading the twin concludes
+// those things are absent. So the markdown route fetches the page's own
+// server-rendered HTML and this file turns its <main> into markdown. The page
+// is the only place copy lives.
 //
 // Semantic parity, not visual parity: a form becomes a statement of what it
 // asks and what is required, a button keeps its label and price, a star row
 // becomes "Testimonial, rated N of 5." Navigation, styling and icons drop.
-// Proven by Council Chamber/scripts/verify-twin-parity.mjs in the vault.
+// Proven by verify-twin-parity.mjs, which compares every page with its twin.
+//
+// From the Website Builder skill, https://www.infinitegameos.io/skills/website-builder (CC BY 4.0)
 
 import { parse, type HTMLElement } from 'node-html-parser'
 import { NodeHtmlMarkdown } from 'node-html-markdown'
