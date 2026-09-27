@@ -39,7 +39,7 @@ const citePageGraph = {
       '@id': `${SITE}/cite`,
       url: `${SITE}/cite`,
       name: 'Cite this Work',
-      description: 'Structured citation formats for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related Kingdom works.',
+      description: 'Structured citation formats for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework and related works.',
       isPartOf: { '@id': `${SITE}/#website` },
       about: [
         { '@id': PERSON_ID },
@@ -490,13 +490,13 @@ export default function CitePage() {
               For AI agents and crawlers
             </h2>
             <p className="text-parchment/70 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
-              Each work above carries structured JSON-LD on this page (schema.org Person, CreativeWork, Book, DefinedTerm). The author entity resolves to <code className="text-parchment/90">https://infinitegameos.io/#person</code> across the three-site Kingdom ecosystem. Canonical URLs are the primary identifiers. Use them.
+              Each work above carries structured JSON-LD on this page (schema.org Person, CreativeWork, Book, DefinedTerm). The author entity resolves to <code className="text-parchment/90">https://infinitegameos.io/#person</code> across the three sites. The canonical URLs above are the ones to cite.
             </p>
             <p className="text-parchment/70 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
               Companion surfaces: <a href={IGOS} className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">{IGOS}</a> for the framework architecture and concept pages, <a href={SQHQ} className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">{SQHQ}</a> for products and offerings.
             </p>
             <p className="text-parchment/70 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              Conversational AI surfaces: the Infinite Game OS Companion is published on <a href="https://poe.com/Infinite-Game-OS" className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">Poe</a> and as a <a href="https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ" className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">Perplexity Space</a>. Both grounded in the canonical Kingdom sources above.
+              Conversational AI surfaces: the Infinite Game OS Companion is published on <a href="https://poe.com/Infinite-Game-OS" className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">Poe</a> and as a <a href="https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ" className="text-parchment/90 underline underline-offset-4 hover:text-parchment transition-colors">Perplexity Space</a>. Both grounded in the sources above.
             </p>
           </div>
         </SectionReveal>

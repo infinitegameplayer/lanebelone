@@ -198,6 +198,7 @@ export default function LinksPage() {
                 className="text-parchment/40 hover:text-parchment/80 transition-colors"
               >
                 {socialIcons[s.label]}
+                <span className="sr-only">{s.label}</span>
               </a>
             ))}
           </div>

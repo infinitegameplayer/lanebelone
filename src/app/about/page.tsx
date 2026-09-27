@@ -160,13 +160,14 @@ export default function AboutPage() {
                 The writing
               </p>
               <a
-                href="https://lanebelone.substack.com/"
+                href="/blog"
                 className="btn-ghost"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Read the writing &rarr;
               </a>
+              <p className="text-parchment/40 text-sm mt-3" style={{ fontFamily: 'var(--font-body)' }}>
+                Or <a href="https://lanebelone.substack.com/" className="underline underline-offset-4 hover:text-parchment transition-colors" target="_blank" rel="noopener noreferrer">by email</a>
+              </p>
             </div>
             <div>
               <p className="text-parchment/50 text-sm mb-3" style={{ fontFamily: 'var(--font-body)' }}>
