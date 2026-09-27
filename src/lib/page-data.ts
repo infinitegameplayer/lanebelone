@@ -619,7 +619,7 @@ export const linkHub: LinkHubItem[] = [
   {
     label: 'Read the Writing',
     sublabel: 'Essays and breadcrumbs from inside the game',
-    href: 'https://lanebelone.substack.com/',
+    href: '/blog',
     icon: 'writing',
   },
   {
