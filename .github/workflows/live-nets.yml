@@ -7,6 +7,11 @@ name: Live Nets
 #
 # Born 2026-08-26 from the Site Update pass before a five-week absence.
 # Manual run: gh workflow run live-nets.yml
+#
+# 2026-09-28: the schedule below never fired on this repo from 2026-08-26 while
+# the identical file fired twice a week on infinitegameos. Manual dispatch ran
+# green, so the workflow was sound and the schedule was never registered. This
+# edit re-registers it. Site Update now reads the last scheduled run per repo.
 
 on:
   schedule:
