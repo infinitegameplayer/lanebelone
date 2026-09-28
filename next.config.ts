@@ -45,7 +45,7 @@ const nextConfig: NextConfig = {
       // repointed in the same pass, so this rule exists for external inbound
       // traffic, which no content edit can reach.
       { source: '/f/:slug', destination: '/blog/f/:slug', permanent: true },
-      // The Wix-era podcast page. Brave's index still serves it (2026-09-28)
+      // The podcast page from the GoDaddy site builder years. Brave's index still serves it (2026-09-28)
       // and it ended in a 404. The show is no longer hosted, so the King sent
       // it to /about, where the work it belonged to is told.
       { source: '/podcast', destination: '/about', permanent: true },
