@@ -58,7 +58,12 @@ export const aboutStory: StorySection[] = [
     paras: [
       "I write, speak and lead experiences from inside that game.",
       "My writing carries fresh ideas on joyful and sovereign living that move through me like an Alive current. Speaking engagements bring The Infinite Player into rooms where something real needs to open: play the player, design the board, find the game within the game, the inner game running under every outer one.",
-      "At Side Quest HQ, I lead Side Quests, finite adventures you choose inside the Infinite Game, along with workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.",
+      {
+        before: 'At Side Quest HQ, I build ',
+        linkLabel: 'The Alive Business',
+        linkHref: 'https://www.sidequesthq.co/products/the-alive-business',
+        after: ', a $197 operating system for a business you already run. I also lead Side Quests, finite adventures you choose inside the Infinite Game, along with workshops and advisory containers for founders and creators who want to operate from a deeper, more alive place.',
+      },
       "The intention has always been the same: help people move in a more beautiful direction.",
     ],
     signature: 'Lane',
