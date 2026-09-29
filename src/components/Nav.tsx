@@ -75,6 +75,12 @@ export default function Nav() {
             Library
           </Link>
           <a
+            href="https://www.sidequesthq.co/resources"
+            className="nav-link"
+          >
+            Resources
+          </a>
+          <a
             href="#connect"
             className="btn-ghost text-parchment/60 hover:text-parchment"
           >
@@ -156,6 +162,21 @@ export default function Nav() {
           >
             Library
           </Link>
+          <a
+            href="https://www.sidequesthq.co/resources"
+            className="text-base text-parchment/80 hover:text-parchment transition-colors"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              fontFamily: 'var(--font-body)',
+              minHeight: '44px',
+              display: 'flex',
+              alignItems: 'center',
+              paddingLeft: '12px',
+              borderLeft: '2px solid transparent',
+            }}
+          >
+            Resources
+          </a>
           <a
             href="#connect"
             className="text-base text-parchment/60 hover:text-parchment transition-colors"
