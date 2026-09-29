@@ -1,13 +1,66 @@
-@import '@fontsource/space-grotesk/600.css';
-@import '@fontsource/eb-garamond/400.css';
-@import '@fontsource/eb-garamond/400-italic.css';
-@import '@fontsource/eb-garamond/500.css';
-@import '@fontsource/geist-sans/400.css';
-@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/space-grotesk/600.css' layer(base);
+@import '@fontsource/eb-garamond/400.css' layer(base);
+@import '@fontsource/eb-garamond/400-italic.css' layer(base);
+@import '@fontsource/eb-garamond/500.css' layer(base);
+@import '@fontsource/geist-sans/400.css' layer(base);
+@import '@fontsource/geist-sans/500.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* inline: utilities compile to these literal values, as Tailwind 3 did. The :root
+   block below reuses four of these names with different values (--font-display,
+   --font-body, --color-accent, --radius) for the site's own CSS, so a utility that
+   read the variable would take the :root value and change the room's type and
+   colour. Inline keeps utilities and site CSS each on the tokens they had. */
+@theme inline {
+  --color-forest-800: #111d13;
+  --color-forest-900: #0c1510;
+
+  --color-accent: #4a2878;
+
+  --color-gold-from: #c9a84c;
+  --color-gold-to: #f0d080;
+
+  --color-parchment: #f5f0e8;
+  --color-muted: #a89f8c;
+
+  --font-display: EB Garamond, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+
+  --radius: 8px;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  /* Tailwind 3 preflight defaults that v4 changed: placeholders were gray-400
+     (v4 uses the text colour at half opacity) and buttons showed the pointer
+     (v4 uses the browser default). Kept so forms read and behave as they did. */
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 1;
+    color: #9ca3af;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 :root {
   /* Deep forest palette (distinct from SQHQ) */
@@ -34,29 +87,34 @@
   --font-voice: 'EB Garamond', Georgia, serif;
 }
 
-* { box-sizing: border-box; padding: 0; margin: 0; }
+/* Element-level base rules live in the base layer. In Tailwind 4 utilities sit in a
+   cascade layer, and unlayered CSS beats layered CSS whatever its specificity, so an
+   unlayered `* { padding: 0 }` would erase every p-* and m-* utility on the site. */
+@layer base {
+  * { box-sizing: border-box; padding: 0; margin: 0; }
 
-html { max-width: 100vw; overflow-x: hidden; scroll-behavior: smooth; }
+  html { max-width: 100vw; overflow-x: hidden; scroll-behavior: smooth; }
 
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+
+  a { color: inherit; text-decoration: none; }
 }
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-}
-
-a { color: inherit; text-decoration: none; }
 
 /* Grain texture overlay (2% per codex) */
 .grain-overlay { position: relative; }

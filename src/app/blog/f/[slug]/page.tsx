@@ -119,7 +119,7 @@ export default async function BlogPostPage({
       {/* Hero image (mobile): full-bleed at top */}
       {post.heroImage && (
         <div className="md:hidden relative w-full max-h-[480px] overflow-hidden mb-12">
-          <div className="relative w-full aspect-[16/7]">
+          <div className="relative w-full aspect-16/7">
             <Image
               src={post.heroImage}
               alt={post.title}
@@ -128,7 +128,7 @@ export default async function BlogPostPage({
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0c1510]" />
+            <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-forest-900" />
           </div>
         </div>
       )}
@@ -144,7 +144,7 @@ export default async function BlogPostPage({
 
         {/* Title */}
         <h1
-          className="text-4xl md:text-5xl leading-tight text-parchment mb-10"
+          className="text-4xl md:text-5xl leading-tight md:leading-none text-parchment mb-10"
           style={{ fontFamily: 'var(--font-display)' }}
         >
           {post.title}
@@ -153,7 +153,7 @@ export default async function BlogPostPage({
         {/* Hero image (desktop): contained below title */}
         {post.heroImage && (
           <div className="hidden md:block relative w-full mb-10 rounded-lg overflow-hidden">
-            <div className="relative w-full aspect-[16/7]">
+            <div className="relative w-full aspect-16/7">
               <Image
                 src={post.heroImage}
                 alt={post.title}
@@ -174,7 +174,7 @@ export default async function BlogPostPage({
 
         {/* Lead magnet CTA: One Alive Thing */}
         <div className="mt-16 pt-8 border-t border-parchment/10">
-          <div className="rounded-xl border border-[#c9a84c]/30 bg-[#c9a84c]/[0.05] p-6">
+          <div className="rounded-xl border border-gold-from/30 bg-gold-from/5 p-6">
             <p
               className="text-parchment/85 mb-5 leading-relaxed"
               style={{ fontFamily: 'var(--font-body)' }}

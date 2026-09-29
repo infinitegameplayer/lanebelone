@@ -5,6 +5,7 @@ import SectionReveal from '@/components/SectionReveal'
 import InquiryForm from '@/components/InquiryForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
+import { localCover } from '@/lib/local-cover'
 import {
   happeningNow,
   sqhqChips,
@@ -94,7 +95,7 @@ export default function HomePage() {
         <SectionReveal>
           <a href={oat.href} target="_blank" rel="noopener" className="oat-feature">
             <div className="oat-cover">
-              <img src={oat.image} alt={`${oat.title} cover`} loading="lazy" />
+              <img src={localCover(oat.image)} alt={`${oat.title} cover`} loading="lazy" />
             </div>
             <div>
               <span className="free-pill">{oat.priceLabel}</span>
@@ -429,7 +430,7 @@ export default function HomePage() {
           <a href={libraryAliveBusiness.href} target="_blank" rel="noopener" style={{ display: 'block' }}>
             <div className="os-marquee">
               <div className="os-cover">
-                <img src={portrait(libraryAliveBusiness.image)} alt={`${libraryAliveBusiness.title} cover`} loading="lazy" />
+                <img src={localCover(portrait(libraryAliveBusiness.image))} alt={`${libraryAliveBusiness.title} cover`} loading="lazy" />
               </div>
               <div>
                 <div className="os-eyebrow">Where the whole business lives</div>

@@ -62,7 +62,7 @@ export default function JoyfulSovereigntyPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c1510]/70 via-[#0c1510]/60 to-[#0c1510]" />
+        <div className="absolute inset-0 bg-linear-to-b from-forest-900/70 via-forest-900/60 to-forest-900" />
         <div className="relative z-10 section pt-32 pb-20">
           <h1
             className="hero-line hero-line-1 text-6xl md:text-8xl mb-6"
@@ -71,7 +71,7 @@ export default function JoyfulSovereigntyPage() {
             Joyful Sovereignty
           </h1>
           <p
-            className="hero-line hero-line-2 text-xl md:text-2xl text-parchment/55 max-w-xl leading-relaxed"
+            className="hero-line hero-line-2 text-xl md:text-2xl text-parchment/55 max-w-xl leading-relaxed md:leading-8"
             style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic' }}
           >
             Spacious. Playful. At peace. The whole game, played from the inside.

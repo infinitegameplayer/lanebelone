@@ -385,7 +385,7 @@ function CitationFormat({ label, body, multiline }: { label: string; body: strin
       </p>
       <pre
         className="text-parchment/80 text-xs leading-relaxed bg-black/30 border border-white/5 rounded p-4 overflow-x-auto"
-        style={{ fontFamily: 'var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace)', whiteSpace: multiline ? 'pre' : 'pre-wrap' }}
+        style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', whiteSpace: multiline ? 'pre' : 'pre-wrap' }}
       >
         <code>{body}</code>
       </pre>

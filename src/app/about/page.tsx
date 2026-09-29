@@ -79,7 +79,7 @@ export default function AboutPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0c1510] via-[#0c1510]/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-forest-900 via-forest-900/50 to-transparent" />
         <div className="relative z-10 section pb-16 pt-40">
           <h1
             className="hero-line hero-line-1 text-5xl md:text-7xl"
@@ -95,7 +95,7 @@ export default function AboutPage() {
         <SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div className="flex flex-col gap-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-              <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed" style={{ fontFamily: 'var(--font-display)' }}>
+              <p className="text-xl md:text-2xl text-parchment/90 leading-relaxed md:leading-8" style={{ fontFamily: 'var(--font-display)' }}>
                 Lane Belone is a writer on the Infinite Game, a former Green Beret
                 and co-author of <em>Unleash Your Humble Alpha</em>. His work centers
                 on the <a href="https://www.sidequesthq.co/infinite-player" className="underline underline-offset-4 transition-colors" style={{ color: 'rgba(232, 228, 240, 0.85)' }}>Infinite Player</a>, the player underneath every role. At Side

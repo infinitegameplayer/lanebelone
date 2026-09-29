@@ -19,13 +19,13 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center w-full pt-28 pb-20 md:pt-0 md:pb-0">
           <div className="flex flex-col gap-6">
             <h1
-              className="hero-line hero-line-1 text-5xl md:text-7xl leading-tight"
+              className="hero-line hero-line-1 text-5xl md:text-7xl leading-tight md:leading-none"
               style={{ fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '-0.025em' }}
             >
               Lane Belone
             </h1>
             <p
-              className="hero-line hero-line-2 text-lg md:text-xl leading-relaxed max-w-md"
+              className="hero-line hero-line-2 text-lg md:text-xl leading-relaxed md:leading-7 max-w-md"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-muted)' }}
             >
               Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.

@@ -84,7 +84,7 @@ export default function SpeakingPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0c1510] via-[#0c1510]/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-forest-900 via-forest-900/40 to-transparent" />
         <div className="relative z-10 section pb-16 pt-40">
           <h1
             className="hero-line hero-line-1 text-5xl md:text-7xl mb-4"

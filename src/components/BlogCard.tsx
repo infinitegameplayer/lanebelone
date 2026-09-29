@@ -14,7 +14,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
       className="group block rounded-lg overflow-hidden border border-parchment/10 hover:border-parchment/25 transition-colors duration-300"
     >
       {post.heroImage && (
-        <div className="relative w-full aspect-[16/9] overflow-hidden">
+        <div className="relative w-full aspect-video overflow-hidden">
           <Image
             src={post.heroImage}
             alt={post.title}

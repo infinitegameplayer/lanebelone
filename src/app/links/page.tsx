@@ -140,18 +140,18 @@ export default function LinksPage() {
           <div className="w-full flex flex-col gap-3">
             {linkHub.map((item) => {
               const className = item.featured
-                ? 'group block w-full rounded-xl border border-[#c9a84c]/40 bg-[#c9a84c]/[0.07] px-5 py-4 text-left transition-all duration-200 hover:bg-[#c9a84c]/[0.12] hover:border-[#c9a84c]/60 hover:shadow-[0_0_24px_rgba(201,168,76,0.18)] active:scale-[0.99]'
-                : 'group block w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 text-left transition-all duration-200 hover:bg-white/[0.06] hover:border-white/20 active:scale-[0.99]'
+                ? 'group block w-full rounded-xl border border-gold-from/40 bg-gold-from/[0.07] px-5 py-4 text-left transition-all duration-200 hover:bg-gold-from/12 hover:border-gold-from/60 hover:shadow-[0_0_24px_rgba(201,168,76,0.18)] active:scale-[0.99]'
+                : 'group block w-full rounded-xl border border-white/10 bg-white/3 px-5 py-4 text-left transition-all duration-200 hover:bg-white/6 hover:border-white/20 active:scale-[0.99]'
               const inner = (
                 <span className="flex items-center gap-4">
-                  <span className={`shrink-0 transition-colors ${item.featured ? 'text-[#c9a84c]' : 'text-parchment/50 group-hover:text-parchment/90'}`}>
+                  <span className={`shrink-0 transition-colors ${item.featured ? 'text-gold-from' : 'text-parchment/50 group-hover:text-parchment/90'}`}>
                     {linkIcons[item.icon]}
                   </span>
                   <span className="min-w-0">
                     <span className="flex items-center gap-2 text-parchment" style={{ fontFamily: 'var(--font-body)' }}>
                       {item.label}
                       {item.pill && (
-                        <span className="shrink-0 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#c9a84c]/20 text-[#c9a84c] border border-[#c9a84c]/30">
+                        <span className="shrink-0 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-gold-from/20 text-gold-from border border-gold-from/30">
                           {item.pill}
                         </span>
                       )}

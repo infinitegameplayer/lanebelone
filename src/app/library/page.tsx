@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { localCover } from '@/lib/local-cover'
 import {
   libraryAliveBusiness,
   librarySlp,
@@ -124,7 +125,7 @@ function BookCard({
       className={`lib-book${className ? ` ${className}` : ''}`}
     >
       <div className="lib-cover-frame">
-        <img src={image} alt={`${title} cover`} loading="lazy" />
+        <img src={localCover(image)} alt={`${title} cover`} loading="lazy" />
       </div>
       <div className="lib-meta">
         <span className={`lib-price${free ? ' lib-price--free' : ''}`}>{priceLabel}</span>
@@ -160,7 +161,7 @@ function CollectionCard({
             reader. The card's own heading gives the collection name, so the covers
             supply the members. */}
         {members.map(m => (
-          <img key={m.title} src={portrait(m.image)} alt={`${m.title} cover`} loading="lazy" />
+          <img key={m.title} src={localCover(portrait(m.image))} alt={`${m.title} cover`} loading="lazy" />
         ))}
       </div>
       <div className="lib-meta">
