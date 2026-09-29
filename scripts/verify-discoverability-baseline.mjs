@@ -247,6 +247,57 @@ async function checkHomepage(base) {
   return results
 }
 
+// Covers moved off Vercel Blob to each site's public/covers on 2026-09-29
+// (localCover()), because Blob Data Transfer is metered on every view and full-size
+// covers loaded straight from Blob spent the month's allowance in one evening and
+// paused the store. This net fails if any sitemap page hands a browser a Blob URL
+// again, for example a new product page that renders coverImage.print without
+// localCover(). Structured data and og:image may still name Blob URLs, since nothing
+// downloads them on a page view, so only src, srcset and imagesrcset are read.
+const BLOB_URL_RE = /https?:\/\/[a-z0-9]+\.public\.blob\.vercel-storage\.com\/[^\s"',)]+/gi
+
+function browserFetchedBlobUrls(html) {
+  const attrs = [...html.matchAll(/\b(?:src|srcset|srcSet|imageSrcSet|imagesrcset)="([^"]*)"/g)]
+    .map((m) => m[1])
+    .join(' ')
+    .replace(/_next\/image\?url=[^"'\s]+/g, '')
+  return [...new Set(attrs.match(BLOB_URL_RE) ?? [])]
+}
+
+async function checkNoBlobImages(base) {
+  // Positive control: one image the browser would fetch from Blob and one og:image
+  // it would not. The detector must count exactly one, or its clean result is void.
+  const control = browserFetchedBlobUrls(
+    '<img src="https://abc123.public.blob.vercel-storage.com/x/cover-print.png">' +
+      '<meta property="og:image" content="https://abc123.public.blob.vercel-storage.com/x/cover-1x1.png">'
+  )
+  const controlResult = {
+    name: 'Blob image detector control',
+    violations: control.length === 1 ? [] : [`control expected 1 browser-fetched Blob URL, read ${control.length}; result void`],
+  }
+  if (control.length !== 1) return [controlResult, { name: 'no Blob images', violations: ['skipped: detector control failed'] }]
+
+  let locs
+  try {
+    const res = await fetchResource(`${base}/sitemap.xml`, '*/*')
+    locs = [...res.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim())
+  } catch (err) {
+    return [controlResult, { name: 'no Blob images', violations: [`sitemap fetch error: ${err.message}`] }]
+  }
+  if (locs.length === 0) return [controlResult, { name: 'no Blob images', violations: ['no <loc> entries'] }]
+
+  const bad = []
+  for (const url of locs) {
+    try {
+      const res = await fetchResource(url, 'text/html')
+      for (const b of browserFetchedBlobUrls(res.body)) bad.push(`${new URL(url).pathname} loads ${b}`)
+    } catch (err) {
+      bad.push(`${url} -> ${err.message}`)
+    }
+  }
+  return [controlResult, { name: `no Blob images (${locs.length} pages)`, violations: bad }]
+}
+
 async function checkSitemapUrls(base) {
   let body
   try {
@@ -317,6 +368,7 @@ async function main() {
   results.push(await checkStaticFile(base, '/rss.xml', sanityRss))
   results.push(...(await checkHomepage(base)))
   if (!args.skipSitemap) results.push(...(await checkSitemapUrls(base)))
+  if (!args.skipSitemap) results.push(...(await checkNoBlobImages(base)))
 
   const failed = results.filter((r) => r.violations.length > 0)
 
