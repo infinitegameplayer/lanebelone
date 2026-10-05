@@ -68,6 +68,7 @@ export const LIVE_SLUGS: string[] = [
   'it-all-arrived-at-once',
   'the-shape-reveals-itself',
   'it-hasnt-finished-happening-yet',
+  'the-safe-route-is-a-game-too',
 ]
 
 // Combined set used for static generation and URL resolution.

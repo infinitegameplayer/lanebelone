@@ -606,13 +606,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Open Studio Episode 14 (2026-08-26) carries no
-  // product spotlight, so the slot points at the Infinite Playlist, the
-  // episode's core destination.
+  // Rotating episode slot. Infinite Player Season visit 1 (2026-10-05) opens
+  // One Alive Thing, already featured above, so the slot points at the
+  // concept the piece sits under.
   {
-    label: 'The Infinite Playlist',
-    sublabel: 'Some stretches run smooth and some arrive all at once. Both are the music',
-    href: 'https://www.infinitegameos.io/concepts/infinite-playlist',
+    label: 'Play Your Own Game',
+    sublabel: 'The safe route is a game too. Your own shows itself one experiment at a time',
+    href: 'https://www.infinitegameos.io/play-your-own-game',
     icon: 'compass',
   },
   {
