@@ -28,7 +28,7 @@ We got there in the afternoon. One trekker and a guide ahead of us. A few tiny g
 
 That was part of the thrill. Sometimes I like to go in blind. I felt prepared for the physical side of it, but I didn't want to know every stop and every tea house. I wanted it to be new as I did it.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/01-lane-at-the-rock.jpg" alt="Lane Belone jumping above the spray-painted Everest Base Camp rock at 5,364 meters, with no expedition tents in September" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/01-lane-at-the-rock.jpg" alt="Lane Belone jumping above the spray-painted Everest Base Camp rock at 5,364 meters, with no expedition tents in September" loading="lazy" /><figcaption>Me at the Everest Base Camp rock, 5,364 meters. Photo: Martin Hogan</figcaption></figure>
 
 The trip came to me through my friend Ashley Johnson. He and Lee Smith came to Peru with me last year. They were the two people I knew going into Nepal.
 
@@ -50,7 +50,7 @@ Sometimes a trip like this is a tight group of like-minded people. This one brou
 
 The flight from Kathmandu to Lukla is short, into what they call the most dangerous airport in the world. Ours was super smooth both ways. On the way out, the plane landed, the people got out and the engines never stopped. We hopped on and were back in the air within minutes of it touching down.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/02-lukla-airstrip.jpg" alt="Lukla airstrip, the gateway to the Everest Base Camp trek" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/02-lukla-airstrip.jpg" alt="Lukla airstrip, the gateway to the Everest Base Camp trek" loading="lazy" /><figcaption>Lukla, the most dangerous airport in the world, and our way in and out. Photo: Martin Hogan</figcaption></figure>
 
 Early September is the tail end of the monsoon and the very start of the trekking season. Most people wait for October and November, after the rains are completely done.
 
@@ -58,7 +58,7 @@ Going when we did meant greenery and waterfalls you mostly miss in the regular s
 
 At every tea house we stayed in, we were the first guests of the season. At the very first one, in Phakding, they welcomed us with white Buddhist scarves carrying mantras and blessings. First night of the trek, ginger lemon honey tea on the table, a blessing scarf around the neck.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/03-hillary-suspension-bridge.jpg" alt="Lane Belone on the Hillary suspension bridge between Phakding and Namche Bazaar" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/03-hillary-suspension-bridge.jpg" alt="Lane Belone on the Hillary suspension bridge between Phakding and Namche Bazaar" loading="lazy" /><figcaption>Me on the Hillary suspension bridge, between Phakding and Namche Bazaar. Photo: Martin Hogan</figcaption></figure>
 
 The days found a rhythm fast. Wake-up call around 6:30. Breakfast at 7. On the trail by 7:30. The times shifted day to day, but that was the rhythm: wake up, breakfast, leave.
 
@@ -66,7 +66,7 @@ We reached Phakding around midday on day one, had some tea and rested the first 
 
 We stayed one night in Namche and then walked up to a museum where they make art out of recycled plastics. Our group bought almost zero plastic water bottles the whole trek. We filled from the taps and used purification tablets. Everybody was fine. The one exception was Gorak Shep, up above the glacier, where there's no running water.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/04-namche-bazaar.jpg" alt="Namche Bazaar, the main village hub on the Everest Base Camp trekking route" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/04-namche-bazaar.jpg" alt="Namche Bazaar, the main village hub on the Everest Base Camp trekking route" loading="lazy" /><figcaption>Namche Bazaar, the hub of the trek. Photo: Martin Hogan</figcaption></figure>
 
 From Namche the route climbed like a staircase, sleeping a little higher each night. Kyangjuma. Pangboche. Dingboche, with an acclimatization day: a climb up high and back down to the same little bed.
 
@@ -78,7 +78,7 @@ The tea houses at the lower villages had rooms with two beds, pillows and blanke
 
 Nearly every menu on the mountain reads the same: dal bhat, fried rice with egg, chow mein, noodles. A few places add Western dishes like spaghetti or a chicken sandwich. We often had noodle soup for lunch, light enough to get right back on the trail, and dal bhat for dinner. Dal bhat also goes by Nepali set. You'll eat a lot of it.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/05-dal-bhat.jpg" alt="Dal bhat at a tea house on the Everest Base Camp trek" loading="lazy" /></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/05-dal-bhat.jpg" alt="Dal bhat at a tea house on the Everest Base Camp trek" loading="lazy" /><figcaption>Dal bhat, also known as Nepali set.</figcaption></figure>
 
 The half days were some of the best days of the trek.
 
@@ -114,7 +114,7 @@ We stood on top of that little mountain among the absolute giants of the Himalay
 
 It was the easiest morning of the trek for me. For most of the group it was the hardest.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/08-group-kala-patthar.jpg" alt="The trekking group on top of Kala Patthar with Mount Everest and Nuptse behind them" loading="lazy" /><figcaption>Photo: Wangda Sherpa</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/08-group-kala-patthar.jpg" alt="The trekking group on top of Kala Patthar with Mount Everest and Nuptse behind them" loading="lazy" /><figcaption>Our group on top of Kala Patthar, with Everest in the background. Photo: Wangda Sherpa</figcaption></figure>
 
 The way down took three full days, around 20 kilometers each. Fun days, and long ones.
 
@@ -122,13 +122,13 @@ This is the stretch where knees usually have something to "say". Nobody in our g
 
 On certain stretches, horses are available. We saw people ride when fatigue or a sore knee asked for it.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/09-namche-to-lukla.jpg" alt="The trail from Namche Bazaar down to Lukla on the Everest Base Camp descent" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/09-namche-to-lukla.jpg" alt="The trail from Namche Bazaar down to Lukla on the Everest Base Camp descent" loading="lazy" /><figcaption>On the way down from Namche Bazaar to Lukla. Photo: Martin Hogan</figcaption></figure>
 
 The itinerary had us sleeping in a smaller village past Namche on the way down. For days beforehand we'd been joking about how great it would be to stay in Namche again instead. Everybody wanted it, so that became the plan.
 
 So our second-to-last night was pool and karaoke for a few hours at what was claimed as the world's highest Irish pub, in Namche Bazaar. We had a blast.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/10-namche-irish-pub.jpg" alt="Karaoke night at the Irish pub in Namche Bazaar after reaching Everest Base Camp" loading="lazy" /></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/10-namche-irish-pub.jpg" alt="Karaoke night at the Irish pub in Namche Bazaar after reaching Everest Base Camp" loading="lazy" /><figcaption>Karaoke night at the Irish pub in Namche Bazaar.</figcaption></figure>
 
 The people were very kind.
 
@@ -140,7 +140,7 @@ Kindness, curiosity, openness and receptivity, all in one small moment. It's one
 
 It's a different world up there. People have different kinds of jobs. Everything that reaches the higher villages is carried up by porters and yaks: the materials, the fuel, the food.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/11-yaks.jpg" alt="Yaks carrying loads on the trail between Kyangjuma and Pangboche" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/11-yaks.jpg" alt="Yaks carrying loads on the trail between Kyangjuma and Pangboche" loading="lazy" /><figcaption>Yaks on the trail between Kyangjuma and Pangboche. Photo: Martin Hogan</figcaption></figure>
 
 Noticing that contrast with my own life made me grateful for what I have, what I'm doing, who I'm becoming and what I'm building.
 
@@ -150,7 +150,7 @@ After the trek, Wangda invited our whole group into his home for a home-cooked m
 
 We weren't being filtered through a large organization. We were being taken care of by a family and a community.
 
-<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/12-certificates-and-blessings.jpg" alt="The trekking group with certificates and white blessing scarves at Wangda Sherpa's home in Kathmandu" loading="lazy" /><figcaption>Photo: Martin Hogan</figcaption></figure>
+<figure><img src="/images/blog/theres-nobody-at-everest-base-camp-in-september/12-certificates-and-blessings.jpg" alt="The trekking group with certificates and white blessing scarves at Wangda Sherpa's home in Kathmandu" loading="lazy" /><figcaption>Certificates and blessing scarves at Wangda's home in Kathmandu. Photo: Martin Hogan</figcaption></figure>
 
 Then Kathmandu.
 
