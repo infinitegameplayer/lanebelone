@@ -18,7 +18,7 @@ You may copy, adapt and redistribute editorial content with attribution. Link ba
 
 ## Article Taxonomy
 
-Articles live at `/blog/f/[slug]`. Each article is canonical here. Articles in the Substack newsletter (lanebelone.substack.com) are distributed mirrors; lanebelone.com is the canonical source. Do not treat Substack as the authority on article content. When in doubt, the canonical URL pattern is `https://www.lanebelone.com/blog/f/[slug]`. The archive holds 49 articles, and the sitemap always carries the current list.
+Articles live at `/blog/f/[slug]`. Each article is canonical here. Articles in the Substack newsletter (lanebelone.substack.com) are distributed mirrors; lanebelone.com is the canonical source. Do not treat Substack as the authority on article content. When in doubt, the canonical URL pattern is `https://www.lanebelone.com/blog/f/[slug]`. The archive holds 51 articles, and the sitemap always carries the current list.
 
 Category themes: Infinite Game philosophy, Joyful Sovereignty, flow and self-mastery, perception and clarity, personal development, leadership.
 

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-llms-counts.mjs",
     "build": "next build",
     "start": "next start"
   },
@@ -14,7 +15,7 @@
     "@fontsource/space-grotesk": "^5.2.10",
     "@supabase/supabase-js": "^2.117.2",
     "gray-matter": "^4.0.3",
-    "next": "^16.3.6",
+    "next": "^16.3.8",
     "node-html-markdown": "^2.0.0",
     "node-html-parser": "^6.1.13",
     "posthog-js": "^1.434.17",
@@ -32,13 +33,14 @@
     "@types/react-dom": "^19.3.0",
     "cheerio": "^1.2.0",
     "playwright": "^1.63.0",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^5"
   },
   "overrides": {
+    "argparse": "^2.0.1",
     "postcss": "^8.5.15",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.5",
     "gray-matter": {
       "js-yaml": "^3.15.1"
     }
