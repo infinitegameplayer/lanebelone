@@ -94,6 +94,7 @@ export default function HomePage() {
         </SectionReveal>
         <SectionReveal>
           <a href={oat.href} target="_blank" rel="noopener" className="oat-feature">
+            <div className="shimmer-border" />
             <div className="oat-cover">
               <img src={localCover(oat.image)} alt={`${oat.title} cover`} loading="lazy" />
             </div>

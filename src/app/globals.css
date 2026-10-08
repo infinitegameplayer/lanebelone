@@ -245,7 +245,11 @@
   z-index: 1;
 }
 
-/* Featured card. Gold border plus rotating shimmer glow */
+/* Featured card. Gold border plus a rotating gold glint.
+   The Gleam level (King-ruled 2026-10-08, the same on all three sites): 95% at
+   the bright point, one lap every 6s, a 2px rim. The mask cuts the middle out,
+   so only the rim shows on any background. Its parent needs position: relative
+   and overflow: hidden (.bezel-card and .oat-feature both carry it). */
 .bezel-card.featured {
   border-color: rgba(201, 168, 76, 0.3);
   box-shadow: 0 0 24px rgba(201, 168, 76, 0.04);
@@ -253,38 +257,29 @@
 .shimmer-border {
   position: absolute;
   inset: 0;
-  border-radius: 8px;
+  border-radius: inherit;
   overflow: hidden;
   z-index: 0;
+  padding: 2px;
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
 }
 .shimmer-border::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  margin-top: -100%;
-  margin-left: -100%;
+  inset: -150%;
   background: conic-gradient(
     from 0deg,
-    rgba(201, 168, 76, 0.04) 0deg,
-    rgba(201, 168, 76, 0.08) 60deg,
-    rgba(240, 208, 128, 0.11) 120deg,
-    rgba(201, 168, 76, 0.08) 180deg,
-    rgba(201, 168, 76, 0.04) 240deg,
-    rgba(201, 168, 76, 0.02) 300deg,
-    rgba(201, 168, 76, 0.04) 360deg
+    transparent 0deg,
+    rgba(201, 168, 76, 0.74) 40deg,
+    rgba(240, 208, 128, 0.95) 70deg,
+    rgba(201, 168, 76, 0.74) 100deg,
+    transparent 150deg,
+    transparent 360deg
   );
-  animation: shimmerRotate 30s linear infinite;
-}
-.shimmer-border::after {
-  content: '';
-  position: absolute;
-  inset: 1px;
-  border-radius: 7px;
-  background: rgba(13, 26, 16, 0.4);
-  z-index: 1;
+  animation: shimmerRotate 6s linear infinite;
 }
 @keyframes shimmerRotate {
   from { transform: rotate(0deg); }
@@ -743,7 +738,11 @@
   padding: 2rem;
   box-shadow: 0 0 28px rgba(201, 168, 76, 0.06);
   transition: transform 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
+.oat-feature > :not(.shimmer-border) { position: relative; z-index: 1; }
 .oat-feature:hover { transform: translateY(-3px); border-color: rgba(201, 168, 76, 0.55); }
 .oat-cover {
   aspect-ratio: 4 / 5;
