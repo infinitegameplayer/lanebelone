@@ -148,5 +148,5 @@ Wish you a great rest of your day!</p><p><br>
 Best,</p><p><br>
 Lane</p><p><br>
 P.S. If you enjoyed this edition, share this edition on social media or with a friend who you think would enjoy reading this.</p><p><br>
-P.P.S. <a href="https://exactly-what-the-moment.captivate.fm/episode/harmonious-manifestation-meditation" rel="">Check out the Harmonious Manifestation Meditation here</a>.<br>
+P.P.S. Check out the Harmonious Manifestation Meditation here.<br>
 </p><p></p><hr><p></p><div><h2><strong>Next Joyful Sovereignty Weekly…</strong></h2></div><p>We will be diving deeper and into some interesting topics surrounding Self-Mastery. If you have any questions about this edition, shoot me an email and I will do my best to clarify in the next edition. If you haven't yet, <a href="https://www.lanebelone.com/blog" rel="noopener" target="_blank">sign up and get the next edition delivered to your inbox every Saturday morning by clicking here</a>.</p>
