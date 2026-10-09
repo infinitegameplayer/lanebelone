@@ -127,4 +127,4 @@ Wish you a great rest of your day!</p><p><br>
 With Joyful Sovereignty,</p><p><br>
 Lane</p><p><br>
 P.S. If you enjoyed this edition, share this link on your social media or with a friend who you think would enjoy reading this.</p><p><br>
-P.P.S. The Peru journey this November is gonna be an amazing time for exploration, expansion and play. If you’re a man seeking the next level, join the Masculine Archetypal Activation Journey. <a href="https://bit.ly/masculine-activation-peru-2024" rel="">Click here to learn more</a>.&nbsp;</p>
+P.P.S. The Peru journey this November is gonna be an amazing time for exploration, expansion and play. If you’re a man seeking the next level, join the Masculine Archetypal Activation Journey. Click here to learn more.&nbsp;</p>

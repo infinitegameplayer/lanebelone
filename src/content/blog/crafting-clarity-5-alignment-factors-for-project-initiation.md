@@ -19,7 +19,7 @@ Intentions are more about how you will approach the project, rather than what yo
 This is very important, because there is only so much in your control in life (a tiny bit really).</p><p><br>
 This clarity allows us to focus on what we can control and let go of the rest.</p><p><br>
 Your intentions can be articulated in a single sentence or you can list out 1-3 intentions for your project.</p><p><br>
-An example from <a href="https://starttheproject.com/" rel="">a recent project my friend Jason and I started</a> is:</p><p><br>
+An example from a recent project my friend Jason and I started is:</p><p><br>
 <em>“Nourishing and empowering creatives, leaders and businesses to become more sovereign. Sparking a movement of free individuals, in community, expressing harmony, magic and transformation.”</em></p><p><br>
 Almost always, you won’t know how your intention(s) will be realized. That’s the key is to keep it open and be inquisitive in your approach.</p><p><br>
 Whenever you get lost during the course of your project, your intentions can be your North Star to guide you back on the path.</p><p><br>
@@ -87,4 +87,4 @@ Wish you a great rest of your day!</p><p><br>
 With Joyful Sovereignty,</p><p><br>
 Lane</p><p><br>
 P.S. If you enjoyed this edition, share this link on your social media or with a friend who you think would enjoy reading this.</p><p><br>
-P.P.S. If you haven’t checked out Start The Project, <a href="https://starttheproject.com/" rel="">click on this link and take a gander</a>!</p>
+P.P.S. If you haven’t checked out Start The Project, click on this link and take a gander!</p>
