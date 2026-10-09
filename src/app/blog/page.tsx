@@ -6,7 +6,7 @@ import { PERSON_ID } from '@/lib/identity'
 
 export const metadata: Metadata = {
   title: 'Writing',
-  description: 'Essays and articles by Lane Belone on the infinite game, clearer perception and the art of living freely.',
+  description: 'Essays and articles by Lane Belone on the Infinite Game, clearer perception and the art of living freely.',
   alternates: {
     canonical: 'https://www.lanebelone.com/blog',
     types: {
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Writing · Lane Belone',
-    description: 'Essays and articles by Lane Belone on the infinite game, clearer perception and the art of living freely.',
+    description: 'Essays and articles by Lane Belone on the Infinite Game, clearer perception and the art of living freely.',
     url: 'https://www.lanebelone.com/blog',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Writing · Lane Belone',
-    description: 'Essays and articles by Lane Belone on the infinite game, clearer perception and the art of living freely.',
+    description: 'Essays and articles by Lane Belone on the Infinite Game, clearer perception and the art of living freely.',
   },
 }
 
@@ -37,7 +37,7 @@ export default function BlogIndexPage() {
     '@id': 'https://www.lanebelone.com/blog#blog',
     url: 'https://www.lanebelone.com/blog',
     name: 'Lane Belone · Writing',
-    description: 'Essays on the infinite game, sovereignty, flow and perception.',
+    description: 'Essays on the Infinite Game, sovereignty, flow and perception.',
     author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': PERSON_ID },
   }
@@ -68,7 +68,7 @@ export default function BlogIndexPage() {
           className="text-parchment/60 text-lg max-w-xl mb-6"
           style={{ fontFamily: 'var(--font-body)' }}
         >
-          Essays and breadcrumbs from the infinite game.
+          Essays and breadcrumbs from the Infinite Game.
         </p>
         <div className="mb-12">
           <ArticlesSubscribeForm />
