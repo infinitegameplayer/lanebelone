@@ -136,7 +136,7 @@ export const jsSections: StorySection[] = [
     ],
   },
   {
-    heading: 'The infinite game',
+    heading: 'The Infinite Game',
     paras: [
       'There are two kinds of games. Finite games are played to win. Infinite games are played to keep the game going.',
       'Life is an infinite game.',
