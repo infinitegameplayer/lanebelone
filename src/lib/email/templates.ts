@@ -54,7 +54,7 @@ export function newsletterWelcomeEmail({
 }) {
   const opening = firstName && firstName.trim().length > 0
     ? `Howdy, ${firstName.trim()}.`
-    : 'Howdy.'
+    : 'Howdy there.'
   return {
     subject: "Howdy. (Yes, that's actually my email.)",
     previewText: 'You opted in. Brave.',
@@ -83,7 +83,7 @@ export function articleWelcomeEmail({
 }) {
   const opening = firstName && firstName.trim().length > 0
     ? `Howdy, ${firstName.trim()}.`
-    : 'Howdy.'
+    : 'Howdy there.'
   return {
     subject: "You're in. New writing, straight to you.",
     previewText: 'The whole essay in your inbox, with a little something at the end.',
@@ -113,7 +113,7 @@ export function personalHelloEmail({
 }) {
   const opening = firstName && firstName.trim().length > 0
     ? `Howdy ${firstName.trim()},`
-    : 'Howdy,'
+    : 'Howdy there,'
   return {
     subject: 'How you doing?',
     previewText: 'What brought you my way?',
@@ -138,7 +138,7 @@ export function personalArticleInviteEmail({
 }) {
   const opening = firstName && firstName.trim().length > 0
     ? `Howdy ${firstName.trim()},`
-    : 'Howdy,'
+    : 'Howdy there,'
   return {
     subject: 'Want my writing in your inbox too?',
     previewText: 'Different perspectives, straight to your inbox.',
