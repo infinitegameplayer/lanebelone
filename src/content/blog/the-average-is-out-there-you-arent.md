@@ -3,7 +3,7 @@ title: "The Average Is Out There. You Aren't."
 slug: "the-average-is-out-there-you-arent"
 date: "2026-06-26"
 dateModified: "2026-06-26"
-description: "The loud road hands your creative work to AI and gets back the aggregate average. There's a quieter road that keeps you the source and lets AI carry the weight around a direction only you hold."
+description: "The loud road hands your creative work to AI and gets back the average. The quieter road keeps you the source, with AI carrying the weight."
 category: "ai-and-creativity"
 heroImage: "/images/blog/the-average-is-out-there-you-arent-hero.png"
 format: markdown

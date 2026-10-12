@@ -4,7 +4,7 @@ slug: "self-mastery-the-antidote-to-distraction-regret-uncertainty"
 date: "2023-02-25"
 category: "performance"
 heroImage: "/images/blog/self-mastery-the-antidote-to-distraction-regret-uncertainty-hero.png"
-description: "My Intention For this 3rd edition of the Joyful Sovereignty Weekly, my intention is to share a primer on Self-Mastery to plant seeds of empowerment within..."
+description: "Chronic distraction, regret and uncertainty have one antidote. A primer on Self-Mastery to plant seeds of empowerment."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%203.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 3rd edition of the Joyful Sovereignty Weekly, my intention is to share a primer on Self-Mastery to plant seeds of empowerment within you. In upcoming editions, we will dive into these areas deeper for more context and clarity.</em><br>
 <a href="https://www.lanebelone.com/blog/f/the-key-to-joyful-sovereignty-is-gratitude" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Many in the world suffer from "chronic distraction". Not being able to focus on anything for more than 2 minutes.</p><p><br>

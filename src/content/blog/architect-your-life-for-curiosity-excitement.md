@@ -4,7 +4,7 @@ slug: "architect-your-life-for-curiosity-excitement"
 date: "2023-04-01"
 category: "philosophy"
 heroImage: "/images/blog/architect-your-life-for-curiosity-excitement-hero.png"
-description: "My Intention For this 8th edition of the Joyful Sovereignty Weekly, my intention is help you become the architect of your life and surround yourself with..."
+description: "What if the cure for distraction is attention on what excites you? A guide to architecting a life around your curiosity."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%238%20-%20Architect.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 8th edition of the Joyful Sovereignty Weekly, my intention is help you become the architect of your life and surround yourself with curiosity, excitement and joy in life.</em></p><p><a href="https://www.lanebelone.com/blog/f/overcome-transition-by-deciding-powerfully" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p><br>
 “I’m not sure what excites me.”</p><p><br>

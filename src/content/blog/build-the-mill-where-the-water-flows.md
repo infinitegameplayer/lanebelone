@@ -3,7 +3,7 @@ title: "Build the Mill Where the Water Flows"
 slug: "build-the-mill-where-the-water-flows"
 date: "2026-06-29"
 dateModified: "2026-06-29"
-description: "Automating something feels incredible. The catch is timing, not effort. Let the workflow show you where it wants to flow, then build the automation around what's actually there. The water never earned the mill. The timing did."
+description: "Automating feels incredible when the timing is right. Let the workflow show you where it wants to flow, then build the mill there."
 category: "infinite-game"
 heroImage: "/images/blog/build-the-mill-where-the-water-flows-hero.png"
 format: markdown

@@ -4,7 +4,7 @@ slug: "restoration-revolution-redefining-rest-for-optimal-living"
 date: "2024-03-08"
 category: "the-distillation"
 heroImage: "/images/blog/restoration-revolution-redefining-rest-for-optimal-living-hero.png"
-description: "My Intention For this 16th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to expand your perspective on rest and how..."
+description: "Rest works best before your body forces it. A fresh way to weave rest through your days for creativity, peace and joy."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2316%20-%20Rest.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 16th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to expand your perspective on rest and how to integrate it into your life.</em><br>
 </p><p></p><hr><p></p><p>Perhaps you know of someone that has worked so hard and been burnt out.</p><p><br>

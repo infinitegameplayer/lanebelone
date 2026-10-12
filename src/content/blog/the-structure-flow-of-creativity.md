@@ -4,7 +4,7 @@ slug: "the-structure-flow-of-creativity"
 date: "2023-05-28"
 category: "performance"
 heroImage: "/images/blog/the-structure-flow-of-creativity-hero.png"
-description: "My Intention For this 13th edition of the Joyful Sovereignty Weekly, my intention is fan the ember of creativity within you. By reading this, a spark of..."
+description: "Your creative fire may have burned down to embers. Here's the fuel and the structure to bring it roaring back."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2313%20-%20Creativity.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 13th edition of the Joyful Sovereignty Weekly, my intention is fan the ember of creativity within you. By reading this, a spark of creativity is awakened exactly how it needs to be in your life that leads to Joyful Sovereignty.</em></p><p><a href="https://www.lanebelone.com/blog/f/developing-a-playbook-for-the-infinite-game" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a><br>
 </p><p></p><hr><p></p><p>Ever been to a fun campfire?</p><p><br>

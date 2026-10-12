@@ -4,7 +4,7 @@ slug: "transmuting-pressure-cultivating-the-anti-fragility-mindset"
 date: "2024-02-23"
 category: "the-distillation"
 heroImage: "/images/blog/transmuting-pressure-cultivating-the-anti-fragility-mindset-hero.png"
-description: "My Intention For this 15th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to share a perspective that welcomes the..."
+description: "How prepared is prepared enough? Between an uncertain future and a life without fear, an anti-fragile mindset turns pressure into strength."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2315%20-%20Anti-Fragility.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 15th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to share a perspective that welcomes the uncertainties of life and allow it to be useful to you.</em></p><p></p><hr><p></p><p>For years, I’ve been between a rock and a hard place.</p><p><br>
 The Rock: Being prepared for an unpredictable and uncertain future.</p><p><br>

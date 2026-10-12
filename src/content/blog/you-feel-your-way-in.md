@@ -3,7 +3,7 @@ title: "You Feel Your Way In"
 slug: "you-feel-your-way-in"
 date: "2026-06-08"
 dateModified: "2026-06-08"
-description: "You do not think your way into a new life. You feel your way in. The body is the compass. A well-built day moves in a rhythm that does the work you were trying to force."
+description: "You don't think your way into a new life. You feel your way in, and the body is the compass."
 category: "infinite-game"
 heroImage: "/images/blog/you-feel-your-way-in-hero.png"
 format: markdown

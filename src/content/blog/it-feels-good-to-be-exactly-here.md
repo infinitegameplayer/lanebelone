@@ -3,7 +3,7 @@ title: "It Feels Good to Be Exactly Here"
 slug: "it-feels-good-to-be-exactly-here"
 date: "2026-08-03"
 dateModified: "2026-08-03"
-description: "There's a middle stretch where you chose everything on purpose and the momentum still hasn't fully arrived. That stretch can read as discouragement, and it can read as a crossing. You keep the goal and loosen your grip on the route, and at some point the separate pieces start turning each other."
+description: "There's a middle stretch where you chose everything on purpose and momentum hasn't arrived. It can read as discouragement. It can also read as a crossing."
 category: "infinite-game"
 heroImage: "/images/blog/it-feels-good-to-be-exactly-here-hero.jpg"
 format: markdown

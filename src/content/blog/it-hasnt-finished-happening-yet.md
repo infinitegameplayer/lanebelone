@@ -3,7 +3,7 @@ title: "It Hasn't Finished Happening Yet"
 slug: "it-hasnt-finished-happening-yet"
 date: "2026-08-26"
 dateModified: "2026-08-26"
-description: "I hold whole strategies six or seven moves out and hand over the next step. It looked like restraint. The moves past the first two haven't finished resolving yet, and the corner staying dark is what makes the path someone else's to walk."
+description: "I hold strategies six or seven moves out and hand over only the next step. The dark corner is what makes the path someone else's to walk."
 category: "infinite-game"
 heroImage: "/images/blog/it-hasnt-finished-happening-yet-hero.jpg"
 format: markdown

@@ -4,7 +4,7 @@ slug: "intrinsic-joy-the-game-within-the-game"
 date: "2024-05-25"
 category: "the-distillation"
 heroImage: "/images/blog/intrinsic-joy-the-game-within-the-game-hero.png"
-description: "My Intention For this 19th edition of The Distillation, my intention is to support the awakening of your inner game and intrinsic joy. For years, I’ve been..."
+description: "Beneath the collective Infinite Game sits a personal one. Here's what I found about awakening your inner game and intrinsic joy."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2319%20-%20Game%20Within%20The%20Game.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 19th edition of The Distillation, my intention is to support the awakening of your inner game and intrinsic joy.</em></p><p></p><hr><p></p><p>For years, I’ve been playing around with the idea that Life is a game.</p><p><br>
 As much as I knew I wanted to energize that idea, I kept running into resistance and challenges.</p><p><br>

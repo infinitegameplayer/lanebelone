@@ -3,7 +3,7 @@ title: "The Shape Reveals Itself"
 slug: "the-shape-reveals-itself"
 date: "2026-08-17"
 dateModified: "2026-08-17"
-description: "There's real architecture under this trip and no picture yet of how any of it lands. An earlier version would have arrived with the shape already drawn. This one brought the intention and left the form at home."
+description: "There's real architecture under this trip and no picture yet of how it lands. This version brought the intention and left the form at home."
 category: "infinite-game"
 heroImage: "/images/blog/the-shape-reveals-itself-hero.jpg"
 format: markdown

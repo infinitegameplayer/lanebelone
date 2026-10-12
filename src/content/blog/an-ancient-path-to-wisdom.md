@@ -4,7 +4,7 @@ slug: "an-ancient-path-to-wisdom"
 date: "2023-04-08"
 category: "philosophy"
 heroImage: "/images/blog/an-ancient-path-to-wisdom-hero.jpg"
-description: "My Intention For this 9th edition of the Joyful Sovereignty Weekly, my intention is to share a story of exploration and that you find some nugget of truth..."
+description: "A Peruvian Paqo guided me up a mountain path of boulders and cocoa leaf offerings. Here's the story and the nugget of truth I found."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Wisdom.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h4><em><strong>My Intention</strong></em></h4></div><p><em>For this 9th edition of the Joyful Sovereignty Weekly, my intention is to share a story of exploration and that you find some nugget of truth that has been searching for you.</em></p><p><a href="https://www.lanebelone.com/blog/f/architect-your-life-for-curiosity-excitement" rel="noopener" target="_blank"><strong>Read Previous Edition Here</strong></a><br>
 </p><p>Quick announcement! Self-Mastery Operating System is now launched! The 4-week cohort begins on 16 April. Go to this link to find out more: <a href="https://www.lanebelone.com/mastery" rel="noopener" target="_blank">https://www.lanebelone.com/mastery</a></p><p></p><hr><p></p><p><br>

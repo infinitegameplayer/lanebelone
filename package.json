@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sync-llms-counts.mjs && node scripts/route-dates.mjs",
+    "prebuild": "node scripts/check-descriptions.mjs && node scripts/sync-llms-counts.mjs && node scripts/route-dates.mjs",
     "route-dates": "node scripts/route-dates.mjs",
     "build": "next build",
     "start": "next start"

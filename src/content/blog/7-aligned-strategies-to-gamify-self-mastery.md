@@ -4,7 +4,7 @@ slug: "7-aligned-strategies-to-gamify-self-mastery"
 date: "2023-03-03"
 category: "performance"
 heroImage: "/images/blog/7-aligned-strategies-to-gamify-self-mastery-hero.png"
-description: "My Intention For this 4th edition of the Joyful Sovereignty Weekly, my intention is to widen your view of Self-Mastery. To provide the context needed to..."
+description: "Self-Mastery can feel playful and stay sincere. Seven strategies for bringing more play into the path."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/7%20Strategies-1ccd216.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 4th edition of the Joyful Sovereignty Weekly, my intention is to widen your view of Self-Mastery. To provide the context needed to start your Self-Mastery journey powerfully.</em><br>
 <a href="https://www.lanebelone.com/blog/f/self-mastery-the-antidote-to-distraction-regret-uncertainty" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Moving towards a meaningful endeavor can sometimes be serious. That can take away from the enjoyment of the process.</p><p><br>

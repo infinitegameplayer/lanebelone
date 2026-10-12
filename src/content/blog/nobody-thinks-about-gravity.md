@@ -3,7 +3,7 @@ title: "Nobody Thinks About Gravity"
 slug: "nobody-thinks-about-gravity"
 date: "2026-07-20"
 dateModified: "2026-07-20"
-description: "The most foundational rules of the game you're playing went invisible a long time ago, the way gravity does on a basketball court. They only surface when you start changing how you play. The tell isn't that a step feels flat. The tell is that you need a justification for it."
+description: "The foundational rules of your game went invisible long ago, like gravity on a basketball court. They surface when you change how you play."
 category: "infinite-game"
 heroImage: "/images/blog/nobody-thinks-about-gravity-hero.png"
 format: markdown

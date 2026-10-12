@@ -4,7 +4,7 @@ slug: "micro-mastery-is-the-gateway-to-universal-mastery"
 date: "2023-03-18"
 category: "performance"
 heroImage: "/images/blog/micro-mastery-is-the-gateway-to-universal-mastery-hero.jpg"
-description: "My Intention For this 6th edition of the Joyful Sovereignty Weekly, my intention is to help you eliminate procrastination and hesitation on your journey to..."
+description: "Your mind has a thousand reasons to delay the big dream. Small acts of mastery dissolve procrastination and hesitation, one step at a time."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/Keystone%20Gateway.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 6th edition of the Joyful Sovereignty Weekly, my intention is to help you eliminate procrastination and hesitation on your journey to Self-Mastery.</em><br>
 <a href="https://www.lanebelone.com/blog/f/the-sweet-spot-of-self-mastery-strategy-flow-play" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>When you look up to a mountain, it often looks powerful, majestic and beautiful.</p><p><br>

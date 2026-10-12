@@ -4,7 +4,7 @@ slug: "the-joyful-sovereignty-infinite-game"
 date: "2023-05-05"
 category: "joyful-sovereignty"
 heroImage: "/images/blog/the-joyful-sovereignty-infinite-game-hero.png"
-description: "My Intention For this 11th edition of the Joyful Sovereignty Weekly, my intention is bring an awareness of an infinite game that is already being played...."
+description: "Somewhere, kids are always playing tag. A look at the Infinite Game already underway and how to step out of the finite one."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2311%20-%20Infinite%20Game.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 11th edition of the Joyful Sovereignty Weekly, my intention is bring an awareness of an infinite game that is already being played. With that awareness, can spark insight and action as needed.</em><br>
 <a href="https://www.lanebelone.com/blog/f/the-people-process-and-trajectory-to-change-the-world" rel="noopener" target="_blank"><strong>Read The</strong></a><strong> Previous Edition Here</strong></p><p></p><hr><p></p><p><br>

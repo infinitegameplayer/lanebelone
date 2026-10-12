@@ -3,7 +3,7 @@ title: "It All Arrived at Once"
 slug: "it-all-arrived-at-once"
 date: "2026-08-10"
 dateModified: "2026-08-10"
-description: "Several chosen things landed in the same three weeks. The real question wasn't how to get it all done. It was whether a life built on flow has the elasticity to hold a full season. Same house, different weather."
+description: "Several chosen things landed in the same three weeks. Does a life built on flow have the elasticity to hold a full season?"
 category: "infinite-game"
 heroImage: "/images/blog/it-all-arrived-at-once-hero.jpg"
 format: markdown

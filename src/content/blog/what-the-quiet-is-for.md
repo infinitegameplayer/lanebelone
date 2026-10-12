@@ -3,7 +3,7 @@ title: "What the Quiet Is For"
 slug: "what-the-quiet-is-for"
 date: "2026-06-22"
 dateModified: "2026-06-22"
-description: "A noisy tool stack charges a tax you can't see while you're paying it, a low hum that pulls energy off the work you care about. The calm you build by subtracting isn't the destination. It's the room where the real question finally has space: let the energy come home, then choose where it goes."
+description: "A noisy tool stack charges a tax you can't see. Subtract until the quiet makes room for the real question: where should your energy go?"
 category: "infinite-game"
 heroImage: "/images/blog/what-the-quiet-is-for-hero.png"
 format: markdown

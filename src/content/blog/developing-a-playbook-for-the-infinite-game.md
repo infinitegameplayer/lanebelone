@@ -4,7 +4,7 @@ slug: "developing-a-playbook-for-the-infinite-game"
 date: "2023-05-14"
 category: "philosophy"
 heroImage: "/images/blog/developing-a-playbook-for-the-infinite-game-hero.png"
-description: "My Intention For this 12th edition of the Joyful Sovereignty Weekly, my intention is to bring to your awareness a perspective of the Joyful Sovereignty..."
+description: "A treasure hunter's story opens a look at the Joyful Sovereignty playbook and how to play the Infinite Game with more depth."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20%2312%20-%20Playbook.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 12th edition of the Joyful Sovereignty Weekly, my intention is to bring to your awareness a perspective of the Joyful Sovereignty Infinite Game Playbook. So you can play a more beautiful game of life (if you choose).</em></p><p><a href="https://www.lanebelone.com/blog/f/the-joyful-sovereignty-infinite-game" rel="noopener" target="_blank">Read the Previous Edition Here</a></p><p></p><hr><p></p><p><br>
 Imagine you’ve been a professional treasure hunter for decades.</p><p><br>

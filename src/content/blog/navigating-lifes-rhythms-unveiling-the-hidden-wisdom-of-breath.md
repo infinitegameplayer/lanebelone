@@ -4,7 +4,7 @@ slug: "navigating-lifes-rhythms-unveiling-the-hidden-wisdom-of-breath"
 date: "2024-02-16"
 category: "the-distillation"
 heroImage: "/images/blog/navigating-lifes-rhythms-unveiling-the-hidden-wisdom-of-breath-hero.png"
-description: "My Intention For this 14th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to help ease your mind, knowing that it’s..."
+description: "Life breathes in and out. Sometimes you lead. Sometimes you follow. There's ease in both the control and the surrender."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2313%20-%20The%20Breath.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 14th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to help ease your mind, knowing that it’s okay to be in one place in your life right now (and not the other).</em><br>
 </p><p></p><hr><p></p><p><br>

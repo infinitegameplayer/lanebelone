@@ -3,7 +3,7 @@ title: "The Wheels Have to Touch"
 slug: "the-wheels-have-to-touch"
 date: "2026-07-27"
 dateModified: "2026-07-27"
-description: "A beautiful loop becomes a working one the moment its principles get defined precisely enough to measure. The slippage gathers at the handoffs rather than inside the stages. You bring the direction and the constraints your body agrees with. The machine can hold the precision."
+description: "A beautiful loop becomes a working one when its principles are precise enough to measure. You bring the direction and the machine holds the precision."
 category: "infinite-game"
 heroImage: "/images/blog/the-wheels-have-to-touch-hero.jpg"
 format: markdown

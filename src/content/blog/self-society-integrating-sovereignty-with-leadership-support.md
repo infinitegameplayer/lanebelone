@@ -4,7 +4,7 @@ slug: "self-society-integrating-sovereignty-with-leadership-support"
 date: "2024-07-06"
 category: "the-distillation"
 heroImage: "/images/blog/self-society-integrating-sovereignty-with-leadership-support-hero.png"
-description: "My Intention For this 21st edition of The Distillation, my intention is to share a paradigm of supporting leaders, in an informed and empowered way,..."
+description: "How to support leaders beyond your community while keeping your sovereignty. A political topic, with wisdom for any leader you back."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2321%20-%20Supporting%20Leaders.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 21st edition of The Distillation, my intention is to share a paradigm of supporting leaders, in an informed and empowered way, aligned with sovereignty.</em></p><p></p><hr><p></p><p>The past several years I’ve changed how I participate and involve myself with politics.</p><p><br>
 A big part of me knows that it’s mostly a disempowered system that isn’t for my best good.</p><p><br>

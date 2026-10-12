@@ -3,7 +3,7 @@ title: "The Dance You're Already In"
 slug: "the-dance-youre-already-in"
 date: "2026-06-01"
 dateModified: "2026-06-01"
-description: "The change you keep reaching for is not a clean break. It is a dance you are already in, opening the moment you meet your own resistance with softness instead of judgment."
+description: "The change you keep reaching for is a dance you're already in. It opens when you meet your resistance with softness instead of judgment."
 category: "infinite-game"
 heroImage: "/images/blog/the-dance-youre-already-in-hero.png"
 format: markdown

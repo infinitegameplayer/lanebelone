@@ -3,7 +3,7 @@ title: "What Are We Going to Play?"
 slug: "what-are-we-going-to-play"
 date: "2026-07-06"
 dateModified: "2026-09-25"
-description: "You don't master the tools in order and then arrive. You take the real work you're Alive about and let the separate skills mesh into one operating system. Once the foundation is in your hands, the uncertain next step stops being a threat and becomes the fun."
+description: "You don't master the tools in order and then arrive. Take the work you're Alive about and let the skills mesh into one operating system."
 category: "infinite-game"
 heroImage: "/images/blog/what-are-we-going-to-play-hero.png"
 format: markdown

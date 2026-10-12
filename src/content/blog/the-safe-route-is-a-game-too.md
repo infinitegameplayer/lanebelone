@@ -3,7 +3,7 @@ title: "The Safe Route Is a Game Too"
 slug: "the-safe-route-is-a-game-too"
 date: "2026-10-05"
 dateModified: "2026-10-05"
-description: "The safe route is a game too, with its own rules, its own length and its own prize. Your own game shows itself one experiment at a time. Whatever you practice deciding from becomes your default."
+description: "The safe route is a game too, with its own rules and prize. Your own game shows itself one experiment at a time."
 category: "infinite-game"
 heroImage: "/images/blog/the-safe-route-is-a-game-too-hero.jpg"
 format: markdown

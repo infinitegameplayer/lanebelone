@@ -3,7 +3,7 @@ title: "What Game of Business Do You Want to Play?"
 slug: "what-game-of-business-do-you-want-to-play"
 date: "2026-06-15"
 dateModified: "2026-09-25"
-description: "You absorbed the rules of business the way you absorbed everything else, then a decade of feeds made them invisible. AI accelerates whatever game you point it at. The move before the tool is to pause and ask what game of business you actually want to play."
+description: "AI accelerates whatever game you point it at. The move before the tool is to ask what game of business you want to play."
 category: "infinite-game"
 heroImage: "/images/blog/what-game-of-business-do-you-want-to-play-hero.png"
 format: markdown

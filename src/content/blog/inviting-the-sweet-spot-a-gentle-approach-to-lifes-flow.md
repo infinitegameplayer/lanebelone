@@ -4,7 +4,7 @@ slug: "inviting-the-sweet-spot-a-gentle-approach-to-lifes-flow"
 date: "2024-03-15"
 category: "the-distillation"
 heroImage: "/images/blog/inviting-the-sweet-spot-a-gentle-approach-to-lifes-flow-hero.png"
-description: "My Intention For this 17th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to introduce a perspective of the Sweet..."
+description: "If life tugs you one way, then another, the Sweet Spot offers a gentler rhythm. Here's how to find it and which detours to skip."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/The%20Distillation%20%2317%20-%20Sweet%20Spot.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 17th edition of The Distillation (formally the Joyful Sovereignty Weekly), my intention is to introduce a perspective of the Sweet Spot that will lead to easeful integration into your life.</em></p><p></p><hr><p></p><p><br>
 Ever feel like you’re being jerked around by life?</p><p><br>

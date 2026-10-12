@@ -3,7 +3,7 @@ title: "Nobody's Good at It Yet"
 slug: "nobodys-good-at-it-yet"
 date: "2026-07-13"
 dateModified: "2026-07-13"
-description: "There's no twenty-year veteran of AI, because nobody has settled what right is yet. The same is true of the life you actually want. Mastering the old game gives you a real trophy and a poor compass. You're not under-qualified. You're early."
+description: "There's no twenty-year veteran of AI, and none of the life you want either. You're not under-qualified. You're early."
 category: "infinite-game"
 heroImage: "/images/blog/nobodys-good-at-it-yet-hero.png"
 format: markdown

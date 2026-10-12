@@ -4,7 +4,7 @@ slug: "the-sweet-spot-of-self-mastery-strategy-flow-play"
 date: "2023-03-10"
 category: "performance"
 heroImage: "/images/blog/the-sweet-spot-of-self-mastery-strategy-flow-play-hero.png"
-description: "My Intention For this 5th edition of the Joyful Sovereignty Weekly, my intention is help you find the sweet spot of your Self-Mastery journey. Read The..."
+description: "The sweet spot of self-mastery lives where strategy, flow and play meet. Here's how to steady yourself there."
 ---
 <p></p><figure><div><img alt="" src="//img1.wsimg.com/isteam/ip/63b44413-1bd1-41f7-a1a3-d748eba816d5/JS%20Weekly%20-%20%235.png/:/rs=w:1280"></div></figure><p></p><p>&nbsp;</p><div><h2><em><strong>My Intention</strong></em></h2></div><p><em>For this 5th edition of the Joyful Sovereignty Weekly, my intention is help you find the sweet spot of your Self-Mastery journey.</em><br>
 <a href="https://www.lanebelone.com/blog/f/7-aligned-strategies-to-gamify-self-mastery" rel="noopener" target="_blank"><strong>Read The Previous Edition Here</strong></a></p><p></p><hr><p></p><p>Have you ever had the experience of too much chaos in your life?</p><p><br>
