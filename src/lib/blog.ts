@@ -70,6 +70,7 @@ export const LIVE_SLUGS: string[] = [
   'it-hasnt-finished-happening-yet',
   'the-safe-route-is-a-game-too',
   'theres-nobody-at-everest-base-camp-in-september',
+  'several-irons-in-the-fire',
 ]
 
 // Combined set used for static generation and URL resolution.

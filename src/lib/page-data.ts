@@ -606,13 +606,13 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // Rotating episode slot. Infinite Player Season visit 1 (2026-10-05) opens
+  // Rotating episode slot. Infinite Player Season visit 2 (2026-10-12) opens
   // One Alive Thing, already featured above, so the slot points at the
-  // concept the piece sits under.
+  // concept the piece names: the Infinite Player.
   {
-    label: 'Play Your Own Game',
-    sublabel: 'The safe route is a game too. Your own shows itself one experiment at a time',
-    href: 'https://www.infinitegameos.io/play-your-own-game',
+    label: 'The Infinite Player',
+    sublabel: "Several irons in the fire. Who's answering when you choose?",
+    href: 'https://www.sidequesthq.co/infinite-player',
     icon: 'compass',
   },
   {
