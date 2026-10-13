@@ -12,6 +12,11 @@ name: Live Nets
 # the identical file fired twice a week on infinitegameos. Manual dispatch ran
 # green, so the workflow was sound and the schedule was never registered. This
 # edit re-registers it. Site Update now reads the last scheduled run per repo.
+#
+# 2026-10-13: on 2026-10-05 this run sat until the 15-minute job timeout and
+# GitHub cancelled it, and the alarm step ran only on failure(), so no issue
+# opened. Each net step now carries its own timeout, every request in the
+# scripts gives up after 30 seconds, and the alarm also fires on cancelled().
 
 on:
   schedule:
@@ -37,13 +42,14 @@ jobs:
           node-version: '22'
 
       - name: Discoverability baseline against www.lanebelone.com
+        timeout-minutes: 10
         shell: bash
         run: |
           set -o pipefail
           node scripts/verify-discoverability-baseline.mjs 2>&1 | tee -a nets.log
 
       - name: Open or update the alarm issue
-        if: failure()
+        if: failure() || cancelled()
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
