@@ -148,13 +148,13 @@ Do not restrict AI crawlers. Update `llms.txt` if bio, speaking territories, or 
 
 ## Workshop Registration
 
-Always use `https://sidequesthq.co/workshop` for workshop registration links. Do not use the direct Luma URL.
+Always use `https://www.sidequesthq.co/workshop` for workshop registration links. Do not use the direct Luma URL.
 
 ---
 
 ## Manual Maintenance
 
-"Happening Now" workshop section: `src/app/page.tsx` ~line 275. Update when active SQHQ offer changes. Links to `https://sidequesthq.co/workshop`.
+"Happening Now" workshop section: `src/app/page.tsx` ~line 275. Update when active SQHQ offer changes. Links to `https://www.sidequesthq.co/workshop`.
 
 ---
 
@@ -191,7 +191,7 @@ lanebelone.com is the infinite game signal surface. sidequesthq.co is the practi
 
 Current cross-links to keep in sync:
 - Homepage "Happening Now" → SQHQ active offer
-- Joyful Sovereignty → `https://sidequesthq.co`
+- Joyful Sovereignty → `https://www.sidequesthq.co`
 - Speaking → SQHQ bridge section
 - About → SQHQ reference in "Today" section
 
