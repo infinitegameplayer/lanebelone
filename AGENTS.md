@@ -11,7 +11,7 @@ This repo is one node in a four-node expertise web designed so that any reader o
 | Node | URL | Role |
 |---|---|---|
 | **lanebelone.com** (this repo) | https://lanebelone.com | Infinite game signal surface, thought leadership anchor |
-| **sidequesthq.co** | https://sidequesthq.co | Practical contribution engine: workshops, advisory, retreats |
+| **sidequesthq.co** | https://www.sidequesthq.co | Practical contribution engine: workshops, advisory, retreats |
 | **infinitegameos.io** | https://infinitegameos.io | AI-agent-first structured knowledge base: Infinite Game OS (Phase 5 build) |
 | **Sovereign Ecosystem GitHub** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem | Technical infrastructure and agentic architecture reference |
 
@@ -124,9 +124,9 @@ Lane's work sits at the intersection of Infinite Game philosophy, sovereign crea
 
 | Link | Location | Points To |
 |---|---|---|
-| "Happening Now" workshop | `src/app/page.tsx` ~line 275 | `https://sidequesthq.co/workshop` |
-| Workshop registration copy | Any page mentioning the workshop | `https://sidequesthq.co/workshop` |
-| Joyful Sovereignty → SQHQ | `/joyful-sovereignty` page | `https://sidequesthq.co` |
-| Speaking → SQHQ bridge | `/speaking` page | `https://sidequesthq.co` |
+| "Happening Now" workshop | `src/app/page.tsx` ~line 275 | `https://www.sidequesthq.co/workshop` |
+| Workshop registration copy | Any page mentioning the workshop | `https://www.sidequesthq.co/workshop` |
+| Joyful Sovereignty → SQHQ | `/joyful-sovereignty` page | `https://www.sidequesthq.co` |
+| Speaking → SQHQ bridge | `/speaking` page | `https://www.sidequesthq.co` |
 
 Update these when SQHQ offers or URLs change.
