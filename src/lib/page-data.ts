@@ -606,6 +606,23 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
+  // The alive work, King-placed near the top (2026-10-18). Sublabel draws on
+  // the /explorers-side-quest page, which names Peru 2027 as forming. Pill
+  // King-added 2026-10-18; drop it once Peru 2027 runs.
+  {
+    label: "Explorer's Side Quest",
+    sublabel: 'Small-group adventures with good people · the next one is forming',
+    href: 'https://www.sidequesthq.co/explorers-side-quest',
+    icon: 'mountain',
+    pill: 'Peru 2027',
+  },
+  // The flagship, King-placed near the top (2026-10-18).
+  {
+    label: 'The Alive Business',
+    sublabel: 'The whole operating system for a business that stays yours · $197',
+    href: 'https://www.sidequesthq.co/products/the-alive-business',
+    icon: 'book',
+  },
   // Rotating episode slot. Infinite Player Season visit 2 (2026-10-12) opens
   // One Alive Thing, already featured above, so the slot points at the
   // concept the piece names: the Infinite Player.
@@ -617,9 +634,9 @@ export const linkHub: LinkHubItem[] = [
   },
   {
     label: 'The Full Library',
-    sublabel: 'Start here · every playbook and field guide in one place',
+    sublabel: 'Every playbook and field guide in one place',
     href: '/library',
-    icon: 'compass',
+    icon: 'library',
   },
   {
     label: 'Read the Writing',
@@ -632,24 +649,6 @@ export const linkHub: LinkHubItem[] = [
     sublabel: 'The framework, mapped',
     href: 'https://www.infinitegameos.io',
     icon: 'infinity',
-  },
-  {
-    label: 'Sovereign Life Playbook',
-    sublabel: 'Design your life from the inside out · $37',
-    href: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-    icon: 'book',
-  },
-  {
-    label: 'The Alive Business',
-    sublabel: 'The whole operating system for a business that stays yours · $197',
-    href: 'https://www.sidequesthq.co/products/the-alive-business',
-    icon: 'book',
-  },
-  {
-    label: 'Invite Me to Speak',
-    sublabel: 'Keynotes, workshops and Side Quests',
-    href: '/speaking',
-    icon: 'mic',
   },
 ]
 

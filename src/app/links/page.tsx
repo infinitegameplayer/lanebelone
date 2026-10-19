@@ -5,7 +5,7 @@ import { linkHub, socialLinks } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Links',
-  description: 'Every Lane Belone destination in one place. Writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and more.',
+  description: "Every Lane Belone destination in one place. Explorer's Side Quests, The Alive Business, the writing, the Infinite Game OS and more.",
   alternates: {
     canonical: 'https://www.lanebelone.com/links',
     types: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Lane Belone',
     locale: 'en_US',
     title: 'Links · Lane Belone',
-    description: 'Every Lane Belone destination in one place. Writing, the Infinite Game OS, the Sovereign Life Playbook, speaking and more.',
+    description: "Every Lane Belone destination in one place. Explorer's Side Quests, The Alive Business, the writing, the Infinite Game OS and more.",
     url: 'https://www.lanebelone.com/links',
   },
   twitter: {
@@ -93,11 +93,9 @@ const linkIcons: Record<string, React.ReactNode> = {
       <polygon points="15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5" />
     </svg>
   ),
-  mic: (
+  mountain: (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="9" y="2" width="6" height="11" rx="3" />
-      <path d="M5 10a7 7 0 0 0 14 0" />
-      <line x1="12" y1="17" x2="12" y2="21" />
+      <path d="M2 20l7-12 4 6 3-4 6 10z" />
     </svg>
   ),
   library: (
