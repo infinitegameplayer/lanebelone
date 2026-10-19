@@ -200,6 +200,10 @@ export default function AboutPage() {
               If the story resonated, this is the personal list. Updates and fresh ideas, the kind you&rsquo;ll actually open.
             </p>
             <NewsletterForm />
+            <p className="text-parchment/40 text-xs mt-10" style={{ fontFamily: 'var(--font-body)' }}>
+              Search visibility for this site is checked with the{' '}
+              <a href="https://brave.com/search/api/" className="underline underline-offset-4 hover:text-parchment transition-colors" target="_blank" rel="noopener noreferrer">Brave Search API</a>.
+            </p>
           </div>
         </SectionReveal>
       </section>
