@@ -623,13 +623,12 @@ export const linkHub: LinkHubItem[] = [
     href: 'https://www.sidequesthq.co/products/the-alive-business',
     icon: 'book',
   },
-  // Rotating episode slot. Infinite Player Season visit 2 (2026-10-12) opens
-  // One Alive Thing, already featured above, so the slot points at the
-  // concept the piece names: the Infinite Player.
+  // Rotating episode slot. Infinite Player Season visit 3 (2026-10-19) invites
+  // to the advisory call (King-ruled at sourcing), so the slot points there.
   {
-    label: 'The Infinite Player',
-    sublabel: "Several irons in the fire. Who's answering when you choose?",
-    href: 'https://www.sidequesthq.co/infinite-player',
+    label: 'Advisory Call',
+    sublabel: 'One on one. A clear read and a direction you can act on',
+    href: 'https://www.sidequesthq.co/advisory-call',
     icon: 'compass',
   },
   {
