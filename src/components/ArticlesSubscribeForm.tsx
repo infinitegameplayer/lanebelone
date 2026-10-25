@@ -1,6 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { submitSignup } from '@/lib/form-signup'
+import { markSubscribed } from '@/lib/bottom-bar'
+import { umamiTrack } from '@/lib/umami'
+
+const ARTICLES_LIST = 'lanebelone-articles'
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -80,20 +85,9 @@ export default function ArticlesSubscribeForm() {
     setErrorMessage('')
 
     try {
-      const res = await fetch('/api/form-submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formName: 'lanebelone-articles',
-          email: email.trim(),
-          honeypot: website,
-          openedAt,
-        }),
-      })
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}))
-        throw new Error(body?.error || `Submission failed (${res.status})`)
-      }
+      await submitSignup(ARTICLES_LIST, email, website, openedAt)
+      markSubscribed(window.localStorage, ARTICLES_LIST)
+      umamiTrack('article_signup', { path: window.location.pathname })
       setStatus('submitted')
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'

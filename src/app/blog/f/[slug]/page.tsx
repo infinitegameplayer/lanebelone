@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug, CARRY_FORWARD_SLUGS } from '@/lib/blog'
 import ReadingProgress from '@/components/ReadingProgress'
 import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
+import MobileBottomBar from '@/components/MobileBottomBar'
 import GoldButton from '@/components/GoldButton'
 import { personRef } from '@/lib/identity'
 
@@ -168,6 +169,7 @@ export default async function BlogPostPage({
 
         {/* Body */}
         <div
+          id="article-body"
           className="prose-blog"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
@@ -191,6 +193,19 @@ export default async function BlogPostPage({
         <div className="mt-16 pt-8 border-t border-parchment/10">
           <ArticlesSubscribeForm />
         </div>
+
+        {/* Mobile bottom bar: rises 70 percent through the essay, steps aside at the form above */}
+        <MobileBottomBar
+          kind="articles"
+          formName="lanebelone-articles"
+          triggerId="article-body"
+          triggerRatio={0.7}
+          avoidId="subscribe"
+          line="Get new writing by email"
+          button="Subscribe"
+          placeholder="Your email"
+          thanks="You're in. A welcome from Lane is landing in your inbox now."
+        />
 
         {/* Back link */}
         <div className="mt-16 pt-8 border-t border-parchment/10">
