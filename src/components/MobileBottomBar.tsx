@@ -22,9 +22,10 @@ interface MobileBottomBarProps {
   button: string
   placeholder: string
   thanks: string
+  alreadyThanks: string // shown instead of thanks when the reader is already on the list (no welcome is coming)
 }
 
-export default function MobileBottomBar({ kind, formName, triggerId, triggerRatio, avoidId, line, button, placeholder, thanks }: MobileBottomBarProps) {
+export default function MobileBottomBar({ kind, formName, triggerId, triggerRatio, avoidId, line, button, placeholder, thanks, alreadyThanks }: MobileBottomBarProps) {
   const [active, setActive] = useState(false) // false until we know this reader has neither closed it nor signed up
   const [shown, setShown] = useState(false)
   const [email, setEmail] = useState('')
@@ -32,6 +33,7 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
   const [openedAt] = useState(() => Date.now())
   const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [already, setAlready] = useState(false)
   const shownRef = useRef(false)
   const focusedRef = useRef(false)
   const trackedRef = useRef(false)
@@ -122,7 +124,8 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
     setStatus('submitting')
     setErrorMessage('')
     try {
-      await submitSignup(formName, email, website, openedAt)
+      const listStatus = await submitSignup(formName, email, website, openedAt)
+      setAlready(listStatus === 'already-subscribed')
       markSubscribed(window.localStorage, formName)
       umamiTrack('bottom_bar_signup', { kind, path: window.location.pathname })
       setStatus('submitted')
@@ -194,7 +197,7 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
         &times;
       </button>
       {status === 'submitted' ? (
-        <div style={{ fontSize: 14, lineHeight: 1.45, color: '#f5d88a', paddingRight: 24 }}>{thanks}</div>
+        <div style={{ fontSize: 14, lineHeight: 1.45, color: '#f5d88a', paddingRight: 24 }}>{already ? alreadyThanks : thanks}</div>
       ) : (
         <>
           <div

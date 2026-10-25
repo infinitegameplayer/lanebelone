@@ -52,6 +52,7 @@ export default function ArticlesSubscribeForm() {
   const [openedAt] = useState(() => Date.now())
   const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [already, setAlready] = useState(false)
 
   useEffect(() => {
     if (typeof document === 'undefined') return
@@ -85,7 +86,8 @@ export default function ArticlesSubscribeForm() {
     setErrorMessage('')
 
     try {
-      await submitSignup(ARTICLES_LIST, email, website, openedAt)
+      const listStatus = await submitSignup(ARTICLES_LIST, email, website, openedAt)
+      setAlready(listStatus === 'already-subscribed')
       markSubscribed(window.localStorage, ARTICLES_LIST)
       umamiTrack('article_signup', { path: window.location.pathname })
       setStatus('submitted')
@@ -102,7 +104,9 @@ export default function ArticlesSubscribeForm() {
         id="subscribe"
         style={{ color: '#f5d88a', fontSize: '0.95rem', lineHeight: 1.6, padding: '1rem 0' }}
       >
-        You&apos;re in. A welcome from Lane is landing in your inbox now.
+        {already
+          ? "You're already on the list. The next essay will find you."
+          : "You're in. A welcome from Lane is landing in your inbox now."}
       </div>
     )
   }

@@ -205,6 +205,7 @@ export default async function BlogPostPage({
           button="Subscribe"
           placeholder="Your email"
           thanks="You're in. A welcome from Lane is landing in your inbox now."
+          alreadyThanks="You're already on the list. The next essay will find you."
         />
 
         {/* Back link */}

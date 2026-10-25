@@ -176,15 +176,20 @@ export async function POST(req: NextRequest) {
   const shouldOptIn =
     config.newsletterOptIn === 'implicit' ||
     (config.newsletterOptIn === 'explicit-checkbox' && body.newsletterConsent === true)
+  // The articles opt-in names what happened (subscribed, already-subscribed and
+  // so on). It goes back to the page so the thank-you never promises a welcome
+  // that is not coming.
+  let listStatus: string | undefined
   if (shouldOptIn && !unsubscribed) {
     try {
       if (config.list === 'article') {
-        await applyArticleOptIn({
+        const result = await applyArticleOptIn({
           email,
           firstName,
           lastName,
           source: `form:${body.formName}`,
         })
+        listStatus = result.status
       } else {
         await applyNewsletterOptIn({
           email,
@@ -199,7 +204,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  return NextResponse.json({ ok: true })
+  return NextResponse.json(listStatus ? { ok: true, status: listStatus } : { ok: true })
 }
 
 // Brand inbox that receives inquiry notifications. Env override repoints it
