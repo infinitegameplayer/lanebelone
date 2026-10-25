@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { nextBarState, isDismissed, dismiss, isSubscribed, markSubscribed } from '@/lib/bottom-bar'
-import { submitSignup } from '@/lib/form-signup'
+import { submitSignup, thanksFor } from '@/lib/form-signup'
 import { umamiTrack } from '@/lib/umami'
 
 // The mobile bottom bar: a thin floating sign-up that fades in once the reader is
@@ -21,11 +21,9 @@ interface MobileBottomBarProps {
   line: string
   button: string
   placeholder: string
-  thanks: string
-  alreadyThanks: string // shown instead of thanks when the reader is already on the list (no welcome is coming)
 }
 
-export default function MobileBottomBar({ kind, formName, triggerId, triggerRatio, avoidId, line, button, placeholder, thanks, alreadyThanks }: MobileBottomBarProps) {
+export default function MobileBottomBar({ kind, formName, triggerId, triggerRatio, avoidId, line, button, placeholder }: MobileBottomBarProps) {
   const [active, setActive] = useState(false) // false until we know this reader has neither closed it nor signed up
   const [shown, setShown] = useState(false)
   const [email, setEmail] = useState('')
@@ -33,7 +31,7 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
   const [openedAt] = useState(() => Date.now())
   const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const [already, setAlready] = useState(false)
+  const [listStatus, setListStatus] = useState<string | undefined>(undefined)
   const shownRef = useRef(false)
   const focusedRef = useRef(false)
   const trackedRef = useRef(false)
@@ -124,8 +122,7 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
     setStatus('submitting')
     setErrorMessage('')
     try {
-      const listStatus = await submitSignup(formName, email, website, openedAt)
-      setAlready(listStatus === 'already-subscribed')
+      setListStatus(await submitSignup(formName, email, website, openedAt))
       markSubscribed(window.localStorage, formName)
       umamiTrack('bottom_bar_signup', { kind, path: window.location.pathname })
       setStatus('submitted')
@@ -197,7 +194,7 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
         &times;
       </button>
       {status === 'submitted' ? (
-        <div style={{ fontSize: 14, lineHeight: 1.45, color: '#f5d88a', paddingRight: 24 }}>{already ? alreadyThanks : thanks}</div>
+        <div style={{ fontSize: 14, lineHeight: 1.45, color: '#f5d88a', paddingRight: 24 }}>{thanksFor(listStatus)}</div>
       ) : (
         <>
           <div

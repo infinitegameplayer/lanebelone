@@ -4,6 +4,21 @@
 // the list's status when the route names one ('already-subscribed' means no
 // welcome is coming, because the reader is already on the list).
 
+// What an articles reader is told depends on what the list did, so no line
+// promises an email that is not coming. The bar and the end-of-article form
+// both read it from here.
+export const ARTICLES_THANKS = {
+  welcomed: "You're in. A welcome from Lane is landing in your inbox now.",
+  already: "You're already on the list. The next essay will find you.",
+  rejoin: 'Check your inbox. A note from Lane is on its way.',
+}
+
+export function thanksFor(listStatus: string | undefined): string {
+  if (listStatus === 'already-subscribed') return ARTICLES_THANKS.already
+  if (listStatus === 'rejoin-confirm-sent') return ARTICLES_THANKS.rejoin
+  return ARTICLES_THANKS.welcomed
+}
+
 export async function submitSignup(formName: string, email: string, honeypot: string, openedAt: number): Promise<string | undefined> {
   const res = await fetch('/api/form-submit', {
     method: 'POST',

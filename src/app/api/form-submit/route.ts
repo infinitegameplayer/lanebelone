@@ -180,7 +180,10 @@ export async function POST(req: NextRequest) {
   // so on). It goes back to the page so the thank-you never promises a welcome
   // that is not coming.
   let listStatus: string | undefined
-  if (shouldOptIn && !unsubscribed) {
+  // A reader who once opted out still reaches the articles opt-in: it sends
+  // the welcome-back note ("Want back in?") and re-adds nobody until they
+  // choose in it (King-ruled 2026-10-25). The Personal list keeps its skip.
+  if (shouldOptIn && (!unsubscribed || config.list === 'article')) {
     try {
       if (config.list === 'article') {
         const result = await applyArticleOptIn({

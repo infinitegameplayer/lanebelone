@@ -13,10 +13,12 @@ const { applyArticleOptInMock, applyNewsletterOptInMock } = vi.hoisted(() => ({
 }))
 
 // A Supabase stand-in: the audit insert, the contact lookup and the update all succeed.
+// `contactUnsubscribed` sets whether the found contact once opted out.
+let contactUnsubscribed = false
 const supabaseStub = {
   from: () => ({
     insert: async () => ({ error: null }),
-    select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { id: 1, tags: [], first_name: null, last_name: null, unsubscribed: false }, error: null }) }) }),
+    select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { id: 1, tags: [], first_name: null, last_name: null, unsubscribed: contactUnsubscribed }, error: null }) }) }),
     update: () => ({ eq: async () => ({ error: null }) }),
   }),
 }
@@ -34,6 +36,8 @@ beforeAll(async () => {
 
 beforeEach(() => {
   applyArticleOptInMock.mockClear()
+  applyNewsletterOptInMock.mockClear()
+  contactUnsubscribed = false
 })
 
 function articlesRequest() {
@@ -56,5 +60,16 @@ describe('form-submit, articles list status', () => {
   it('passes back subscribed for a new reader, whose welcome is on its way', async () => {
     const res = await POST(articlesRequest())
     expect(await res.json()).toEqual({ ok: true, status: 'subscribed' })
+  })
+
+  // A reader who once opted out gets the welcome-back note ("Want back in?"),
+  // which re-adds nobody until they choose in it. King-ruled 2026-10-25: before
+  // this, the route skipped the opt-in for them and nothing was sent at all.
+  it('hands a reader who once opted out to the welcome-back note', async () => {
+    contactUnsubscribed = true
+    applyArticleOptInMock.mockResolvedValueOnce({ status: 'rejoin-confirm-sent' })
+    const res = await POST(articlesRequest())
+    expect(applyArticleOptInMock).toHaveBeenCalledTimes(1)
+    expect(await res.json()).toEqual({ ok: true, status: 'rejoin-confirm-sent' })
   })
 })
