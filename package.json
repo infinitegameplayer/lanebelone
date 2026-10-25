@@ -7,7 +7,8 @@
     "prebuild": "node scripts/check-descriptions.mjs && node scripts/sync-llms-counts.mjs && node scripts/route-dates.mjs",
     "route-dates": "node scripts/route-dates.mjs",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run"
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^5.2.7",
@@ -37,7 +38,8 @@
     "playwright": "^1.64.1",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.12"
   },
   "overrides": {
     "argparse": "^2.0.1",
