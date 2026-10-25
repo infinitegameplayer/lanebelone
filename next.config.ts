@@ -14,11 +14,21 @@ const markdownAcceptRegex =
 // catch-all keeps the 404 and global error hashes for paths with no page of
 // their own. Server-rendered pages get a nonce policy from src/proxy.ts, which
 // replaces this header there. Without a manifest (next dev, or a plain
-// `next build`) every path falls back to the 'unsafe-inline' policy.
+// `next build`) every path falls back to the 'unsafe-inline' policy. So does a
+// manifest with an empty hash list anywhere: a script-src with neither hashes
+// nor 'unsafe-inline' would block every page's hydration.
 type CspHashes = { fallback: string[]; pages: Record<string, string[]> }
-const cspHashes: CspHashes | null = process.env.CSP_HASH_MANIFEST
-  ? JSON.parse(fs.readFileSync(process.env.CSP_HASH_MANIFEST, 'utf8'))
-  : null
+function loadCspHashes(): CspHashes | null {
+  if (!process.env.CSP_HASH_MANIFEST) return null
+  const manifest: CspHashes = JSON.parse(fs.readFileSync(process.env.CSP_HASH_MANIFEST, 'utf8'))
+  const pages = Object.values(manifest.pages ?? {})
+  if (!manifest.fallback?.length || !pages.length || pages.some((hashes) => !hashes.length)) {
+    console.warn('next.config: CSP hash manifest is incomplete, keeping the unsafe-inline policy')
+    return null
+  }
+  return manifest
+}
+const cspHashes = loadCspHashes()
 const pageCsp = (hashes: string[]) =>
   buildCsp(hashSources([...new Set([...hashes, ...(cspHashes?.fallback ?? [])])]))
 
