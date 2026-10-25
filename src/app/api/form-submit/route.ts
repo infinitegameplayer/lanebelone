@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { refuseBots } from '@/lib/bot-guard'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { lookupNativeFormConfig } from '@/lib/form-config'
 import { sendEmail } from '@/lib/email/resend'
@@ -42,6 +43,8 @@ type SubmitBody = {
 const MIN_FILL_MS = 1500
 
 export async function POST(req: NextRequest) {
+  const blocked = await refuseBots()
+  if (blocked) return blocked
   const origin = req.headers.get('origin') ?? req.headers.get('referer') ?? ''
   let body: SubmitBody
   try {

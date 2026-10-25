@@ -6,6 +6,7 @@
 // with this site's send shell and SITE_URL.
 
 import { NextRequest, NextResponse } from 'next/server'
+import { refuseBots } from '@/lib/bot-guard'
 import { verifyAnyToken } from '@/lib/unsubscribe-token'
 import { requestEmailChange } from '@/lib/email-lists'
 import { sendEmail } from '@/lib/email/resend'
@@ -13,6 +14,8 @@ import { sendEmail } from '@/lib/email/resend'
 const SITE_URL = 'https://www.lanebelone.com'
 
 export async function POST(req: NextRequest) {
+  const blocked = await refuseBots()
+  if (blocked) return blocked
   let body: { email?: string; token?: string; newEmail?: string }
   try {
     body = (await req.json()) as { email?: string; token?: string; newEmail?: string }
