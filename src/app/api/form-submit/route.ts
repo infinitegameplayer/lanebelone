@@ -4,6 +4,7 @@ import { lookupNativeFormConfig } from '@/lib/form-config'
 import { sendEmail } from '@/lib/email/resend'
 import { applyNewsletterOptIn, applyArticleOptIn } from '@/lib/newsletter'
 import {
+  cleanName,
   contactAutoResponse,
   speakingAutoResponse,
 } from '@/lib/email/templates'
@@ -71,8 +72,8 @@ export async function POST(req: NextRequest) {
   }
 
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : undefined
-  const firstName = typeof body.firstName === 'string' ? body.firstName.trim() : undefined
-  const lastName = typeof body.lastName === 'string' ? body.lastName.trim() : undefined
+  const firstName = cleanName(body.firstName)
+  const lastName = cleanName(body.lastName)
   const message = typeof body.message === 'string' ? body.message.trim() : undefined
 
   const supabase = getSupabaseAdmin()

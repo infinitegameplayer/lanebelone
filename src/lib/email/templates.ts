@@ -5,6 +5,20 @@
 
 const ACCENT = '#c9a84c'
 
+// A visitor's name reaches these templates from public forms and from stored
+// contacts, so it is cleaned before it is set into HTML: letters, marks,
+// spaces, hyphens and apostrophes only, at most 40 characters. Tags, links
+// and domains cannot ride a name into a real email from this address
+// (Site Defensibility Read 2026-10-25). Built at runtime because the ES2017
+// target rejects a Unicode property escape in a regex literal.
+const NAME_STRIP = new RegExp("[^\\p{L}\\p{M}\\s'\\u2019-]", 'gu')
+
+export function cleanName(raw?: string | null): string | undefined {
+  if (typeof raw !== 'string') return undefined
+  const name = raw.normalize('NFC').replace(NAME_STRIP, '').replace(/\s+/g, ' ').trim().slice(0, 40).trim()
+  return name.length > 0 ? name : undefined
+}
+
 function p(text: string, style = '') {
   return `<p style="margin:0 0 16px 0;${style}">${text}</p>`
 }
@@ -26,7 +40,8 @@ function button(href: string, label: string) {
 }
 
 function greeting(firstName?: string): string {
-  return firstName && firstName.trim().length > 0 ? `Hey ${firstName.trim()},` : 'Hey,'
+  const name = cleanName(firstName)
+  return name ? `Hey ${name},` : 'Hey,'
 }
 
 export function contactAutoResponse(firstName?: string) {
@@ -52,8 +67,9 @@ export function newsletterWelcomeEmail({
 }: {
   firstName?: string
 }) {
-  const opening = firstName && firstName.trim().length > 0
-    ? `Howdy, ${firstName.trim()}.`
+  const cleaned = cleanName(firstName)
+  const opening = cleaned
+    ? `Howdy, ${cleaned}.`
     : 'Howdy there.'
   return {
     subject: "Howdy. (Yes, that's actually my email.)",
@@ -81,8 +97,9 @@ export function articleWelcomeEmail({
 }: {
   firstName?: string
 }) {
-  const opening = firstName && firstName.trim().length > 0
-    ? `Howdy, ${firstName.trim()}.`
+  const cleaned = cleanName(firstName)
+  const opening = cleaned
+    ? `Howdy, ${cleaned}.`
     : 'Howdy there.'
   return {
     subject: "You're in. New writing, straight to you.",

@@ -57,7 +57,9 @@ type CycleResult = { email: string; stage: number | string; status: string }
 
 export async function GET(req: NextRequest) {
   const authHeader = req.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  // An unset secret would make the expected header "Bearer undefined", so the
+  // gate refuses outright when the secret is missing.
+  if (!process.env.CRON_SECRET || authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
