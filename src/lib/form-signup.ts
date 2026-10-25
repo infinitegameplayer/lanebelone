@@ -9,7 +9,7 @@
 // both read it from here.
 export const ARTICLES_THANKS = {
   welcomed: "You're in. A welcome from Lane is landing in your inbox now.",
-  already: "You're already on the list. The next essay will find you.",
+  already: "You're already on the list. Past you had good taste.", // King-ruled 2026-10-25, an exception to the plain article register
   rejoin: 'Check your inbox. A note from Lane is on its way.',
 }
 
