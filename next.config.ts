@@ -1,4 +1,6 @@
+import fs from 'node:fs'
 import type { NextConfig } from 'next'
+import { buildCsp, hashSources, UNSAFE_INLINE_CSP } from './src/lib/csp'
 
 // Content negotiation: when an AI agent requests text/markdown or text/plain,
 // rewrite to the /markdown handler which returns clean markdown instead of HTML.
@@ -6,17 +8,34 @@ import type { NextConfig } from 'next'
 const markdownAcceptRegex =
   '(?=.*(?:text/plain|text/markdown))(?!.*text/html.*(?:text/plain|text/markdown)).*'
 
-// CSP allowlist origins. Analytics hosts read from env at build time so changing
-// the env var updates the policy without a code edit. Empty values are filtered
-// out of the source lists. PostHog lazy-loads its session recorder from the assets
-// host, so that origin is explicit. Fonts are self-hosted via @fontsource (served
-// from 'self'), so no external font origin is needed. Cal.com appears only as
-// outbound links in article bodies, not an on-page embed, so it needs no origin.
-const UMAMI_URL = process.env.NEXT_PUBLIC_UMAMI_URL || ''
-const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
-const POSTHOG_ASSETS = 'https://us-assets.i.posthog.com'
+// CSP. The prerendered pages each get a policy listing the SHA-256 of their own
+// inline scripts (Next hydration and the Turbopack runtime), read from the
+// manifest scripts/build-with-csp.mjs writes between its two build passes. The
+// catch-all keeps the 404 and global error hashes for paths with no page of
+// their own. Server-rendered pages get a nonce policy from src/proxy.ts, which
+// replaces this header there. Without a manifest (next dev, or a plain
+// `next build`) every path falls back to the 'unsafe-inline' policy. So does a
+// manifest with an empty hash list anywhere: a script-src with neither hashes
+// nor 'unsafe-inline' would block every page's hydration.
+type CspHashes = { fallback: string[]; pages: Record<string, string[]> }
+function loadCspHashes(): CspHashes | null {
+  if (!process.env.CSP_HASH_MANIFEST) return null
+  const manifest: CspHashes = JSON.parse(fs.readFileSync(process.env.CSP_HASH_MANIFEST, 'utf8'))
+  const pages = Object.values(manifest.pages ?? {})
+  if (!manifest.fallback?.length || !pages.length || pages.some((hashes) => !hashes.length)) {
+    console.warn('next.config: CSP hash manifest is incomplete, keeping the unsafe-inline policy')
+    return null
+  }
+  return manifest
+}
+const cspHashes = loadCspHashes()
+const pageCsp = (hashes: string[]) =>
+  buildCsp(hashSources([...new Set([...hashes, ...(cspHashes?.fallback ?? [])])]))
 
 const nextConfig: NextConfig = {
+  // Both CSP build passes share one build ID so their pages are byte-identical.
+  // null keeps Next's own random ID for any other build.
+  generateBuildId: async () => process.env.CSP_BUILD_ID ?? null,
   images: {
     formats: ['image/webp'],
   },
@@ -83,26 +102,8 @@ const nextConfig: NextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           {
-            // CSP tuned to lanebelone's client-side third parties: PostHog
-            // (analytics + session recording) and Umami (env-sourced analytics).
-            // unsafe-inline on script-src is required for Next.js hydration and the
-            // JSON-LD blocks in the document head. worker-src blob: is required by
-            // PostHog session recording. Fonts are self-hosted (@fontsource), so
-            // font-src needs no external origin. HubSpot and Luma are fully removed.
             key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              `script-src ${["'self'", "'unsafe-inline'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: https:",
-              "font-src 'self' data:",
-              `connect-src ${["'self'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
-              "worker-src 'self' blob:",
-              "frame-ancestors 'self'",
-              "base-uri 'self'",
-              "form-action 'self'",
-              "object-src 'none'",
-            ].join('; '),
+            value: cspHashes ? pageCsp([]) : UNSAFE_INLINE_CSP,
           },
           // RFC 8288 Link headers — point AI agents to structured resources
           {
@@ -128,6 +129,11 @@ const nextConfig: NextConfig = {
           { key: 'Vary', value: 'Accept' },
         ],
       },
+      // Per-page hash CSP. Listed after the catch-all so it replaces that value.
+      ...Object.entries(cspHashes?.pages ?? {}).map(([source, hashes]) => ({
+        source,
+        headers: [{ key: 'Content-Security-Policy', value: pageCsp(hashes) }],
+      })),
       // Referrer-Policy is split out of the global block. The /preferences URL
       // carries the subscriber email and a live token, so that route family must
       // leak no referrer even on a same-origin click. Every other path keeps the

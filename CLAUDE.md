@@ -213,7 +213,8 @@ Current cross-links to keep in sync:
 
 Last check: 2026-04-10 (Session E: Website Maintenance and Security Protocol baseline).
 Status: security headers active, SECURITY.md present, `cheerio` moved to devDependencies, branded 404 added.
-Deferred: CSP (requires HubSpot integration testing before enabling), blog `dangerouslySetInnerHTML` migration to sanitized renderer.
+CSP (2026-10-25): script-src carries no `'unsafe-inline'` in production. Prerendered pages get a SHA-256 hash for each inline script, so they stay static. `npm run build` runs `scripts/build-with-csp.mjs`: two `next build` passes with one shared build ID and hashes read from the first pass. It fails closed to the `'unsafe-inline'` policy, never to one with neither: if the hashes can't be read, or the second pass differs from them, the deploy keeps `'unsafe-inline'` and the build log carries a `build-with-csp: WARNING` line. Vercel builds with a deployment adapter, which writes prerendered HTML under `.next/server/route-cache/` instead of `.next/server/app/`. `scripts/csp-hashes.mjs` reads both layouts, driven by `prerender-manifest.json`. The five force-dynamic pages (`/preferences/*`, `/unsubscribe`, `/articles-subscribed`) get a per-request nonce from `src/proxy.ts`. Both policies come from `src/lib/csp.ts`. A plain `next build` or `next dev` falls back to the `'unsafe-inline'` policy.
+Deferred: blog `dangerouslySetInnerHTML` migration to sanitized renderer.
 Next dep sprint: 2026-07-01. Per Website Maintenance Protocol: `npm outdated`, `npm audit`, update minor/patch, build, preview deploy, promote.
 Cross-site note: security checks run against all Kingdom sites together. A finding here should be checked on sidequesthq.co and vice versa.
 
