@@ -44,6 +44,26 @@ function greeting(firstName?: string): string {
   return name ? `Hey ${name},` : 'Hey,'
 }
 
+// Sent when an address that unsubscribed earlier comes back through a door
+// that cannot prove the person asked (a public form, a signup, a tokenless
+// link). Nothing changes until they choose: the link opens their own
+// preferences, where one click restores any list (Site Defensibility Read
+// 2026-10-25).
+export function welcomeBackEmail({ firstName, preferencesUrl }: { firstName?: string; preferencesUrl: string }) {
+  return {
+    subject: 'Want back in?',
+    previewText: 'One click and you are back.',
+    html: `
+${p(greeting(firstName))}
+${p('This address just asked to join the list again. You unsubscribed a while back, so I wanted to hear it from you before adding you back.')}
+${p('If that was you, pick what you want to receive:')}
+${button(preferencesUrl, 'Choose my emails')}
+${p("If it wasn't you, ignore this and nothing changes.")}
+${signoff()}
+`,
+  }
+}
+
 export function contactAutoResponse(firstName?: string) {
   return {
     subject: 'Got your message',

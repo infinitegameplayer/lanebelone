@@ -9,9 +9,9 @@
 
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
-import { newsletterWelcomeEmail, articleWelcomeEmail } from '@/lib/email/templates'
+import { newsletterWelcomeEmail, articleWelcomeEmail, welcomeBackEmail } from '@/lib/email/templates'
 import { sendEmail } from '@/lib/email/resend'
-import { signEmailToken } from '@/lib/unsubscribe-token'
+import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
 
 export type OptInSource =
   | `form:${string}`
@@ -21,8 +21,33 @@ export type OptInSource =
   | 'test'
 
 export type OptInResult = {
-  status: 'subscribed' | 'already-subscribed' | 'unsubscribed-rejoin' | 'error'
+  status: 'subscribed' | 'already-subscribed' | 'unsubscribed-rejoin' | 'rejoin-confirm-sent' | 'error'
   error?: string
+}
+
+// An address that unsubscribed is never re-added by a door that cannot prove
+// the person asked: a public form, a signup, a tokenless link. It gets one
+// email whose link opens its own preferences, where one click restores any
+// list. The person stays free to come back, and a stranger cannot do it for
+// them. Callers that hold proof (a valid token) pass verified: true
+// (Site Defensibility Read 2026-10-25).
+async function sendWelcomeBack(email: string, firstName: string | undefined, dryRun: boolean) {
+  if (dryRun) {
+    console.log(`[opt-in dry-run] welcome-back ${email}`)
+    return
+  }
+  try {
+    const preferencesUrl = `https://www.lanebelone.com/preferences?email=${encodeURIComponent(email)}&token=${signExpiringToken(email)}`
+    const template = welcomeBackEmail({ firstName, preferencesUrl })
+    await sendEmail({
+      to: email,
+      subject: template.subject,
+      html: template.html,
+      previewText: template.previewText,
+    })
+  } catch (err) {
+    console.error('welcome-back send error:', err instanceof Error ? err.message : err)
+  }
 }
 
 const TAG = 'personal_subscriber'
@@ -55,11 +80,13 @@ export async function applyNewsletterOptIn({
   firstName,
   lastName,
   source,
+  verified = false,
 }: {
   email: string
   firstName?: string
   lastName?: string
   source: OptInSource
+  verified?: boolean
 }): Promise<OptInResult> {
   const normalizedEmail = email.trim().toLowerCase()
   if (!normalizedEmail) {
@@ -87,6 +114,10 @@ export async function applyNewsletterOptIn({
 
       if (alreadyTagged) {
         return { status: 'already-subscribed' }
+      }
+      if (isUnsub && !verified) {
+        await sendWelcomeBack(normalizedEmail, firstName ?? existing.first_name ?? undefined, dryRun)
+        return { status: 'rejoin-confirm-sent' }
       }
 
       const mergedTags = currentTags.includes(TAG) ? currentTags : [...currentTags, TAG]
@@ -207,11 +238,13 @@ export async function applyArticleOptIn({
   firstName,
   lastName,
   source,
+  verified = false,
 }: {
   email: string
   firstName?: string
   lastName?: string
   source: OptInSource
+  verified?: boolean
 }): Promise<OptInResult> {
   const normalizedEmail = email.trim().toLowerCase()
   if (!normalizedEmail) {
@@ -246,6 +279,10 @@ export async function applyArticleOptIn({
 
       if (alreadyTagged) {
         return { status: 'already-subscribed' }
+      }
+      if (isUnsub && !verified) {
+        await sendWelcomeBack(normalizedEmail, resolvedFirstName, dryRun)
+        return { status: 'rejoin-confirm-sent' }
       }
 
       const mergedTags = currentTags.includes(ARTICLE_TAG) ? currentTags : [...currentTags, ARTICLE_TAG]

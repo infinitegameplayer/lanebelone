@@ -48,10 +48,17 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(new URL('/articles-subscribed?status=unknown', req.url))
   }
 
-  await applyArticleOptIn({
+  // A valid token is proof the person asked; the tokenless broadcast link is
+  // not, so an opted-out contact gets a welcome-back email instead of a silent
+  // re-add (Site Defensibility Read 2026-10-25).
+  const result = await applyArticleOptIn({
     email,
     source: 'one-click:personal-email',
+    verified: Boolean(token),
   })
 
+  if (result.status === 'rejoin-confirm-sent') {
+    return NextResponse.redirect(new URL('/articles-subscribed?status=check-email', req.url))
+  }
   return NextResponse.redirect(new URL('/articles-subscribed', req.url))
 }
