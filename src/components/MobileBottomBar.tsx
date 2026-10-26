@@ -67,6 +67,7 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
         focused: focusedRef.current,
         dismissed: false,
         subscribed: false,
+        wide: window.matchMedia('(min-width: 48rem)').matches, // Tailwind's md, where the class hides it too
       })
       lastY = y
       if (next.shown !== shownRef.current) {
@@ -138,7 +139,8 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
 
   return (
     <div
-      className="md:hidden kingdom-bottom-bar"
+      // display lives in the class, not the style: an inline display outranks md:hidden
+      className="flex md:hidden kingdom-bottom-bar"
       role="region"
       aria-label={line}
       style={{
@@ -149,7 +151,6 @@ export default function MobileBottomBar({ kind, formName, triggerId, triggerRati
         zIndex: 40,
         minHeight: BAR_HEIGHT,
         padding: '12px 16px 13px',
-        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         gap: 6,
