@@ -623,12 +623,13 @@ export const linkHub: LinkHubItem[] = [
     href: 'https://www.sidequesthq.co/products/the-alive-business',
     icon: 'book',
   },
-  // Rotating episode slot. Infinite Player Season visit 3 (2026-10-19) invites
-  // to the advisory call (King-ruled at sourcing), so the slot points there.
+  // Rotating episode slot. Infinite Player Season visit 4 (2026-10-26) opens
+  // One Alive Thing, already featured above, so the slot points at the
+  // concept the piece's no carries: positive-sum by design.
   {
-    label: 'Advisory Call',
-    sublabel: 'One on one. A clear read and a direction you can act on',
-    href: 'https://www.sidequesthq.co/advisory-call',
+    label: 'Positive-Sum by Design',
+    sublabel: "Your no can be the door to someone else's yes",
+    href: 'https://www.infinitegameos.io/concepts/positive-sum-by-design',
     icon: 'compass',
   },
   {
