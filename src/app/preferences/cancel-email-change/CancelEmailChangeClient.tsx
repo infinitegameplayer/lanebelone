@@ -41,7 +41,7 @@ export default function CancelEmailChangeClient({ token }: { token: string }) {
     return <Note>Done. The change is cancelled and your address stays exactly as it is.</Note>
   }
   if (outcome === 'already-confirmed') {
-    return <Note>This change was already confirmed and is active now. If that was not you, reach out and we will sort it right away.</Note>
+    return <Note>This change was already confirmed and is active now. If that wasn&apos;t you, reach out and we will sort it right away.</Note>
   }
   if (outcome === 'invalid') {
     return <Note>This link is invalid or has already been used.</Note>

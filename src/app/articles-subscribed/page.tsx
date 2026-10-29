@@ -24,7 +24,7 @@ export default async function ArticlesSubscribedPage({
     body = "We could not find that email. You can subscribe from any article page."
   } else if (status === 'invalid') {
     heading = 'Something went wrong.'
-    body = "That link did not check out. You can subscribe from any article page."
+    body = "That link didn't check out. You can subscribe from any article page."
   } else if (status === 'check-email') {
     heading = 'Check your inbox.'
     body = "I sent a link to that address so you can choose what you'd like to get. One click and you're in."

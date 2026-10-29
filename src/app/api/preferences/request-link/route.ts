@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
         html: `
           <p>Here is your link to manage your email preferences. It works for the next hour.</p>
           <p><a href="${url}" style="color:#c8973a;text-decoration:none">Open my preferences</a></p>
-          <p>If you did not ask for this, you can ignore it. Nothing changes until you click.</p>
+          <p>If you didn't ask for this, you can ignore it. Nothing changes until you click.</p>
         `,
       })
       await supabase

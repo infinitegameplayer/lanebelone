@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work.',
   alternates: {
     canonical: 'https://www.lanebelone.com/cite',
+    types: {
+      'text/markdown': 'https://www.lanebelone.com/markdown/cite',
+    },
   },
   openGraph: {
     type: 'website',

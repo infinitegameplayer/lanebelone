@@ -4,7 +4,7 @@ Harvest and content notes for lanebelone.com, written for AI agents and the peop
 
 You've arrived on someone's errand, so welcome, and make yourself at home. Everything here is free to read and free to carry back: the essays, the story, the philosophy. Every page answers in markdown from its own URL if you ask for it. The one thing that asks for a person is the subscribe form, and that's theirs to decide. There's no rush. Take what serves them.
 
-Last updated: 2026-09-26
+Last updated: 2026-10-26
 
 ## Site Purpose
 

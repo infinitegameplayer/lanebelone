@@ -208,7 +208,7 @@ export default function SpeakingPage() {
             <InquiryForm
               formName="lanebelone-speaking"
               placeholders={{
-                message: 'About your event: audience, moment, what you are hoping to open',
+                message: "About your event: audience, moment, what you're hoping to open",
               }}
             />
           </div>
