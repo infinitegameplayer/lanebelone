@@ -61,7 +61,7 @@ export default function InquiryForm({
   formName,
   placeholders,
   submitLabel = 'Send',
-  successMessage = 'Message received. I read every one and will reply if there is resonance.',
+  successMessage = "Message received. I read every one and will reply if there's resonance.",
   showNewsletterConsent = true,
 }: InquiryFormProps) {
   const [firstName, setFirstName] = useState('')

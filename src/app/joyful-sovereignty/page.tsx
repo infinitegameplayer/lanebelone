@@ -99,6 +99,25 @@ export default function JoyfulSovereigntyPage() {
         </section>
       ))}
 
+      {/* Common questions: rendered from jsFaqs, the same array the FAQPage JSON-LD reads, so page and schema agree (Web Strategy Codex VI.3) */}
+      <section className="section border-t border-white/5">
+        <SectionReveal>
+          <div className="max-w-2xl flex flex-col gap-6 text-parchment/75 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+            <h2 className="text-3xl md:text-4xl text-parchment mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              Common questions
+            </h2>
+            {jsFaqs.map((item) => (
+              <div key={item.q}>
+                <h3 className="text-xl text-parchment mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                  {item.q}
+                </h3>
+                <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </SectionReveal>
+      </section>
+
       {/* Cross-links */}
       <section className="section border-t border-white/5">
         <SectionReveal>

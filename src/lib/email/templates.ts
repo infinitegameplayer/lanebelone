@@ -52,7 +52,7 @@ function greeting(firstName?: string): string {
 export function welcomeBackEmail({ firstName, preferencesUrl }: { firstName?: string; preferencesUrl: string }) {
   return {
     subject: 'Want back in?',
-    previewText: 'One click and you are back.',
+    previewText: "One click and you're back.",
     html: `
 ${p(greeting(firstName))}
 ${p('This address just asked to join the list again. You unsubscribed a while back, so I wanted to hear it from you before adding you back.')}
@@ -199,7 +199,7 @@ export function speakingAutoResponse(firstName?: string) {
     html: `
 ${p(greeting(firstName))}
 ${p('Got your speaking inquiry. I will respond within a couple of days.')}
-${p('If there is a fit on timing and audience, the reply will move toward specifics.')}
+${p("If there's a fit on timing and audience, the reply will move toward specifics.")}
 ${signoff()}
 `,
   }

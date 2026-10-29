@@ -93,7 +93,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
       setItems((prev) =>
         prev.map((it) => (it.key === item.key ? { ...it, joined: item.joined } : it)),
       )
-      setError('That change did not save. Please try again.')
+      setError("That change didn't save. Please try again.")
     } finally {
       setBusy(null)
     }
@@ -109,7 +109,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
       setLeftAll(true)
       setConfirmLeave(false)
     } catch {
-      setError('That did not save. Please try again.')
+      setError("That didn't save. Please try again.")
     } finally {
       setBusy(null)
     }
@@ -129,7 +129,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
       const data = (await res.json()) as { pausedUntil?: string }
       setPausedUntil(data.pausedUntil ?? new Date(Date.now() + 30 * 86400000).toISOString())
     } catch {
-      setError('That did not save. Please try again.')
+      setError("That didn't save. Please try again.")
     } finally {
       setBusy(null)
     }
@@ -143,7 +143,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
       await post('/api/preferences/resume', { email, token })
       setPausedUntil(null)
     } catch {
-      setError('That did not save. Please try again.')
+      setError("That didn't save. Please try again.")
     } finally {
       setBusy(null)
     }
@@ -193,7 +193,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
             marginBottom: '1.75rem',
           }}
         >
-          Done. You are off every list. If that was a slip, flip any list back on above.
+          Done. You&apos;re off every list. If that was a slip, flip any list back on above.
         </p>
       )}
 
@@ -248,7 +248,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
         <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: `1px solid ${hairline}` }}>
           {changeState === 'sent' ? (
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: text, marginTop: 0, marginBottom: 0 }}>
-              Check your new address for a confirmation link. Your current address stays active until you confirm, and a notice went to {maskedEmail} so you can stop the change if it was not you.
+              Check your new address for a confirmation link. Your current address stays active until you confirm, and a notice went to {maskedEmail} so you can stop the change if it wasn&apos;t you.
             </p>
           ) : (
             <>
@@ -280,16 +280,16 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
                 </button>
               </form>
               {changeState === 'same' && (
-                <p style={{ fontSize: '0.9rem', color: faint, marginTop: '0.75rem' }}>That is already your address.</p>
+                <p style={{ fontSize: '0.9rem', color: faint, marginTop: '0.75rem' }}>That&apos;s already your address.</p>
               )}
               {changeState === 'invalid' && (
-                <p style={{ fontSize: '0.9rem', color: '#e6a23c', marginTop: '0.75rem' }}>That does not look like a valid email. Check it and try again.</p>
+                <p style={{ fontSize: '0.9rem', color: '#e6a23c', marginTop: '0.75rem' }}>That doesn&apos;t look like a valid email. Check it and try again.</p>
               )}
               {changeState === 'rate' && (
-                <p style={{ fontSize: '0.9rem', color: '#e6a23c', marginTop: '0.75rem' }}>That is a few change requests in a short window. Give it an hour and try again.</p>
+                <p style={{ fontSize: '0.9rem', color: '#e6a23c', marginTop: '0.75rem' }}>That&apos;s a few change requests in a short window. Give it an hour and try again.</p>
               )}
               {changeState === 'error' && (
-                <p style={{ fontSize: '0.9rem', color: '#e6a23c', marginTop: '0.75rem' }}>That did not go through. Please try again in a moment.</p>
+                <p style={{ fontSize: '0.9rem', color: '#e6a23c', marginTop: '0.75rem' }}>That didn&apos;t go through. Please try again in a moment.</p>
               )}
             </>
           )}

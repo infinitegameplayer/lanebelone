@@ -60,17 +60,17 @@ export async function POST(req: NextRequest) {
         <p>Someone, hopefully you, asked to move their email subscriptions to this address.</p>
         <p>Confirm to make it official. Until you do, nothing changes.</p>
         <p><a href="${confirmUrl}" style="color:#c8973a;text-decoration:none">Confirm this address</a></p>
-        <p>This link works for 72 hours. If you did not ask for this, you can ignore it and nothing happens.</p>
+        <p>This link works for 72 hours. If you didn't ask for this, you can ignore it and nothing happens.</p>
       `,
     })
     await sendEmail({
       to: result.oldEmail!,
       subject: 'A change to your email address was requested',
-      previewText: 'If this was not you, cancel it here.',
+      previewText: "If this wasn't you, cancel it here.",
       html: `
         <p>A request came in to move your email subscriptions to a new address.</p>
         <p>If that was you, confirm from the new address and the move completes. Nothing else is needed here.</p>
-        <p>If it was not you, cancel it now. The change only applies once the new address is confirmed.</p>
+        <p>If it wasn't you, cancel it now. The change only applies once the new address is confirmed.</p>
         <p><a href="${cancelUrl}" style="color:#c8973a;text-decoration:none">Cancel this change</a></p>
       `,
     })

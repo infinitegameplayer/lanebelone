@@ -65,7 +65,7 @@ export default function ConfirmEmailChangeClient({ token }: { token: string }) {
   }
 
   if (outcome === 'confirmed') {
-    return <Note>Done. Your email is updated. Everything you are subscribed to will come to this address from now on.</Note>
+    return <Note>Done. Your email is updated. Everything you&apos;re subscribed to will come to this address from now on.</Note>
   }
   if (outcome === 'merged') {
     return <Note>Got it. I will combine your two addresses by hand and follow up. Nothing else is needed from you.</Note>
@@ -73,7 +73,7 @@ export default function ConfirmEmailChangeClient({ token }: { token: string }) {
   if (outcome === 'collision') {
     return (
       <div style={{ fontFamily: 'Georgia, serif', color: muted }}>
-        <Note>That address is already on file, so the change did not go through. Want me to combine the two for you?</Note>
+        <Note>That address is already on file, so the change didn&apos;t go through. Want me to combine the two for you?</Note>
         <button type="button" onClick={merge} style={primaryButtonStyle}>Combine them for me</button>
       </div>
     )
