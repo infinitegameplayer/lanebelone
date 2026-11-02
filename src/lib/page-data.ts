@@ -623,13 +623,13 @@ export const linkHub: LinkHubItem[] = [
     href: 'https://www.sidequesthq.co/products/the-alive-business',
     icon: 'book',
   },
-  // Rotating episode slot. Infinite Player Season visit 4 (2026-10-26) opens
-  // One Alive Thing, already featured above, so the slot points at the
-  // concept the piece's no carries: positive-sum by design.
+  // Rotating episode slot. Infinite Player Season visit 5 (2026-11-02) names
+  // The Alive Business, already featured above, so the slot points at the
+  // concept the piece turns on: conditioned versus authentic identity.
   {
-    label: 'Positive-Sum by Design',
-    sublabel: "Your no can be the door to someone else's yes",
-    href: 'https://www.infinitegameos.io/concepts/positive-sum-by-design',
+    label: 'Conditioned vs. Authentic Identity',
+    sublabel: 'A brand that feels like you starts underneath the look',
+    href: 'https://www.infinitegameos.io/concepts/conditioned-vs-authentic-identity',
     icon: 'compass',
   },
   {

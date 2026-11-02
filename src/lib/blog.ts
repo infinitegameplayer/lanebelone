@@ -73,6 +73,7 @@ export const LIVE_SLUGS: string[] = [
   'several-irons-in-the-fire',
   'that-which-is-seeking-you',
   'someone-elses-yes',
+  'once-you-know-the-scales',
 ]
 
 // Combined set used for static generation and URL resolution.
