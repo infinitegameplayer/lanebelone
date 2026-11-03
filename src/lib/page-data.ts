@@ -212,7 +212,20 @@ export interface HappeningNowItem {
 // Discoverability Sitting 3). Empty by default, and the homepage section and its
 // markdown twin render only when an item is here. It returns for something with a
 // real window: a launch, a workshop date, an Explorer's Side Quest opening.
-export const happeningNow: HappeningNowItem[] = []
+// 2026-11-03, King-ruled (Peru 2027 Launch Surfaces): Peru 2027 is the first.
+// Copy borrows from the Peru page's own description. It leaves once the twelve
+// spots fill or the trip runs, and the array returns to empty.
+export const happeningNow: HappeningNowItem[] = [
+  {
+    badge: 'Peru 2027',
+    title: 'Infinite Players in Peru',
+    description:
+      "Eleven days from Cusco to Machu Picchu, 1 to 11 September 2027. An Explorer's Side Quest with Lane and Another Planet Peru. Twelve spots in all.",
+    cta: 'See the journey',
+    ctaHref: 'https://www.sidequesthq.co/explorers-side-quest/peru-2027',
+    featured: true,
+  },
+]
 
 export interface BookEntry {
   badge: string
@@ -606,13 +619,15 @@ export const linkHub: LinkHubItem[] = [
     featured: true,
     pill: 'Free',
   },
-  // The alive work, King-placed near the top (2026-10-18). Sublabel draws on
-  // the /explorers-side-quest page, which names Peru 2027 as forming. Pill
-  // King-added 2026-10-18; drop it once Peru 2027 runs.
+  // The alive work, King-placed near the top (2026-10-18). Pill King-added
+  // 2026-10-18. 2026-11-03, King-ruled (Peru 2027 Launch Surfaces): the item
+  // became Peru's, straight to the trip page (the full www URL skips the /peru
+  // redirect). Once the twelve spots fill or the trip runs, it returns to the
+  // general Explorer's Side Quest at sidequesthq.co/explorers-side-quest.
   {
-    label: "Explorer's Side Quest",
-    sublabel: 'Small-group adventures with good people · the next one is forming',
-    href: 'https://www.sidequesthq.co/explorers-side-quest',
+    label: 'Infinite Players in Peru',
+    sublabel: 'Cusco to Machu Picchu · 1 to 11 September 2027',
+    href: 'https://www.sidequesthq.co/explorers-side-quest/peru-2027',
     icon: 'mountain',
     pill: 'Peru 2027',
   },
