@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { usePostHog } from 'posthog-js/react'
 import { isNoTrackPath } from '@/lib/no-track'
 import { umamiTrack } from '@/lib/umami'
+import { readFirstTouch, rememberFirstTouch } from '@/lib/client-attribution'
 
 // Hosts whose outbound clicks we record (Kingdom + the social/code surfaces we publish to).
 const KINGDOM_HOSTS = new Set([
@@ -41,20 +42,18 @@ export function CrossSiteLinkTracker() {
   // record the cross-site stitch, persist it for checkout, then clean the URL.
   useEffect(() => {
     if (typeof window === 'undefined') return
-    // First-touch: remember this session's entry UTMs and referrer once, so a
-    // later cross-site hop can forward the true source even after same-site
-    // navigation has dropped the query string.
+    // First-touch: remember the visitor's entry UTMs and referrer once, kept in
+    // localStorage for a year, so a later cross-site hop (even in a new tab on a
+    // return visit) can forward the true source.
     try {
-      if (!sessionStorage.getItem('first_touch')) {
-        const p = new URLSearchParams(window.location.search)
-        const ft: Record<string, string> = {}
-        for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'igshid', 'ttclid', 'msclkid']) {
-          const v = p.get(k)
-          if (v) ft[k] = v
-        }
-        if (document.referrer) ft.referrer = document.referrer
-        if (Object.keys(ft).length) sessionStorage.setItem('first_touch', JSON.stringify(ft))
+      const p = new URLSearchParams(window.location.search)
+      const ft: Record<string, string> = {}
+      for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'igshid', 'ttclid', 'msclkid']) {
+        const v = p.get(k)
+        if (v) ft[k] = v
       }
+      if (document.referrer) ft.referrer = document.referrer
+      rememberFirstTouch(ft)
     } catch {
       // first-touch capture is best-effort
     }
@@ -120,9 +119,9 @@ export function CrossSiteLinkTracker() {
               url.searchParams.set('ksrc', window.location.hostname)
             }
           }
-          // Forward this session's first-touch source so the destination and its
+          // Forward the kept first-touch source so the destination and its
           // checkout see the true origin, not just the immediate referrer.
-          const ft = JSON.parse(sessionStorage.getItem('first_touch') || '{}')
+          const ft = readFirstTouch()
           for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'igshid', 'ttclid', 'msclkid']) {
             if (ft[k] && !url.searchParams.has(k)) url.searchParams.set(k, ft[k])
           }
