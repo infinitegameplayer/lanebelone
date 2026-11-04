@@ -1,12 +1,18 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getAllPosts, getPostBySlug, CARRY_FORWARD_SLUGS } from '@/lib/blog'
+import {
+  getAllPosts,
+  getPostBySlug,
+  CARRY_FORWARD_SLUGS,
+  articleJsonLd as buildArticleJsonLd,
+  articleBreadcrumbJsonLd,
+  schemaDate,
+} from '@/lib/blog'
 import ReadingProgress from '@/components/ReadingProgress'
 import ArticlesSubscribeForm from '@/components/ArticlesSubscribeForm'
 import MobileBottomBar from '@/components/MobileBottomBar'
 import GoldButton from '@/components/GoldButton'
-import { personRef } from '@/lib/identity'
 
 // Only statically generate carry-forward slugs. Expired slugs are handled by
 // Vercel redirects in vercel.json before this route is reached.
@@ -32,6 +38,7 @@ export async function generateMetadata({
       canonical: `https://www.lanebelone.com/blog/f/${slug}`,
       types: {
         'text/markdown': `https://www.lanebelone.com/markdown/blog/f/${slug}`,
+        'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
       },
     },
     openGraph: {
@@ -42,8 +49,8 @@ export async function generateMetadata({
       type: 'article',
       url: `https://www.lanebelone.com/blog/f/${slug}`,
       authors: [post.authorUrl ?? 'https://www.lanebelone.com'],
-      publishedTime: `${post.date}T12:00:00Z`,
-      modifiedTime: `${post.dateModified || post.date}T12:00:00Z`,
+      publishedTime: schemaDate(post.date),
+      modifiedTime: schemaDate(post.dateModified || post.date),
       images: post.heroImage ? [{ url: post.heroImage }] : [],
     },
     twitter: {
@@ -72,45 +79,8 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
-  const articleJsonLd: Record<string, unknown> = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    '@id': `https://www.lanebelone.com/blog/f/${slug}#article`,
-    mainEntityOfPage: `https://www.lanebelone.com/blog/f/${slug}`,
-    headline: post.title,
-    description: post.description,
-    datePublished: `${post.date}T00:00:00Z`,
-    dateModified: `${post.dateModified || post.date}T00:00:00Z`,
-    inLanguage: 'en-US',
-    author: {
-      '@type': 'Person',
-      '@id': 'https://infinitegameos.io/#person',
-      name: post.author ?? 'Lane Belone',
-      url: post.authorUrl ?? 'https://www.lanebelone.com',
-    },
-    publisher: personRef,
-    url: `https://www.lanebelone.com/blog/f/${slug}`,
-    license: 'https://creativecommons.org/licenses/by/4.0/',
-    ...(post.heroImage && { image: `https://www.lanebelone.com${post.heroImage}` }),
-    ...(post.wordCount && { wordCount: post.wordCount }),
-    ...(post.articleSection && { articleSection: post.articleSection }),
-    ...(post.about && post.about.length > 0 && {
-      about: post.about.map(id => ({ '@id': id })),
-    }),
-    ...(post.mentions && post.mentions.length > 0 && {
-      mentions: post.mentions.map(id => ({ '@id': id })),
-    }),
-  }
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.lanebelone.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://www.lanebelone.com/blog' },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.lanebelone.com/blog/f/${slug}` },
-    ],
-  }
+  const articleJsonLd = buildArticleJsonLd(post)
+  const breadcrumbJsonLd = articleBreadcrumbJsonLd(post)
 
   return (
     <article className="pt-32 pb-24">

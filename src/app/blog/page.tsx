@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com/blog',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown/blog',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
   openGraph: {
@@ -38,13 +39,25 @@ export default function BlogIndexPage() {
     url: 'https://www.lanebelone.com/blog',
     name: 'Lane Belone · Writing',
     description: 'Essays on the Infinite Game, sovereignty, flow and perception.',
-    author: { '@id': 'https://infinitegameos.io/#person' },
+    author: { '@id': PERSON_ID },
     publisher: { '@id': PERSON_ID },
+    mainEntity: { '@id': 'https://www.lanebelone.com/blog#posts' },
+    blogPost: posts.map((post) => ({ '@id': `https://www.lanebelone.com/blog/f/${post.slug}#article` })),
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.lanebelone.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://www.lanebelone.com/blog' },
+    ],
   }
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    '@id': 'https://www.lanebelone.com/blog#posts',
     itemListElement: posts.map((post, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -57,6 +70,7 @@ export default function BlogIndexPage() {
     <section className="section pt-40 pb-24">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="max-w-5xl mx-auto">
         <h1
           className="text-5xl md:text-7xl mb-4"

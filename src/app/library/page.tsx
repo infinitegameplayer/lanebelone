@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { PERSON_ID } from '@/lib/identity'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { localCover } from '@/lib/local-cover'
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com/library',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown/library',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
   openGraph: {
@@ -82,7 +84,7 @@ const collectionPageJsonLd = {
   name: 'The Library · Lane Belone',
   description: DESCRIPTION,
   isPartOf: { '@id': 'https://www.lanebelone.com/#website' },
-  about: { '@id': 'https://infinitegameos.io/#person' },
+  about: { '@id': PERSON_ID },
   mainEntity: {
     '@type': 'ItemList',
     name: 'Lane Belone Library',
