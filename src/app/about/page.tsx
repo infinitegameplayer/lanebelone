@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { PERSON_ID } from '@/lib/identity'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
 import NewsletterForm from '@/components/NewsletterForm'
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com/about',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown/about',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
   openGraph: {
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
 const profilePageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
+  mainEntity: { '@id': PERSON_ID },
   url: 'https://www.lanebelone.com/about',
   name: 'About Lane Belone',
   description: LANE_BIO,

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import SectionReveal from '@/components/SectionReveal'
-import { BIO_ONE_LINE, personNode, sqhqOrgRef } from '@/lib/identity'
+import { BIO_ONE_LINE, PERSON_ID, personNode, sqhqOrgRef } from '@/lib/identity'
 
 export const metadata: Metadata = {
   title: 'Cite this Work',
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com/cite',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown/cite',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
   openGraph: {
@@ -18,19 +19,20 @@ export const metadata: Metadata = {
     title: 'Cite this Work · Lane Belone',
     description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work.',
     url: 'https://www.lanebelone.com/cite',
+    images: ['https://www.lanebelone.com/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cite this Work · Lane Belone',
     description: 'Citation formats (APA, Chicago, BibTeX) and machine-readable references for Lane Belone, Joyful Sovereignty, the Infinite Game OS framework, preprints and related work.',
+    images: ['https://www.lanebelone.com/opengraph-image'],
   },
 }
 
 const SITE = 'https://www.lanebelone.com'
 const IGOS = 'https://www.infinitegameos.io'
-// The Person entity id is the bare host on all three sites (Web Strategy Codex III).
-// IGOS above is the link host, so the id has its own constant.
-const PERSON_ID = 'https://infinitegameos.io/#person'
+// The Person entity id (PERSON_ID) is the bare host on all three sites (Web
+// Strategy Codex III) and comes from src/lib/identity.ts.
 const SQHQ = 'https://www.sidequesthq.co'
 const HF_DATASET = 'https://huggingface.co/datasets/lanebelone/infinite-game-os'
 
@@ -117,6 +119,8 @@ const citePageGraph = {
         { '@id': PERSON_ID },
         { '@type': 'Person', name: 'Steven Kuhn' },
       ],
+      isbn: '173525472X',
+      url: 'https://www.amazon.com/Unleash-Your-Humble-Alpha-Presence/dp/173525472X',
       datePublished: '2023',
       description: 'A framework for leaders navigating the intersection of inner life and outer impact. Written for veterans, entrepreneurs and natural leaders.',
     },

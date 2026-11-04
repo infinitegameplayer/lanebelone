@@ -8,6 +8,8 @@ category: infinite-game
 featured: true
 heroImage: /images/blog/the-infinite-game-is-already-in-progress-hero.png
 format: markdown
+author: "Lane Belone"
+authorUrl: "https://www.lanebelone.com"
 about:
   - https://www.infinitegameos.io/concepts/joyful-sovereignty
   - https://www.infinitegameos.io/infinite-game

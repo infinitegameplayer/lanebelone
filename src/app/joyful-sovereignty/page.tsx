@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com/joyful-sovereignty',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown/joyful-sovereignty',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
   openGraph: {
