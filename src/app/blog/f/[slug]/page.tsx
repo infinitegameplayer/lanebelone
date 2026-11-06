@@ -60,7 +60,8 @@ export async function generateMetadata({
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr)
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  // UTC, as in BlogCard: a date-only string is UTC midnight (2026-11-05).
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
 }
 
 export default async function BlogPostPage({
@@ -134,7 +135,11 @@ export default async function BlogPostPage({
         </div>
       )}
 
-      <div className="section max-w-2xl mx-auto">
+      {/* The column holds the post to about 67 characters a line at desktop width.
+          `.section` sets max-width: 1100px outside any layer, which beat the
+          max-w-2xl utility, so posts ran 121 to 136 a line at 1440 px until
+          2026-11-05 (Site Update). The ! keeps the utility above it. */}
+      <div className="section max-w-[38rem]! mx-auto">
         {/* Meta */}
         <p
           className="text-xs text-parchment/40 mb-4 tracking-widest uppercase"

@@ -362,7 +362,7 @@ export default function HomePage() {
                       marginBottom: '0.5rem',
                     }}
                   >
-                    {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) : ''}
+                    {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' }) : ''}
                   </div>
                   <h3
                     style={{
