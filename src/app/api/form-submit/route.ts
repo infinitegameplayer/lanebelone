@@ -44,7 +44,7 @@ const MIN_FILL_MS = 1500
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
+  const blocked = await refuseBots({ route: '/api/form-submit' })
   if (blocked) return blocked
   const origin = req.headers.get('origin') ?? req.headers.get('referer') ?? ''
   let body: SubmitBody
