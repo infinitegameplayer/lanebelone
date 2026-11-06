@@ -16,7 +16,7 @@ const SITE_URL = 'https://www.lanebelone.com'
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
+  const blocked = await refuseBots({ route: '/api/preferences/request-link' })
   if (blocked) return blocked
   let body: { email?: string }
   try {
