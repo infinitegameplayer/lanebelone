@@ -343,7 +343,8 @@ export async function applyArticleOptIn({
     try {
       const token = signEmailToken(normalizedEmail)
       const unsubUrl = `https://www.lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
-      const template = articleWelcomeEmail({ firstName: resolvedFirstName })
+      const leaveUrl = `https://www.lanebelone.com/articles/leave?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const template = articleWelcomeEmail({ firstName: resolvedFirstName, leaveUrl })
       await sendEmail({
         to: normalizedEmail,
         subject: template.subject,

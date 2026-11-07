@@ -1,64 +1,24 @@
-// One-click "join the articles list" GET handler.
+// The old one-click "join the articles list" link, now a redirect that writes
+// nothing (2026-11-07, Email Codex Section 12).
 //
-// Security tradeoff note: the broadcast link sent to Personal-list contacts
-// uses ?email={{{EMAIL}}} with no HMAC token. The existence guard below
-// bounds abuse: if no matching contact exists in Supabase, the request is
-// rejected without creating anything. This limits abuse to already-known
-// contacts whose emails appear in Personal-list broadcasts.
-// An optional ?token= parameter allows fully verified opt-ins (e.g. from
-// transactional surfaces that can mint an HMAC token). When token is present
-// and invalid, the request is rejected regardless of contact existence.
+// This GET used to subscribe on open, so any mail scanner that followed the
+// link joined the reader without them knowing. Every letter, nurture email and
+// Side Quest HQ template that ever carried it still points here, so the route
+// stays and hands the address (and token, when the link carried one) to the
+// join page, /articles/join. That page joins a person once they are plainly on
+// it, behind BotID, and shows a one-tap button otherwise. Every link already in
+// an inbox became scanner-safe the day this shipped.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase'
-import { verifyEmailToken } from '@/lib/unsubscribe-token'
-import { applyArticleOptIn } from '@/lib/newsletter'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl
-  const rawEmail = searchParams.get('email') ?? ''
-  const token = searchParams.get('token') ?? ''
-
-  const email = rawEmail.trim().toLowerCase()
-
-  if (!email) {
-    return NextResponse.redirect(new URL('/articles-subscribed?status=invalid', req.url))
-  }
-
-  // If a token was supplied, it must be valid.
-  if (token) {
-    if (!verifyEmailToken(email, token)) {
-      return NextResponse.redirect(new URL('/articles-subscribed?status=invalid', req.url))
-    }
-  }
-
-  // Look up the contact. If none exists and no valid token was supplied,
-  // reject without creating anything (prevents arbitrary opt-ins via the
-  // tokenless broadcast link).
-  const supabase = getSupabaseAdmin()
-  const { data: existing } = await supabase
-    .from('contacts')
-    .select('id, tags, first_name, last_name, unsubscribed')
-    .eq('email', email)
-    .maybeSingle()
-
-  if (!existing && !token) {
-    return NextResponse.redirect(new URL('/articles-subscribed?status=unknown', req.url))
-  }
-
-  // A valid token is proof the person asked; the tokenless broadcast link is
-  // not, so an opted-out contact gets a welcome-back email instead of a silent
-  // re-add (Site Defensibility Read 2026-10-25).
-  const result = await applyArticleOptIn({
-    email,
-    source: 'one-click:personal-email',
-    verified: Boolean(token),
-  })
-
-  if (result.status === 'rejoin-confirm-sent') {
-    return NextResponse.redirect(new URL('/articles-subscribed?status=check-email', req.url))
-  }
-  return NextResponse.redirect(new URL('/articles-subscribed', req.url))
+  const target = new URL('/articles/join', req.url)
+  const email = searchParams.get('email')
+  const token = searchParams.get('token')
+  if (email) target.searchParams.set('email', email)
+  if (token) target.searchParams.set('token', token)
+  return NextResponse.redirect(target, 307)
 }
