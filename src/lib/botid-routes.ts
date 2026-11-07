@@ -11,4 +11,5 @@ export const BOTID_PROTECTED: { path: string; method: 'POST' }[] = [
   { path: '/api/preferences/request-email-change', method: 'POST' },
   { path: '/api/articles/join', method: 'POST' },
   { path: '/api/articles/leave', method: 'POST' },
+  { path: '/api/unsubscribe', method: 'POST' },
 ]
