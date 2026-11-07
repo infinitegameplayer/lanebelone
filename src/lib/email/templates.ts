@@ -82,10 +82,15 @@ ${signoff()}
 // consent or success-page button click. Voice tells: no "newsletter", no
 // "subscriber", no "join the community". Sent from howdy@lanebelone.com.
 
+// leaveUrl carries the undo line, as on the articles welcome: a join can start
+// from one click on the letters map, so the welcome carries a one-click way
+// back (/personal/leave, under the same checks as the join page).
 export function newsletterWelcomeEmail({
   firstName,
+  leaveUrl,
 }: {
   firstName?: string
+  leaveUrl: string
 }) {
   const cleaned = cleanName(firstName)
   const opening = cleaned
@@ -102,6 +107,7 @@ ${p(`Two things to do real quick. Save ${bold('howdy@lanebelone.com')} to your c
 ${p("No schedule. I send when there's something worth sending. Quiet stretches are part of the design (that's what I tell myself lol).")}
 ${p('Good to be in touch.')}
 ${welcomeSignoff()}
+${p(`Not you? <a href="${leaveUrl}" style="color:#8a7f70">One click to undo.</a>`, 'margin-top:28px;font-size:13px;color:#8a7f70')}
 `,
   }
 }
