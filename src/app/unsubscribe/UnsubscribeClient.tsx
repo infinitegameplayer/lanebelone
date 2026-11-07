@@ -42,6 +42,8 @@ async function unsubscribe(email: string, token: string, mode: 'auto' | 'tap', g
 export default function UnsubscribeClient({ email, token, state }: { email: string; token: string; state: LinkState }) {
   const [status, setStatus] = useState<Status>('idle')
   const [message, setMessage] = useState('')
+  // A failed tap keeps the button on screen, with this line under it.
+  const [tapError, setTapError] = useState('')
 
   const phase = useAutoAction(async (gate): Promise<AutoOutcome> => {
     const res = await unsubscribe(email, token, 'auto', gate)
@@ -53,17 +55,18 @@ export default function UnsubscribeClient({ email, token, state }: { email: stri
   const onTap = async () => {
     if (status === 'working') return
     setStatus('working')
+    setTapError('')
     try {
       const res = await unsubscribe(email, token, 'tap')
       if (res.ok) {
         setStatus('success')
       } else {
-        setStatus('error')
-        setMessage('Something stopped that. Reply to any email from here and it will be handled by hand.')
+        setStatus('idle')
+        setTapError('Something stopped that. Reply to any email from here and it will be handled by hand.')
       }
     } catch {
-      setStatus('error')
-      setMessage('Network error. Please try again.')
+      setStatus('idle')
+      setTapError('Network error. Tap again in a moment.')
     }
   }
 
@@ -111,8 +114,16 @@ export default function UnsubscribeClient({ email, token, state }: { email: stri
     body = <p style={text}>This link couldn&apos;t be verified. If you copied it from an email, try clicking it directly instead.</p>
   } else if (status === 'resubscribing') {
     body = <p style={text}>Bringing you back...</p>
-  } else if (status === 'resubscribed' || status === 'error') {
+  } else if (status === 'resubscribed') {
     body = <p style={text}>{message}</p>
+  } else if (status === 'error') {
+    // Only a failed resubscribe lands here; its button stays for another try.
+    body = (
+      <>
+        <p style={text}>{message}</p>
+        {resubscribeBlock}
+      </>
+    )
   } else if (state === 'already') {
     body = (
       <>
@@ -143,6 +154,9 @@ export default function UnsubscribeClient({ email, token, state }: { email: stri
         >
           {status === 'working' ? 'Unsubscribing…' : 'Unsubscribe me'}
         </button>
+        {tapError && (
+          <p style={{ ...text, fontSize: '0.85rem', color: 'rgba(220,80,80,0.85)', marginTop: '0.75rem' }}>{tapError}</p>
+        )}
       </>
     )
   } else {
