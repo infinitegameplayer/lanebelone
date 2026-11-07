@@ -149,7 +149,8 @@ function buildBeat(stage: number, email: string, firstName: string): EmailTempla
   if (stage === 1) return personalHelloEmail({ firstName })
   if (stage === 2) {
     const token = signEmailToken(email)
-    const optInUrl = `${SITE}/api/newsletter/articles-optin?email=${encodeURIComponent(email)}&token=${token}`
+    // The scanner-proof join page (Email Codex Section 12, 2026-11-07).
+    const optInUrl = `${SITE}/articles/join?email=${encodeURIComponent(email)}&token=${token}`
     return personalArticleInviteEmail({ firstName, optInUrl, blogUrl: BLOG_URL })
   }
   return null

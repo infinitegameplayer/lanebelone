@@ -112,10 +112,15 @@ ${welcomeSignoff()}
 // to the Articles list. Confirms the subscription and sets the expectation
 // for full essays in the inbox. Sent from howdy@lanebelone.com.
 
+// leaveUrl carries the undo line (King-ruled 2026-11-07): a join can start from
+// one click on an email link, so the welcome carries a one-click way back. Its
+// page (/articles/leave) acts under the same checks as the join page.
 export function articleWelcomeEmail({
   firstName,
+  leaveUrl,
 }: {
   firstName?: string
+  leaveUrl: string
 }) {
   const cleaned = cleanName(firstName)
   const opening = cleaned
@@ -130,6 +135,7 @@ ${p("You just opened a door. From here on, my new writing lands right here in yo
 ${p("Every one closes with a small breadcrumb at the bottom. A song, a side quest, a little surprise. Always worth a look.")}
 ${p("Glad you're here.")}
 ${welcomeSignoff()}
+${p(`Not you? <a href="${leaveUrl}" style="color:#8a7f70">One click to undo.</a>`, 'margin-top:28px;font-size:13px;color:#8a7f70')}
 `,
   }
 }
