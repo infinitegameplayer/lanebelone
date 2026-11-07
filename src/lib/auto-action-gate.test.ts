@@ -74,6 +74,8 @@ const EMAIL_LINK_PAGES = [
   'src/app/letter/join/JoinClient.tsx',
   'src/app/letter/leave/LeaveClient.tsx',
   'src/app/unsubscribe/UnsubscribeClient.tsx',
+  'src/app/personal/join/JoinClient.tsx',
+  'src/app/personal/leave/LeaveClient.tsx',
 ]
 const present = EMAIL_LINK_PAGES.filter((f) => existsSync(join(process.cwd(), f)))
 
