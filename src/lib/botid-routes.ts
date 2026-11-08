@@ -14,4 +14,5 @@ export const BOTID_PROTECTED: { path: string; method: 'POST' }[] = [
   { path: '/api/unsubscribe', method: 'POST' },
   { path: '/api/personal/join', method: 'POST' },
   { path: '/api/personal/leave', method: 'POST' },
+  { path: '/api/gate-reading', method: 'POST' },
 ]
