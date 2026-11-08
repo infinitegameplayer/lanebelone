@@ -39,7 +39,7 @@ export default function JoinClient({ email, token }: { email: string; token: str
     if (body?.needsTap) return 'tap'
     const o = outcomeOf(body?.status)
     return o === 'done' ? 'done' : o === 'already' ? 'already' : 'tap'
-  })
+  }, true, 'join')
 
   const onTap = async () => {
     if (tap === 'working') return
