@@ -175,7 +175,9 @@ export async function applyNewsletterOptIn({
         // create leaves an existing contact as it was, so a reader who left and
         // rejoins stayed unsubscribed in Resend until the next reconcile
         // (observed 2026-11-07). update clears it, as flipAudience does.
-        await resend.contacts.update({ audienceId, email: normalizedEmail, unsubscribed: false })
+        const { error: updateError } = await resend.contacts.update({ audienceId, email: normalizedEmail, unsubscribed: false })
+        // The SDK returns an API error rather than throwing it, so it is read here.
+        if (updateError) console.error('opt-in Resend unsuppress error:', updateError.message)
       } else {
         console.warn('newsletter opt-in: Resend audience id not resolved, skipping eager-add')
       }
@@ -345,7 +347,9 @@ export async function applyArticleOptIn({
         // create leaves an existing contact as it was, so a reader who left and
         // rejoins stayed unsubscribed in Resend until the next reconcile
         // (observed 2026-11-07). update clears it, as flipAudience does.
-        await resend.contacts.update({ audienceId, email: normalizedEmail, unsubscribed: false })
+        const { error: updateError } = await resend.contacts.update({ audienceId, email: normalizedEmail, unsubscribed: false })
+        // The SDK returns an API error rather than throwing it, so it is read here.
+        if (updateError) console.error('opt-in Resend unsuppress error:', updateError.message)
       } else {
         console.warn('article opt-in: Resend audience id not resolved, skipping eager-add')
       }
