@@ -638,13 +638,13 @@ export const linkHub: LinkHubItem[] = [
     href: 'https://www.sidequesthq.co/products/the-alive-business',
     icon: 'book',
   },
-  // Rotating episode slot. Infinite Player Season visit 5 (2026-11-02) names
-  // The Alive Business, already featured above, so the slot points at the
-  // concept the piece turns on: conditioned versus authentic identity.
+  // Rotating episode slot. Infinite Player Season visit 6 (2026-11-09) opens
+  // on One Alive Thing, already featured above, and names the Side Quest
+  // Playbook as the way to try on the next jacket, so the slot points there.
   {
-    label: 'Conditioned vs. Authentic Identity',
-    sublabel: 'A brand that feels like you starts underneath the look',
-    href: 'https://www.infinitegameos.io/concepts/conditioned-vs-authentic-identity',
+    label: 'Side Quest Playbook',
+    sublabel: 'Try on the next jacket: a quest with a beginning, middle and end',
+    href: 'https://www.sidequesthq.co/products/side-quest-playbook',
     icon: 'compass',
   },
   {
