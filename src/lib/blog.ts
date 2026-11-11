@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import { personRef } from './identity'
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
@@ -121,8 +122,15 @@ function renderMarkdownSync(content: string): string {
   return result.toString()
 }
 
-function countWords(content: string): number {
-  return content.trim().split(/\s+/).filter(Boolean).length
+// Counts the words a reader sees: tags, comments and entities are stripped
+// first, so html-format archive posts are not counted by their markup.
+export function countWords(content: string): number {
+  const text = content
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&[a-z#0-9]+;/gi, ' ')
+  return text.trim().split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w)).length
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -192,5 +200,63 @@ export function getPostBySlug(slug: string): BlogPost | null {
     articleSection: data.articleSection || data.category || undefined,
     author: data.author || undefined,
     authorUrl: data.authorUrl || undefined,
+  }
+}
+
+// Article schema. One builder for the JSON-LD on every /blog/f/[slug] page, so
+// the fields are tested once (blog-schema.test.ts) instead of per page.
+export const SITE_URL = 'https://www.lanebelone.com'
+export const BLOG_ID = `${SITE_URL}/blog#blog`
+
+export function postUrl(slug: string): string {
+  return `${SITE_URL}/blog/f/${slug}`
+}
+
+// One timestamp for a frontmatter date everywhere it is published (JSON-LD,
+// Open Graph article times and RSS all read noon UTC).
+export function schemaDate(date: string): string {
+  return `${date}T12:00:00Z`
+}
+
+export function articleJsonLd(post: BlogPost): Record<string, unknown> {
+  const url = postUrl(post.slug)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
+    mainEntityOfPage: url,
+    headline: post.title,
+    description: post.description,
+    datePublished: schemaDate(post.date),
+    // A post never revised carries no dateModified in frontmatter; its
+    // publish date is its last modification.
+    dateModified: schemaDate(post.dateModified || post.date),
+    inLanguage: 'en-US',
+    author: { ...personRef },
+    publisher: { ...personRef },
+    isPartOf: { '@type': 'Blog', '@id': BLOG_ID, url: `${SITE_URL}/blog` },
+    url,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    ...(post.heroImage && { image: `${SITE_URL}${post.heroImage}` }),
+    ...(post.wordCount && { wordCount: post.wordCount }),
+    ...(post.articleSection && { articleSection: post.articleSection }),
+    ...(post.about && post.about.length > 0 && {
+      about: post.about.map(id => ({ '@id': id })),
+    }),
+    ...(post.mentions && post.mentions.length > 0 && {
+      mentions: post.mentions.map(id => ({ '@id': id })),
+    }),
+  }
+}
+
+export function articleBreadcrumbJsonLd(post: BlogPost): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: postUrl(post.slug) },
+    ],
   }
 }

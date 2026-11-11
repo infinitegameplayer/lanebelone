@@ -6,6 +6,7 @@ import InquiryForm from '@/components/InquiryForm'
 import Hero from '@/components/Hero'
 import { getAllPosts } from '@/lib/blog'
 import { localCover } from '@/lib/local-cover'
+import { PERSON_ID } from '@/lib/identity'
 import {
   happeningNow,
   sqhqChips,
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
 }
@@ -37,21 +39,25 @@ const websiteJsonLd = {
   name: 'Lane Belone',
   description:
     'Lane Belone, writer on the Infinite Game, sharing breadcrumbs along the way.',
-  publisher: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': PERSON_ID },
   inLanguage: 'en-US',
   // The footer, /terms and every per-article node already say CC BY 4.0.
   // The site-level node was the one place that stayed silent.
   license: 'https://creativecommons.org/licenses/by/4.0/',
 }
 
-const profilePageJsonLd = {
+// The homepage is a ProfilePage, as /about is: Web Strategy Codex VI.2 names
+// ProfilePage on both for this site. A change to that is a codex change first.
+const homePageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
+  '@id': 'https://www.lanebelone.com/#webpage',
+  isPartOf: { '@id': 'https://www.lanebelone.com/#website' },
   url: 'https://www.lanebelone.com',
   name: 'Lane Belone',
   description:
     'Lane Belone, writer on the Infinite Game, sharing breadcrumbs along the way.',
-  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
+  mainEntity: { '@id': PERSON_ID },
 }
 
 // Portrait cover crop (4:5 cover-display) for the library-style shelves, matching
@@ -81,7 +87,7 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageJsonLd) }} />
       {/* 1. Hero (client component for useRef + CursorParallax) */}
       <Hero />
 

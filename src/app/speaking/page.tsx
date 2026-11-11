@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { PERSON_ID } from '@/lib/identity'
 import Image from 'next/image'
 import SectionReveal from '@/components/SectionReveal'
 import InquiryForm from '@/components/InquiryForm'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.lanebelone.com/speaking',
     types: {
       'text/markdown': 'https://www.lanebelone.com/markdown/speaking',
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
     },
   },
   openGraph: {
@@ -37,7 +39,7 @@ const speakingServiceJsonLd = {
   category: 'Leadership and Change',
   description:
     'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He brings The Infinite Player into rooms as a keynote, a workshop or a Side Quest.',
-  provider: { '@id': 'https://infinitegameos.io/#person' },
+  provider: { '@id': PERSON_ID },
   url: 'https://www.lanebelone.com/speaking',
   areaServed: 'Worldwide',
   audience: {

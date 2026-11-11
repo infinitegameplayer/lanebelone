@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: 'Terms of use for lanebelone.com.',
   alternates: {
     canonical: 'https://www.lanebelone.com/terms',
+    types: {
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
+    },
   },
   openGraph: {
     type: 'website',
@@ -13,11 +16,13 @@ export const metadata: Metadata = {
     title: 'Terms of Use · Lane Belone',
     description: 'Terms of use for lanebelone.com.',
     url: 'https://www.lanebelone.com/terms',
+    images: ['https://www.lanebelone.com/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms of Use · Lane Belone',
     description: 'Terms of use for lanebelone.com.',
+    images: ['https://www.lanebelone.com/opengraph-image'],
   },
 }
 
