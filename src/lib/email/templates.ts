@@ -3,6 +3,8 @@
 // write succeeds. Suppression: skip the send if the contact has
 // unsubscribed=true. See Form Architecture Codex for the canonical pattern.
 
+import { lettersMapHtml, type LetterKey } from '@/lib/letters-map'
+
 const ACCENT = '#c9a84c'
 
 // A visitor's name reaches these templates from public forms and from stored
@@ -44,6 +46,61 @@ function greeting(firstName?: string): string {
   return name ? `Hey ${name},` : 'Hey,'
 }
 
+// The letters map at the foot of a welcome, leaving out the list it welcomes to
+// (src/lib/letters-map.ts; PendingPlan - The Letters Map and Welcome Back).
+function lettersMap(omit: LetterKey, email: string) {
+  return lettersMapHtml({ omit, email, linkColor: ACCENT, textColor: '#8a7f70' })
+}
+
+function undoLine(leaveUrl: string) {
+  return p(`Not you? <a href="${leaveUrl}" style="color:#8a7f70">One click to undo.</a>`, 'margin-top:28px;font-size:13px;color:#8a7f70')
+}
+
+// ─── Welcome back to one list ───────────────────────────────────────
+//
+// Sent instead of the first welcome when a reader rejoins a list they left
+// (src/lib/list-return.ts reads the earlier leave). Approved draft, PendingPlan
+// - The Letters Map and Welcome Back, section 3: each site swaps the list name,
+// the link and its own sign-off. Distinct from welcomeBackEmail above ("Want
+// back in?"), which stays the door for a reader who left every list.
+const RETURNS: Record<'personal' | 'articles', { back: string; next: string }> = {
+  personal: {
+    back: "You're back on the personal notes.",
+    next: `Nothing to set up. The next one lands when there's something worth sending. Meanwhile, the writing is here: <a href="https://www.lanebelone.com/blog" style="color:${ACCENT}">lanebelone.com/blog</a>`,
+  },
+  articles: {
+    back: "You're back on the articles list.",
+    next: `Nothing to set up. The next one lands when it ships, and everything you missed is here: <a href="https://www.lanebelone.com/blog" style="color:${ACCENT}">lanebelone.com/blog</a>`,
+  },
+}
+
+export function listWelcomeBackEmail({
+  list,
+  firstName,
+  email,
+  leaveUrl,
+}: {
+  list: 'personal' | 'articles'
+  firstName?: string
+  email: string
+  leaveUrl: string
+}) {
+  const name = cleanName(firstName)
+  const r = RETURNS[list]
+  return {
+    subject: 'Welcome back',
+    previewText: 'The door swings both ways.',
+    html: `
+${p(name ? `Hey ${name},` : 'Hey there,')}
+${p(`${r.back} The door swings both ways, and you just proved it.`)}
+${p(r.next)}
+${welcomeSignoff()}
+${lettersMap(list, email)}
+${undoLine(leaveUrl)}
+`,
+  }
+}
+
 // Sent when an address that unsubscribed earlier comes back through a door
 // that cannot prove the person asked (a public form, a signup, a tokenless
 // link). Nothing changes until they choose: the link opens their own
@@ -82,10 +139,17 @@ ${signoff()}
 // consent or success-page button click. Voice tells: no "newsletter", no
 // "subscriber", no "join the community". Sent from howdy@lanebelone.com.
 
+// leaveUrl carries the undo line, as on the articles welcome: a join can start
+// from one click on the letters map, so the welcome carries a one-click way
+// back (/personal/leave, under the same checks as the join page).
 export function newsletterWelcomeEmail({
   firstName,
+  email,
+  leaveUrl,
 }: {
   firstName?: string
+  email: string
+  leaveUrl: string
 }) {
   const cleaned = cleanName(firstName)
   const opening = cleaned
@@ -102,6 +166,8 @@ ${p(`Two things to do real quick. Save ${bold('howdy@lanebelone.com')} to your c
 ${p("No schedule. I send when there's something worth sending. Quiet stretches are part of the design (that's what I tell myself lol).")}
 ${p('Good to be in touch.')}
 ${welcomeSignoff()}
+${lettersMap('personal', email)}
+${undoLine(leaveUrl)}
 `,
   }
 }
@@ -112,10 +178,17 @@ ${welcomeSignoff()}
 // to the Articles list. Confirms the subscription and sets the expectation
 // for full essays in the inbox. Sent from howdy@lanebelone.com.
 
+// leaveUrl carries the undo line (King-ruled 2026-11-07): a join can start from
+// one click on an email link, so the welcome carries a one-click way back. Its
+// page (/articles/leave) acts under the same checks as the join page.
 export function articleWelcomeEmail({
   firstName,
+  email,
+  leaveUrl,
 }: {
   firstName?: string
+  email: string
+  leaveUrl: string
 }) {
   const cleaned = cleanName(firstName)
   const opening = cleaned
@@ -130,6 +203,8 @@ ${p("You just opened a door. From here on, my new writing lands right here in yo
 ${p("Every one closes with a small breadcrumb at the bottom. A song, a side quest, a little surprise. Always worth a look.")}
 ${p("Glad you're here.")}
 ${welcomeSignoff()}
+${lettersMap('articles', email)}
+${undoLine(leaveUrl)}
 `,
   }
 }

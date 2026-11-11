@@ -25,5 +25,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/preferences', '/preferences/:path*', '/unsubscribe', '/articles-subscribed'],
+  matcher: ['/preferences', '/preferences/:path*', '/unsubscribe', '/articles-subscribed', '/articles/join', '/articles/leave', '/personal/join', '/personal/leave'],
 }

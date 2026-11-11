@@ -15,9 +15,13 @@ const { applyArticleOptInMock, applyNewsletterOptInMock } = vi.hoisted(() => ({
 // A Supabase stand-in: the audit insert, the contact lookup and the update all succeed.
 // `contactUnsubscribed` sets whether the found contact once opted out.
 let contactUnsubscribed = false
+let inserts = 0
 const supabaseStub = {
   from: () => ({
-    insert: async () => ({ error: null }),
+    insert: async () => {
+      inserts++
+      return { error: null }
+    },
     select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { id: 1, tags: [], first_name: null, last_name: null, unsubscribed: contactUnsubscribed }, error: null }) }) }),
     update: () => ({ eq: async () => ({ error: null }) }),
   }),
@@ -71,5 +75,36 @@ describe('form-submit, articles list status', () => {
     const res = await POST(articlesRequest())
     expect(applyArticleOptInMock).toHaveBeenCalledTimes(1)
     expect(await res.json()).toEqual({ ok: true, status: 'rejoin-confirm-sent' })
+  })
+})
+
+// 2026-10-30: the sidequesthq starter kit saved the contact "stylemy", and every
+// send to it failed after. sidequesthq refused it at the door on 2026-11-03 (#214);
+// this is the same door on lanebelone (Site Update 2026-11-05).
+describe('an email that is not an address is refused at the door', () => {
+  function submit(formName: string, email: string) {
+    return new NextRequest('https://www.lanebelone.com/api/form-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', origin: 'https://www.lanebelone.com' },
+      body: JSON.stringify({ formName, email, message: 'hello', honeypot: '', openedAt: Date.now() - 5000 }),
+    })
+  }
+
+  it('refuses a malformed email on every form before any row is written', async () => {
+    for (const formName of ['lanebelone-newsletter', 'lanebelone-articles', 'lanebelone-contact', 'lanebelone-speaking']) {
+      for (const email of ['stylemy', 'a@b', 'two words@example.com']) {
+        inserts = 0
+        const res = await POST(submit(formName, email))
+        expect(res.status, `${formName} ${email}`).toBe(400)
+        expect(inserts, `${formName} ${email}`).toBe(0)
+      }
+    }
+    expect(applyArticleOptInMock).not.toHaveBeenCalled()
+    expect(applyNewsletterOptInMock).not.toHaveBeenCalled()
+  })
+
+  it('still accepts a well-formed email on the same form', async () => {
+    const res = await POST(submit('lanebelone-newsletter', 'reader@example.com'))
+    expect(res.status).toBe(200)
   })
 })

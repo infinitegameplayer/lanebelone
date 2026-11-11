@@ -9,7 +9,8 @@
 
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
-import { newsletterWelcomeEmail, articleWelcomeEmail, welcomeBackEmail } from '@/lib/email/templates'
+import { newsletterWelcomeEmail, articleWelcomeEmail, welcomeBackEmail, listWelcomeBackEmail } from '@/lib/email/templates'
+import { leftThisListBefore } from '@/lib/list-return'
 import { sendEmail } from '@/lib/email/resend'
 import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
 
@@ -98,6 +99,8 @@ export async function applyNewsletterOptIn({
 
   let rejoin = false
   let alreadyTagged = false
+  let returning = false
+  let welcomeName = firstName
   try {
     const { data: existing, error: selectErr } = await supabase
       .from('contacts')
@@ -119,6 +122,8 @@ export async function applyNewsletterOptIn({
         await sendWelcomeBack(normalizedEmail, firstName ?? existing.first_name ?? undefined, dryRun)
         return { status: 'rejoin-confirm-sent' }
       }
+      returning = await leftThisListBefore(supabase, normalizedEmail, 'personal')
+      welcomeName = firstName ?? existing.first_name ?? undefined
 
       const mergedTags = currentTags.includes(TAG) ? currentTags : [...currentTags, TAG]
       const updates: Record<string, unknown> = {
@@ -167,6 +172,12 @@ export async function applyNewsletterOptIn({
           lastName: lastName ?? undefined,
           unsubscribed: false,
         })
+        // create leaves an existing contact as it was, so a reader who left and
+        // rejoins stayed unsubscribed in Resend until the next reconcile
+        // (observed 2026-11-07). update clears it, as flipAudience does.
+        const { error: updateError } = await resend.contacts.update({ audienceId, email: normalizedEmail, unsubscribed: false })
+        // The SDK returns an API error rather than throwing it, so it is read here.
+        if (updateError) console.error('opt-in Resend unsuppress error:', updateError.message)
       } else {
         console.warn('newsletter opt-in: Resend audience id not resolved, skipping eager-add')
       }
@@ -182,7 +193,10 @@ export async function applyNewsletterOptIn({
     try {
       const token = signEmailToken(normalizedEmail)
       const unsubUrl = `https://www.lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
-      const template = newsletterWelcomeEmail({ firstName })
+      const leaveUrl = `https://www.lanebelone.com/personal/leave?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const template = returning
+        ? listWelcomeBackEmail({ list: 'personal', firstName: welcomeName, email: normalizedEmail, leaveUrl })
+        : newsletterWelcomeEmail({ firstName, email: normalizedEmail, leaveUrl })
       await sendEmail({
         to: normalizedEmail,
         subject: template.subject,
@@ -256,6 +270,7 @@ export async function applyArticleOptIn({
 
   let rejoin = false
   let alreadyTagged = false
+  let returning = false
   let resolvedFirstName: string | undefined = firstName
   let resolvedLastName: string | undefined = lastName
 
@@ -284,6 +299,7 @@ export async function applyArticleOptIn({
         await sendWelcomeBack(normalizedEmail, resolvedFirstName, dryRun)
         return { status: 'rejoin-confirm-sent' }
       }
+      returning = await leftThisListBefore(supabase, normalizedEmail, 'articles')
 
       const mergedTags = currentTags.includes(ARTICLE_TAG) ? currentTags : [...currentTags, ARTICLE_TAG]
       const updates: Record<string, unknown> = {
@@ -328,6 +344,12 @@ export async function applyArticleOptIn({
           lastName: resolvedLastName ?? undefined,
           unsubscribed: false,
         })
+        // create leaves an existing contact as it was, so a reader who left and
+        // rejoins stayed unsubscribed in Resend until the next reconcile
+        // (observed 2026-11-07). update clears it, as flipAudience does.
+        const { error: updateError } = await resend.contacts.update({ audienceId, email: normalizedEmail, unsubscribed: false })
+        // The SDK returns an API error rather than throwing it, so it is read here.
+        if (updateError) console.error('opt-in Resend unsuppress error:', updateError.message)
       } else {
         console.warn('article opt-in: Resend audience id not resolved, skipping eager-add')
       }
@@ -343,7 +365,10 @@ export async function applyArticleOptIn({
     try {
       const token = signEmailToken(normalizedEmail)
       const unsubUrl = `https://www.lanebelone.com/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
-      const template = articleWelcomeEmail({ firstName: resolvedFirstName })
+      const leaveUrl = `https://www.lanebelone.com/articles/leave?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const template = returning
+        ? listWelcomeBackEmail({ list: 'articles', firstName: resolvedFirstName, email: normalizedEmail, leaveUrl })
+        : articleWelcomeEmail({ firstName: resolvedFirstName, email: normalizedEmail, leaveUrl })
       await sendEmail({
         to: normalizedEmail,
         subject: template.subject,

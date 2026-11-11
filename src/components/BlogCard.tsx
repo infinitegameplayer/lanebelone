@@ -4,7 +4,9 @@ import type { BlogPost } from '@/lib/blog'
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr)
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  // A date-only string parses as UTC midnight; formatting in UTC keeps the day
+  // from slipping back one on a build machine west of Greenwich (2026-11-05).
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
 }
 
 export default function BlogCard({ post }: { post: BlogPost }) {
