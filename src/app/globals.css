@@ -219,7 +219,6 @@
 .hero-line-1 { animation-delay: 0.1s; }
 .hero-line-2 { animation-delay: 0.22s; }
 .hero-line-3 { animation-delay: 0.34s; }
-.hero-line-4 { animation-delay: 0.46s; }
 
 /* Double-bezel card */
 .bezel-card {
@@ -893,3 +892,195 @@
 @media (max-width: 640px) {
   .explorer-card { padding: 1.35rem; }
 }
+
+/* ── Homepage Depth Touches (King-ruled 2026-11-10) ──────────────────────────
+   Ported from the round-five proof (PARA Site Depth Proof, web/lb.css).
+   Still by default: one screen of hero, nothing sticky. Holds and motion only
+   where the browser has scroll timelines and the reader has not asked for
+   reduced motion. */
+
+/* Homepage hero. Clipped sideways only: overflow hidden would slice the
+   sinking photo and stop the sticky stage. */
+.home-hero {
+  position: relative;
+  height: 100svh;
+  isolation: isolate;
+  overflow-x: clip;
+  overflow-y: visible;
+  view-timeline: --home-hero block;
+}
+.home-hero + .section-divider { opacity: 0; }
+.home-hero-stage {
+  position: relative;
+  top: 0;
+  height: 100svh;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow-x: clip;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* A drawn forest dawn behind Colorado gold; its ::after dims it to the page
+   colour as the hero leaves. */
+.home-hero-sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #081208 0%, #0d1f14 24%, #18342a 42%, #4d5e44 56%, #b39458 68%, #d6ae68 73%, #081208 100%);
+}
+.home-hero-sky::after { content: ''; position: absolute; inset: 0; background: #081208; opacity: 0; }
+.home-hero-land {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96svh;
+  z-index: 0;
+  pointer-events: none;
+}
+.home-hero-land img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent);
+}
+.home-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(8, 18, 8, 0.7) 0%, rgba(8, 18, 8, 0.35) 38%, rgba(8, 18, 8, 0) 58%);
+}
+.home-hero h1, .home-hero p { text-shadow: 0 2px 18px rgba(8, 18, 8, 0.7); }
+/* The second button keeps its shape over the photo, hover included (Fable
+   audit finding 3): near-solid dark glass, a light edge and a halo. */
+.home-hero .home-hero-connect,
+.home-hero .home-hero-connect:hover {
+  background: rgba(8, 18, 8, 0.86);
+  border: 1.5px solid rgba(255, 255, 255, 0.78);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(8, 18, 8, 0.5), 0 6px 22px rgba(8, 18, 8, 0.55);
+}
+/* Phones: Lane at Lobuche stands the full screen. At 30 percent his face holds
+   near a quarter of the way down at any phone height (a short screen loses
+   mostly the foot). Soft at the top, since his own blue sky sinks away from
+   the nav during the hold. The scrim deepens from just under his face. */
+@media (max-width: 760px) {
+  .home-hero-land { height: 100svh; }
+  .home-hero-land img {
+    object-position: 50% 30%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 84%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 84%, transparent);
+  }
+  .home-hero-scrim {
+    background: linear-gradient(to bottom, rgba(8, 18, 8, 0.3) 0%, rgba(8, 18, 8, 0.05) 22%, rgba(8, 18, 8, 0.6) 38%, rgba(8, 18, 8, 0.72) 64%, rgba(8, 18, 8, 0.5) 100%);
+  }
+}
+@keyframes home-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero-sky, .home-hero-land { animation: home-fade-in 1.2s ease both; }
+}
+/* The release: the photo rides up with the page and stays, then fades only as
+   the next section nears the top; the drawn sky dims a step ahead of it. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .home-hero { height: 150svh; }
+    .home-hero-stage { position: sticky; }
+    .home-hero-land {
+      animation: home-hero-sink linear both, home-hero-out linear both;
+      animation-timeline: --home-hero, --home-hero;
+      animation-range: contain 0% contain 100%, exit 30% exit 88%;
+    }
+    .home-hero-sky::after {
+      animation: home-hero-night ease-in both;
+      animation-timeline: --home-hero;
+      animation-range: exit 25% exit 82%;
+    }
+    /* The photo sinks 14svh below the stage; a soft foot on the scrim keeps
+       that overhang from showing as a lit strip under a hard line. */
+    .home-hero-scrim {
+      -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent);
+      mask-image: linear-gradient(to bottom, #000 68%, transparent);
+    }
+    .home-hero-words {
+      animation: home-hero-rise linear both;
+      animation-timeline: --home-hero;
+      animation-range: contain 60% contain 100%;
+    }
+  }
+}
+@keyframes home-hero-sink { from { transform: translateY(0) scale(1.08); } to { transform: translateY(14svh) scale(1); } }
+@keyframes home-hero-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes home-hero-night { from { opacity: 0; } to { opacity: 1; } }
+@keyframes home-hero-rise { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-12svh); } }
+
+/* Happening Now card with a photo: side by side, the photo on the right
+   fading into the card at its inner edge. On phones the photo sits under the
+   words with the card's own gap above it, bleeding to the sides and foot,
+   its soft edge toward the button. */
+.happening-wide { grid-column: 1 / -1; width: 100%; }
+.happening-split {
+  --pad: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  align-items: center;
+  overflow: hidden;
+}
+.happening-body { position: relative; z-index: 1; }
+.happening-photo {
+  order: 2;
+  align-self: stretch;
+  margin: calc(-1 * var(--pad)) calc(-1 * var(--pad)) calc(-1 * var(--pad)) 0;
+  min-height: 280px;
+}
+.happening-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+  -webkit-mask-image: linear-gradient(to left, #000 72%, transparent);
+  mask-image: linear-gradient(to left, #000 72%, transparent);
+}
+@media (max-width: 760px) {
+  .happening-split { grid-template-columns: 1fr; }
+  .happening-photo { margin: 0 calc(-1 * var(--pad)) calc(-1 * var(--pad)); min-height: 220px; }
+  .happening-photo img {
+    -webkit-mask-image: linear-gradient(to top, #000 78%, transparent);
+    mask-image: linear-gradient(to top, #000 78%, transparent);
+  }
+}
+
+/* Joyful Sovereignty: first light behind the section, its words arriving on
+   scroll. The dividers either side step back so the light reads whole. */
+.js-first-light { isolation: isolate; }
+.js-first-light::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: -10rem;
+  bottom: -10rem;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 50% 45% at 50% 42%, rgba(232, 200, 120, 0.12), rgba(120, 150, 70, 0.07) 50%, transparent 78%);
+}
+.section-divider:has(+ .js-first-light), .js-first-light + .section-divider { opacity: 0; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .js-first-light blockquote, .js-first-light p {
+      animation: home-arrive linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+  }
+}
+@keyframes home-arrive { from { opacity: 0; transform: translateY(2.5vh); } to { opacity: 1; transform: none; } }
