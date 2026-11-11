@@ -1025,7 +1025,8 @@
 @media (max-height: 480px) {
   .home-hero { height: auto; }
   .home-hero-stage { position: relative; height: auto; min-height: 100svh; }
-  .home-hero-stage > div.min-h-screen { min-height: 0; }
+  .home-hero-stage > div.min-h-screen { min-height: 0; padding-top: 5rem; padding-bottom: 2rem; }
+  .home-hero-scrim { -webkit-mask-image: none; mask-image: none; }
   .home-hero-land { height: 100%; animation: none; transform: none; opacity: 1; }
   .home-hero-sky::after { animation: none; opacity: 0; }
   .home-hero-words { animation: none; opacity: 1; transform: none; visibility: visible; }
