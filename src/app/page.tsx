@@ -124,10 +124,9 @@ export default function HomePage() {
               <div className="section-label">· Happening Now ·</div>
             </SectionReveal>
             <SectionReveal staggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {happeningNow.map((item) => (
-                <div key={item.title} className={`bezel-card${item.featured ? ' featured' : ''} flex flex-col`}>
-                  {item.featured && <div className="shimmer-border" />}
-                  <div className="bezel-inner flex flex-col gap-3 flex-1">
+              {happeningNow.map((item) => {
+                const words = (
+                  <>
                     <div
                       style={{
                         fontFamily: 'var(--font-display)',
@@ -163,9 +162,30 @@ export default function HomePage() {
                         {item.cta}{item.price ? ` · ${item.price}` : ''}
                       </a>
                     </div>
+                  </>
+                )
+                return (
+                  <div
+                    key={item.title}
+                    className={`bezel-card${item.featured ? ' featured' : ''}${item.image ? ' happening-wide' : ''} flex flex-col`}
+                  >
+                    {item.featured && <div className="shimmer-border" />}
+                    {item.image ? (
+                      <div className="bezel-inner happening-split flex-1">
+                        <div className="happening-body flex flex-col gap-3">{words}</div>
+                        <picture className="happening-photo">
+                          <source media="(max-width: 760px)" type="image/avif" srcSet={`${item.image.phone}.avif`} />
+                          <source media="(max-width: 760px)" type="image/webp" srcSet={`${item.image.phone}.webp`} />
+                          <source type="image/avif" srcSet={`${item.image.desktop}.avif`} />
+                          <img src={`${item.image.desktop}.webp`} alt={item.image.alt} loading="lazy" decoding="async" />
+                        </picture>
+                      </div>
+                    ) : (
+                      <div className="bezel-inner flex flex-col gap-3 flex-1">{words}</div>
+                    )}
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </SectionReveal>
           </section>
 
@@ -173,9 +193,9 @@ export default function HomePage() {
         </>
       )}
 
-      {/* 3. Joyful Sovereignty (full-width contemplative break) */}
+      {/* 3. Joyful Sovereignty (full-width contemplative break), first light behind it */}
       <section
-        className="relative"
+        className="js-first-light relative"
         style={{
           padding: '8rem 2rem',
           textAlign: 'center',
@@ -270,6 +290,8 @@ export default function HomePage() {
                   <img
                     src={post.heroImage}
                     alt={post.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%',
                       aspectRatio: '16/9',
@@ -347,6 +369,8 @@ export default function HomePage() {
                   <img
                     src={post.heroImage}
                     alt={post.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{ transition: 'transform 0.3s ease' }}
                     className="group-hover:scale-[1.03]"
                   />
@@ -362,7 +386,7 @@ export default function HomePage() {
                       marginBottom: '0.5rem',
                     }}
                   >
-                    {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) : ''}
+                    {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' }) : ''}
                   </div>
                   <h3
                     style={{

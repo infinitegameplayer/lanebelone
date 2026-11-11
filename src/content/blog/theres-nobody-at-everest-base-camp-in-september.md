@@ -5,6 +5,7 @@ date: "2026-10-07"
 dateModified: "2026-10-07"
 description: "An empty base camp in September, twelve days on the trail with Trekker Nepal and the field notes I'd hand anyone who feels the call."
 category: "adventures"
+featured: true
 heroImage: "/images/blog/theres-nobody-at-everest-base-camp-in-september-hero.jpg"
 format: markdown
 author: "Lane Belone"

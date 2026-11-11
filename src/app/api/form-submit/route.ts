@@ -41,9 +41,10 @@ type SubmitBody = {
 }
 
 const MIN_FILL_MS = 1500
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
+  const blocked = await refuseBots({ route: '/api/form-submit' })
   if (blocked) return blocked
   const origin = req.headers.get('origin') ?? req.headers.get('referer') ?? ''
   let body: SubmitBody
@@ -75,6 +76,11 @@ export async function POST(req: NextRequest) {
   }
 
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : undefined
+  // An address Resend cannot send to is refused here, as on sidequesthq (#214).
+  // The forms set noValidate, so the browser never checks it.
+  if (email && !EMAIL_RE.test(email)) {
+    return NextResponse.json({ error: 'Invalid email format' }, { status: 400 })
+  }
   const firstName = cleanName(body.firstName)
   const lastName = cleanName(body.lastName)
   const message = typeof body.message === 'string' ? body.message.trim() : undefined
