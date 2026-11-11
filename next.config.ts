@@ -134,6 +134,12 @@ const nextConfig: NextConfig = {
         source,
         headers: [{ key: 'Content-Security-Policy', value: pageCsp(hashes) }],
       })),
+      // Homepage hero pictures (Fable audit finding 11): a day of freshness, a
+      // week of stale-while-revalidate. No later rule sets Cache-Control.
+      {
+        source: '/images/home/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }],
+      },
       // Referrer-Policy is split out of the global block. The /preferences URL
       // carries the subscriber email and a live token, so that route family must
       // leak no referrer even on a same-origin click. Every other path keeps the
