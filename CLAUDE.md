@@ -87,7 +87,7 @@ src/components/
   BlogCard.tsx
 
 public/
-  images/                 WebP, lowercase-hyphenated, max 1920px / under 200KB
+  images/                 WebP, lowercase-hyphenated, max 1920px / under 200KB (homepage heroes in images/home: AVIF + WebP fallback, up to 2400px / at or under 300KB)
   llms.txt / llms-full.txt / robots.txt / sitemap.xml
 vercel.json               37 redirect rules for expired/dropped articles: do not remove
 ```
@@ -163,6 +163,7 @@ Always use `https://www.sidequesthq.co/workshop` for workshop registration links
 Originals: `C:\Users\User\Pictures\Brand Assets\LaneBelone\` (local, never committed)
 Working copies: `~/sites/lanebelone/public/images/` (committed to GitHub, served by Vercel)
 Optimization: max 1920px wide, under 200KB, WebP, lowercase-hyphenated filename.
+Exception: the homepage first-screen heroes in `public/images/home` follow the Homepage Depth Touches plan instead: AVIF with a WebP fallback, up to 2400px wide, each file at or under 300KB.
 Tool: Squoosh (squoosh.app) or the sharp image script.
 
 Android photos may be saved rotated. Fix before staging: `sharp(input).rotate(90).toFile(output)`.
