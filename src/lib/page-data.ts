@@ -206,6 +206,10 @@ export interface HappeningNowItem {
   ctaHref: string
   price?: string
   featured?: boolean
+  // A photo turns the card into the wide side-by-side layout (Homepage Depth
+  // Touches, King-ruled 2026-11-10). Paths without extension: each needs an
+  // .avif and a .webp beside it, the phone file under 760px.
+  image?: { desktop: string; phone: string; alt: string }
 }
 
 // Happening Now is an option, not a fixture (King-ruled 2026-09-24, Three-Site
@@ -224,6 +228,11 @@ export const happeningNow: HappeningNowItem[] = [
     cta: 'See the journey',
     ctaHref: 'https://www.sidequesthq.co/explorers-side-quest/peru-2027',
     featured: true,
+    image: {
+      desktop: '/images/home/peru-group',
+      phone: '/images/home/peru-group-m',
+      alt: 'Eight travelers hand in hand, facing the sun over the mountains of Peru',
+    },
   },
 ]
 
