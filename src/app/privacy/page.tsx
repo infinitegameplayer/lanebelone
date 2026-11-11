@@ -29,7 +29,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-parchment/40 text-sm mb-12" style={{ fontFamily: 'var(--font-body)' }}>
-          Effective date: March 2026
+          Effective date: November 2026
         </p>
 
         <div className="flex flex-col gap-10 text-parchment/70 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               Cookies and analytics
             </h2>
             <p>
-              This site may use basic, privacy-respecting analytics to understand how people are finding and using the site. We do not use invasive tracking, and we do not sell or share analytics data with third parties.
+              This site may use basic, privacy-respecting analytics to understand how people are finding and using the site. The site also keeps a short note in your browser of how you first arrived (a link&apos;s campaign tags and the site that sent you) for up to a year, and passes it along when you follow a link to sidequesthq.co or infinitegameos.io. We do not use invasive tracking, and we do not sell or share analytics data with third parties.
             </p>
           </div>
 
