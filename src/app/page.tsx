@@ -46,18 +46,18 @@ const websiteJsonLd = {
   license: 'https://creativecommons.org/licenses/by/4.0/',
 }
 
-// The ProfilePage for the Person lives on /about. The homepage is a WebPage
-// about the Person, so the site carries one ProfilePage, not two.
+// The homepage is a ProfilePage, as /about is: Web Strategy Codex VI.2 names
+// ProfilePage on both for this site. A change to that is a codex change first.
 const homePageJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
+  '@type': 'ProfilePage',
   '@id': 'https://www.lanebelone.com/#webpage',
   isPartOf: { '@id': 'https://www.lanebelone.com/#website' },
   url: 'https://www.lanebelone.com',
   name: 'Lane Belone',
   description:
     'Lane Belone, writer on the Infinite Game, sharing breadcrumbs along the way.',
-  about: { '@id': PERSON_ID },
+  mainEntity: { '@id': PERSON_ID },
 }
 
 // Portrait cover crop (4:5 cover-display) for the library-style shelves, matching

@@ -81,10 +81,10 @@ describe('JSON-LD identity', () => {
     }
   })
 
-  // D15: one ProfilePage on the site, on /about.
-  it('only /about is a ProfilePage', () => {
-    const withProfile = pages().filter(p => /'@type':\s*'ProfilePage'/.test(src(p))).map(rel)
-    expect(withProfile).toEqual(['about/page.tsx'])
+  // D15 held: Web Strategy Codex VI.2 names ProfilePage on the homepage and /about.
+  it('the homepage and /about are the ProfilePages', () => {
+    const withProfile = pages().filter(p => /'@type':\s*'ProfilePage'/.test(src(p))).map(rel).sort()
+    expect(withProfile).toEqual(['about/page.tsx', 'page.tsx'])
   })
 
   // D20: the blog index carries a BreadcrumbList and ties Blog to its list.
