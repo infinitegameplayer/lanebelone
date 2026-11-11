@@ -42,6 +42,8 @@ export function CrossSiteLinkTracker() {
   // record the cross-site stitch, persist it for checkout, then clean the URL.
   useEffect(() => {
     if (typeof window === 'undefined') return
+    // Privacy surfaces are never observed, so they never become a kept first touch.
+    if (isNoTrackPath(window.location.pathname)) return
     // First-touch: remember the visitor's entry UTMs and referrer once, kept in
     // localStorage for a year, so a later cross-site hop (even in a new tab on a
     // return visit) can forward the true source.
