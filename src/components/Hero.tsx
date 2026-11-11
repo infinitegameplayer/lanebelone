@@ -54,7 +54,7 @@ export default function Hero() {
               </h1>
               <p
                 className="hero-line hero-line-2 text-lg md:text-xl leading-relaxed md:leading-7 max-w-md"
-                style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-muted)' }}
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}
               >
                 Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.
               </p>
