@@ -290,6 +290,8 @@ export default function HomePage() {
                   <img
                     src={post.heroImage}
                     alt={post.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%',
                       aspectRatio: '16/9',
@@ -367,6 +369,8 @@ export default function HomePage() {
                   <img
                     src={post.heroImage}
                     alt={post.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{ transition: 'transform 0.3s ease' }}
                     className="group-hover:scale-[1.03]"
                   />

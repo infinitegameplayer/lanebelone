@@ -59,12 +59,12 @@ export default function Hero() {
                 Exploring the Infinite Game. Writing, speaking and sharing breadcrumbs along the way.
               </p>
               <div className="hero-line hero-line-3 flex flex-wrap gap-4">
-                <Link href="/joyful-sovereignty" className="btn-gold">
+                <Link href="/blog" className="btn-gold">
+                  Read the Writing
+                </Link>
+                <Link href="/joyful-sovereignty" className="btn-outline home-hero-connect">
                   Explore Joyful Sovereignty
                 </Link>
-                <a href="#connect" className="btn-outline home-hero-connect">
-                  Connect
-                </a>
               </div>
             </div>
           </div>

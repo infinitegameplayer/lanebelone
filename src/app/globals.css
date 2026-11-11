@@ -972,6 +972,9 @@
    mostly the foot). Soft at the top, since his own blue sky sinks away from
    the nav during the hold. The scrim deepens from just under his face. */
 @media (max-width: 760px) {
+  /* No gold band on phones: the portrait carries the light, and the drawn
+     dawn's gold showed under the buttons until the photo arrived. */
+  .home-hero-sky { background: linear-gradient(to bottom, #081208 0%, #0d1f14 35%, #18342a 65%, #081208 100%); }
   .home-hero-land { height: 100svh; }
   .home-hero-land img {
     object-position: 50% 30%;
@@ -1018,7 +1021,9 @@
 @keyframes home-hero-sink { from { transform: translateY(0) scale(1.08); } to { transform: translateY(14svh) scale(1); } }
 @keyframes home-hero-out { from { opacity: 1; } to { opacity: 0; } }
 @keyframes home-hero-night { from { opacity: 0; } to { opacity: 1; } }
-@keyframes home-hero-rise { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-12svh); } }
+/* visibility goes hidden only at the end, so the faded buttons stop taking
+   taps and leave the tab order once they are gone (Fable audit 2026-11-11). */
+@keyframes home-hero-rise { from { opacity: 1; transform: none; visibility: visible; } to { opacity: 0; transform: translateY(-12svh); visibility: hidden; } }
 
 /* Happening Now card with a photo: side by side, the photo on the right
    fading into the card at its inner edge. On phones the photo sits under the
