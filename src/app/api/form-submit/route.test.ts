@@ -108,3 +108,33 @@ describe('an email that is not an address is refused at the door', () => {
     expect(res.status).toBe(200)
   })
 })
+
+// The origin check compared with startsWith, so a host that begins with the
+// site's address passed it, the same shape sidequesthq fixed in #269
+// (Security Posture Ledger, 2026-11-18). The site is matched exactly, by the
+// Origin header or, when a browser sends none, by the origin of the Referer.
+describe('the origin check matches the site exactly', () => {
+  function from(headers: Record<string, string>) {
+    return new NextRequest('https://www.lanebelone.com/api/form-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...headers },
+      body: JSON.stringify({ formName: 'lanebelone-newsletter', email: 'reader@example.com', honeypot: '', openedAt: Date.now() - 5000 }),
+    })
+  }
+
+  it.each([
+    ['an Origin that starts with the apex address', { origin: 'https://lanebelone.com.evil.example' }],
+    ['an Origin that starts with the www address', { origin: 'https://www.lanebelone.com.evil.example' }],
+    ['a Referer on a look-alike host', { referer: 'https://www.lanebelone.com.evil.example/start' }],
+  ])('refuses %s and writes nothing', async (_label, headers) => {
+    inserts = 0
+    const res = await POST(from(headers))
+    expect(res.status).toBe(403)
+    expect(inserts).toBe(0)
+  })
+
+  it('accepts a Referer from a page on the site when no Origin is sent', async () => {
+    const res = await POST(from({ referer: 'https://www.lanebelone.com/articles?utm_source=letter' }))
+    expect(res.status).toBe(200)
+  })
+})
