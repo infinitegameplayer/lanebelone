@@ -63,7 +63,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unknown form' }, { status: 400 })
   }
 
-  const originAllowed = config.allowedOrigins.some((allowed) => origin.startsWith(allowed))
+  // Exact match on scheme and host. A prefix test passed https://lanebelone.com.evil.example (Security Posture
+  // Ledger, 2026-11-18; sidequesthq #269). The Referer, read when a browser sends no Origin, is a full URL, so its
+  // origin is taken.
+  let requestOrigin = ''
+  try {
+    requestOrigin = origin ? new URL(origin).origin : ''
+  } catch {
+    requestOrigin = '' // an unparseable header matches nothing
+  }
+  const originAllowed = config.allowedOrigins.includes(requestOrigin)
   if (!originAllowed) {
     return NextResponse.json({ error: 'Origin not allowed' }, { status: 403 })
   }
