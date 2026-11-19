@@ -36,4 +36,39 @@ for (const [file, re] of targets) {
   if (next !== text) writeFileSync(path, next, 'utf8')
   console.log(`sync-llms-counts: ${file} ${next === text ? 'already' : 'now'} reads ${count}`)
 }
+
+// The "Last updated" stamps lagged the same way: each Monday article adds a
+// line to both manifests and nobody moves the date (PR #27 fixed it by hand on
+// 2026-10-29; the Sentinel caught it again on 2026-11-18). The stamp now moves
+// forward to the newest article date. It never moves backward, so a manifest
+// edited for another reason keeps the later date written by hand.
+const newest = readdirSync(join(root, 'src/content/blog'))
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => readFileSync(join(root, 'src/content/blog', f), 'utf8').match(/^date:\s*"?(\d{4}-\d{2}-\d{2})"?\s*$/m)?.[1])
+  .filter(Boolean)
+  .sort()
+  .pop()
+
+const stamps = [
+  ['public/llms.txt', /(^# Last updated: )(\d{4}-\d{2}-\d{2})()$/m],
+  ['public/llms-full.txt', /(Last updated: )(\d{4}-\d{2}-\d{2})(\.)/],
+]
+
+for (const [file, re] of stamps) {
+  const path = join(root, file)
+  const text = readFileSync(path, 'utf8')
+  const hits = text.match(new RegExp(re.source, re.flags.includes('m') ? 'gm' : 'g')) || []
+  if (hits.length !== 1 || !newest) {
+    console.error(`sync-llms-counts: ${file} stamp matched ${hits.length} times, expected 1 (newest article ${newest ?? 'none'}). Was the line reworded?`)
+    failed = true
+    continue
+  }
+  const current = text.match(re)[2]
+  if (current >= newest) {
+    console.log(`sync-llms-counts: ${file} stamp already ${current}`)
+    continue
+  }
+  writeFileSync(path, text.replace(re, `$1${newest}$3`), 'utf8')
+  console.log(`sync-llms-counts: ${file} stamp now ${newest}`)
+}
 process.exitCode = failed ? 1 : 0
