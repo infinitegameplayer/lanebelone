@@ -27,7 +27,7 @@ const SHEET = `
   .kingdom-bottom-bar .kbar-thanks { font-size: 14px; line-height: 1.45; color: #f5d88a; padding-right: 24px; }
   .kingdom-bottom-bar .kbar-form { display: flex; gap: 8px; align-items: center; }
   .kingdom-bottom-bar .kbar-field { flex: 1; min-width: 0; height: 38px; padding: 0 12px; border-radius: 8px; background: #141c15; border: 1px solid rgba(232, 228, 216, 0.14); color: #e8e4d8; font-family: var(--font-body); font-size: 16px; outline: none; }
-  .kingdom-bottom-bar .kbar-btn { flex: none; height: 38px; padding: 0 14px; border: 0; border-radius: 8px; background-image: linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%); color: #0f1a12; font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; cursor: pointer; }
+  .kingdom-bottom-bar .kbar-btn { flex: none; height: 38px; padding: 0 14px; border: 0; border-radius: 8px; background-image: linear-gradient(135deg, #c8973a 0%, #f5d88a 45%, #d4a040 65%, #c8973a 100%); color: #0f1a12; font-family: 'Inter', system-ui, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; cursor: pointer; }
   .kingdom-bottom-bar input::placeholder { color: rgba(245, 240, 232, 0.45); }
   .kingdom-bottom-bar input:focus { border-color: rgba(201, 168, 76, 0.5); }
   @media ${DOCK} {

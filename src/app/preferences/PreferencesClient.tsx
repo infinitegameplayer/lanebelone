@@ -219,9 +219,7 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
                   {crossDomain && (
                     <span
                       style={{
-                        fontSize: '0.7rem',
-                        letterSpacing: '0.06em',
-                        textTransform: 'uppercase',
+                        fontSize: '0.8125rem',
                         color: faint,
                         fontFamily: "'Inter', system-ui, sans-serif",
                       }}

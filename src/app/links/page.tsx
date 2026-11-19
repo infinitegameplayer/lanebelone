@@ -149,7 +149,7 @@ export default function LinksPage() {
                     <span className="flex items-center gap-2 text-parchment" style={{ fontFamily: 'var(--font-body)' }}>
                       {item.label}
                       {item.pill && (
-                        <span className="shrink-0 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-gold-from/20 text-gold-from border border-gold-from/30">
+                        <span className="shrink-0 text-[13px] px-1.5 py-0.5 rounded-full bg-gold-from/20 text-gold-from border border-gold-from/30">
                           {item.pill}
                         </span>
                       )}

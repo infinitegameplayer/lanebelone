@@ -28,7 +28,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
       )}
       <div className="p-5">
         <p
-          className="text-xs text-parchment/40 mb-2 tracking-widest uppercase"
+          className="text-[13px] text-parchment/40 mb-2"
           style={{ fontFamily: 'var(--font-body)' }}
         >
           {formatDate(post.date)}
