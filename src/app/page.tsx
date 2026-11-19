@@ -110,7 +110,7 @@ export default function HomePage() {
               <p className="oat-sub">
                 The easiest door in, and a real one. In under an hour you find what&rsquo;s alive in you and make one small thing real. You finish holding something that wasn&rsquo;t there when you sat down, and the path keeps unfolding from there at your own pace.
               </p>
-              <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
+              <span className="btn-gold" style={{ fontSize: '0.8125rem', padding: '0.6rem 1.3rem' }}>
                 Begin the side quest
               </span>
             </div>
@@ -136,10 +136,9 @@ export default function HomePage() {
                     <div
                       style={{
                         fontFamily: 'var(--font-display)',
-                        fontSize: '0.62rem',
+                        fontSize: '0.8125rem',
                         fontWeight: 500,
-                        letterSpacing: '0.16em',
-                        textTransform: 'uppercase',
+                        letterSpacing: '0.02em',
                         color: item.featured ? 'var(--color-gold)' : 'var(--color-accent-hover)',
                         display: 'inline-block',
                         padding: '0.3rem 0.7rem',
@@ -163,7 +162,7 @@ export default function HomePage() {
                         target="_blank"
                         rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(item.ctaHref) ? 'noopener' : 'noopener noreferrer'}
                         className={item.featured ? 'btn-gold' : 'btn-outline'}
-                        style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}
+                        style={{ fontSize: '0.8125rem', padding: '0.6rem 1.3rem' }}
                       >
                         {item.cta}{item.price ? ` · ${item.price}` : ''}
                       </a>
@@ -224,9 +223,9 @@ export default function HomePage() {
             <div
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '0.68rem',
+                fontSize: '0.8125rem',
                 fontWeight: 500,
-                letterSpacing: '0.25em',
+                letterSpacing: '0.22em',
                 textTransform: 'uppercase',
                 color: 'var(--color-gold)',
                 marginBottom: '2.5rem',
@@ -312,10 +311,9 @@ export default function HomePage() {
                 <span
                   style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: '0.65rem',
+                    fontSize: '0.875rem',
                     fontWeight: 500,
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
+                    letterSpacing: '0.02em',
                     color: 'var(--color-gold)',
                     textDecoration: 'underline',
                     textUnderlineOffset: '3px',
@@ -385,9 +383,7 @@ export default function HomePage() {
                   <div
                     style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: '0.65rem',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
+                      fontSize: '0.8125rem',
                       color: 'var(--color-text-muted)',
                       marginBottom: '0.5rem',
                     }}
@@ -468,7 +464,7 @@ export default function HomePage() {
                 <div className="os-title">{libraryAliveBusiness.title}</div>
                 <p className="os-blurb">{libraryAliveBusiness.oneLiner}</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.3rem', flexWrap: 'wrap' }}>
-                  <span className="btn-gold" style={{ fontSize: '0.8rem', padding: '0.6rem 1.3rem' }}>
+                  <span className="btn-gold" style={{ fontSize: '0.8125rem', padding: '0.6rem 1.3rem' }}>
                     Explore The Alive Business
                   </span>
                   <span className="os-price">{libraryAliveBusiness.price}</span>

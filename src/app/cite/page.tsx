@@ -387,7 +387,7 @@ function CitationCard({ work }: { work: CitedWork }) {
 function CitationFormat({ label, body, multiline }: { label: string; body: string; multiline?: boolean }) {
   return (
     <div>
-      <p className="text-parchment/50 text-xs uppercase tracking-wider mb-2" style={{ fontFamily: 'var(--font-body)' }}>
+      <p className="text-parchment/50 text-[13px] mb-2" style={{ fontFamily: 'var(--font-body)' }}>
         {label}
       </p>
       <pre

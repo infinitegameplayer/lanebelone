@@ -325,13 +325,13 @@
   max-width: 1100px;
 }
 
-/* Gold section label */
+/* Gold section kicker. Kingdom Design Codex Labels (2026-11-05): 13px minimum,
+   at most two true labels on a page, so this reads as a sentence-case accent. */
 .section-label {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--color-gold);
   margin-bottom: 1rem;
 }
@@ -483,10 +483,9 @@
 }
 .lib-shelf-label {
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--color-gold);
   margin-top: 4rem;
   margin-bottom: 1.6rem;
@@ -522,10 +521,9 @@
 .lib-meta { padding-top: 0.9rem; }
 .lib-price {
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--color-accent-hover);
   display: block;
   margin-bottom: 0.4rem;
@@ -641,10 +639,9 @@
 .os-cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .os-eyebrow {
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--color-gold);
   margin-bottom: 0.7rem;
 }
@@ -666,10 +663,9 @@
 }
 .os-price {
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--color-accent-hover);
 }
 @media (max-width: 720px) {
@@ -714,10 +710,9 @@
 }
 .fg-price {
   font-family: var(--font-display);
-  font-size: 0.56rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--color-accent-hover);
   margin-top: 0.25rem;
 }
@@ -770,10 +765,9 @@
 .free-pill {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--color-gold-light);
   margin-bottom: 0.5rem;
 }
@@ -859,9 +853,8 @@
 .explorer-card p:last-child { margin-bottom: 0; }
 .explorer-card .explorer-card-eyebrow {
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
   color: var(--color-gold);
   margin-bottom: 0.6rem;
 }

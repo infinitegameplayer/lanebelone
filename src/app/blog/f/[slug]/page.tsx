@@ -112,7 +112,7 @@ export default async function BlogPostPage({
       <div className="section max-w-[38rem]! mx-auto">
         {/* Meta */}
         <p
-          className="text-xs text-parchment/40 mb-4 tracking-widest uppercase"
+          className="text-[13px] text-parchment/40 mb-4"
           style={{ fontFamily: 'var(--font-body)' }}
         >
           {formatDate(post.date)}
