@@ -647,13 +647,12 @@ export const linkHub: LinkHubItem[] = [
     href: 'https://www.sidequesthq.co/products/the-alive-business',
     icon: 'book',
   },
-  // Rotating episode slot. Infinite Player Season visit 6 (2026-11-09) opens
-  // on One Alive Thing, already featured above, and names the Side Quest
-  // Playbook as the way to try on the next jacket, so the slot points there.
+  // Rotating episode slot. Infinite Player Season visit 7 (2026-11-23) opens
+  // the Operator's Guide free door test, so the slot points there.
   {
-    label: 'Side Quest Playbook',
-    sublabel: 'Try on the next jacket: a quest with a beginning, middle and end',
-    href: 'https://www.sidequesthq.co/products/side-quest-playbook',
+    label: "The Operator's Guide",
+    sublabel: 'Free working sessions for finding where AI fits in your business',
+    href: 'https://www.sidequesthq.co/operators-guide',
     icon: 'compass',
   },
   {
