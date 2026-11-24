@@ -4,9 +4,8 @@
 // already in an inbox became scanner-safe (2026-11-07, Email Codex Section 12).
 //
 // The server reads whether the address is already on the list and writes
-// nothing. A reader already on it is told so. Everyone else meets JoinClient,
-// which joins them with no button once a person is plainly on the page, and
-// shows its one-tap button whenever it cannot tell.
+// nothing. A reader already on it is told so. Everyone else meets JoinClient's
+// button, and only the press joins them (press-only.ts, 2026-11-24).
 
 import type { Metadata } from 'next'
 import Link from 'next/link'

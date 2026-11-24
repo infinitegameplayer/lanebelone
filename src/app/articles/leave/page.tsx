@@ -1,8 +1,7 @@
 // "Not you? One click to undo." from the articles welcome email lands here:
 // /articles/leave?email=...&token=... The server checks the signed token and
-// whether the address is on the list, and writes nothing. LeaveClient takes the
-// address off the list once a person is plainly on the page, or shows its
-// button when it cannot tell (the scanner-proof one-click, 2026-11-07).
+// whether the address is on the list, and writes nothing. LeaveClient shows its
+// button, and only the press takes the address off (press-only.ts, 2026-11-24).
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
