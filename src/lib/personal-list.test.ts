@@ -18,6 +18,6 @@ describe('Personal notes one-click', () => {
     const leaveUrl = 'https://www.lanebelone.com/personal/leave?email=a%40x.com&token=t'
     const html = newsletterWelcomeEmail({ firstName: 'A', email: 'a@x.com', leaveUrl }).html
     expect(html).toContain(`href="${leaveUrl}"`)
-    expect(html).toContain('One click to undo.')
+    expect(html).toContain('Undo it here.')
   })
 })

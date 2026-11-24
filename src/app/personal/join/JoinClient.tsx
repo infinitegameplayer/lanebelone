@@ -52,7 +52,7 @@ export default function JoinClient({ email, token }: { email: string; token: str
       <>
         <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
         <p style={lead}>
-          You&apos;re in. The welcome note is landing now, with a one-click undo if this was not you. Meanwhile, the {blog} is here.
+          You&apos;re in. The welcome note is landing now, with a way to undo it if this was not you. Meanwhile, the {blog} is here.
         </p>
       </>
     )
@@ -66,7 +66,7 @@ export default function JoinClient({ email, token }: { email: string; token: str
     )
   }
   if (tap === 'check-email') {
-    return <p style={lead}>Check your inbox. I sent a link to that address so you can choose what you&apos;d like to get. One click and you&apos;re in.</p>
+    return <p style={lead}>Check your inbox. I sent a link to that address so you can choose what you&apos;d like to get.</p>
   }
   if (tap === 'unknown') {
     return <p style={lead}>I could not find that address. Reply to the letter that brought you here and you will be added by hand.</p>

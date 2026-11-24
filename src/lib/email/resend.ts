@@ -66,7 +66,7 @@ function buildEmailHtml({
     ? ` &middot; <a href="${preferencesUrl}" style="color:rgba(201,168,76,0.6);text-decoration:none">manage preferences</a>`
     : ''
   const unsubscribeFragment = unsubscribeUrl
-    ? ` &middot; <a href="${unsubscribeUrl}" style="color:rgba(201,168,76,0.6);text-decoration:none">one-click unsubscribe</a>`
+    ? ` &middot; <a href="${unsubscribeUrl}" style="color:rgba(201,168,76,0.6);text-decoration:none">unsubscribe</a>`
     : ''
 
   // Lanebelone palette: dark with gold accent. Mirrors the visual register of

@@ -53,7 +53,7 @@ function lettersMap(omit: LetterKey, email: string) {
 }
 
 function undoLine(leaveUrl: string) {
-  return p(`Not you? <a href="${leaveUrl}" style="color:#8a7f70">One click to undo.</a>`, 'margin-top:28px;font-size:13px;color:#8a7f70')
+  return p(`Not you? <a href="${leaveUrl}" style="color:#8a7f70">Undo it here.</a>`, 'margin-top:28px;font-size:13px;color:#8a7f70')
 }
 
 // ─── Welcome back to one list ───────────────────────────────────────
@@ -109,7 +109,7 @@ ${undoLine(leaveUrl)}
 export function welcomeBackEmail({ firstName, preferencesUrl }: { firstName?: string; preferencesUrl: string }) {
   return {
     subject: 'Want back in?',
-    previewText: "One click and you're back.",
+    previewText: 'Pick what you want to receive.',
     html: `
 ${p(greeting(firstName))}
 ${p('This address just asked to join the list again. You unsubscribed a while back, so I wanted to hear it from you before adding you back.')}
@@ -259,7 +259,6 @@ ${p(opening)}
 ${p("Every so often I put words to what I'm seeing. Different angles on sovereignty, the Infinite Game, building a life that's actually yours.")}
 ${p("If you'd like those landing in your inbox too, there's an easy way to receive them.")}
 ${button(optInUrl, 'Yes, send me the writing')}
-${p("One click and you're in.", 'font-size:14px;color:rgba(245,240,232,0.55)')}
 ${p("You'll still get my personal updates either way. Looking forward to connecting when we do.")}
 ${welcomeSignoff()}
 ${p(`P.S. Want to wander through a few first? They all live <a href="${blogUrl}" style="color:${ACCENT};text-decoration:underline">here</a>.`, 'font-size:14px;color:rgba(245,240,232,0.55)')}
