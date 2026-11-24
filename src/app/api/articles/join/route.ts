@@ -1,10 +1,8 @@
 // The one-click join to the articles list from an email link (/articles/join),
 // the scanner-proof one-click (King-ruled 2026-11-07, Email Codex Section 12).
 //
-// mode 'auto' is the page acting by itself once a person is plainly there
-// (auto-action-gate.ts). It acts only when BotID vouches for the visitor and the
-// address is already a Kingdom contact; anything else answers needsTap and the
-// page shows its button. mode 'tap' is the button: the ordinary BotID check.
+// Acts only on a person's press of the page's button (press-only.ts): an
+// automatic request changes nothing. The press passes the ordinary BotID check.
 //
 // A valid ?token= (minted by Kingdom email that can sign, such as the Personal
 // nurture) is proof the person asked, so an address that left every list
@@ -14,8 +12,8 @@
 // one-click route guarded.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { botVerdict, refuseBots } from '@/lib/bot-guard'
-import { autoJoinAllowed, cleanGateReport } from '@/lib/auto-action-gate'
+import { refuseBots } from '@/lib/bot-guard'
+import { refuseAutomatic } from '@/lib/press-only'
 import { verifyEmailToken } from '@/lib/unsubscribe-token'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { applyArticleOptIn } from '@/lib/newsletter'
@@ -32,7 +30,7 @@ async function findContact(email: string): Promise<{ unsubscribed: boolean | nul
 }
 
 export async function POST(req: NextRequest) {
-  let body: { email?: unknown; token?: unknown; mode?: unknown; gate?: unknown }
+  let body: { email?: unknown; token?: unknown; mode?: unknown }
   try {
     body = (await req.json()) as typeof body
   } catch {
@@ -49,24 +47,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, status: 'invalid' }, { status: 400 })
   }
 
-  const auto = body.mode === 'auto'
-  if (auto) {
-    const verdict = await botVerdict({ route: '/api/articles/join' })
-    const contact = verdict === 'human' ? await findContact(email) : null
-    const allowed = autoJoinAllowed(verdict, contact)
-    console.log(`auto-join ${JSON.stringify({ route: '/api/articles/join', verdict, known: contact !== null, allowed, gate: cleanGateReport(body.gate) })}`)
-    if (!allowed) return NextResponse.json({ ok: true, needsTap: true }, { status: 200 })
-  } else {
-    const blocked = await refuseBots({ route: '/api/articles/join' })
-    if (blocked) return blocked
-    if (!tokenValid && !(await findContact(email))) {
-      return NextResponse.json({ ok: true, status: 'unknown' }, { status: 200 })
-    }
+  const refused = refuseAutomatic('/api/articles/join', body.mode)
+  if (refused) return refused
+  const blocked = await refuseBots({ route: '/api/articles/join' })
+  if (blocked) return blocked
+  if (!tokenValid && !(await findContact(email))) {
+    return NextResponse.json({ ok: true, status: 'unknown' }, { status: 200 })
   }
 
   const result = await applyArticleOptIn({
     email,
-    source: auto ? 'one-click:articles-join' : 'one-click:articles-join-tap',
+    source: 'one-click:articles-join-tap',
     verified: tokenValid,
   })
   if (result.status === 'error') {

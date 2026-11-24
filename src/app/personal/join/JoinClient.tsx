@@ -1,23 +1,21 @@
 'use client'
 
-// The one-click join to Personal notes. Once a person is plainly on the page
-// (useAutoAction, auto-action-gate.ts) it joins them with no button at all. If
-// the checks go unmet, or the server cannot vouch for the visitor, the one-tap
-// button appears instead, so a person always gets in and a mail scanner that
-// presses nothing joins no one. Mirror of src/app/articles/join/JoinClient.tsx.
+// The one-click join to Personal notes. The page shows one button and joins
+// only when a person presses it (Email Codex Section 12, press-only.ts), so a
+// mail scanner that opens the link joins no one. Mirror of
+// src/app/articles/join/JoinClient.tsx.
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useAutoAction, type AutoOutcome } from '@/components/useAutoAction'
 import { buttonStyle, lead } from '../../articles/join/shell'
 
 type TapState = 'idle' | 'working' | 'done' | 'already' | 'check-email' | 'unknown' | 'refused' | 'error'
 
-async function join(email: string, token: string, mode: 'auto' | 'tap', gate?: unknown): Promise<Response> {
+async function join(email: string, token: string): Promise<Response> {
   return fetch('/api/personal/join', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, token: token || undefined, mode, gate }),
+    body: JSON.stringify({ email, token: token || undefined, mode: 'tap' }),
   })
 }
 
@@ -32,20 +30,11 @@ function outcomeOf(status: unknown): TapState {
 export default function JoinClient({ email, token }: { email: string; token: string }) {
   const [tap, setTap] = useState<TapState>('idle')
 
-  const phase = useAutoAction(async (gate): Promise<AutoOutcome> => {
-    const res = await join(email, token, 'auto', gate)
-    if (!res.ok) return 'tap'
-    const body = await res.json().catch(() => ({}))
-    if (body?.needsTap) return 'tap'
-    const o = outcomeOf(body?.status)
-    return o === 'done' ? 'done' : o === 'already' ? 'already' : 'tap'
-  }, true, 'join')
-
   const onTap = async () => {
     if (tap === 'working') return
     setTap('working')
     try {
-      const res = await join(email, token, 'tap')
+      const res = await join(email, token)
       // A tap the bot check refuses is still a person most of the time (a
       // corporate proxy can hide the signals). They get a way in, never a dead end.
       if (res.status === 403) return setTap('refused')
@@ -58,7 +47,7 @@ export default function JoinClient({ email, token }: { email: string; token: str
 
   const blog = <Link href="/blog" style={{ color: '#d4a040' }}>writing</Link>
 
-  if (phase === 'done' || tap === 'done') {
+  if (tap === 'done') {
     return (
       <>
         <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
@@ -68,7 +57,7 @@ export default function JoinClient({ email, token }: { email: string; token: str
       </>
     )
   }
-  if (phase === 'already' || tap === 'already') {
+  if (tap === 'already') {
     return (
       <>
         <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
@@ -83,35 +72,26 @@ export default function JoinClient({ email, token }: { email: string; token: str
     return <p style={lead}>I could not find that address. Reply to the letter that brought you here and you will be added by hand.</p>
   }
 
-  if (phase === 'tap') {
-    return (
-      <>
-        <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
-        <p style={lead}>Life, inner thoughts and what I&apos;m learning, sent when there&apos;s something worth sending. One tap and this address is on the list.</p>
-        <button type="button" onClick={onTap} disabled={tap === 'working'} style={{ ...buttonStyle, opacity: tap === 'working' ? 0.6 : 1 }}>
-          {tap === 'working' ? 'Adding you…' : 'Yes, send me the notes'}
-        </button>
-        {tap === 'refused' && (
-          <p style={{ ...lead, color: 'rgba(220,120,100,0.9)', fontSize: '0.9rem', marginTop: '0.75rem' }}>
-            Something on this connection stopped the join. Reply to the letter that brought you here and you will be added by hand.
-          </p>
-        )}
-        {tap === 'error' && (
-          <p style={{ ...lead, color: 'rgba(220,120,100,0.9)', fontSize: '0.9rem', marginTop: '0.75rem' }}>
-            Something went wrong. Try once more, or reply to the letter and you will be added by hand.
-          </p>
-        )}
-      </>
-    )
-  }
-
   return (
     <>
       <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
-      <p style={lead} aria-live="polite">Adding you to the list…</p>
+      <p style={lead}>Life, inner thoughts and what I&apos;m learning, sent when there&apos;s something worth sending. One tap and this address is on the list.</p>
+      <button type="button" onClick={onTap} disabled={tap === 'working'} style={{ ...buttonStyle, opacity: tap === 'working' ? 0.6 : 1 }}>
+        {tap === 'working' ? 'Adding you…' : 'Yes, send me the notes'}
+      </button>
       <noscript>
         <p style={lead}>This page needs JavaScript to add you. Reply to the letter that brought you here and you will be added by hand.</p>
       </noscript>
+      {tap === 'refused' && (
+        <p style={{ ...lead, color: 'rgba(220,120,100,0.9)', fontSize: '0.9rem', marginTop: '0.75rem' }}>
+          Something on this connection stopped the join. Reply to the letter that brought you here and you will be added by hand.
+        </p>
+      )}
+      {tap === 'error' && (
+        <p style={{ ...lead, color: 'rgba(220,120,100,0.9)', fontSize: '0.9rem', marginTop: '0.75rem' }}>
+          Something went wrong. Try once more, or reply to the letter and you will be added by hand.
+        </p>
+      )}
     </>
   )
 }
