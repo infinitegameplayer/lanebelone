@@ -113,7 +113,7 @@ describe('the welcomes carry the map without their own list', () => {
       expect(html).toContain('The letters')
       expect(html).not.toContain(`<strong>${own}</strong>`)
       expect(html).toContain('join?email=a%40x.co')
-      expect(html.indexOf('The letters')).toBeLessThan(html.indexOf('One click to undo.'))
+      expect(html.indexOf('The letters')).toBeLessThan(html.indexOf('Undo it here.'))
     })
   }
   it('Welcome back keeps the approved draft', () => {
