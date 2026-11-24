@@ -3,9 +3,9 @@ import { BOTID_PROTECTED } from '@/lib/botid-routes'
 import { newsletterWelcomeEmail } from '@/lib/email/templates'
 
 // The Personal notes join and undo (PendingPlan - The Letters Map and Welcome
-// Back, step 1). Their automatic act reads BotID's verdict, which needs the
-// browser signal that only the protected list attaches; and a join from one
-// click carries a one-click way back in its welcome (Email Codex Section 12).
+// Back, step 1). A press reads BotID's verdict, which needs the browser signal
+// that only the protected list attaches; and a join from one click carries a
+// one-click way back in its welcome (Email Codex Section 12).
 
 describe('Personal notes one-click', () => {
   for (const path of ['/api/personal/join', '/api/personal/leave']) {
