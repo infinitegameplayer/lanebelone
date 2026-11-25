@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: 'Privacy policy for lanebelone.com: how we collect, use and protect your information.',
   alternates: {
     canonical: 'https://www.lanebelone.com/privacy',
+    types: {
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
+    },
   },
   openGraph: {
     type: 'website',
