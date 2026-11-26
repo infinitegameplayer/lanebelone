@@ -28,6 +28,8 @@ const indexable = pages().filter(p => !isNoindex(src(p)))
 
 // Pages this build may not edit (task rules): /links and /privacy. Their
 // defects are recorded in the PR ledger. Remove an entry once it is fixed.
+// The RSS alternate was fixed on both (Site Update 2026-11-25); the share
+// image is still held, so HELD now skips only that check.
 const HELD = new Set(['links/page.tsx', 'privacy/page.tsx'])
 
 describe('indexable pages', () => {
@@ -53,13 +55,13 @@ describe('indexable pages', () => {
       expect(src(p)).toMatch(/canonical:\s*[`']https:\/\/www\.lanebelone\.com/)
     })
 
-    if (HELD.has(name)) continue
-
     // D1: a page-level alternates object replaces the root one, so each page
     // carries the RSS alternate itself.
     it(`${name} keeps the RSS alternate link`, () => {
       expect(src(p)).toContain("'application/rss+xml': 'https://www.lanebelone.com/rss.xml'")
     })
+
+    if (HELD.has(name)) continue
 
     // D6: a page-level openGraph replaces the root one, so a page with no
     // opengraph-image file of its own names an image.

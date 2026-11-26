@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.lanebelone.com/links',
     types: {
+      'application/rss+xml': 'https://www.lanebelone.com/rss.xml',
       'text/markdown': 'https://www.lanebelone.com/markdown/links',
     },
   },
