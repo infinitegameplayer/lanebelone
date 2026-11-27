@@ -52,7 +52,7 @@ export default function JoinClient({ email, token }: { email: string; token: str
       <>
         <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
         <p style={lead}>
-          You&apos;re in. The welcome note is landing now, with a way to undo it if this was not you. Meanwhile, the {blog} is here.
+          You&apos;re in. The welcome note is landing now, with a way to undo it if this wasn&apos;t you. Meanwhile, the {blog} is here.
         </p>
       </>
     )

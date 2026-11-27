@@ -39,7 +39,7 @@ export default async function ArticlesJoinPage({
 
   if (!email || (token && !verifyEmailToken(email, token))) {
     return (
-      <Shell heading="This link did not work">
+      <Shell heading="This link didn't work">
         <p style={lead}>
           You can get every new piece by email from the bottom of any{' '}
           <Link href="/blog" style={{ color: '#d4a040' }}>article</Link>.
