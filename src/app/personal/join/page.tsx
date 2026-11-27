@@ -38,7 +38,7 @@ export default async function PersonalJoinPage({
 
   if (!email || (token && !verifyEmailToken(email, token))) {
     return (
-      <Shell heading="This link did not work">
+      <Shell heading="This link didn't work">
         <p style={lead}>
           Reply to the letter that brought you here and you will be added to the personal notes by hand.
         </p>

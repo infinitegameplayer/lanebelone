@@ -32,7 +32,7 @@ export default async function ArticlesLeavePage({
 
   if (!email || !token || email.length > 254 || !verifyAnyToken(email, token)) {
     return (
-      <Shell heading="This link did not work">
+      <Shell heading="This link didn't work">
         <p style={lead}>
           To change what you receive, use Manage preferences at the bottom of any email, or reply to it and it will be handled by hand.
         </p>
@@ -51,7 +51,7 @@ export default async function ArticlesLeavePage({
         <>
           <p style={{ ...lead, wordBreak: 'break-all' }}>{email}</p>
           <p style={lead}>
-            This address is not on the articles list, so there is nothing to undo. The{' '}
+            This address isn&apos;t on the articles list, so there&apos;s nothing to undo. The{' '}
             <Link href="/blog" style={{ color: '#d4a040' }}>writing</Link> is still here to read.
           </p>
         </>
